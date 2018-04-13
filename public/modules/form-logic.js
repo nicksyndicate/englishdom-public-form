@@ -84,7 +84,10 @@ function afterSuccessSend(response, form) {
 
 function setSuccessText(text) {
   let successSendBlock = document.querySelector('.js-success-send-ed-form');
-  successSendBlock.innerHTML = text;
+
+  if (setSuccessText) {
+    successSendBlock.innerHTML = text;
+  }  
 }
 
 function showErrors(name, text, parent) {
