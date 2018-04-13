@@ -1,5 +1,8 @@
 # Englishdom public form
 
+- скопировать файл ./public/bundles/js/form-logic.js к себе в папку
+- скопировать файл ./public/bundles/css/intlTelInput.css к себе в папку
+
 ```
 #js 
 
