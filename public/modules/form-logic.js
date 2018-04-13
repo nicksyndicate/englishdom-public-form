@@ -3,15 +3,13 @@ import api from '../utils/form-api';
 import parsers from '../utils/form-parsers';
 import intTelInput from '../utils/intl-tel-input';
 
-import '../vendor/babel-polyfill/dist/polyfill';
-
-function init(opt) {
+const init = function(opt) {
   if (opt.phone) {
     intTelInput();
   }
 
   setButtons(opt);
-  setScuccessText(opt.successSendText);
+  setSuccessText(opt.successSendText);
 }
 
 function setButtons(opt) {
@@ -84,9 +82,8 @@ function afterSuccessSend(response, form) {
   }
 }
 
-function setScuccessText(text) {
+function setSuccessText(text) {
   let successSendBlock = document.querySelector('.js-success-send-ed-form');
-
   successSendBlock.innerHTML = text;
 }
 
@@ -111,4 +108,4 @@ function hideErrors(form) {
   }
 }
 
-export default init;
+window.logic = init;

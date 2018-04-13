@@ -35,23 +35,17 @@ module.exports = function(grunt) {
       plugins: [
         new webpack.optimize.UglifyJsPlugin({
           sourceMap: true,
-          compress: grunt.option('no-dev')
-            ? {
-                drop_console: true
-              }
-            : {}
+          compress: false
         }),
         new webpack.optimize.OccurrenceOrderPlugin()
        ],
 
       resolve: {
-        modules: ['<%= project.modules %>', '<%= project.vendor %>', '<%= project.utils %>'],
+        modules: ['<%= project.modules %>', '<%= project.vendor %>'],
 
         alias: {
           'jquery': 'jquery/dist/jquery',
           'underscore': 'underscore/underscore',
-          'form-api': 'utils/form-api',
-          'form-parsers': 'utils/form-parsers',
           'input-tel': 'intl-tel-input/build/js/intlTelInput',
           'babel-polyfill': 'babel-polyfill/dist/polyfill',
         }
@@ -59,7 +53,11 @@ module.exports = function(grunt) {
 
       module: {
         rules: [
-          //
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
+          }
         ]
       }
     }
