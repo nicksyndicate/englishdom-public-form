@@ -52,7 +52,18 @@ logic({
 <div class="js-success-send-ed-form"></div>
 
 
-<script src="form-page.js"></script>
+<script src="./public/bundles/js/form-logic.js"></script>
+<script>
+  logic({
+    internal: true, // false
+    registration: true, // false
+    phone: true, //false
+    firstName: true, // false
+    source: 'landing_b', // oprional
+    successSendText: 'optional text' //oprional
+  });
+</script>
+
 <link rel="stylesheet" href="intlTelInput.css"></script>
 
 ```
