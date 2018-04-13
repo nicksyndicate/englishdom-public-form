@@ -1,0 +1,29 @@
+<form action="" method="POST" novalidate="" class="js-ed-form">
+  <div>
+    <div>
+      <label for="form-name" class="">
+        <input id="form-name" type="text" name="first_name" class="js-first_name" placeholder="Имя*" maxlength="25" />
+        <p class="js-error-first_name"></p>
+      </label>
+    </div>
+    <div class="">
+      <label for="form-email" class="">
+        <input id="form-email" type="email" name="email" class="js-email" placeholder="Email*" />
+        <p class="js-error-email"></p>
+      </label>
+    </div>
+    <div class="">
+      <label for="form-phone" class="">
+        <input id="form-phone" name="phone" type="tel" class="js-ed-form-tel-number js-phone" autocomplete="off" />
+        <p class="js-error-phone"></p>
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="js-ed-form-button">начать бесплатно</button>
+</form>
+<div>
+<div class="js-success-send-ed-form"></div>
+
+
+<script src="./public/bundles/js/form-page.js"></script>
+<link rel="stylesheet" href="./public/bundles/css/intlTelInput.css"></script>

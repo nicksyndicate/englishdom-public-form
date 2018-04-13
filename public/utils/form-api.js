@@ -1,0 +1,95 @@
+import $ from 'jquery';
+import _ from 'underscore';
+
+function getUserId() {
+  let id = document.body.getAttribute('data-user-id');
+
+  return id;
+}
+
+function apiGetDataFromServer(cb) {
+  let id = getUserId();
+
+  $.ajax({
+    url: 'https://develop.eddev.cf/api-public/logged-user/',
+    headers: {
+      Authorization1: null
+    },
+    success: function (response) {
+      data = response.data.attributes;
+
+      if (cb) {
+        cb.call(data);
+      }
+    }
+  });
+}
+
+function apiRegistration(data, cb) {
+  const sendData = {
+    type: 'read-registration',
+    data: data
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://e-loshkarev.eddev.cf/api-public/user/registration/',
+    data: JSON.stringify(sendData),
+
+    success: function(response) {
+      cb(true, response);
+    },
+    error: function(response) {
+      cb(false, response);
+    }
+  })
+}
+
+function apiReadRegistration(data, cb) {
+  const sendData = {
+    type: 'read-registration',
+    data: data
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://e-loshkarev.eddev.cf/api-public/user/read-registration/',
+    data: JSON.stringify(sendData),
+
+    success: function(response) {
+      cb(true, response);
+    },
+    error: function(response) {
+      cb(false, response);
+    }
+  })
+}
+
+function apiSendApplication(data, cb) {
+  const sendData = {
+    type: 'application',
+    data: data
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://e-loshkarev.eddev.cf/api-public/application/individual',
+    contentType: "application/json",
+    data: JSON.stringify(sendData),
+
+    success: function(response) {
+      cb(true, response);
+    },
+    error: function(response) {
+      cb(false, response);
+    }
+  });
+}
+
+export default {
+  getUserId: getUserId,
+  apiRegistration: apiRegistration,
+  apiGetDataFromServer: apiGetDataFromServer,
+  apiReadRegistration: apiReadRegistration,
+  apiSendApplication: apiSendApplication
+}
