@@ -72,7 +72,7 @@ Application form:
 ```
 
 ```js
-import init from 'form-logic.min';
+import init from 'form-logic';
 
 init({
   internal: true,
@@ -85,7 +85,7 @@ init({
 ```
 
 ```js
-var init = require('form-logic.min.js');
+var init = require('form-logic.js');
 
 init({
   internal: true,
