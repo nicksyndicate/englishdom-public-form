@@ -1,21 +1,7 @@
 # Englishdom public form
 
-- скопировать файл ./public/bundles/js/form-logic.js к себе в папку
+- скопировать файл ./public/bundles/js/form-logic.min.js к себе в папку
 - скопировать файл ./public/bundles/css/intlTelInput.css к себе в папку
-
-```
-#js 
-
-logic({
-  internal: true, // false
-  registration: true, // false
-  phone: true, //false
-  firstName: true, // false
-  source: 'landing_b', // oprional
-  successSendText: 'optional text' //oprional
-});
-```
-
 
 
 - классы, которые начинаются с 'js-' необходимо оставить в форме
@@ -56,8 +42,8 @@ logic({
 <div>
 <div class="js-success-send-ed-form"></div>
 
-
-<script src="./public/bundles/js/form-logic.js"></script>
+<link rel="stylesheet" href="intlTelInput.css"></script>
+<script src="./public/bundles/js/form-logic.min.js"></script>
 <script>
   logic({
     internal: true, // false
@@ -69,6 +55,21 @@ logic({
   });
 </script>
 
-<link rel="stylesheet" href="intlTelInput.css"></script>
+<!-- или в js файле -->
+
+import logic from 'from-logic.js';
+
+logic({
+  internal: true, // false
+  registration: true, // false
+  phone: true, //false
+  firstName: true, // false
+  source: 'landing_b', // optional
+  successSendText: 'optional text' //optional
+});
 
 ```
+
+!
+
+- при подключении формы на сайтах партнёров статистика не собирается
