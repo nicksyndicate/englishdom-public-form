@@ -44,6 +44,7 @@ module.exports = function(grunt) {
         modules: ['<%= project.modules %>', '<%= project.vendor %>'],
 
         alias: {
+          'logic': 'form-logic/form-logic',
           'jquery': 'jquery/dist/jquery',
           'underscore': 'underscore/underscore',
           'input-tel': 'intl-tel-input/build/js/intlTelInput',
