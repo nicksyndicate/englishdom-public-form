@@ -5,6 +5,6 @@ init({
   registration: true, // false
   phone: true, //false
   firstName: true, // false
-  source: 'landing_b', // oprional
-  successSendText: 'optional text' //oprional
+  source: 'landing_b', // optional
+  successSendText: 'optional text' //optional
 });

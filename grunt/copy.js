@@ -8,7 +8,7 @@ module.exports = {
       {
         cwd: './node_modules',
         expand: true,
-        dest: '<%= project.publicFolder %>/vendor',
+        dest: '<%= project.publicFolder %>/vendor-js',
 
         src: [
           'intl-tel-input/build/js/intlTelInput.js',

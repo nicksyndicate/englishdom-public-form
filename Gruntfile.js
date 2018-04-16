@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         publicUtils: '<%= project.publicFolder %>/utils',
 
         modules: '<%= project.publicFolder %>/modules/',
-        vendor: '<%= project.publicFolder %>/vendor/'
+        vendor: '<%= project.publicFolder %>/vendor-js/'
       }
     }
   });
