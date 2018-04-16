@@ -35,7 +35,7 @@ function setIntlTel(el) {
     }
   });
 
-  el.intlTelInput('loadUtils', 'public/vendor/intl-tel-input/lib/libphonenumber/build/utils.js');
+  el.intlTelInput('loadUtils', '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js');
   el.intlTelInput('selectCountry', 'RU');
 }
 

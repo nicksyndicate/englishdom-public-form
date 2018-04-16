@@ -11,7 +11,7 @@ function apiGetDataFromServer(cb) {
   let id = getUserId();
 
   $.ajax({
-    url: 'https://englishdom.com/api-public/logged-user/',
+    url: '/api-public/logged-user/', //'https://englishdom.com/api-public/logged-user/',
     headers: {
       Authorization1: null
     },
@@ -33,7 +33,7 @@ function apiRegistration(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/registration/',
+    url: '/api-public/user/registration/', //'https://englishdom.com/api-public/user/registration/',
     data: JSON.stringify(sendData),
 
     success: function(response) {
@@ -53,7 +53,7 @@ function apiReadRegistration(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/read-registration/',
+    url: '/api-public/user/read-registration/', //'https://englishdom.com/api-public/user/read-registration/',
     data: JSON.stringify(sendData),
 
     success: function(response) {
@@ -73,7 +73,7 @@ function apiSendApplication(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/application/individual',
+    url: '/api-public/application/individual', //'https://englishdom.com/api-public/application/individual',
     contentType: "application/json",
     data: JSON.stringify(sendData),
 
