@@ -80,6 +80,7 @@ init({
   phone: true,
   firstName: true,
   source: 'landing_b',
+  redirectToEd: true,
   successSendText: 'optional text'
 });
 ```
@@ -93,6 +94,7 @@ init({
   phone: true,
   firstName: true,
   source: 'landing_b',
+  redirectToEd: true,
   successSendText: 'optional text'
 });
 ```
@@ -104,6 +106,7 @@ registration | boolean | false | определяет тип формы - рег
 phone | boolean | false | определяет необходимость передачи номера телефона
 firstName | boolean | false | определяет необходимость передачи имени пользователя
 source | string | '' | определяет ресурс, с которого поступает заявка
+redirectToEd | boolean | false | определяет необходимость редиректа на http://englishdom.com/home/user/login после успешной отправки формы
 successSendText | string | '' | определяет текст после успешной отправки формы
 
 ClassName | Tag/Default ClassName | Default | Description
