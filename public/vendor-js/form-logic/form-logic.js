@@ -3,28 +3,32 @@ const api = require('./utils/form-api');
 const parsers = require('./utils/form-parsers');
 const intTelInput = require('./utils/intl-tel-input');
 
-function init(opt) {
+let opt = {};
+
+function init(options) {
+  opt = options;
+
   if (opt.phone) {
     intTelInput.default();
   }
 
-  setButtons(opt);
+  setButtons();
   setSuccessText(opt.successSendText);
 }
 
-function setButtons(opt) {
+function setButtons() {
   let buttons = document.querySelectorAll('.js-ed-form-button');
 
   for (let i=0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(e) {
       e.preventDefault();
 
-      setNextMethod(opt, e);
+      setNextMethod(e);
     });
   }
 }
 
-function setNextMethod(opt, e) {
+function setNextMethod(e) {
   let form = e.target.closest('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
@@ -36,7 +40,7 @@ function setNextMethod(opt, e) {
 
 function registration(data, form) {
   api.default.apiRegistration(data, function(result, response) {
-    if (result) afterSuccessRegistration(data, form);
+    if (result) return afterSuccessRegistration(data, form);
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
       return showErrors(error, type, form);
@@ -46,7 +50,7 @@ function registration(data, form) {
 
 function readRegistration(data, form) {
   api.default.apiReadRegistration(data, function(result, response) {
-    if (result) sendApplication(data, form);
+    if (result) return sendApplication(data, form);
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
       return showErrors(error, type, form);
@@ -56,7 +60,7 @@ function readRegistration(data, form) {
 
 function sendApplication(data, form) {
   api.default.apiSendApplication(data, function(result, response) {
-    if (result) afterSuccessSend(response, form);
+    if (result) return afterSuccessSend(response, form);
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
       return showErrors(error, type, form);
@@ -64,8 +68,16 @@ function sendApplication(data, form) {
   });
 }
 
-function afterSuccessRegistration(response) {
-  // redirect ?
+function toRedirect() {
+  if (opt.redirectToEd) {
+    setTimeout(function() {
+      window.location = 'https://englishdom.com/home/user/login';
+    }, 4000);
+  }
+}
+
+function afterSuccessRegistration(data, form) {
+  afterSuccessSend(data, form);
 }
 
 function afterSuccessSend(response, form) {
@@ -77,9 +89,11 @@ function afterSuccessSend(response, form) {
     form.classList.add('is-success');
   }
 
-  if (!successSendBlock.classList.contains('is-success')) {
+  if (successSendBlock && !successSendBlock.classList.contains('is-success')) {
     successSendBlock.classList.add('is-success');
   }
+
+  toRedirect();
 }
 
 function setSuccessText(text) {

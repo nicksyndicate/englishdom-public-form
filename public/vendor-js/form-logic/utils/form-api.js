@@ -27,7 +27,6 @@ function apiGetDataFromServer(cb) {
 
 function apiRegistration(data, cb) {
   const sendData = {
-    type: 'read-registration',
     data: data
   };
 
