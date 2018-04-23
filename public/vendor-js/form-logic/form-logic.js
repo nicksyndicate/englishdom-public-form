@@ -40,7 +40,13 @@ function setNextMethod(e) {
 
 function registration(data, form) {
   api.default.apiRegistration(data, function(result, response) {
-    if (result) return afterSuccessRegistration(data, form);
+    if (result) {
+      if (opt.successRegSendCb) {
+        opt.successRegSendCb(response);
+      }
+
+      return afterSuccessRegistration(data, form)
+    }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
       return showErrors(error, type, form);
@@ -50,7 +56,13 @@ function registration(data, form) {
 
 function readRegistration(data, form) {
   api.default.apiReadRegistration(data, function(result, response) {
-    if (result) return sendApplication(data, form);
+    if (result) {
+      if (opt.successRegSendCb) {
+        opt.successRegSendCb(response);
+      }
+
+      return sendApplication(data, form);
+    }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
       return showErrors(error, type, form);
@@ -60,7 +72,13 @@ function readRegistration(data, form) {
 
 function sendApplication(data, form) {
   api.default.apiSendApplication(data, function(result, response) {
-    if (result) return afterSuccessSend(response, form);
+    if (result) {
+      if (opt.successAppSendCb) {
+        opt.successAppSendCb(response);
+      }
+
+      return afterSuccessSend(response, form);
+    }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
       return showErrors(error, type, form);
@@ -69,10 +87,6 @@ function sendApplication(data, form) {
 }
 
 function toRedirect(response) {
-  if (opt.successSendCb) {
-    opt.successSendCb(response);
-  }
-
   if (opt.redirectToEd) {
     setTimeout(function() {
       window.location = 'https://englishdom.com/home/user/login';

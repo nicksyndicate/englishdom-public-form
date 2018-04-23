@@ -11,8 +11,10 @@ function apiGetDataFromServer(cb) {
   let id = getUserId();
 
   $.ajax({
-    url: 'https://englishdom.com/api-public/logged-user/',
-    contentType: "application/json",
+    url: '/api-public/logged-user/',
+    contentType: 'application/vnd.api+json',
+    dataType: 'json',
+    timeout: $.ajaxSettings.timeout || 40000,
     headers: {
       Authorization1: null
     },
@@ -33,8 +35,10 @@ function apiRegistration(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/registration/',
-    contentType: "application/json",
+    url: '/api-public/user/registration/',
+    dataType: 'json',
+    timeout: $.ajaxSettings.timeout || 40000,
+    contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
 
     success: function(response) {
@@ -47,15 +51,18 @@ function apiRegistration(data, cb) {
 }
 
 function apiReadRegistration(data, cb) {
+  data.type = 'read-registration';
+
   const sendData = {
-    type: 'read-registration',
     data: data
   };
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/read-registration/',
-    contentType: "application/json",
+    url: '/api-public/user/read-registration/',
+    dataType: 'json',
+    timeout: $.ajaxSettings.timeout || 40000,
+    contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
 
     success: function(response) {
@@ -68,15 +75,18 @@ function apiReadRegistration(data, cb) {
 }
 
 function apiSendApplication(data, cb) {
+  data.type = 'application';
+
   const sendData = {
-    type: 'application',
     data: data
   };
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/application/individual',
-    contentType: "application/json",
+    url: '/api-public/application/individual',
+    dataType: 'json',
+    timeout: $.ajaxSettings.timeout || 40000,
+    contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
 
     success: function(response) {

@@ -108,7 +108,8 @@ firstName | boolean | false | определяет необходимость п
 source | string | '' | определяет ресурс, с которого поступает заявка
 redirectToEd | boolean | false | определяет необходимость редиректа на http://englishdom.com/home/user/login после успешной отправки формы
 successSendText | string | '' | определяет текст после успешной отправки формы
-successSendCb | function | undefined | callback после успешной отправки формы
+successRegSendCb | function | undefined | callback после успешной отправки формы регистрации
+successAppSendCb | function | undefined | callback после успешной отправки формы подачи заявки
 
 ClassName | Tag/Default ClassName | Default | Description
 ------ | ---- | ------- | -----------
