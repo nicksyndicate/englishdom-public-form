@@ -69,8 +69,8 @@ function sendApplication(data, form) {
 }
 
 function toRedirect(response) {
-  if (successSendCb) {
-    successSendCb(response);
+  if (opt.successSendCb) {
+    opt.successSendCb(response);
   }
 
   if (opt.redirectToEd) {
