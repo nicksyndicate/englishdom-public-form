@@ -68,7 +68,11 @@ function sendApplication(data, form) {
   });
 }
 
-function toRedirect() {
+function toRedirect(response) {
+  if (successSendCb) {
+    successSendCb(response);
+  }
+
   if (opt.redirectToEd) {
     setTimeout(function() {
       window.location = 'https://englishdom.com/home/user/login';
@@ -93,7 +97,7 @@ function afterSuccessSend(response, form) {
     successSendBlock.classList.add('is-success');
   }
 
-  toRedirect();
+  toRedirect(response);
 }
 
 function setSuccessText(text) {
