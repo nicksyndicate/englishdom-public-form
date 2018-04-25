@@ -16,20 +16,30 @@ function init(options) {
   setSuccessText(opt.successSendText);
 }
 
+function uninit() {
+  let buttons = document.querySelectorAll('.js-ed-form-button');
+
+  for (let i=0; i < buttons.length; i++) {
+    buttons[i].removeEventListener('click', buttonListener, false);
+  }
+}
+
+function buttonListener(e) {
+  e.preventDefault();
+
+  setNextMethod(e);
+}
+
 function setButtons() {
   let buttons = document.querySelectorAll('.js-ed-form-button');
 
   for (let i=0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function(e) {
-      e.preventDefault();
-
-      setNextMethod(e);
-    });
+    buttons[i].addEventListener('click', buttonListener, false);
   }
 }
 
 function setNextMethod(e) {
-  let form = e.target.closest('.js-ed-form');
+  let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
   if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
@@ -42,13 +52,19 @@ function registration(data, form) {
   api.default.apiRegistration(data, function(result, response) {
     if (result) {
       if (opt.successRegSendCb) {
-        opt.successRegSendCb(response);
+        opt.successRegSendCb.map(function(cb) {
+          cb(response);
+        })
       }
 
       return afterSuccessRegistration(data, form)
     }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
+      if (opt.errorRegSendCb) {
+        opt.errorRegSendCb(response);
+      }
+
       return showErrors(error, type, form);
     });
   });
@@ -58,13 +74,19 @@ function readRegistration(data, form) {
   api.default.apiReadRegistration(data, function(result, response) {
     if (result) {
       if (opt.successRegSendCb) {
-        opt.successRegSendCb(response);
+        opt.successRegSendCb.map(function(cb) {
+          cb(response);
+        })
       }
 
       return sendApplication(data, form);
     }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
+      if (opt.errorRegSendCb) {
+        opt.errorRegSendCb(response);
+      }
+
       return showErrors(error, type, form);
     });
   });
@@ -81,6 +103,10 @@ function sendApplication(data, form) {
     }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
+      if (opt.errorRegSendCb) {
+        opt.errorRegSendCb(response);
+      }
+      
       return showErrors(error, type, form);
     });
   });
@@ -127,7 +153,7 @@ function showErrors(name, text, parent) {
 
   let errorField = parent.querySelector('.js-error-' + name);
 
-  if (!errorField.classList.contains('is-error')) {
+  if (errorField && !errorField.classList.contains('is-error')) {
     errorField.classList.add('is-error');
   }
 
@@ -143,5 +169,7 @@ function hideErrors(form) {
   }
 }
 
-module.exports = init;
-window.logic = init;
+module.exports = { init: init, uninit: uninit };
+
+window.logicInit = init;
+window.logicUninit = uninit;

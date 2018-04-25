@@ -14,7 +14,7 @@ function apiGetDataFromServer(cb) {
     url: '/api-public/logged-user/',
     contentType: 'application/vnd.api+json',
     dataType: 'json',
-    timeout: $.ajaxSettings.timeout || 40000,
+    timeout: 40000,
     headers: {
       Authorization1: null
     },
@@ -37,7 +37,7 @@ function apiRegistration(data, cb) {
     type: 'POST',
     url: '/api-public/user/registration/',
     dataType: 'json',
-    timeout: $.ajaxSettings.timeout || 40000,
+    timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
 
@@ -61,7 +61,7 @@ function apiReadRegistration(data, cb) {
     type: 'POST',
     url: '/api-public/user/read-registration/',
     dataType: 'json',
-    timeout: $.ajaxSettings.timeout || 40000,
+    timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
 
@@ -85,7 +85,7 @@ function apiSendApplication(data, cb) {
     type: 'POST',
     url: '/api-public/application/individual',
     dataType: 'json',
-    timeout: $.ajaxSettings.timeout || 40000,
+    timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
 

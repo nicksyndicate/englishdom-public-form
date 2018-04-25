@@ -72,31 +72,41 @@ Application form:
 ```
 
 ```js
-import init from 'form-logic';
+import form from 'form-logic';
 
-init({
+form.init({ // метод для инициализации формы
   internal: true,
-  registration: true,
+  registration: false,
   phone: true,
   firstName: true,
-  source: 'landing_b',
-  redirectToEd: true,
-  successSendText: 'optional text'
+  source: 'skype',
+  redirectToEd: false,
+  successSendText: 'optional text',
+  successRegSendCb: [ cb ]
 });
+
+function cb() {}
+
+form.uninit(); // метод для сброса формы и удаления слушателей на кнопках
 ```
 
 ```js
-var init = require('form-logic.js');
+var form = require('form-logic.js');
 
-init({
+form.init({  // метод для инициализации формы
   internal: true,
-  registration: true,
+  registration: false,
   phone: true,
   firstName: true,
-  source: 'landing_b',
-  redirectToEd: true,
-  successSendText: 'optional text'
+  source: 'skype',
+  redirectToEd: false,
+  successSendText: 'optional text',
+  successRegSendCb: [ cb ]
 });
+
+function cb() {}
+
+form.uninit(); // метод для сброса формы и удаления слушателей на кнопках
 ```
 
 Option | Type | Default | Description
@@ -108,7 +118,7 @@ firstName | boolean | false | определяет необходимость п
 source | string | '' | определяет ресурс, с которого поступает заявка
 redirectToEd | boolean | false | определяет необходимость редиректа на http://englishdom.com/home/user/login после успешной отправки формы
 successSendText | string | '' | определяет текст после успешной отправки формы
-successRegSendCb | function | undefined | callback после успешной отправки формы регистрации
+successRegSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы регистрации
 successAppSendCb | function | undefined | callback после успешной отправки формы подачи заявки
 
 ClassName | Tag/Default ClassName | Default | Description
