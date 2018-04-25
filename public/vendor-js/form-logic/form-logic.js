@@ -39,13 +39,30 @@ function setButtons() {
 }
 
 function setNextMethod(e) {
-  let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
+  let form = closestPolyfill(e);
   let data = parsers.default.getExternalData(opt, form);
 
   if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
   if (opt.internal) return readRegistration(data, form);
 
   return sendApplication(data, form);
+}
+
+function closestPolyfill(e) {
+  if (!e.target.__proto__.closest) {
+    e.target.__proto__.closest = function(css) {
+      var node = this;
+
+      while (node) {
+        if (node.matches && node.matches(css)) return node;
+        else if (node.msMatchesSelector && node.msMatchesSelector(css)) return node;
+        else node = node.parentElement;
+      }
+      return null;
+    };
+  }
+
+  return e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
 }
 
 function registration(data, form) {
