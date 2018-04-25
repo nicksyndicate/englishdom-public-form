@@ -81,6 +81,7 @@ form.init({ // метод для инициализации формы
   firstName: true,
   source: 'skype',
   redirectToEd: false,
+  partnerTags: '?utm_source=smth&utm_medium=smth',
   successSendText: 'optional text',
   successRegSendCb: [ cb ]
 });
@@ -100,6 +101,7 @@ form.init({  // метод для инициализации формы
   firstName: true,
   source: 'skype',
   redirectToEd: false,
+  partnerTags: '?utm_source=smth&utm_medium=smth',
   successSendText: 'optional text',
   successRegSendCb: [ cb ]
 });
@@ -118,6 +120,7 @@ firstName | boolean | false | определяет необходимость п
 source | string | '' | определяет ресурс, с которого поступает заявка
 redirectToEd | boolean | false | определяет необходимость редиректа на http://englishdom.com/home/user/login после успешной отправки формы
 successSendText | string | '' | определяет текст после успешной отправки формы
+partnerTags | string | '' | utm метки, которые будут добавлены к api url (пример: "?utm_source=smth&utm_medium=smth")
 successRegSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы регистрации
 successAppSendCb | function | undefined | callback после успешной отправки формы подачи заявки
 

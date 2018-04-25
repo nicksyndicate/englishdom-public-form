@@ -39,7 +39,7 @@ function setButtons() {
 }
 
 function setNextMethod(e) {
-  let form = closestPolyfill(e);
+  let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
   if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
@@ -48,25 +48,8 @@ function setNextMethod(e) {
   return sendApplication(data, form);
 }
 
-function closestPolyfill(e) {
-  if (!e.target.__proto__.closest) {
-    e.target.__proto__.closest = function(css) {
-      var node = this;
-
-      while (node) {
-        if (node.matches && node.matches(css)) return node;
-        else if (node.msMatchesSelector && node.msMatchesSelector(css)) return node;
-        else node = node.parentElement;
-      }
-      return null;
-    };
-  }
-
-  return e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
-}
-
 function registration(data, form) {
-  api.default.apiRegistration(data, function(result, response) {
+  api.default.apiRegistration(data, opt.partnerTags, function(result, response) {
     if (result) {
       if (opt.successRegSendCb) {
         opt.successRegSendCb.map(function(cb) {
@@ -88,7 +71,7 @@ function registration(data, form) {
 }
 
 function readRegistration(data, form) {
-  api.default.apiReadRegistration(data, function(result, response) {
+  api.default.apiReadRegistration(data, opt.partnerTags, function(result, response) {
     if (result) {
       if (opt.successRegSendCb) {
         opt.successRegSendCb.map(function(cb) {
@@ -110,7 +93,7 @@ function readRegistration(data, form) {
 }
 
 function sendApplication(data, form) {
-  api.default.apiSendApplication(data, function(result, response) {
+  api.default.apiSendApplication(data, opt.partnerTags, function(result, response) {
     if (result) {
       if (opt.successAppSendCb) {
         opt.successAppSendCb(response);
@@ -168,10 +151,12 @@ function setSuccessText(text) {
 function showErrors(name, text, parent) {
   hideErrors(parent);
 
-  if (parent && !parent.classList.contains('is-error')) {
-    parent.classList.add('is-error');
+  let errorInput = parent.querySelector('.js-' + name);
+
+  if (errorInput && !errorInput.classList.contains('is-error')) {
+    errorInput.classList.add('is-error');
   }
-  
+
   let errorField = parent.querySelector('.js-error-' + name);
 
   if (errorField && !errorField.classList.contains('is-error')) {
@@ -182,7 +167,11 @@ function showErrors(name, text, parent) {
 }
 
 function hideErrors(form) {
-  form.classList.remove('is-error');
+  let inputs = form.querySelectorAll('input');  
+
+  for (let i=0; i < inputs.length; i++) {
+    inputs[i].classList.remove('is-error');
+  }
 
   let errors = form.querySelectorAll('.js-error-field');
 

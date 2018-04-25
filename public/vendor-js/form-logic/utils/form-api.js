@@ -28,14 +28,15 @@ function apiGetDataFromServer(cb) {
   });
 }
 
-function apiRegistration(data, cb) {
+function apiRegistration(data, tags, cb) {
+  const utm = tags || '';
   const sendData = {
     data: data
   };
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/registration/',
+    url: 'https://englishdom.com/api-public/user/registration' + utm,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -50,16 +51,17 @@ function apiRegistration(data, cb) {
   })
 }
 
-function apiReadRegistration(data, cb) {
+function apiReadRegistration(data, tags, cb) {
   data.type = 'read-registration';
 
+  const utm = tags || '';
   const sendData = {
     data: data
   };
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/read-registration/',
+    url: 'https://englishdom.com/api-public/user/read-registration' + utm,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -74,16 +76,17 @@ function apiReadRegistration(data, cb) {
   })
 }
 
-function apiSendApplication(data, cb) {
+function apiSendApplication(data, tags, cb) {
   data.type = 'application';
 
+  const utm = tags || '';
   const sendData = {
     data: data
   };
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/application/individual',
+    url: 'https://englishdom.com/api-public/application/individual' + utm,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
