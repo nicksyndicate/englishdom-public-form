@@ -11,7 +11,7 @@ function apiGetDataFromServer(cb) {
   let id = getUserId();
 
   $.ajax({
-    url: '/api-public/logged-user/',
+    url: 'https://englishdom.com/api-public/logged-user/',
     contentType: 'application/vnd.api+json',
     dataType: 'json',
     timeout: 40000,
@@ -35,7 +35,7 @@ function apiRegistration(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: '/api-public/user/registration/',
+    url: 'https://englishdom.com/api-public/user/registration/',
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -59,7 +59,7 @@ function apiReadRegistration(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: '/api-public/user/read-registration/',
+    url: 'https://englishdom.com/api-public/user/read-registration/',
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -83,7 +83,7 @@ function apiSendApplication(data, cb) {
 
   $.ajax({
     type: 'POST',
-    url: '/api-public/application/individual',
+    url: 'https://englishdom.com/api-public/application/individual',
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
