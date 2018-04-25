@@ -151,6 +151,10 @@ function setSuccessText(text) {
 function showErrors(name, text, parent) {
   hideErrors(parent);
 
+  if (parent && !parent.classList.contains('is-error')) {
+    parent.classList.add('is-error');
+  }
+  
   let errorField = parent.querySelector('.js-error-' + name);
 
   if (errorField && !errorField.classList.contains('is-error')) {
@@ -161,6 +165,8 @@ function showErrors(name, text, parent) {
 }
 
 function hideErrors(form) {
+  form.classList.remove('is-error');
+
   let errors = form.querySelectorAll('.js-error-field');
 
   for (let i=0; i < errors.length; i++) {

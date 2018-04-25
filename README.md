@@ -125,4 +125,4 @@ ClassName | Tag/Default ClassName | Default | Description
 ------ | ---- | ------- | -----------
 is-success | .js-ed-form | '' | будет добавлен после успешной отправки формы
 is-success | .js-success-send-ed-form | '' |  будет добавлен после успешной отправки формы
-is-error | .js-error-* | '' | будет добавлен после неуспешной отправки формы
+is-error | .js-ed-form && .js-error-* | '' | будет добавлен после неуспешной отправки формы
