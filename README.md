@@ -122,7 +122,7 @@ redirectToEd | boolean | false | определяет необходимость
 successSendText | string | '' | определяет текст после успешной отправки формы
 partnerTags | string | '' | utm метки, которые будут добавлены к api url (пример: "?utm_source=smth&utm_medium=smth")
 successRegSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы регистрации
-successAppSendCb | function | undefined | callback после успешной отправки формы подачи заявки
+successAppSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы подачи заявки
 
 ClassName | Tag/Default ClassName | Default | Description
 ------ | ---- | ------- | -----------

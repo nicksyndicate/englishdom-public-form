@@ -76,7 +76,7 @@ function apiReadRegistration(data, tags, cb) {
   })
 }
 
-function apiSendApplication(data, tags, cb) {
+function apiSendApplication(data, tags, token, cb) {
   data.type = 'application';
 
   const utm = tags || '';
@@ -91,6 +91,9 @@ function apiSendApplication(data, tags, cb) {
     timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
+    headers: {
+      Authorization1: 'Bearer ' + token
+    },
 
     success: function(response) {
       cb(true, response);

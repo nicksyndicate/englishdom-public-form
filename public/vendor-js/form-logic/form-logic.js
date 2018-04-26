@@ -79,7 +79,9 @@ function readRegistration(data, form) {
         })
       }
 
-      return sendApplication(data, form);
+      let token = response.meta.token;
+
+      return sendApplication(data, form, token);
     }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
@@ -92,11 +94,13 @@ function readRegistration(data, form) {
   });
 }
 
-function sendApplication(data, form) {
-  api.default.apiSendApplication(data, opt.partnerTags, function(result, response) {
+function sendApplication(data, form, token) {
+  api.default.apiSendApplication(data, opt.partnerTags, token, function(result, response) {
     if (result) {
       if (opt.successAppSendCb) {
-        opt.successAppSendCb(response);
+        opt.successAppSendCb.map(function(cb) {
+          cb(response);
+        })
       }
 
       return afterSuccessSend(response, form);

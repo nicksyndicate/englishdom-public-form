@@ -28,6 +28,10 @@ function getExternalData(opt, form) {
       name = email.split('@')[0];
       name = name.replace(/\d+/g, '').replace(/[^\w\s]/gi, '');
 
+      if (name && name.length > 24) {
+        name = name.slice(0, 24);
+      }
+
       if (!name) {
         name = '_';
       }
