@@ -7,7 +7,7 @@ function getUserId() {
   return id;
 }
 
-function apiGetDataFromServer(cb) {
+function apiGetDataFromServer(cb, loadCb) {
   let id = getUserId();
 
   $.ajax({
@@ -24,11 +24,23 @@ function apiGetDataFromServer(cb) {
       if (cb) {
         cb.call(data);
       }
+    },
+    beforeSend: function() {
+      if (loadCb) {
+        loadCb.start();
+
+      }
+    },
+    complete: function() {
+      if (loadCb) {
+        loadCb.end();
+        
+      }
     }
   });
 }
 
-function apiRegistration(data, tags, cb) {
+function apiRegistration(data, tags, loadCb, cb) {
   const utm = tags || '';
   const sendData = {
     data: data
@@ -47,11 +59,23 @@ function apiRegistration(data, tags, cb) {
     },
     error: function(response) {
       cb(false, response);
+    },
+    beforeSend: function() {
+      if (loadCb) {
+        loadCb.start();
+
+      }
+    },
+    complete: function() {
+      if (loadCb) {
+        loadCb.end();
+        
+      }
     }
   })
 }
 
-function apiReadRegistration(data, tags, cb) {
+function apiReadRegistration(data, tags, loadCb, cb) {
   data.type = 'read-registration';
 
   const utm = tags || '';
@@ -72,11 +96,23 @@ function apiReadRegistration(data, tags, cb) {
     },
     error: function(response) {
       cb(false, response);
+    },
+    beforeSend: function() {
+      if (loadCb) {
+        loadCb.start();
+
+      }
+    },
+    complete: function() {
+      if (loadCb) {
+        loadCb.end();
+        
+      }
     }
   })
 }
 
-function apiSendApplication(data, tags, token, cb) {
+function apiSendApplication(data, tags, token, loadCb, cb) {
   data.type = 'application';
 
   const utm = tags || '';
@@ -100,6 +136,18 @@ function apiSendApplication(data, tags, token, cb) {
     },
     error: function(response) {
       cb(false, response);
+    },
+    beforeSend: function() {
+      if (loadCb) {
+        loadCb.start();
+
+      }
+    },
+    complete: function() {
+      if (loadCb) {
+        loadCb.end();
+        
+      }
     }
   });
 }

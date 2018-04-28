@@ -83,7 +83,10 @@ form.init({ // метод для инициализации формы
   redirectToEd: false,
   partnerTags: '?utm_source=smth&utm_medium=smth',
   successSendText: 'optional text',
-  successRegSendCb: [ cb ]
+  initFormCb: [ cb ],
+  loadCb: { start: cb, end: cb },
+  successRegSendCb: [ cb ],
+  errorRegSendCb: cb
 });
 
 function cb() {}
@@ -103,7 +106,10 @@ form.init({  // метод для инициализации формы
   redirectToEd: false,
   partnerTags: '?utm_source=smth&utm_medium=smth',
   successSendText: 'optional text',
-  successRegSendCb: [ cb ]
+  initFormCb: [ cb ],
+  loadCb: { start: cb, end: cb },
+  successRegSendCb: [ cb ],
+  errorRegSendCb: cb
 });
 
 function cb() {}
@@ -121,8 +127,11 @@ source | string | '' | определяет ресурс, с которого п
 redirectToEd | boolean | false | определяет необходимость редиректа на http://englishdom.com/home/user/login после успешной отправки формы
 successSendText | string | '' | определяет текст после успешной отправки формы
 partnerTags | string | '' | utm метки, которые будут добавлены к api url (пример: "?utm_source=smth&utm_medium=smth")
+initFormCb | array | undefined | callbacks array, которые вызываются в момента старта формы
+loadCb | object | undefined | callbacks, которые вызываются на старте и окончании вызова api ({ start: func, end: func })
 successRegSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы регистрации
 successAppSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы подачи заявки
+errorRegSendCb | function | undefined | callback, который вызывается при ошибке регистрации на сайте englishdom
 
 ClassName | Tag/Default ClassName | Default | Description
 ------ | ---- | ------- | -----------
