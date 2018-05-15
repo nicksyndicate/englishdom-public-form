@@ -36,7 +36,16 @@ function setIntlTel(el) {
   });
 
   el.intlTelInput('loadUtils', '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js');
-  el.intlTelInput('selectCountry', 'RU');
+  
+  let attr = document.body.getAttribute('data-country');
+  let country = attr ? attr : 'RU';
+  
+  try {
+    el.intlTelInput('selectCountry', attr);
+
+  } catch (e) {
+    el.intlTelInput('selectCountry', 'RU');
+  }
 }
 
 export default init;

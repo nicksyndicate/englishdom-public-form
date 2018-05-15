@@ -138,3 +138,13 @@ ClassName | Tag/Default ClassName | Default | Description
 is-success | .js-ed-form | '' | будет добавлен после успешной отправки формы
 is-success | .js-success-send-ed-form | '' |  будет добавлен после успешной отправки формы
 is-error | .js-* && .js-error-* | '' | будет добавлен после неуспешной отправки формы (* - error name like 'email')
+
+### Form html examples
+
+You can set 'data-country' attribute in body tag and phone input set correct country flag.
+Default value is 'RU'. 
+Example: 
+
+```html
+<body data-country='GB'></body>
+```
