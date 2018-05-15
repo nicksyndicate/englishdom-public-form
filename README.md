@@ -141,7 +141,7 @@ is-error | .js-* && .js-error-* | '' | будет добавлен после н
 
 ### Form html examples
 
-You can set 'data-country' attribute in body tag and phone input set correct country flag.
+You can set 'data-country' attribute in body tag and phone input will set correct country flag.
 Default value is 'RU'. 
 Example: 
 
