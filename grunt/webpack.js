@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       output: {
         publicPath: '/public/bundles/js/',
         path: path.resolve(__dirname, '../public/bundles/js'),
-        filename: '[name].js',
+        filename: '[name].min.js',
         chunkFilename: '[id].' + new Date().getTime() + '.js',
 
         sourceMapFilename: '[file].map'

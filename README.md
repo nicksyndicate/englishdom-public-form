@@ -9,7 +9,7 @@
 
 ```html
 <!-- Add main form file -->
-<script src="form-logic.min.js"></script>
+<script src="./public/bundles/js/form-logic.min.js"></script>
 <!-- Add tintl-tel-input styles -->
 <link rel="stylesheet" href="intlTelInput.css"/>
 ```
