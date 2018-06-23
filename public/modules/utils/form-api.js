@@ -130,7 +130,8 @@ function apiSendApplication(data, tags, token, loadCb, cb) {
     data: JSON.stringify(sendData),
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Authorization, Authorization1, Content-Type, Accept, Origin',
+      'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
       'Authorization1': 'Bearer ' + token
     },
 
