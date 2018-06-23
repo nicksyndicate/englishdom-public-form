@@ -11,7 +11,7 @@ function apiGetDataFromServer(cb, loadCb) {
   let id = getUserId();
 
   $.ajax({
-    url: 'https://e-loshkarev.eddev.cf/api-public/logged-user/',
+    url: 'https://englishdom.com/api-public/logged-user/',
     contentType: 'application/vnd.api+json',
     dataType: 'json',
     timeout: 40000,
@@ -48,7 +48,7 @@ function apiRegistration(data, tags, loadCb, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://e-loshkarev.eddev.cf/api-public/user/registration' + utm,
+    url: 'https://englishdom.com/api-public/user/registration' + utm,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -85,7 +85,7 @@ function apiReadRegistration(data, tags, loadCb, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://e-loshkarev.eddev.cf/api-public/user/read-registration' + utm,
+    url: 'https://englishdom.com/api-public/user/read-registration' + utm,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -123,7 +123,7 @@ function apiSendApplication(data, tags, token, loadCb, cb) {
   $.ajax({
     crossDomain: true,
     type: 'POST',
-    url: 'https://e-loshkarev.eddev.cf/api-public/application/individual' + utm,
+    url: 'https://englishdom.com/api-public/application/individual' + utm,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
