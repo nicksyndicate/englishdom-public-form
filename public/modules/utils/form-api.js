@@ -121,6 +121,7 @@ function apiSendApplication(data, tags, token, loadCb, cb) {
   };
 
   $.ajax({
+    crossDomain: true,
     type: 'POST',
     url: 'https://e-loshkarev.eddev.cf/api-public/application/individual' + utm,
     dataType: 'json',
@@ -128,7 +129,9 @@ function apiSendApplication(data, tags, token, loadCb, cb) {
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
     headers: {
-      'Authorization1': 'Bearer ' + token      
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Authorization1, Content-Type, Accept, Origin',
+      'Authorization1': 'Bearer ' + token
     },
 
     success: function(response) {
