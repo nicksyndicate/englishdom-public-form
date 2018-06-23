@@ -52,7 +52,7 @@ function getExternalData(opt, form) {
 }
 
 function afterErrorSend(response, form, cb) {
-  let errors = response.responseJSON.errors.detail;
+  let errors = response.responseJSON ? response.responseJSON.errors.detail : {};
 
   Object.keys(errors).map(function(error) {
     Object.keys(errors[error]).map(function(type) {
