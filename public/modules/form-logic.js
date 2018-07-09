@@ -45,6 +45,8 @@ function setButtons() {
 }
 
 function setNextMethod(e) {
+  closestIEpolyfill(e.target);
+
   let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
@@ -188,6 +190,23 @@ function hideErrors(form) {
   for (let i=0; i < errors.length; i++) {
     errors[i].classList.remove('is-error');
     errors[i].innerHTML = '';
+  }
+}
+
+function closestIEpolyfill(Element) {
+  if (!Element.__proto__.closest) {
+
+    Element.__proto__.closest = function(css) {
+      var node = this;
+
+      while (node) {
+        node.matches = node.matches || node.webkitMatchesSelector || node.msMatchesSelector || node.mozMatchesSelector;
+
+        if (node.matches(css)) return node;
+        else node = node.parentElement;
+      }
+      return null;
+    };
   }
 }
 
