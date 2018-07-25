@@ -6,6 +6,17 @@ function getUrl(isInternal) {
   return isInternal ? '' : 'https://englishdom.com';
 }
 
+function getClientId() {
+  let clientId = parsers.getCookie('client_id');
+
+  if (!clientId) {
+    clientId = parsers.createUserId();
+    parsers.setCookie('client_id', clientId);
+  }
+
+  return clientId;
+}
+
 function getUserId() {
   let id = document.body.getAttribute('data-user-id');
 
@@ -51,13 +62,6 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     data: data
   };
 
-  let clientId = parsers.getCookie('client_id');
-
-  if (!clientId) {
-    clientId = parsers.createUserId();
-    parsers.setCookie('client_id', clientId);
-  }
-
   $.ajax({
     type: 'POST',
     url: `${getUrl(internal)}/api-public/user/registration${utm}`,
@@ -66,7 +70,7 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
     headers: {
-      'X-Client-Id': clientId
+      'X-Client-Id': getClientId()
     },
 
     success: function(response) {
@@ -107,6 +111,9 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
+    headers: {
+      'X-Client-Id': getClientId()
+    },
 
     success: function(response) {
       cb(true, response);
@@ -149,7 +156,8 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
-      'Authorization1': 'Bearer ' + token
+      'Authorization1': 'Bearer ' + token,
+      'X-Client-Id': getClientId()
     },
 
     success: function(response) {
