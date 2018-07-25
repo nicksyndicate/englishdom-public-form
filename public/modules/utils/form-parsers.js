@@ -61,9 +61,36 @@ function afterErrorSend(response, form, cb) {
   });
 }
 
+function getCookie(name) {
+  var cookies = document.cookie.split('; ');
+  var value = null;
+
+  for (var i=0; i < cookies.length; i++) {
+    var cookie = cookies[i].split('=');
+
+    if (cookie[0] === name) value = cookie[1];
+  }
+
+  return value;
+}
+
+function setCookie(name, value) {
+  document.cookie = `${name}=${value}`;
+}
+
+function createUserId() {
+  let rand = function() {
+    return Math.random().toString(36).substr(2);
+  };
+
+  return rand() + rand();
+}
 
 export default {
   getRegistrationData: getRegistrationData,
   getExternalData: getExternalData,
-  afterErrorSend: afterErrorSend
+  afterErrorSend: afterErrorSend,
+  getCookie: getCookie,
+  setCookie: setCookie,
+  createUserId: createUserId
 }

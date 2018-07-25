@@ -1,5 +1,10 @@
 import $ from 'jquery';
 import _ from 'underscore';
+import parsers from './form-parsers';
+
+function getUrl(isInternal) {
+  return isInternal ? '' : 'https://englishdom.com';
+}
 
 function getUserId() {
   let id = document.body.getAttribute('data-user-id');
@@ -7,11 +12,11 @@ function getUserId() {
   return id;
 }
 
-function apiGetDataFromServer(cb, loadCb) {
+function apiGetDataFromServer(internal, cb, loadCb) {
   let id = getUserId();
 
   $.ajax({
-    url: 'https://englishdom.com/api-public/logged-user/',
+    url: `${getUrl(internal)}/api-public/logged-user/`,
     contentType: 'application/vnd.api+json',
     dataType: 'json',
     timeout: 40000,
@@ -40,21 +45,33 @@ function apiGetDataFromServer(cb, loadCb) {
   });
 }
 
-function apiRegistration(data, tags, loadCb, cb) {
+function apiRegistration(data, internal, tags, loadCb, cb) {
   const utm = tags || '';
   const sendData = {
     data: data
   };
 
+  let clientId = parsers.getCookie('client_id');
+
+  if (!clientId) {
+    clientId = parsers.createUserId();
+    parsers.setCookie('client_id', clientId);
+  }
+
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/registration' + utm,
+    url: `${getUrl(internal)}/api-public/user/registration${utm}`,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
+    headers: {
+      'X-Client-Id': clientId
+    },
 
     success: function(response) {
+      parsers.setCookie('jwt', response.meta.token);
+      
       cb(true, response);
     },
     error: function(response) {
@@ -75,7 +92,7 @@ function apiRegistration(data, tags, loadCb, cb) {
   })
 }
 
-function apiReadRegistration(data, tags, loadCb, cb) {
+function apiReadRegistration(data, internal, tags, loadCb, cb) {
   data.type = 'read-registration';
 
   const utm = tags || '';
@@ -85,7 +102,7 @@ function apiReadRegistration(data, tags, loadCb, cb) {
 
   $.ajax({
     type: 'POST',
-    url: 'https://englishdom.com/api-public/user/read-registration' + utm,
+    url: `${getUrl(internal)}/api-public/user/read-registration${utm}`,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',
@@ -112,7 +129,7 @@ function apiReadRegistration(data, tags, loadCb, cb) {
   })
 }
 
-function apiSendApplication(data, tags, token, loadCb, cb) {
+function apiSendApplication(data, internal, tags, token, loadCb, cb) {
   data.type = 'application';
 
   const utm = tags || '';
@@ -123,7 +140,7 @@ function apiSendApplication(data, tags, token, loadCb, cb) {
   $.ajax({
     crossDomain: true,
     type: 'POST',
-    url: 'https://englishdom.com/api-public/application/individual' + utm,
+    url: `${getUrl(internal)}/api-public/application/individual${utm}`,
     dataType: 'json',
     timeout: 40000,
     contentType: 'application/vnd.api+json',

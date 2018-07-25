@@ -57,7 +57,7 @@ function setNextMethod(e) {
 }
 
 function registration(data, form) {
-  api.default.apiRegistration(data, opt.partnerTags, opt.loadCb, function(result, response) {
+  api.default.apiRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(result, response) {
     if (result) {
       if (opt.successRegSendCb) {
         opt.successRegSendCb.map(function(cb) {
@@ -79,7 +79,7 @@ function registration(data, form) {
 }
 
 function readRegistration(data, form) {
-  api.default.apiReadRegistration(data, opt.partnerTags, opt.loadCb, function(result, response) {
+  api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(result, response) {
     if (result) {
       if (opt.successRegSendCb) {
         opt.successRegSendCb.map(function(cb) {
@@ -103,7 +103,7 @@ function readRegistration(data, form) {
 }
 
 function sendApplication(data, form, token) {
-  api.default.apiSendApplication(data, opt.partnerTags, token, opt.loadCb, function(result, response) {
+  api.default.apiSendApplication(data, opt.internal, opt.partnerTags, token, opt.loadCb, function(result, response) {
     if (result) {
       if (opt.successAppSendCb) {
         opt.successAppSendCb.map(function(cb) {
