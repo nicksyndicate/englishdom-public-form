@@ -115,15 +115,15 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
       'X-Client-Id': getClientId()
     },
     statusCode: {
-      200: function() {
-        cb(true);
+      200: function(response) {
+        cb({ result: false, response: response, sendApp: true });
       },
       201: function(response) {
-        cb(true, response);
+        cb({ result: true, response: response, sendApp: true });
       }
     },
     error: function(response) {
-      cb(false, response);
+      cb({ result: false, response: response, sendApp: false });
     },
     beforeSend: function() {
       if (loadCb) {

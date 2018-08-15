@@ -79,16 +79,18 @@ function registration(data, form) {
 }
 
 function readRegistration(data, form) {
-  api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(result, response) {
-    if (result) {
-      if (response) {
+  api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
+    if (apiData.sendApp) {
+      if (apiData.result || !opt.internal) {
         if (opt.successRegSendCb) {
           opt.successRegSendCb.map(function(cb) {
-            cb(response);
+            cb(apiData.response);
           })
         }
   
-        let token = response.meta.token;
+        let token = apiData.response.meta.token;
+
+        return sendApplication(data, form, token);
 
       } else {
         let errorResponse = {
@@ -103,25 +105,28 @@ function readRegistration(data, form) {
           }
         };
 
+        sendApplication(data, form, token);
+
         return parsers.default.afterErrorSend(errorResponse, form, function(error, type, form) {
           if (opt.errorRegSendCb) {
             opt.errorRegSendCb(errorResponse);
           }
     
           return showErrors(error, type, form);
-        });        
+        });
+
       }
 
-      return sendApplication(data, form, token);
-    }
+    } else {
+      return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
+        if (opt.errorRegSendCb) {
+          opt.errorRegSendCb(apiData.response);
+        }
+  
+        return showErrors(error, type, form);
+      });
 
-    return parsers.default.afterErrorSend(response, form, function(error, type, form) {
-      if (opt.errorRegSendCb) {
-        opt.errorRegSendCb(response);
-      }
-
-      return showErrors(error, type, form);
-    });
+    }    
   });
 }
 
