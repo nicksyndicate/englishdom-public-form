@@ -84,6 +84,12 @@ function getTokenForApp(data, form) {
     if (apiData.result) {
       let token = apiData.response.meta.token;
 
+      if (opt.successRegSendCb) {
+        opt.successRegSendCb.map(function(cb) {
+          cb(apiData.response);
+        })
+      }
+
       return sendApplication(data, form, token);
 
     } else {
