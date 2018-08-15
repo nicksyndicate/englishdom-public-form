@@ -75,6 +75,7 @@ Application form:
 import form from 'form-logic';
 
 form.init({ // метод для инициализации формы
+  applicationOnly: true,
   internal: true,
   registration: false,
   phone: true,
@@ -119,6 +120,7 @@ form.uninit(); // метод для сброса формы и удаления 
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
+applicationOnly | boolean | false | используется только для отправки заявки без проверки на ошибки регистрации
 internal | boolean | false | определяет расположение формы на https://englishdom.com или на сторонних ресурсах
 registration | boolean | false | определяет тип формы - регистрационная или нет
 phone | boolean | false | определяет необходимость передачи номера телефона
