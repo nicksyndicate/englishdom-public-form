@@ -114,8 +114,10 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     headers: {
       'X-Client-Id': getClientId()
     },
-
-    success: function(response) {
+    200: function() {
+      cb(true);
+    },
+    201: function(response) {
       cb(true, response);
     },
     error: function(response) {

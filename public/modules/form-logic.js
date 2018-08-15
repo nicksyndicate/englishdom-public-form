@@ -81,13 +81,32 @@ function registration(data, form) {
 function readRegistration(data, form) {
   api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(result, response) {
     if (result) {
-      if (opt.successRegSendCb) {
-        opt.successRegSendCb.map(function(cb) {
-          cb(response);
-        })
-      }
+      if (response) {
+        if (opt.successRegSendCb) {
+          opt.successRegSendCb.map(function(cb) {
+            cb(response);
+          })
+        }
+  
+        let token = response.meta.token;
 
-      let token = response.meta.token;
+      } else {
+        let errorResponse = {
+          data:{
+            email:{
+              recordFound: "Ваш email уже зарегистрирован"
+            }
+          }
+        };
+
+        return parsers.default.afterErrorSend(errorResponse, form, function(error, type, form) {
+          if (opt.errorRegSendCb) {
+            opt.errorRegSendCb(errorResponse);
+          }
+    
+          return showErrors(error, type, form);
+        });        
+      }
 
       return sendApplication(data, form, token);
     }
