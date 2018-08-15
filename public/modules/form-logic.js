@@ -92,10 +92,14 @@ function readRegistration(data, form) {
 
       } else {
         let errorResponse = {
-          data:{
-            email:{
-              recordFound: "Ваш email уже зарегистрирован"
-            }
+          responseJSON: {
+            errors: {
+              detail: {
+                email: {
+                  recordFound: "Ваш email уже зарегистрирован"
+                }
+              }
+            }            
           }
         };
 
