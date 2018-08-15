@@ -50,6 +50,7 @@ function setNextMethod(e) {
   let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
+  if (opt.applicationOnly) return sendApplication(data, form);
   if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
   if (opt.internal) return readRegistration(data, form);
 
