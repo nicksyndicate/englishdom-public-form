@@ -96,6 +96,45 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
   })
 }
 
+function apiGetToken(data, internal, tags, loadCb, cb) {
+  data.type = 'read-registration';
+
+  const utm = tags || '';
+  const sendData = {
+    data: data
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: `${getUrl(internal)}/api-public/user/read-registration${utm}`,
+    dataType: 'json',
+    timeout: 40000,
+    contentType: 'application/vnd.api+json',
+    data: JSON.stringify(sendData),
+    headers: {
+      'X-Client-Id': getClientId()
+    },
+    success: function(response) {
+      cb({ result: true, response: response });
+    },
+    error: function(response) {
+      cb({ result: false, response: response });
+    },
+    beforeSend: function() {
+      if (loadCb) {
+        loadCb.start();
+
+      }
+    },
+    complete: function() {
+      if (loadCb) {
+        loadCb.end();
+        
+      }
+    }
+  })
+}
+
 function apiReadRegistration(data, internal, tags, loadCb, cb) {
   data.type = 'read-registration';
 
@@ -187,6 +226,7 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
 
 export default {
   getUserId: getUserId,
+  apiGetToken: apiGetToken,
   apiRegistration: apiRegistration,
   apiGetDataFromServer: apiGetDataFromServer,
   apiReadRegistration: apiReadRegistration,

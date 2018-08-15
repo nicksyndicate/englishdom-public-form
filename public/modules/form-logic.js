@@ -50,7 +50,7 @@ function setNextMethod(e) {
   let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
-  if (opt.applicationOnly) return sendApplication(data, form);
+  if (opt.applicationOnly) return getTokenForApp(data, form);
   if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
   if (opt.internal) return readRegistration(data, form);
 
@@ -76,6 +76,26 @@ function registration(data, form) {
 
       return showErrors(error, type, form);
     });
+  });
+}
+
+function getTokenForApp(data, form) {
+  api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
+    if (apiData.result) {
+      let token = apiData.response.meta.token;
+
+      return sendApplication(data, form, token);
+
+    } else {
+      return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
+        if (opt.errorRegSendCb) {
+          opt.errorRegSendCb(apiData.response);
+        }
+  
+        return showErrors(error, type, form);
+      });
+
+    }    
   });
 }
 
@@ -204,7 +224,7 @@ function showErrors(name, text, parent) {
     errorField.classList.add('is-error');
   }
 
-  errorField.innerHTML = text;
+  if (errorField) errorField.innerHTML = text;
 }
 
 function hideErrors(form) {
