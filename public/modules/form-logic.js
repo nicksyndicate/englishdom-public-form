@@ -80,7 +80,7 @@ function registration(data, form) {
 }
 
 function getTokenForApp(data, form) {
-  api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
+  api.default.apiGetToken(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
     if (apiData.result) {
       let token = apiData.response.meta.token;
 
