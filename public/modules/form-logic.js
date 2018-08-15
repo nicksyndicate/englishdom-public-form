@@ -81,14 +81,14 @@ function registration(data, form) {
 function readRegistration(data, form) {
   api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
     if (apiData.sendApp) {
+      let token = apiData.response.meta.token;
+
       if (apiData.result || !opt.internal) {
         if (opt.successRegSendCb) {
           opt.successRegSendCb.map(function(cb) {
             cb(apiData.response);
           })
         }
-  
-        let token = apiData.response.meta.token;
 
         return sendApplication(data, form, token);
 
