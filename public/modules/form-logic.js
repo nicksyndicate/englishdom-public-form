@@ -50,7 +50,7 @@ function setNextMethod(e) {
   let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
   let data = parsers.default.getExternalData(opt, form);
 
-  if (opt.applicationOnly) return getTokenForApp(data, form);
+  if (opt.preReadRegFormCb) return getTokenForApp(data, form);
   if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
   if (opt.internal) return readRegistration(data, form);
 
@@ -80,6 +80,10 @@ function registration(data, form) {
 }
 
 function getTokenForApp(data, form) {
+  let loginData = opt.preReadRegFormCb();
+
+  if (loginData) return sendApplication(data, form, loginData);
+
   api.default.apiGetToken(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
     if (apiData.result) {
       let token = apiData.response.meta.token;
