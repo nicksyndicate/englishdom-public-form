@@ -4,22 +4,23 @@ const parsers = require('./utils/form-parsers');
 const intTelInput = require('./utils/intl-tel-input');
 
 let opt = {};
+let currentOpt = {};
 
 function init(options) {
-  opt = options;
+  opt[options.key] = options;
 
-  if (opt.phone) {
+  if (options.phone) {
     intTelInput.default();
   }
 
-  if (opt.initFormCb) {
-    opt.initFormCb.map(function(cb) {
+  if (options.initFormCb) {
+    options.initFormCb.map(function(cb) {
       cb();
     })
   }
 
   setButtons();
-  setSuccessText(opt.successSendText);
+  setSuccessText(options.successSendText);
 }
 
 function uninit() {
@@ -48,20 +49,23 @@ function setNextMethod(e) {
   closestIEpolyfill(e.target);
 
   let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
-  let data = parsers.default.getExternalData(opt, form);
+  let key = form.getAttribute('data-key');
 
-  if (opt.preReadRegFormCb) return getTokenForApp(data, form);
-  if (opt.registration) return registration(parsers.default.getRegistrationData(data), form);
-  if (opt.internal) return readRegistration(data, form);
+  currentOpt = opt[key];
+  let data = parsers.default.getExternalData(currentOpt, form);
+
+  if (currentOpt.preReadRegFormCb) return getTokenForApp(data, form);
+  if (currentOpt.registration) return registration(parsers.default.getRegistrationData(data), form);
+  if (currentOpt.internal) return readRegistration(data, form);
 
   return sendApplication(data, form);
 }
 
 function registration(data, form) {
-  api.default.apiRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(result, response) {
+  api.default.apiRegistration(data, currentOpt.internal, currentOpt.partnerTags, currentOpt.loadCb, function(result, response) {
     if (result) {
-      if (opt.successRegSendCb) {
-        opt.successRegSendCb.map(function(cb) {
+      if (currentOpt.successRegSendCb) {
+        currentOpt.successRegSendCb.map(function(cb) {
           cb(response);
         })
       }
@@ -70,8 +74,8 @@ function registration(data, form) {
     }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
-      if (opt.errorRegSendCb) {
-        opt.errorRegSendCb(response);
+      if (currentOpt.errorRegSendCb) {
+        currentOpt.errorRegSendCb(response);
       }
 
       return showErrors(error, type, form);
@@ -80,16 +84,16 @@ function registration(data, form) {
 }
 
 function getTokenForApp(data, form) {
-  let loginData = opt.preReadRegFormCb();
+  let loginData = currentOpt.preReadRegFormCb();
 
   if (loginData) return sendApplication(data, form, loginData);
 
-  api.default.apiGetToken(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
+  api.default.apiGetToken(data, currentOpt.internal, currentOpt.partnerTags, currentOpt.loadCb, function(apiData) {
     if (apiData.result) {
       let token = apiData.response.meta.token;
 
-      if (opt.successRegSendCb) {
-        opt.successRegSendCb.map(function(cb) {
+      if (currentOpt.successRegSendCb) {
+        currentOpt.successRegSendCb.map(function(cb) {
           cb(apiData.response);
         })
       }
@@ -98,8 +102,8 @@ function getTokenForApp(data, form) {
 
     } else {
       return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
-        if (opt.errorRegSendCb) {
-          opt.errorRegSendCb(apiData.response);
+        if (currentOpt.errorRegSendCb) {
+          currentOpt.errorRegSendCb(apiData.response);
         }
   
         return showErrors(error, type, form);
@@ -110,13 +114,13 @@ function getTokenForApp(data, form) {
 }
 
 function readRegistration(data, form) {
-  api.default.apiReadRegistration(data, opt.internal, opt.partnerTags, opt.loadCb, function(apiData) {
+  api.default.apiReadRegistration(data, currentOpt.internal, currentOpt.partnerTags, currentOpt.loadCb, function(apiData) {
     if (apiData.sendApp) {
       let token = apiData.response.meta.token;
 
-      if (apiData.result || !opt.internal) {
-        if (opt.successRegSendCb) {
-          opt.successRegSendCb.map(function(cb) {
+      if (apiData.result || !currentOpt.internal) {
+        if (currentOpt.successRegSendCb) {
+          currentOpt.successRegSendCb.map(function(cb) {
             cb(apiData.response);
           })
         }
@@ -139,8 +143,8 @@ function readRegistration(data, form) {
         sendApplication(data, form, token);
 
         return parsers.default.afterErrorSend(errorResponse, form, function(error, type, form) {
-          if (opt.errorRegSendCb) {
-            opt.errorRegSendCb(errorResponse);
+          if (currentOpt.errorRegSendCb) {
+            currentOpt.errorRegSendCb(errorResponse);
           }
     
           return showErrors(error, type, form);
@@ -150,8 +154,8 @@ function readRegistration(data, form) {
 
     } else {
       return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
-        if (opt.errorRegSendCb) {
-          opt.errorRegSendCb(apiData.response);
+        if (currentOpt.errorRegSendCb) {
+          currentOpt.errorRegSendCb(apiData.response);
         }
   
         return showErrors(error, type, form);
@@ -162,10 +166,10 @@ function readRegistration(data, form) {
 }
 
 function sendApplication(data, form, token) {
-  api.default.apiSendApplication(data, opt.internal, opt.partnerTags, token, opt.loadCb, function(result, response) {
+  api.default.apiSendApplication(data, currentOpt.internal, currentOpt.partnerTags, token, currentOpt.loadCb, function(result, response) {
     if (result) {
-      if (opt.successAppSendCb) {
-        opt.successAppSendCb.map(function(cb) {
+      if (currentOpt.successAppSendCb) {
+        currentOpt.successAppSendCb.map(function(cb) {
           cb(response);
         })
       }
@@ -174,8 +178,8 @@ function sendApplication(data, form, token) {
     }
 
     return parsers.default.afterErrorSend(response, form, function(error, type, form) {
-      if (opt.errorRegSendCb) {
-        opt.errorRegSendCb(response);
+      if (currentOpt.errorRegSendCb) {
+        currentOpt.errorRegSendCb(response);
       }
       
       return showErrors(error, type, form);
@@ -184,7 +188,7 @@ function sendApplication(data, form, token) {
 }
 
 function toRedirect(response) {
-  if (opt.redirectToEd) {
+  if (currentOpt.redirectToEd) {
     setTimeout(function() {
       window.location = 'https://englishdom.com/home/user/login';
     }, 4000);

@@ -26,7 +26,7 @@ npm install englishdom-form
 Registration form:
 
 ```html
-<form action="" method="POST" novalidate="" class="js-ed-form">
+<form action="" method="POST" novalidate="" class="js-ed-form" key="app">
   <div>
     <div>
       <label for="form-name" class="">
@@ -75,6 +75,7 @@ Application form:
 import form from 'form-logic';
 
 form.init({ // метод для инициализации формы
+  key: "app",
   applicationOnly: true,
   internal: true,
   registration: false,
@@ -99,6 +100,7 @@ form.uninit(); // метод для сброса формы и удаления 
 var form = require('form-logic.js');
 
 form.init({  // метод для инициализации формы
+  key: "app",
   internal: true,
   registration: false,
   phone: true,
@@ -120,6 +122,7 @@ form.uninit(); // метод для сброса формы и удаления 
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
+key | string | undefined | вносится в html и в config вызова формы, если необходимо использовать несколько форм с разной логикой на одной странице
 preReadRegFormCb | function | undefined | используется только для отправки заявки без проверки на ошибки регистрации
 internal | boolean | false | определяет расположение формы на https://englishdom.com или на сторонних ресурсах
 registration | boolean | false | определяет тип формы - регистрационная или нет
