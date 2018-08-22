@@ -13,6 +13,7 @@ function getExternalData(opt, form) {
 
   let data = {
     attributes: {
+      segment: opt.segment || 'individual',
       source: opt.source,
       from_page: location.href,
       email: email,
