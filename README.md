@@ -122,7 +122,7 @@ form.uninit(); // метод для сброса формы и удаления 
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-key | string | undefined | вносится в html и в config вызова формы, если необходимо использовать несколько форм с разной логикой на одной странице
+key | string | undefined | вносится в html и в config вызова формы, для идентификации формы и её параметров
 preReadRegFormCb | function | undefined | используется только для отправки заявки без проверки на ошибки регистрации
 internal | boolean | false | определяет расположение формы на https://englishdom.com или на сторонних ресурсах
 registration | boolean | false | определяет тип формы - регистрационная или нет
