@@ -80,6 +80,7 @@ form.init({ // метод для инициализации формы
   internal: true,
   registration: false,
   phone: true,
+  segment: 'kids',
   firstName: true,
   source: 'skype',
   redirectToEd: false,
@@ -101,6 +102,7 @@ var form = require('form-logic.js');
 
 form.init({  // метод для инициализации формы
   key: "app",
+  segment: 'kids',
   internal: true,
   registration: false,
   phone: true,
