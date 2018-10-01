@@ -5,9 +5,11 @@ const intTelInput = require('./utils/intl-tel-input');
 
 let opt = {};
 let currentOpt = {};
+let cls = '';
 
 function init(options) {
   opt[options.key] = options;
+  cls = options.internalCls;
 
   if (options.phone) {
     intTelInput.default();
@@ -48,7 +50,7 @@ function setButtons() {
 function setNextMethod(e) {
   closestIEpolyfill(e.target);
 
-  let form = e.target.closest('.js-ed-form') || document.querySelector('.js-ed-form');
+  let form = e.target.closest(`.${cls}`) || document.querySelector(`.${cls}`);
   let key = form.getAttribute('data-key');
 
   currentOpt = opt[key];

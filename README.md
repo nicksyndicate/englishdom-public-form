@@ -104,6 +104,7 @@ form.init({  // метод для инициализации формы
   key: "app",
   segment: 'kids',
   internal: true,
+  internalCls: 'some-class-name',
   registration: false,
   phone: true,
   firstName: true,
@@ -127,6 +128,7 @@ Option | Type | Default | Description
 key | string | undefined | вносится в html и в config вызова формы, для идентификации формы и её параметров
 preReadRegFormCb | function | undefined | используется только для отправки заявки без проверки на ошибки регистрации
 internal | boolean | false | определяет расположение формы на https://englishdom.com или на сторонних ресурсах
+internalCls | string | js-ed-form | собирает все формы на странице и навешивает события. Должен быть одинаковым для всех форм на странице
 registration | boolean | false | определяет тип формы - регистрационная или нет
 phone | boolean | false | определяет необходимость передачи номера телефона
 firstName | boolean | false | определяет необходимость передачи имени пользователя
