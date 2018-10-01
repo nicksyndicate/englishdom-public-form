@@ -9,7 +9,7 @@ let cls = '';
 
 function init(options) {
   opt[options.key] = options;
-  cls = options.internalCls;
+  cls = options.internalCls || 'js-ed-form';
 
   if (options.phone) {
     intTelInput.default();
