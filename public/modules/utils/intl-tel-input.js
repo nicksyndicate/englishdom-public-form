@@ -41,7 +41,7 @@ function setIntlTel(el) {
   let country = attr ? attr : 'RU';
   
   try {
-    el.intlTelInput('selectCountry', attr);
+    el.intlTelInput('selectCountry', country);
 
   } catch (e) {
     el.intlTelInput('selectCountry', 'RU');
