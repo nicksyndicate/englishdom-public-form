@@ -48,6 +48,10 @@ function getExternalData(opt, form) {
   if (opt.phone) {
     data.attributes['phone'] = form.querySelector('.js-phone').value;
   }
+
+  if (opt.from) {
+    data.attributes['from'] = opt.from;
+  }
  
   return data;
 }

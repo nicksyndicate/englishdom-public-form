@@ -83,6 +83,7 @@ form.init({ // метод для инициализации формы
   segment: 'kids',
   firstName: true,
   source: 'skype',
+  from: 'some text',
   redirectToEd: false,
   partnerTags: '?utm_source=smth&utm_medium=smth',
   successSendText: 'optional text',
@@ -109,6 +110,7 @@ form.init({  // метод для инициализации формы
   phone: true,
   firstName: true,
   source: 'skype',
+  from: 'some text',
   redirectToEd: false,
   partnerTags: '?utm_source=smth&utm_medium=smth',
   successSendText: 'optional text',
@@ -133,6 +135,7 @@ registration | boolean | false | определяет тип формы - рег
 phone | boolean | false | определяет необходимость передачи номера телефона
 firstName | boolean | false | определяет необходимость передачи имени пользователя
 segment | string | individual | определяет сегмент студента, подавшего заявку (kids / b2b)
+from | string | undefined | параметр необходим при отправке заявки на занятия с преподавателем
 source | string | '' | определяет ресурс, с которого поступает заявка
 redirectToEd | boolean | false | определяет необходимость редиректа на http://englishdom.com/home/user/login после успешной отправки формы
 successSendText | string | '' | определяет текст после успешной отправки формы
