@@ -11,6 +11,8 @@ function init(options) {
   opt[options.key] = options;
   cls = options.internalCls || 'js-ed-form';
 
+  let formArray = document.querySelectorAll(`.${cls}`);
+
   if (options.phone) {
     intTelInput.default();
   }
@@ -21,8 +23,10 @@ function init(options) {
     })
   }
 
-  setButtons();
-  setSuccessText(options.successSendText);
+  for (var i = 0; i < formArray.length; i++) {
+    setButtons(formArray[i]);
+    setSuccessText(options.successSendText, formArray[i]);
+  }
 }
 
 function uninit() {
@@ -39,8 +43,8 @@ function buttonListener(e) {
   setNextMethod(e);
 }
 
-function setButtons() {
-  let buttons = document.querySelectorAll('.js-ed-form-button');
+function setButtons(el) {
+  let buttons = el.querySelectorAll('.js-ed-form-button');
 
   for (let i=0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', buttonListener, false);
@@ -217,8 +221,8 @@ function afterSuccessSend(response, form) {
   toRedirect(response);
 }
 
-function setSuccessText(text) {
-  let successSendBlock = document.querySelector('.js-success-send-ed-form');
+function setSuccessText(text, el) {
+  let successSendBlock = el.querySelector('.js-success-send-ed-form');
 
   if (successSendBlock && text) {
     successSendBlock.innerHTML = text;
