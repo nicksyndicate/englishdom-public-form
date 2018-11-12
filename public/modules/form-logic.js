@@ -3,279 +3,312 @@ const api = require('./utils/form-api');
 const parsers = require('./utils/form-parsers');
 const intTelInput = require('./utils/intl-tel-input');
 
-let opt = {};
-let currentOpt = {};
-let cls = '';
+let forms = [];
 
-function init(options) {
-  opt[options.key] = options;
-  cls = options.internalCls || 'js-ed-form';
+class Form {
 
-  let formArray = document.querySelectorAll(`.${cls}`);
+  constructor(options) {
+    this.options = options;
+    this.cls = this.options.internalCls || 'js-ed-form';
 
-  if (options.phone) {
-    intTelInput.default();
-  }
+    let formArray = document.querySelectorAll(`.${this.cls}`);
 
-  if (options.initFormCb) {
-    options.initFormCb.map(function(cb) {
-      cb();
-    })
-  }
-
-  for (var i = 0; i < formArray.length; i++) {
-    setButtons(formArray[i]);
-    setSuccessText(options.successSendText, formArray[i]);
-  }
-}
-
-function uninit() {
-  let buttons = document.querySelectorAll('.js-ed-form-button');
-
-  for (let i=0; i < buttons.length; i++) {
-    buttons[i].removeEventListener('click', buttonListener, false);
-  }
-}
-
-function buttonListener(e) {
-  e.preventDefault();
-
-  setNextMethod(e);
-}
-
-function setButtons(el) {
-  let buttons = el.querySelectorAll('.js-ed-form-button');
-
-  for (let i=0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', buttonListener, false);
-  }
-}
-
-function setNextMethod(e) {
-  closestIEpolyfill(e.target);
-
-  let form = e.target.closest(`.${cls}`) || document.querySelector(`.${cls}`);
-  let key = form.getAttribute('data-key');
-
-  currentOpt = opt[key];
-  let data = parsers.default.getExternalData(currentOpt, form);
-
-  if (currentOpt.preReadRegFormCb) return getTokenForApp(data, form);
-  if (currentOpt.registration) return registration(parsers.default.getRegistrationData(data), form);
-  if (currentOpt.internal) return readRegistration(data, form);
-
-  return sendApplication(data, form);
-}
-
-function registration(data, form) {
-  api.default.apiRegistration(data, currentOpt.internal, currentOpt.partnerTags, currentOpt.loadCb, function(result, response) {
-    if (result) {
-      if (currentOpt.successRegSendCb) {
-        currentOpt.successRegSendCb.map(function(cb) {
-          cb(response);
-        })
-      }
-
-      return afterSuccessRegistration(data, form)
+    if (this.options.phone) {
+      intTelInput.default();
     }
 
-    return parsers.default.afterErrorSend(response, form, function(error, type, form) {
-      if (currentOpt.errorRegSendCb) {
-        currentOpt.errorRegSendCb(response);
-      }
+    if (this.options.initFormCb) {
+      this.options.initFormCb.map(function(cb) {
+        cb();
+      })
+    }
 
-      return showErrors(error, type, form);
-    });
-  });
-}
+    this.buttonListener = this.buttonListener.bind(this);
 
-function getTokenForApp(data, form) {
-  let loginData = currentOpt.preReadRegFormCb();
+    for (var i = 0; i < formArray.length; i++) {
+      this.setButtons(formArray[i]);
+      this.setSuccessText(this.options.successSendText, formArray[i]);
+    }
+  }
 
-  if (loginData) return sendApplication(data, form, loginData);
+  buttonListener (e) {
+    e.preventDefault();
 
-  api.default.apiGetToken(data, currentOpt.internal, currentOpt.partnerTags, currentOpt.loadCb, function(apiData) {
-    if (apiData.result) {
-      let token = apiData.response.meta.token;
+    this.setNextMethod(e);
+  }
 
-      if (currentOpt.successRegSendCb) {
-        currentOpt.successRegSendCb.map(function(cb) {
-          cb(apiData.response);
-        })
-      }
+  setButtons (el) {
+    this.buttons = el.querySelectorAll('.js-ed-form-button');
 
-      return sendApplication(data, form, token);
+    for (let i=0; i < this.buttons.length; i++) {
+      this.buttons[i].addEventListener('click', this.buttonListener, false);
+    }
+  }
 
-    } else {
-      return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
-        if (currentOpt.errorRegSendCb) {
-          currentOpt.errorRegSendCb(apiData.response);
+  setNextMethod (e) {
+    this.closestIEpolyfill(e.target);
+
+    let form = e.target.closest(`.${this.cls}`) || document.querySelector(`.${this.cls}`);
+
+    let data = parsers.default.getExternalData(this.options, form);
+
+    if (this.options.preReadRegFormCb) return this.getTokenForApp(data, form);
+    if (this.options.registration) return this.registration(parsers.default.getRegistrationData(data), form);
+    if (this.options.internal) return this.readRegistration(data, form);
+
+    return this.sendApplication(data, form);
+  }
+
+  registration (data, form) {
+    let _this = this;
+
+    api.default.apiRegistration(
+      data,
+      this.options.internal,
+      this.options.partnerTags,
+      this.options.loadCb,
+      function(result, response) {
+        if (result) {
+          if (_this.options.successRegSendCb) {
+            _this.options.successRegSendCb.map(function(cb) {
+              cb(response);
+            })
+          }
+
+          return _this.afterSuccessRegistration(data, form)
         }
-  
-        return showErrors(error, type, form);
+
+        return parsers.default.afterErrorSend(response, form, function(error, type, form) {
+          if (_this.options.errorRegSendCb) {
+            _this.options.errorRegSendCb(response);
+          }
+
+          return _this.showErrors(error, type, form);
+        });
       });
+  }
 
-    }    
-  });
-}
+  getTokenForApp (data, form) {
+    let loginData = this.options.preReadRegFormCb();
+    let _this = this;
 
-function readRegistration(data, form) {
-  api.default.apiReadRegistration(data, currentOpt.internal, currentOpt.partnerTags, currentOpt.loadCb, function(apiData) {
-    if (apiData.sendApp) {
-      let token = apiData.response.meta.token;
+    if (loginData) return this.sendApplication(data, form, loginData);
 
-      if (apiData.result || !currentOpt.internal) {
-        if (currentOpt.successRegSendCb) {
-          currentOpt.successRegSendCb.map(function(cb) {
-            cb(apiData.response);
+    api.default.apiGetToken(data,
+      this.options.internal,
+      this.options.partnerTags,
+      this.options.loadCb,
+      function(apiData) {
+        if (apiData.result) {
+          let token = apiData.response.meta.token;
+
+          if (_this.options.successRegSendCb) {
+            _this.options.successRegSendCb.map(function(cb) {
+              cb(apiData.response);
+            })
+          }
+
+          return _this.sendApplication(data, form, token);
+        } else {
+          return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
+            if (_this.options.errorRegSendCb) {
+              _this.options.errorRegSendCb(apiData.response);
+            }
+
+            return _this.showErrors(error, type, form);
+          });
+
+        }
+      });
+  }
+
+  readRegistration (data, form) {
+    let _this = this;
+
+    api.default.apiReadRegistration(data,
+      this.options.internal,
+      this.options.partnerTags,
+      this.options.loadCb,
+      function(apiData) {
+        if (apiData.sendApp) {
+          let token = apiData.response.meta.token;
+
+          if (apiData.result || !_this.options.internal) {
+            if (_this.options.successRegSendCb) {
+              _this.options.successRegSendCb.map(function(cb) {
+                cb(apiData.response);
+              })
+            }
+
+            return _this.sendApplication(data, form, token);
+
+          } else {
+            let errorResponse = {
+              responseJSON: {
+                errors: {
+                  detail: {
+                    email: {
+                      recordFound: "Ваш email уже зарегистрирован"
+                    }
+                  }
+                }
+              }
+            };
+
+            _this.sendApplication(data, form, token);
+
+            return parsers.default.afterErrorSend(errorResponse, form, function(error, type, form) {
+              if (_this.options.errorRegSendCb) {
+                _this.options.errorRegSendCb(errorResponse);
+              }
+
+              return _this.showErrors(error, type, form);
+            });
+
+          }
+
+        } else {
+          return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
+            if (_this.options.errorRegSendCb) {
+              _this.options.errorRegSendCb(apiData.response);
+            }
+
+            return _this.showErrors(error, type, form);
+          });
+
+        }
+      });
+  }
+
+  sendApplication (data, form, token) {
+    let _this = this;
+
+    api.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function(result, response) {
+      if (result) {
+        if (_this.options.successAppSendCb) {
+          _this.options.successAppSendCb.map(function(cb) {
+            cb(response);
           })
         }
 
-        return sendApplication(data, form, token);
-
-      } else {
-        let errorResponse = {
-          responseJSON: {
-            errors: {
-              detail: {
-                email: {
-                  recordFound: "Ваш email уже зарегистрирован"
-                }
-              }
-            }            
-          }
-        };
-
-        sendApplication(data, form, token);
-
-        return parsers.default.afterErrorSend(errorResponse, form, function(error, type, form) {
-          if (currentOpt.errorRegSendCb) {
-            currentOpt.errorRegSendCb(errorResponse);
-          }
-    
-          return showErrors(error, type, form);
-        });
-
+        return _this.afterSuccessSend(response, form);
       }
 
-    } else {
-      return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
-        if (currentOpt.errorRegSendCb) {
-          currentOpt.errorRegSendCb(apiData.response);
+      return parsers.default.afterErrorSend(response, form, function(error, type, form) {
+        if (_this.options.errorRegSendCb) {
+          _this.options.errorRegSendCb(response);
         }
-  
-        return showErrors(error, type, form);
+
+        return _this.showErrors(error, type, form);
       });
+    });
+  }
 
-    }    
-  });
-}
+  toRedirect () {
+    if (this.options.redirectToEd) {
+      setTimeout(function() {
+        window.location = 'https://englishdom.com/home/user/login';
+      }, 4000);
+    }
+  }
 
-function sendApplication(data, form, token) {
-  api.default.apiSendApplication(data, currentOpt.internal, currentOpt.partnerTags, token, currentOpt.loadCb, function(result, response) {
-    if (result) {
-      if (currentOpt.successAppSendCb) {
-        currentOpt.successAppSendCb.map(function(cb) {
-          cb(response);
-        })
-      }
+  afterSuccessRegistration (data, form) {
+    this.afterSuccessSend(data, form);
+  }
 
-      return afterSuccessSend(response, form);
+  afterSuccessSend (response, form) {
+    this.hideErrors(form);
+
+    let successSendBlock = document.querySelector('.js-success-send-ed-form');
+
+    if (!form.classList.contains('is-success')) {
+      form.classList.add('is-success');
     }
 
-    return parsers.default.afterErrorSend(response, form, function(error, type, form) {
-      if (currentOpt.errorRegSendCb) {
-        currentOpt.errorRegSendCb(response);
-      }
-      
-      return showErrors(error, type, form);
-    });
-  });
-}
+    if (successSendBlock && !successSendBlock.classList.contains('is-success')) {
+      successSendBlock.classList.add('is-success');
+    }
 
-function toRedirect(response) {
-  if (currentOpt.redirectToEd) {
-    setTimeout(function() {
-      window.location = 'https://englishdom.com/home/user/login';
-    }, 4000);
-  }
-}
-
-function afterSuccessRegistration(data, form) {
-  afterSuccessSend(data, form);
-}
-
-function afterSuccessSend(response, form) {
-  hideErrors(form);
-
-  let successSendBlock = document.querySelector('.js-success-send-ed-form');
-
-  if (!form.classList.contains('is-success')) {
-    form.classList.add('is-success');
+    this.toRedirect(response);
   }
 
-  if (successSendBlock && !successSendBlock.classList.contains('is-success')) {
-    successSendBlock.classList.add('is-success');
+  setSuccessText (text, el) {
+    let successSendBlock = el.querySelector('.js-success-send-ed-form');
+
+    if (successSendBlock && text) {
+      successSendBlock.innerHTML = text;
+    }
   }
 
-  toRedirect(response);
+  showErrors (name, text, parent) {
+    this.hideErrors(parent);
+
+    let errorInput = parent.querySelector('.js-' + name);
+
+    if (errorInput && !errorInput.classList.contains('is-error')) {
+      errorInput.classList.add('is-error');
+    }
+
+    let errorField = parent.querySelector('.js-error-' + name);
+
+    if (errorField && !errorField.classList.contains('is-error')) {
+      errorField.classList.add('is-error');
+    }
+
+    if (errorField) errorField.innerHTML = text;
+  }
+
+  hideErrors (form) {
+    let inputs = form.querySelectorAll('input');
+
+    for (let i=0; i < inputs.length; i++) {
+      inputs[i].classList.remove('is-error');
+    }
+
+    let errors = form.querySelectorAll('.js-error-field');
+
+    for (let i=0; i < errors.length; i++) {
+      errors[i].classList.remove('is-error');
+      errors[i].innerHTML = '';
+    }
+  }
+
+  closestIEpolyfill (Element) {
+    if (!Element.__proto__.closest) {
+
+      Element.__proto__.closest = function(css) {
+        let node = this;
+
+        while (node) {
+          node.matches = node.matches || node.webkitMatchesSelector || node.msMatchesSelector || node.mozMatchesSelector;
+
+          if (node.matches(css)) return node;
+          else node = node.parentElement;
+        }
+        return null;
+      };
+    }
+  }
+
+  close () {
+    for (var i = 0; i < this.buttons.length; i++) {
+      this.buttons[i].removeEventListener('click', this.buttonListener, false);
+    }
+  }
+
 }
 
-function setSuccessText(text, el) {
-  let successSendBlock = el.querySelector('.js-success-send-ed-form');
+function init (options) {
+  let form = new Form(options);
 
-  if (successSendBlock && text) {
-    successSendBlock.innerHTML = text;
-  }  
+  forms.push(form);
+
+  return form;
 }
 
-function showErrors(name, text, parent) {
-  hideErrors(parent);
-
-  let errorInput = parent.querySelector('.js-' + name);
-
-  if (errorInput && !errorInput.classList.contains('is-error')) {
-    errorInput.classList.add('is-error');
-  }
-
-  let errorField = parent.querySelector('.js-error-' + name);
-
-  if (errorField && !errorField.classList.contains('is-error')) {
-    errorField.classList.add('is-error');
-  }
-
-  if (errorField) errorField.innerHTML = text;
-}
-
-function hideErrors(form) {
-  let inputs = form.querySelectorAll('input');  
-
-  for (let i=0; i < inputs.length; i++) {
-    inputs[i].classList.remove('is-error');
-  }
-
-  let errors = form.querySelectorAll('.js-error-field');
-
-  for (let i=0; i < errors.length; i++) {
-    errors[i].classList.remove('is-error');
-    errors[i].innerHTML = '';
-  }
-}
-
-function closestIEpolyfill(Element) {
-  if (!Element.__proto__.closest) {
-
-    Element.__proto__.closest = function(css) {
-      var node = this;
-
-      while (node) {
-        node.matches = node.matches || node.webkitMatchesSelector || node.msMatchesSelector || node.mozMatchesSelector;
-
-        if (node.matches(css)) return node;
-        else node = node.parentElement;
-      }
-      return null;
-    };
+function uninit () {
+  for (let i = 0; i < forms.length; i++) {
+    forms[i].close();
   }
 }
 
