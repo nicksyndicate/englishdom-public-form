@@ -24,8 +24,6 @@ function getUserId() {
 }
 
 function apiGetDataFromServer(internal, cb, loadCb) {
-  let id = getUserId();
-
   $.ajax({
     url: `${getUrl(internal)}/api-public/logged-user/`,
     contentType: 'application/vnd.api+json',
@@ -33,25 +31,17 @@ function apiGetDataFromServer(internal, cb, loadCb) {
     timeout: 40000,
     headers: {
       Authorization1: null
+    },    
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
     },
     success: function (response) {
       data = response.data.attributes;
 
-      if (cb) {
-        cb.call(data);
-      }
-    },
-    beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
+      if (cb) cb.call(data);
     },
     complete: function() {
-      if (loadCb) {
-        loadCb.end();
-        
-      }
+      if (loadCb) loadCb.end();
     }
   });
 }
@@ -71,9 +61,11 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     data: JSON.stringify(sendData),
     headers: {
       'X-Client-Id': getClientId()
+    },    
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
     },
-
-    success: function(response) {
+    success: function (response) {
       parsers.setCookie('jwt', response.meta.token);
       
       cb(true, response);
@@ -81,17 +73,8 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     error: function(response) {
       cb(false, response);
     },
-    beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
-    },
     complete: function() {
-      if (loadCb) {
-        loadCb.end();
-        
-      }
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -114,23 +97,17 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     headers: {
       'X-Client-Id': getClientId()
     },
-    success: function(response) {
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
+    success: function (response) {
       cb({ result: true, response: response });
     },
-    error: function(response) {
+    error: function() {
       cb({ result: false, response: response });
     },
-    beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
-    },
     complete: function() {
-      if (loadCb) {
-        loadCb.end();
-        
-      }
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -161,20 +138,14 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
         cb({ result: true, response: response, sendApp: true });
       }
     },
-    error: function(response) {
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
+    error: function() {
       cb({ result: false, response: response, sendApp: false });
     },
-    beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
-    },
     complete: function() {
-      if (loadCb) {
-        loadCb.end();
-        
-      }
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -202,24 +173,17 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Authorization1': 'Bearer ' + token,
       'X-Client-Id': getClientId()
     },
-
-    success: function(response) {
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
+    success: function (response) {
       cb(true, response);
     },
-    error: function(response) {
+    error: function() {
       cb(false, response);
     },
-    beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
-    },
     complete: function() {
-      if (loadCb) {
-        loadCb.end();
-        
-      }
+      if (loadCb) loadCb.end();
     }
   });
 }
