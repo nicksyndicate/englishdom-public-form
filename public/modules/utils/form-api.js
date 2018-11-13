@@ -24,8 +24,6 @@ function getUserId() {
 }
 
 function apiGetDataFromServer(internal, cb, loadCb) {
-  let id = getUserId();
-
   $.ajax({
     url: `${getUrl(internal)}/api-public/logged-user/`,
     contentType: 'application/vnd.api+json',
@@ -33,24 +31,24 @@ function apiGetDataFromServer(internal, cb, loadCb) {
     timeout: 40000,
     headers: {
       Authorization1: null
+    },    
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
     },
     success: function (response) {
       data = response.data.attributes;
 
-      if (cb) {
-        cb.call(data);
-      }
-    },
-    beforeSend: function() {
+      if (cb) cb.call(data);
+
       if (loadCb) {
-        loadCb.start();
+        loadCb.end({ success: true });
 
       }
     },
-    complete: function() {
+    error: function error() {
       if (loadCb) {
-        loadCb.end();
-        
+        loadCb.end({ success: false });
+
       }
     }
   });
@@ -72,12 +70,6 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     headers: {
       'X-Client-Id': getClientId()
     },
-
-    success: function(response) {
-      parsers.setCookie('jwt', response.meta.token);
-      
-      cb(true, response);
-    },
     error: function(response) {
       cb(false, response);
     },
@@ -87,9 +79,19 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
 
       }
     },
-    complete: function() {
+    success: function (response) {
+      parsers.setCookie('jwt', response.meta.token);
+      
+      cb(true, response);
+
       if (loadCb) {
-        loadCb.end();
+        loadCb.end({ success: true });
+        
+      }
+    },
+    error: function error() {
+      if (loadCb) {
+        loadCb.end({ success: false });
         
       }
     }
@@ -114,21 +116,25 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     headers: {
       'X-Client-Id': getClientId()
     },
-    success: function(response) {
-      cb({ result: true, response: response });
-    },
-    error: function(response) {
-      cb({ result: false, response: response });
-    },
     beforeSend: function() {
       if (loadCb) {
         loadCb.start();
 
       }
     },
-    complete: function() {
+    success: function (response) {
+      cb({ result: true, response: response });
+
       if (loadCb) {
-        loadCb.end();
+        loadCb.end({ success: true });
+        
+      }
+    },
+    error: function error() {
+      cb({ result: false, response: response });
+
+      if (loadCb) {
+        loadCb.end({ success: false });
         
       }
     }
@@ -156,13 +162,20 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     statusCode: {
       200: function(response) {
         cb({ result: false, response: response, sendApp: true });
+
+        if (loadCb) {
+          loadCb.end({ success: true });
+          
+        }
       },
       201: function(response) {
         cb({ result: true, response: response, sendApp: true });
+
+        if (loadCb) {
+          loadCb.end({ success: true });
+          
+        }
       }
-    },
-    error: function(response) {
-      cb({ result: false, response: response, sendApp: false });
     },
     beforeSend: function() {
       if (loadCb) {
@@ -170,9 +183,11 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
 
       }
     },
-    complete: function() {
+    error: function error() {
+      cb({ result: false, response: response, sendApp: false });
+
       if (loadCb) {
-        loadCb.end();
+        loadCb.end({ success: false });
         
       }
     }
@@ -202,22 +217,25 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Authorization1': 'Bearer ' + token,
       'X-Client-Id': getClientId()
     },
-
-    success: function(response) {
-      cb(true, response);
-    },
-    error: function(response) {
-      cb(false, response);
-    },
     beforeSend: function() {
       if (loadCb) {
         loadCb.start();
 
       }
     },
-    complete: function() {
+    success: function (response) {
+      cb(true, response);
+
       if (loadCb) {
-        loadCb.end();
+        loadCb.end({ success: true });
+        
+      }
+    },
+    error: function error() {
+      cb(false, response);
+
+      if (loadCb) {
+        loadCb.end({ success: false });
         
       }
     }
