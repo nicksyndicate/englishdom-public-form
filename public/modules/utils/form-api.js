@@ -24,8 +24,6 @@ function getUserId() {
 }
 
 function apiGetDataFromServer(internal, cb, loadCb) {
-  let id = getUserId();
-
   $.ajax({
     url: `${getUrl(internal)}/api-public/logged-user/`,
     contentType: 'application/vnd.api+json',
@@ -41,10 +39,17 @@ function apiGetDataFromServer(internal, cb, loadCb) {
       data = response.data.attributes;
 
       if (cb) cb.call(data);
-      if (loadCb) loadCb.end({ success: true });
+
+      if (loadCb) {
+        loadCb.end({ success: true });
+
+      }
     },
     error: function error() {
-      if (loadCb) loadCb.end({ success: false });
+      if (loadCb) {
+        loadCb.end({ success: false });
+
+      }
     }
   });
 }
@@ -79,10 +84,16 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
       
       cb(true, response);
 
-      if (loadCb) loadCb.end({ success: true });
+      if (loadCb) {
+        loadCb.end({ success: true });
+        
+      }
     },
     error: function error() {
-      if (loadCb) loadCb.end({ success: false });
+      if (loadCb) {
+        loadCb.end({ success: false });
+        
+      }
     }
   })
 }
@@ -114,12 +125,18 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     success: function (response) {
       cb({ result: true, response: response });
 
-      if (loadCb) loadCb.end({ success: true });
+      if (loadCb) {
+        loadCb.end({ success: true });
+        
+      }
     },
     error: function error() {
       cb({ result: false, response: response });
 
-      if (loadCb) loadCb.end({ success: false });
+      if (loadCb) {
+        loadCb.end({ success: false });
+        
+      }
     }
   })
 }
@@ -146,12 +163,18 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
       200: function(response) {
         cb({ result: false, response: response, sendApp: true });
 
-        if (loadCb) loadCb.end({ success: true });
+        if (loadCb) {
+          loadCb.end({ success: true });
+          
+        }
       },
       201: function(response) {
         cb({ result: true, response: response, sendApp: true });
 
-        if (loadCb) loadCb.end({ success: true });
+        if (loadCb) {
+          loadCb.end({ success: true });
+          
+        }
       }
     },
     beforeSend: function() {
@@ -163,7 +186,10 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     error: function error() {
       cb({ result: false, response: response, sendApp: false });
 
-      if (loadCb) loadCb.end({ success: false });
+      if (loadCb) {
+        loadCb.end({ success: false });
+        
+      }
     }
   })
 }
@@ -200,12 +226,18 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
     success: function (response) {
       cb(true, response);
 
-      if (loadCb) loadCb.end({ success: true });
+      if (loadCb) {
+        loadCb.end({ success: true });
+        
+      }
     },
     error: function error() {
       cb(false, response);
 
-      if (loadCb) loadCb.end({ success: false });
+      if (loadCb) {
+        loadCb.end({ success: false });
+        
+      }
     }
   });
 }
