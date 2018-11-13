@@ -39,17 +39,9 @@ function apiGetDataFromServer(internal, cb, loadCb) {
       data = response.data.attributes;
 
       if (cb) cb.call(data);
-
-      if (loadCb) {
-        loadCb.end({ success: true });
-
-      }
     },
-    error: function error() {
-      if (loadCb) {
-        loadCb.end({ success: false });
-
-      }
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   });
 }
@@ -69,31 +61,20 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     data: JSON.stringify(sendData),
     headers: {
       'X-Client-Id': getClientId()
-    },
-    error: function(response) {
-      cb(false, response);
-    },
+    },    
     beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
+      if (loadCb) loadCb.start();
     },
     success: function (response) {
       parsers.setCookie('jwt', response.meta.token);
       
       cb(true, response);
-
-      if (loadCb) {
-        loadCb.end({ success: true });
-        
-      }
     },
-    error: function error() {
-      if (loadCb) {
-        loadCb.end({ success: false });
-        
-      }
+    error: function(response) {
+      cb(false, response);
+    },
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -117,26 +98,16 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
       'X-Client-Id': getClientId()
     },
     beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
+      if (loadCb) loadCb.start();
     },
     success: function (response) {
       cb({ result: true, response: response });
-
-      if (loadCb) {
-        loadCb.end({ success: true });
-        
-      }
     },
     error: function error() {
       cb({ result: false, response: response });
-
-      if (loadCb) {
-        loadCb.end({ success: false });
-        
-      }
+    },
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -162,34 +133,19 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     statusCode: {
       200: function(response) {
         cb({ result: false, response: response, sendApp: true });
-
-        if (loadCb) {
-          loadCb.end({ success: true });
-          
-        }
       },
       201: function(response) {
         cb({ result: true, response: response, sendApp: true });
-
-        if (loadCb) {
-          loadCb.end({ success: true });
-          
-        }
       }
     },
     beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
+      if (loadCb) loadCb.start();
     },
     error: function error() {
       cb({ result: false, response: response, sendApp: false });
-
-      if (loadCb) {
-        loadCb.end({ success: false });
-        
-      }
+    },
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -218,26 +174,16 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'X-Client-Id': getClientId()
     },
     beforeSend: function() {
-      if (loadCb) {
-        loadCb.start();
-
-      }
+      if (loadCb) loadCb.start();
     },
     success: function (response) {
       cb(true, response);
-
-      if (loadCb) {
-        loadCb.end({ success: true });
-        
-      }
     },
     error: function error() {
       cb(false, response);
-
-      if (loadCb) {
-        loadCb.end({ success: false });
-        
-      }
+    },
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   });
 }
