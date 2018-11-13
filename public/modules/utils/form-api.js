@@ -103,7 +103,7 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     success: function (response) {
       cb({ result: true, response: response });
     },
-    error: function error() {
+    error: function() {
       cb({ result: false, response: response });
     },
     complete: function() {
@@ -141,7 +141,7 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     beforeSend: function() {
       if (loadCb) loadCb.start();
     },
-    error: function error() {
+    error: function() {
       cb({ result: false, response: response, sendApp: false });
     },
     complete: function() {
@@ -179,7 +179,7 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
     success: function (response) {
       cb(true, response);
     },
-    error: function error() {
+    error: function() {
       cb(false, response);
     },
     complete: function() {
