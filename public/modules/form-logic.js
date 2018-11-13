@@ -108,7 +108,9 @@ class Form {
             })
           }
 
-          return _this.sendApplication(data, form, token);
+          if (!_this.options.registration) {
+            return _this.sendApplication(data, form, token);
+          }
         } else {
           return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
             if (_this.options.errorRegSendCb) {
