@@ -102,11 +102,12 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     },
     success: function (response) {
       cb({ result: true, response: response });
+
+      if (loadCb) loadCb.end();
     },
     error: function(response) {
       cb({ result: false, response: response });
-    },
-    complete: function() {
+
       if (loadCb) loadCb.end();
     }
   })
@@ -133,9 +134,13 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     statusCode: {
       200: function(response) {
         cb({ result: false, response: response, sendApp: true });
+
+        if (loadCb) loadCb.end();
       },
       201: function(response) {
         cb({ result: true, response: response, sendApp: true });
+
+        if (loadCb) loadCb.end();
       }
     },
     beforeSend: function() {
@@ -143,8 +148,7 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     },
     error: function(response) {
       cb({ result: false, response: response, sendApp: false });
-    },
-    complete: function() {
+
       if (loadCb) loadCb.end();
     }
   })
@@ -178,11 +182,12 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
     },
     success: function (response) {
       cb(true, response);
+
+      if (loadCb) loadCb.end();
     },
     error: function(response) {
       cb(false, response);
-    },
-    complete: function() {
+
       if (loadCb) loadCb.end();
     }
   });
