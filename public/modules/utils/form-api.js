@@ -23,7 +23,7 @@ function getUserId() {
   return id;
 }
 
-function apiGetDataFromServer(internal, cb) {
+function apiGetDataFromServer(internal, cb, loadCb) {
   $.ajax({
     url: `${getUrl(internal)}/api-public/logged-user/`,
     contentType: 'application/vnd.api+json',
@@ -32,15 +32,21 @@ function apiGetDataFromServer(internal, cb) {
     headers: {
       Authorization1: null
     },    
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
     success: function (response) {
       data = response.data.attributes;
 
       if (cb) cb.call(data);
+    },
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   });
 }
 
-function apiRegistration(data, internal, tags, cb) {
+function apiRegistration(data, internal, tags, loadCb, cb) {
   const utm = tags || '';
   const sendData = {
     data: data
@@ -56,6 +62,9 @@ function apiRegistration(data, internal, tags, cb) {
     headers: {
       'X-Client-Id': getClientId()
     },    
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
     success: function (response) {
       parsers.setCookie('jwt', response.meta.token);
       
@@ -63,11 +72,14 @@ function apiRegistration(data, internal, tags, cb) {
     },
     error: function(response) {
       cb(false, response);
+    },
+    complete: function() {
+      if (loadCb) loadCb.end();
     }
   })
 }
 
-function apiGetToken(data, internal, tags, cb) {
+function apiGetToken(data, internal, tags, loadCb, cb) {
   data.type = 'read-registration';
 
   const utm = tags || '';
@@ -85,11 +97,18 @@ function apiGetToken(data, internal, tags, cb) {
     headers: {
       'X-Client-Id': getClientId()
     },
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
     success: function (response) {
       cb({ result: true, response: response });
+
+      if (loadCb) loadCb.end();
     },
     error: function(response) {
       cb({ result: false, response: response });
+
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -115,13 +134,22 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     statusCode: {
       200: function(response) {
         cb({ result: false, response: response, sendApp: true });
+
+        if (loadCb) loadCb.end();
       },
       201: function(response) {
         cb({ result: true, response: response, sendApp: true });
+
+        if (loadCb) loadCb.end();
       }
+    },
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
     },
     error: function(response) {
       cb({ result: false, response: response, sendApp: false });
+
+      if (loadCb) loadCb.end();
     }
   })
 }
@@ -149,11 +177,18 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Authorization1': 'Bearer ' + token,
       'X-Client-Id': getClientId()
     },
+    beforeSend: function() {
+      if (loadCb) loadCb.start();
+    },
     success: function (response) {
       cb(true, response);
+
+      if (loadCb) loadCb.end();
     },
     error: function(response) {
       cb(false, response);
+
+      if (loadCb) loadCb.end();
     }
   });
 }
