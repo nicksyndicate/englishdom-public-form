@@ -1,6 +1,6 @@
 {
   "name": "englishdom-form",
-  "version": "0.4.41",
+  "version": "0.4.42",
   "description": "englishdom form api for external includes",
   "main": "index.js",
   "dependencies": {

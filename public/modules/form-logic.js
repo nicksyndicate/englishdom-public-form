@@ -61,12 +61,14 @@ class Form {
 
   registration (data, form) {
     let _this = this;
+    let loadCb = this.options.loadCb;
+
+    if (loadCb) loadCb.start();
 
     api.default.apiRegistration(
       data,
       this.options.internal,
       this.options.partnerTags,
-      this.options.loadCb,
       function(result, response) {
         if (result) {
           if (_this.options.successRegSendCb) {
@@ -75,13 +77,17 @@ class Form {
             })
           }
 
+          if (loadCb) loadCb.end();
+
           return _this.afterSuccessRegistration(data, form)
         }
+
+        if (loadCb) loadCb.end();
 
         return parsers.default.afterErrorSend(response, form, function(error, type, form) {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
-          }
+          }          
 
           return _this.showErrors(error, type, form);
         });
@@ -89,15 +95,17 @@ class Form {
   }
 
   getTokenForApp (data, form) {
-    let loginData = this.options.preReadRegFormCb();
     let _this = this;
+    let loginData = this.options.preReadRegFormCb();
+    let loadCb = this.options.loadCb;    
+
+    if (loadCb) loadCb.start();
 
     if (loginData) return this.sendApplication(data, form, loginData);
 
     api.default.apiGetToken(data,
       this.options.internal,
       this.options.partnerTags,
-      this.options.loadCb,
       function(apiData) {
         if (apiData.result) {
           let token = apiData.response.meta.token;
@@ -112,7 +120,12 @@ class Form {
             return _this.sendApplication(data, form, token);
             
           }
+
+          if (loadCb) loadCb.end();
+
         } else {
+          if (loadCb) loadCb.end();
+
           return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(apiData.response);
@@ -127,6 +140,9 @@ class Form {
 
   readRegistration (data, form) {
     let _this = this;
+    let loadCb = this.options.loadCb;    
+
+    if (loadCb) loadCb.start();
 
     api.default.apiReadRegistration(data,
       this.options.internal,
@@ -171,6 +187,8 @@ class Form {
           }
 
         } else {
+          if (loadCb) loadCb.end();
+
           return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(apiData.response);
@@ -185,6 +203,7 @@ class Form {
 
   sendApplication (data, form, token) {
     let _this = this;
+    let loadCb = this.options.loadCb;    
 
     api.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function(result, response) {
       if (result) {
@@ -194,8 +213,12 @@ class Form {
           })
         }
 
+        if (loadCb) loadCb.end();
+
         return _this.afterSuccessSend(response, form);
       }
+
+      if (loadCb) loadCb.end();
 
       return parsers.default.afterErrorSend(response, form, function(error, type, form) {
         if (_this.options.errorRegSendCb) {
@@ -209,9 +232,7 @@ class Form {
 
   toRedirect () {
     if (this.options.redirectToEd) {
-      setTimeout(function() {
-        window.location = 'https://englishdom.com/home/user/login';
-      }, 4000);
+      window.location = 'https://englishdom.com/home/user/login';
     }
   }
 
