@@ -69,20 +69,26 @@ function afterErrorSend(response, form, cb) {
 }
 
 function getCookie(name) {
-  var cookies = document.cookie.split('; ');
-  var value = null;
+  var match = document.cookie.match(name + '=[^; ]*');
 
-  for (var i=0; i < cookies.length; i++) {
-    var cookie = cookies[i].split('=');
+  if (match) return match[0].split('=')[1];
 
-    if (cookie[0] === name) value = cookie[1];
-  }
-
-  return value;
+  return null;
 }
 
 function setCookie(name, value) {
-  document.cookie = `${name}=${value}`;
+  var cookies = document.cookie.split('; ');
+  var oldBrowserCookie = name + '=' + value + ';path=/;';
+
+  var updatedCookies = [oldBrowserCookie];
+
+  for (var i = 0; i < cookies.length; i++) {
+    if (!cookies[i].match(config.oldBrowserCls)) {
+      updatedCookies.push(cookies[i]);
+    }
+  }
+
+  document.cookie = updatedCookies.join('; '); 
 }
 
 function createUserId() {
