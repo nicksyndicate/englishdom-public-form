@@ -78,12 +78,12 @@ function getCookie(name) {
 
 function setCookie(name, value) {
   var cookies = document.cookie.split('; ');
-  var oldBrowserCookie = name + '=' + value + ';path=/;';
+  var newCookie = name + '=' + value + ';path=/;';
 
-  var updatedCookies = [oldBrowserCookie];
+  var updatedCookies = [newCookie];
 
   for (var i = 0; i < cookies.length; i++) {
-    if (!cookies[i].match(config.oldBrowserCls)) {
+    if (!cookies[i].match(name)) {
       updatedCookies.push(cookies[i]);
     }
   }
