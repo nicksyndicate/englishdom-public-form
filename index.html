@@ -1,4 +1,14 @@
-<form action="" method="POST" novalidate="" class="js-ed-form">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<form action="" method="POST" novalidate="" class="js-ed-form" data-additional-tag="any_tag_1 any_tag_2">
   <div>
     <div>
       <label for="form-name" class="">
@@ -22,23 +32,26 @@
   <button type="submit" class="js-ed-form-button">начать бесплатно</button>
 </form>
 <div>
-<div class="js-success-send-ed-form"></div>
+  <div class="js-success-send-ed-form"></div>
 
-<script src="./public/bundles/js/form-logic.min.js"></script>
-<script>
-  logicInit({  // метод для инициализации формы
-    key:"app",
-    internal: true,
-    registration: false,
-    phone: true,
-    firstName: true,
-    source: 'skype',
-    redirectToEd: false,
-    partnerTags: '?utm_source=smth&utm_medium=smth',
-    successSendText: 'optional text',
-    successRegSendCb: [ cb ]
-  });
+  <script src="./public/bundles/js/form-logic.min.js"></script>
+  <script>
+    logicInit({  // метод для инициализации формы
+      key:"app",
+      internal: true,
+      registration: false,
+      phone: true,
+      firstName: true,
+      source: 'skype',
+      redirectToEd: false,
+      partnerTags: '?utm_source=smth&utm_medium=smth',
+      successSendText: 'optional text',
+      successRegSendCb: [ cb ],
+      AMOCRMTagFormAttribute: 'data-additional-tag'
+    });
 
-  function cb() {}
-</script>
-<link rel="stylesheet" href="./public/bundles/css/intlTelInput.css"></script>
+    function cb() {}
+  </script>
+  <link rel="stylesheet" href="./public/bundles/css/intlTelInput.css"></script>
+</body>
+</html>
