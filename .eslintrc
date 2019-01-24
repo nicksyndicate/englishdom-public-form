@@ -20,19 +20,5 @@
       "modules": true,
       "experimentalObjectRestSpread": true
     }
-  },
-  "overrides": [
-    {
-      "files": [
-        "public/dsd/js/**/*.js",
-        "public/dsd/mix/**/*.jsx"
-      ],
-      "excludedFiles": [
-        "public/dsd/js/bundles/*.js",
-        "public/dsd/**/*.rtest.js",
-        "public/dsd/js/vendor-js/*.js",
-        "public/dsd/test/**/*.js"
-      ]
-    }
-  ]
+  }
 }
