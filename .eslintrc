@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "extends": "airbnb-base",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["public/modules"]
+      }
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "public/dsd/js/**/*.js",
+        "public/dsd/mix/**/*.jsx"
+      ],
+      "excludedFiles": [
+        "public/dsd/js/bundles/*.js",
+        "public/dsd/**/*.rtest.js",
+        "public/dsd/js/vendor-js/*.js",
+        "public/dsd/test/**/*.js"
+      ]
+    }
+  ]
+}
