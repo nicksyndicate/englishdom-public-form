@@ -34,7 +34,7 @@ function getExternalData(opt, form) {
       }
 
       if (!name) {
-        name = '_';
+        name = '';
       }
     } else {
       //
@@ -58,14 +58,17 @@ function getExternalData(opt, form) {
 
 function afterErrorSend(response, form, cb) {
   let errors = response.responseJSON ? response.responseJSON.errors.detail : {};
+  let parsedErrors = [];
 
   if (errors) {
     Object.keys(errors).map(function(error) {
       Object.keys(errors[error]).map(function(type) {
-        cb(error, errors[error][type], form);
+        parsedErrors.push({ name: error, text: errors[error][type] });
       });
     });
-  }  
+  }
+
+  cb(parsedErrors, form);
 }
 
 function getCookie(name) {
