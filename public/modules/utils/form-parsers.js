@@ -52,7 +52,11 @@ function getExternalData(opt, form) {
   if (opt.from) {
     data.attributes['from'] = opt.from;
   }
- 
+
+  if (opt.AMOCRMTagFormAttribute && form.getAttribute(opt.AMOCRMTagFormAttribute)) {
+    data.attributes['tags'] = form.getAttribute(opt.AMOCRMTagFormAttribute);
+  }
+
   return data;
 }
 
