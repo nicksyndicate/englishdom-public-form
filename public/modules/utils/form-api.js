@@ -65,6 +65,7 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     beforeSend: function() {
       if (loadCb) loadCb.start();
     },
+
     success: function (response) {
       parsers.setCookie('jwt', response.meta.token);
       
@@ -135,7 +136,6 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
       200: function(response) {
         cb({ result: false, response: response, sendApp: true });
 
-        if (loadCb) loadCb.end();
       },
       201: function(response) {
         cb({ result: true, response: response, sendApp: true });
