@@ -243,22 +243,24 @@ class Form {
     }
   }
 
-  showErrors (name, text, parent) {
+  showErrors (errors, parent) {
     this.hideErrors(parent);
 
-    let errorInput = parent.querySelector('.js-' + name);
+    errors.forEach((error) => {
+      let errorInput = parent.querySelector('.js-' + error.name);
 
-    if (errorInput && !errorInput.classList.contains('is-error')) {
-      errorInput.classList.add('is-error');
-    }
-
-    let errorField = parent.querySelector('.js-error-' + name);
-
-    if (errorField && !errorField.classList.contains('is-error')) {
-      errorField.classList.add('is-error');
-    }
-
-    if (errorField) errorField.innerHTML = text;
+      if (errorInput && !errorInput.classList.contains('is-error')) {
+        errorInput.classList.add('is-error');
+      }
+  
+      let errorField = parent.querySelector('.js-error-' + error.name);
+  
+      if (errorField && !errorField.classList.contains('is-error')) {
+        errorField.classList.add('is-error');
+      }
+  
+      if (errorField) errorField.innerHTML = error.text;
+    })    
   }
 
   hideErrors (form) {

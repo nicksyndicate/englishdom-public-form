@@ -34,7 +34,7 @@ function getExternalData(opt, form) {
       }
 
       if (!name) {
-        name = '_';
+        name = '';
       }
     } else {
       //
@@ -52,35 +52,50 @@ function getExternalData(opt, form) {
   if (opt.from) {
     data.attributes['from'] = opt.from;
   }
- 
+
+  if (opt.AMOCRMTagFormAttribute && form.getAttribute(opt.AMOCRMTagFormAttribute)) {
+    data.attributes['tags'] = form.getAttribute(opt.AMOCRMTagFormAttribute);
+  }
+
   return data;
 }
 
 function afterErrorSend(response, form, cb) {
   let errors = response.responseJSON ? response.responseJSON.errors.detail : {};
+  let parsedErrors = [];
 
-  Object.keys(errors).map(function(error) {
-    Object.keys(errors[error]).map(function(type) {
-      cb(error, errors[error][type], form);
+  if (errors) {
+    Object.keys(errors).map(function(error) {
+      Object.keys(errors[error]).map(function(type) {
+        parsedErrors.push({ name: error, text: errors[error][type] });
+      });
     });
-  });
+  }
+
+  cb(parsedErrors, form);
 }
 
 function getCookie(name) {
-  var cookies = document.cookie.split('; ');
-  var value = null;
+  var match = document.cookie.match(name + '=[^; ]*');
 
-  for (var i=0; i < cookies.length; i++) {
-    var cookie = cookies[i].split('=');
+  if (match) return match[0].split('=')[1];
 
-    if (cookie[0] === name) value = cookie[1];
-  }
-
-  return value;
+  return null;
 }
 
 function setCookie(name, value) {
-  document.cookie = `${name}=${value}`;
+  var cookies = document.cookie.split('; ');
+  var newCookie = name + '=' + value + ';path=/;';
+
+  var updatedCookies = [newCookie];
+
+  for (var i = 0; i < cookies.length; i++) {
+    if (!cookies[i].match(name)) {
+      updatedCookies.push(cookies[i]);
+    }
+  }
+
+  document.cookie = updatedCookies.join('; '); 
 }
 
 function createUserId() {
