@@ -4,7 +4,7 @@ import 'input-tel';
 function init () {
   let $input = $('.js-ed-form-tel-number');
 
-  setIntlTel($input);
+  return setIntlTel($input);
 }
 
 function setIntlTel(el) {
@@ -46,6 +46,8 @@ function setIntlTel(el) {
   } catch (e) {
     el.intlTelInput('selectCountry', 'RU');
   }
+
+  return el;
 }
 
 export default init;
