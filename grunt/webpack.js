@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
   return {
     form: {
-      devtool: 'eval',
+      devtool: 'source-map',
       progress: true,
       failOnError: true,
       entry: getEntry('./public/modules/'),

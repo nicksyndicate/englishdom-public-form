@@ -11,10 +11,11 @@ class Form {
     this.options = options;
     this.cls = this.options.internalCls || 'js-ed-form';
 
-    let formArray = document.querySelectorAll(`.${this.cls}`);
+    this.form = document.querySelector(`.${this.cls}`);
 
     if (this.options.phone) {
-      intTelInput.default();
+      this.$iti = intTelInput.default();
+      if (this.form) this.setPhoneBlurEvent(this.form);
     }
 
     if (this.options.initFormCb) {
@@ -25,10 +26,8 @@ class Form {
 
     this.buttonListener = this.buttonListener.bind(this);
 
-    for (var i = 0; i < formArray.length; i++) {
-      this.setButtons(formArray[i]);
-      this.setSuccessText(this.options.successSendText, formArray[i]);
-    }
+    if (this.form) this.setButtons(this.form);
+    if (this.form) this.setSuccessText(this.options.successSendText, this.form);
   }
 
   buttonListener (e) {
@@ -38,10 +37,50 @@ class Form {
   }
 
   setButtons (el) {
-    this.buttons = el.querySelectorAll('.js-ed-form-button');
+    this.button = el.querySelector('.js-ed-form-button');
 
-    for (let i=0; i < this.buttons.length; i++) {
-      this.buttons[i].addEventListener('click', this.buttonListener, false);
+    this.button.addEventListener('click', this.buttonListener, false);
+  }
+
+  setPhoneBlurEvent (el) {
+    this.inputPhone = el.querySelector('.js-ed-form-tel-number');
+
+    this.inputPhone.addEventListener('blur', this.blurPhoneEvent.bind(this), false);
+  }
+
+  blurPhoneEvent(event) {
+    event.preventDefault();
+
+    this.checkValidity();
+  }
+
+  checkValidity() {
+    const errorMap = [
+      'Неправильный номер',
+      'Такого кода страны не существует',
+      'Номер слишком короткий',
+      'Номер слишком длинный',
+      'Неправильный номер',
+    ];
+
+    if (this.$iti) {
+      this.hideErrors(this.form);
+
+      // reset block btn
+      this.button.classList.remove('is-disabled');
+
+      if (!this.$iti.intlTelInput('isValidNumber')) {
+        this.showErrors(
+          [{
+            text: errorMap[this.$iti.intlTelInput('getValidationError')],
+            name: 'phone',
+          }],
+          this.form,
+        );
+
+        // block btn
+        this.button.classList.add('is-disabled');
+      }
     }
   }
 
@@ -56,7 +95,9 @@ class Form {
     if (this.options.registration) return this.registration(parsers.default.getRegistrationData(data), form);
     if (this.options.internal) return this.readRegistration(data, form);
 
-    return this.sendApplication(data, form);
+    if (e.target.classList.contains('is-disabled')) {
+      return this.sendApplication(data, form);
+    }
   }
 
   registration (data, form) {
@@ -296,9 +337,7 @@ class Form {
   }
 
   close () {
-    for (var i = 0; i < this.buttons.length; i++) {
-      this.buttons[i].removeEventListener('click', this.buttonListener, false);
-    }
+    this.button.removeEventListener('click', this.buttonListener, false);
   }
 
 }
