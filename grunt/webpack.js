@@ -4,38 +4,31 @@ module.exports = function(grunt) {
   var CleanWebpackPlugin = require('clean-webpack-plugin');
   var path = require('path');
 
-  function getEntry(pagesDir) {
-    var entries = fs.readdirSync(pagesDir).filter(function(file) {
-        return file.match(/.*\.js$/);
-      }),
-      entry = {};
-
-    for (var i = 0; i < entries.length; i++) {
-      entry[entries[i].split('.')[0]] = pagesDir + entries[i];
-    }
-
-    return entry;
-  }
-
   return {
     form: {
       devtool: 'source-map',
       progress: true,
       failOnError: true,
-      entry: getEntry('./public/modules/'),
+      entry: {
+        'form-logic': path.resolve(__dirname, '../public/modules/form-logic.js'),
+        'form-logic.min': path.resolve(__dirname, '../public/modules/form-logic.js'),
+      },
       output: {
         publicPath: '/public/bundles/js/',
         path: path.resolve(__dirname, '../public/bundles/js'),
-        filename: '[name].min.js',
-        chunkFilename: '[id].' + new Date().getTime() + '.js',
-
-        sourceMapFilename: '[file].map'
+        filename: '[name].js',
       },
 
       plugins: [
         new webpack.optimize.UglifyJsPlugin({
+          include: /\.min\.js$/,
+          minimize: true,
           sourceMap: true,
-          compress: false
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+          exclude: /\.min\.js$/,
+          minimize: false,
+          sourceMap: false,
         }),
         new webpack.optimize.OccurrenceOrderPlugin()
        ],
