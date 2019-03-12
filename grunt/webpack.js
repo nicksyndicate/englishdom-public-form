@@ -1,7 +1,5 @@
-module.exports = function (grunt) {
-  const fs = require('fs');
+module.exports = function webpackFn() {
   const webpack = require('webpack');
-  const CleanWebpackPlugin = require('clean-webpack-plugin');
   const path = require('path');
 
   return {
