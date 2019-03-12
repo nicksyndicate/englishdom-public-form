@@ -20,9 +20,9 @@ module.exports = {
           'underscore/underscore.js',
           // for IE11
           'es6-promise/dist/es6-promise.js',
-          'babel-polyfill/dist/polyfill.js'  
-        ]
-      }
-    ]
-  }
+          'babel-polyfill/dist/polyfill.js',
+        ],
+      },
+    ],
+  },
 };

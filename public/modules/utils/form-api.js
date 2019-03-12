@@ -18,7 +18,7 @@ function getClientId() {
 }
 
 function getUserId() {
-  let id = document.body.getAttribute('data-user-id');
+  const id = document.body.getAttribute('data-user-id');
 
   return id;
 }
@@ -30,26 +30,24 @@ function apiGetDataFromServer(internal, cb, loadCb) {
     dataType: 'json',
     timeout: 40000,
     headers: {
-      Authorization1: null
-    },    
-    beforeSend: function() {
+      Authorization1: null,
+    },
+    beforeSend() {
       if (loadCb) loadCb.start();
     },
-    success: function (response) {
-      data = response.data.attributes;
-
-      if (cb) cb.call(data);
+    success(response) {
+      if (cb) cb.call(response.data.attributes);
     },
-    complete: function() {
+    complete() {
       if (loadCb) loadCb.end();
-    }
+    },
   });
 }
 
 function apiRegistration(data, internal, tags, loadCb, cb) {
   const utm = tags || '';
   const sendData = {
-    data: data
+    data,
   };
 
   $.ajax({
@@ -60,24 +58,24 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
     headers: {
-      'X-Client-Id': getClientId()
-    },    
-    beforeSend: function() {
+      'X-Client-Id': getClientId(),
+    },
+    beforeSend() {
       if (loadCb) loadCb.start();
     },
 
-    success: function (response) {
+    success(response) {
       parsers.setCookie('jwt', response.meta.token);
-      
+
       cb(true, response);
     },
-    error: function(response) {
+    error(response) {
       cb(false, response);
     },
-    complete: function() {
+    complete() {
       if (loadCb) loadCb.end();
-    }
-  })
+    },
+  });
 }
 
 function apiGetToken(data, internal, tags, loadCb, cb) {
@@ -85,7 +83,7 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
 
   const utm = tags || '';
   const sendData = {
-    data: data
+    data,
   };
 
   $.ajax({
@@ -96,22 +94,22 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
     headers: {
-      'X-Client-Id': getClientId()
+      'X-Client-Id': getClientId(),
     },
-    beforeSend: function() {
+    beforeSend() {
       if (loadCb) loadCb.start();
     },
-    success: function (response) {
-      cb({ result: true, response: response });
+    success(response) {
+      cb({ result: true, response });
 
       if (loadCb) loadCb.end();
     },
-    error: function(response) {
-      cb({ result: false, response: response });
+    error(response) {
+      cb({ result: false, response });
 
       if (loadCb) loadCb.end();
-    }
-  })
+    },
+  });
 }
 
 function apiReadRegistration(data, internal, tags, loadCb, cb) {
@@ -119,7 +117,7 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
 
   const utm = tags || '';
   const sendData = {
-    data: data
+    data,
   };
 
   $.ajax({
@@ -130,28 +128,27 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
     headers: {
-      'X-Client-Id': getClientId()
+      'X-Client-Id': getClientId(),
     },
     statusCode: {
-      200: function(response) {
-        cb({ result: false, response: response, sendApp: true });
-
+      200(response) {
+        cb({ result: false, response, sendApp: true });
       },
-      201: function(response) {
-        cb({ result: true, response: response, sendApp: true });
+      201(response) {
+        cb({ result: true, response, sendApp: true });
 
         if (loadCb) loadCb.end();
-      }
+      },
     },
-    beforeSend: function() {
+    beforeSend() {
       if (loadCb) loadCb.start();
     },
-    error: function(response) {
-      cb({ result: false, response: response, sendApp: false });
+    error(response) {
+      cb({ result: false, response, sendApp: false });
 
       if (loadCb) loadCb.end();
-    }
-  })
+    },
+  });
 }
 
 function apiSendApplication(data, internal, tags, token, loadCb, cb) {
@@ -159,7 +156,7 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
 
   const utm = tags || '';
   const sendData = {
-    data: data
+    data,
   };
 
   $.ajax({
@@ -174,30 +171,30 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
-      'Authorization1': 'Bearer ' + token,
-      'X-Client-Id': getClientId()
+      Authorization1: `Bearer ${token}`,
+      'X-Client-Id': getClientId(),
     },
-    beforeSend: function() {
+    beforeSend() {
       if (loadCb) loadCb.start();
     },
-    success: function (response) {
+    success(response) {
       cb(true, response);
 
       if (loadCb) loadCb.end();
     },
-    error: function(response) {
+    error(response) {
       cb(false, response);
 
       if (loadCb) loadCb.end();
-    }
+    },
   });
 }
 
 export default {
-  getUserId: getUserId,
-  apiGetToken: apiGetToken,
-  apiRegistration: apiRegistration,
-  apiGetDataFromServer: apiGetDataFromServer,
-  apiReadRegistration: apiReadRegistration,
-  apiSendApplication: apiSendApplication
-}
+  getUserId,
+  apiGetToken,
+  apiRegistration,
+  apiGetDataFromServer,
+  apiReadRegistration,
+  apiSendApplication,
+};

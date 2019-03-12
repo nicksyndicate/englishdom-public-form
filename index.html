@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+<h2>Form1</h2><button class="uninit-form-1">UnInit</button>
 <form action="" method="POST" novalidate="" class="js-ed-form" data-additional-tag="any_tag_1 any_tag_2">
   <div>
     <div>
@@ -31,27 +32,68 @@
   </div>
   <button type="submit" class="js-ed-form-button">начать бесплатно</button>
 </form>
-<div>
+<h2>Form2</h2><button class="uninit-form-2">UnInit</button>
+<form action="" method="POST" novalidate="" class="js-ed-form" data-additional-tag="any_tag_1 any_tag_2">
+  <div>
+    <div>
+      <label for="form-name" class="">
+        <input id="form-name" type="text" name="first_name" class="js-first_name" placeholder="Имя*" maxlength="25" />
+        <p class="js-error-first_name"></p>
+      </label>
+    </div>
+    <div class="">
+      <label for="form-email" class="">
+        <input id="form-email" type="email" name="email" class="js-email" placeholder="Email*" />
+        <p class="js-error-email"></p>
+      </label>
+    </div>
+    <div class="">
+      <label for="form-phone" class="">
+        <input id="form-phone" name="phone" type="tel" class="js-ed-form-tel-number js-phone" autocomplete="off" />
+        <p class="js-error-phone"></p>
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="js-ed-form-button">начать бесплатно</button>
+</form>
+<hr>
+<button class="init-forms">Init All</button><button class="uninit-forms">UnInit All</button>
   <div class="js-success-send-ed-form"></div>
 
   <script src="./public/bundles/js/form-logic.min.js"></script>
   <script>
-    logicInit({  // метод для инициализации формы
-      key:"app",
-      internal: true,
-      registration: false,
-      phone: true,
-      firstName: true,
-      source: 'skype',
-      redirectToEd: false,
-      partnerTags: '?utm_source=smth&utm_medium=smth',
-      successSendText: 'optional text',
-      successRegSendCb: [ cb ],
-      AMOCRMTagFormAttribute: 'data-additional-tag'
+    let formsInstances = [];
+
+    function initForms() {
+      formsInstances = logicInit({  // метод для инициализации формы
+        key:"app",
+        internal: true,
+        registration: false,
+        phone: true,
+        firstName: true,
+        source: 'skype',
+        redirectToEd: false,
+        partnerTags: '?utm_source=smth&utm_medium=smth',
+        successSendText: 'optional text',
+        successRegSendCb: [],
+        AMOCRMTagFormAttribute: 'data-additional-tag'
+      });
+    }
+
+    document.querySelector('.uninit-form-1').addEventListener('click', () => {
+      logicUninit(formsInstances[2]);
+    });
+    document.querySelector('.uninit-form-2').addEventListener('click', () => {
+      logicUninit(formsInstances[2]);
     });
 
-    function cb() {}
+    document.querySelector('.init-forms').addEventListener('click', () => {
+      initForms();
+    });
+    document.querySelector('.uninit-forms').addEventListener('click', () => {
+      logicUninit();
+    });
   </script>
-  <link rel="stylesheet" href="./public/bundles/css/intlTelInput.css"></script>
+  <link rel="stylesheet" href="./public/bundles/css/intlTelInput.css">
 </body>
 </html>

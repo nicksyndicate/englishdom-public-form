@@ -1,8 +1,6 @@
-module.exports = function(grunt) {
-  'use strict';
-
-  var buildType = grunt.option('no-dev') ? 'dependencies' : ['dependencies', 'devDependencies'];
-  var path = require('path');
+module.exports = function gruntFn (grunt) {
+  const buildType = grunt.option('no-dev') ? 'dependencies' : ['dependencies', 'devDependencies'];
+  const path = require('path');
 
   require('load-grunt-config')(grunt, {
 
@@ -13,7 +11,7 @@ module.exports = function(grunt) {
     loadGruntTasks: {
       pattern: 'grunt-*',
       config: require('./package.json'),
-      scope: buildType
+      scope: buildType,
     },
 
     data: {
@@ -24,8 +22,8 @@ module.exports = function(grunt) {
         publicUtils: '<%= project.publicFolder %>/utils',
 
         modules: '<%= project.publicFolder %>/modules/',
-        vendor: '<%= project.publicFolder %>/vendor-js/'
-      }
-    }
+        vendor: '<%= project.publicFolder %>/vendor-js/',
+      },
+    },
   });
 };
