@@ -3,15 +3,13 @@ const api = require('./utils/form-api');
 const parsers = require('./utils/form-parsers');
 const intTelInput = require('./utils/intl-tel-input');
 
-let forms = [];
+let formInstances = [];
 
 class Form {
 
   constructor(options) {
     this.options = options;
-    this.cls = this.options.internalCls || 'js-ed-form';
-
-    this.form = document.querySelector(`.${this.cls}`);
+    this.form = options.formEl;
 
     if (this.options.phone) {
       this.$iti = intTelInput.default();
@@ -87,16 +85,14 @@ class Form {
   setNextMethod (e) {
     this.closestIEpolyfill(e.target);
 
-    let form = e.target.closest(`.${this.cls}`) || document.querySelector(`.${this.cls}`);
+    let data = parsers.default.getExternalData(this.options, this.form);
 
-    let data = parsers.default.getExternalData(this.options, form);
-
-    if (this.options.preReadRegFormCb) return this.getTokenForApp(data, form);
-    if (this.options.registration) return this.registration(parsers.default.getRegistrationData(data), form);
-    if (this.options.internal) return this.readRegistration(data, form);
+    if (this.options.preReadRegFormCb) return this.getTokenForApp(data, this.form);
+    if (this.options.registration) return this.registration(parsers.default.getRegistrationData(data), this.form);
+    if (this.options.internal) return this.readRegistration(data, this.form);
 
     if (e.target.classList.contains('is-disabled')) {
-      return this.sendApplication(data, form);
+      return this.sendApplication(data, this.form);
     }
   }
 
@@ -263,6 +259,7 @@ class Form {
   afterSuccessSend (response, form) {
     this.hideErrors(form);
 
+    // TODO remove document.querySelector
     let successSendBlock = document.querySelector('.js-success-send-ed-form');
 
     if (!form.classList.contains('is-success')) {
@@ -293,15 +290,15 @@ class Form {
       if (errorInput && !errorInput.classList.contains('is-error')) {
         errorInput.classList.add('is-error');
       }
-  
+
       let errorField = parent.querySelector('.js-error-' + error.name);
-  
+
       if (errorField && !errorField.classList.contains('is-error')) {
         errorField.classList.add('is-error');
       }
-  
+
       if (errorField) errorField.innerHTML = error.text;
-    })    
+    })
   }
 
   hideErrors (form) {
@@ -338,21 +335,43 @@ class Form {
 
   close () {
     this.button.removeEventListener('click', this.buttonListener, false);
+    this.inputPhone.removeEventListener('click', this.buttonListener, false);
   }
 
 }
 
-function init (options) {
-  let form = new Form(options);
+function init(options) {
+  const forms = document.querySelectorAll(`.${options.internalCls || 'js-ed-form'}`);
 
-  forms.push(form);
+  forms.forEach((form) => {
+    let removeForm;
 
-  return form;
+    formInstances.forEach((formInstance) => {
+      if (formInstance.form === form) {
+        removeForm = form;
+      }
+    });
+
+    if (!removeForm) {
+      formInstances.push(new Form(Object.assign(options, {
+        formEl: form,
+      })));
+    }
+  });
+
+  return formInstances;
 }
 
-function uninit () {
-  for (let i = 0; i < forms.length; i++) {
-    forms[i].close();
+function uninit(instance) {
+  if (instance) {
+    instance.close();
+    formInstances.splice(formInstances.indexOf(instance), 1);
+  } else {
+    for (let i = 0; i < formInstances.length; i++) {
+      formInstances[i].close();
+    }
+
+    formInstances = [];
   }
 }
 
