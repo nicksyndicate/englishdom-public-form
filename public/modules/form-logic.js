@@ -42,7 +42,7 @@ class Form {
   setPhoneBlurEvent(el) {
     this.inputPhone = el.querySelector('.js-ed-form-tel-number');
 
-    this.inputPhone.addEventListener('blur', this.blurPhoneEvent.bind(this), false);
+    if (this.inputPhone) this.inputPhone.addEventListener('blur', this.blurPhoneEvent.bind(this), false);
   }
 
   blurPhoneEvent(event) {
@@ -305,13 +305,13 @@ class Form {
   hideErrors(form) {
     const inputs = form.querySelectorAll('input');
 
-    for (let i = 0; i < inputs.length; i = +1) {
+    for (let i = 0; i < inputs.length; i += 1) {
       inputs[i].classList.remove('is-error');
     }
 
     const errors = form.querySelectorAll('.js-error-field');
 
-    for (let i = 0; i < errors.length; i = +1) {
+    for (let i = 0; i < errors.length; i += 1) {
       errors[i].classList.remove('is-error');
       errors[i].innerHTML = '';
     }
@@ -337,8 +337,7 @@ class Form {
   }
 
   close() {
-    this.button.removeEventListener('click', this.buttonListener, false);
-    this.inputPhone.removeEventListener('click', this.buttonListener, false);
+    if (this.button) this.button.removeEventListener('click', this.buttonListener, false);
   }
 }
 
@@ -369,7 +368,7 @@ function uninit(instance) {
     instance.close();
     formInstances.splice(formInstances.indexOf(instance), 1);
   } else {
-    for (let i = 0; i < formInstances.length; i = +1) {
+    for (let i = 0; i < formInstances.length; i += 1) {
       formInstances[i].close();
     }
 

@@ -32,6 +32,7 @@
   </div>
   <button type="submit" class="js-ed-form-button">начать бесплатно</button>
 </form>
+<hr>
 <h2>Form2</h2><button class="uninit-form-2">UnInit</button>
 <form action="" method="POST" novalidate="" class="js-ed-form" data-additional-tag="any_tag_1 any_tag_2">
   <div>
@@ -57,7 +58,22 @@
   <button type="submit" class="js-ed-form-button">начать бесплатно</button>
 </form>
 <hr>
-<button class="init-forms">Init All</button><button class="uninit-forms">UnInit All</button>
+<h2>Form3</h2><button class="uninit-form-3">UnInit</button>
+<form action="" method="POST" novalidate="" class="js-ed-form" data-additional-tag="any_tag_1 any_tag_2">
+  <div>
+    <div class="">
+      <label for="form-email" class="">
+        <input id="form-email" type="email" name="email" class="js-email" placeholder="Email*" />
+        <p class="js-error-email"></p>
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="js-ed-form-button">начать бесплатно</button>
+</form>
+<hr>
+<button class="init-forms">Init All</button>
+<button class="init-forms2">Init All Free</button>
+<button class="uninit-forms">UnInit All</button>
   <div class="js-success-send-ed-form"></div>
 
   <script src="./public/bundles/js/form-logic.min.js"></script>
@@ -80,6 +96,20 @@
       });
     }
 
+    function initForms2() {
+      formsInstances = logicInit({
+        key: 'free',
+        internal: true,
+        registration: true,
+        phone: false,
+        firstName: false,
+        source: 'landing_b',
+        redirectToEd: false,
+        successSendText: 'optional text',
+        successRegSendCb: [],
+      });
+    }
+
     document.querySelector('.uninit-form-1').addEventListener('click', () => {
       logicUninit(formsInstances[2]);
     });
@@ -89,6 +119,10 @@
 
     document.querySelector('.init-forms').addEventListener('click', () => {
       initForms();
+    });
+
+    document.querySelector('.init-forms2').addEventListener('click', () => {
+      initForms2();
     });
     document.querySelector('.uninit-forms').addEventListener('click', () => {
       logicUninit();
