@@ -1,8 +1,8 @@
-module.exports = function(grunt) {
-  var fs = require('fs');
-  var webpack = require('webpack');
-  var CleanWebpackPlugin = require('clean-webpack-plugin');
-  var path = require('path');
+module.exports = function (grunt) {
+  const fs = require('fs');
+  const webpack = require('webpack');
+  const CleanWebpackPlugin = require('clean-webpack-plugin');
+  const path = require('path');
 
   return {
     form: {
@@ -30,19 +30,19 @@ module.exports = function(grunt) {
           minimize: false,
           sourceMap: false,
         }),
-        new webpack.optimize.OccurrenceOrderPlugin()
-       ],
+        new webpack.optimize.OccurrenceOrderPlugin(),
+      ],
 
       resolve: {
         modules: ['<%= project.modules %>', '<%= project.vendor %>'],
 
         alias: {
-          'logic': 'form-logic/form-logic',
-          'jquery': 'jquery/dist/jquery',
-          'underscore': 'underscore/underscore',
+          logic: 'form-logic/form-logic',
+          jquery: 'jquery/dist/jquery',
+          underscore: 'underscore/underscore',
           'input-tel': 'intl-tel-input/build/js/intlTelInput',
           'babel-polyfill': 'babel-polyfill/dist/polyfill',
-        }
+        },
       },
 
       module: {
@@ -54,14 +54,14 @@ module.exports = function(grunt) {
               loader: 'babel-loader',
               options: {
                 presets: [
-                  ['es2015', { 'modules': false }]
+                  ['es2015', { modules: false }],
                 ],
-                plugins: ['transform-object-rest-spread']
-              }
-            }
-          }
-        ]
-      }
-    }
+                plugins: ['transform-object-rest-spread'],
+              },
+            },
+          },
+        ],
+      },
+    },
   };
 };

@@ -4,10 +4,10 @@
 
 module.exports = {
   build: [
-    'webpack:form'
+    'webpack:form',
   ],
 
   install: [
-    'copy:js'
-  ]
+    'copy:js',
+  ],
 };
