@@ -3,26 +3,26 @@ function getRegistrationData(data) {
     attributes: {
       email: data.attributes.email,
       source: data.attributes.source,
-      timezone: new Date().getTimezoneOffset()
-    }
-  }
+      timezone: new Date().getTimezoneOffset(),
+    },
+  };
 }
 
 function getExternalData(opt, form) {
-  let email = form.querySelector('.js-email').value;
+  const email = form.querySelector('.js-email').value;
 
-  let data = {
+  const data = {
     attributes: {
       segment: opt.segment || 'individual',
       source: opt.source,
-      from_page: location.href,
-      email: email,
-      timezone: new Date().getTimezoneOffset()
-    }
+      from_page: window.location.href,
+      email,
+      timezone: new Date().getTimezoneOffset(),
+    },
   };
-  
+
   if (opt.firstName) {
-    let field = form.querySelector('.js-first_name');
+    const field = form.querySelector('.js-first_name');
     let name = field ? field.value : '';
 
     if (!name) {
@@ -40,33 +40,32 @@ function getExternalData(opt, form) {
       //
     }
 
-    data.attributes['first_name'] = name;
-    data.attributes['name'] = name;
-    
+    data.attributes.first_name = name;
+    data.attributes.name = name;
   }
 
   if (opt.phone) {
-    data.attributes['phone'] = form.querySelector('.js-phone').value;
+    data.attributes.phone = form.querySelector('.js-phone').value;
   }
 
   if (opt.from) {
-    data.attributes['from'] = opt.from;
+    data.attributes.from = opt.from;
   }
 
   if (opt.AMOCRMTagFormAttribute && form.getAttribute(opt.AMOCRMTagFormAttribute)) {
-    data.attributes['tags'] = form.getAttribute(opt.AMOCRMTagFormAttribute);
+    data.attributes.tags = form.getAttribute(opt.AMOCRMTagFormAttribute);
   }
 
   return data;
 }
 
 function afterErrorSend(response, form, cb) {
-  let errors = response.responseJSON ? response.responseJSON.errors.detail : {};
-  let parsedErrors = [];
+  const errors = response.responseJSON ? response.responseJSON.errors.detail : {};
+  const parsedErrors = [];
 
   if (errors) {
-    Object.keys(errors).map(function(error) {
-      Object.keys(errors[error]).map(function(type) {
+    Object.keys(errors).map((error) => {
+      Object.keys(errors[error]).map((type) => {
         parsedErrors.push({ name: error, text: errors[error][type] });
       });
     });
@@ -76,7 +75,7 @@ function afterErrorSend(response, form, cb) {
 }
 
 function getCookie(name) {
-  var match = document.cookie.match(name + '=[^; ]*');
+  const match = document.cookie.match(`${name}=[^; ]*`);
 
   if (match) return match[0].split('=')[1];
 
@@ -84,22 +83,22 @@ function getCookie(name) {
 }
 
 function setCookie(name, value) {
-  var cookies = document.cookie.split('; ');
-  var newCookie = name + '=' + value + ';path=/;';
+  const cookies = document.cookie.split('; ');
+  const newCookie = `${name}=${value};path=/;`;
 
-  var updatedCookies = [newCookie];
+  const updatedCookies = [newCookie];
 
-  for (var i = 0; i < cookies.length; i++) {
+  for (let i = 0; i < cookies.length; i++) {
     if (!cookies[i].match(name)) {
       updatedCookies.push(cookies[i]);
     }
   }
 
-  document.cookie = updatedCookies.join('; '); 
+  document.cookie = updatedCookies.join('; ');
 }
 
 function createUserId() {
-  let rand = function() {
+  const rand = function () {
     return Math.random().toString(36).substr(2);
   };
 
@@ -107,10 +106,10 @@ function createUserId() {
 }
 
 export default {
-  getRegistrationData: getRegistrationData,
-  getExternalData: getExternalData,
-  afterErrorSend: afterErrorSend,
-  getCookie: getCookie,
-  setCookie: setCookie,
-  createUserId: createUserId
-}
+  getRegistrationData,
+  getExternalData,
+  afterErrorSend,
+  getCookie,
+  setCookie,
+  createUserId,
+};

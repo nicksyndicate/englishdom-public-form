@@ -6,7 +6,6 @@ const intTelInput = require('./utils/intl-tel-input');
 let formInstances = [];
 
 class Form {
-
   constructor(options) {
     this.options = options;
     this.form = options.formEl;
@@ -17,9 +16,9 @@ class Form {
     }
 
     if (this.options.initFormCb) {
-      this.options.initFormCb.map(function(cb) {
+      this.options.initFormCb.map((cb) => {
         cb();
-      })
+      });
     }
 
     this.buttonListener = this.buttonListener.bind(this);
@@ -28,19 +27,19 @@ class Form {
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
   }
 
-  buttonListener (e) {
+  buttonListener(e) {
     e.preventDefault();
 
     this.setNextMethod(e);
   }
 
-  setButtons (el) {
+  setButtons(el) {
     this.button = el.querySelector('.js-ed-form-button');
 
     this.button.addEventListener('click', this.buttonListener, false);
   }
 
-  setPhoneBlurEvent (el) {
+  setPhoneBlurEvent(el) {
     this.inputPhone = el.querySelector('.js-ed-form-tel-number');
 
     this.inputPhone.addEventListener('blur', this.blurPhoneEvent.bind(this), false);
@@ -82,13 +81,15 @@ class Form {
     }
   }
 
-  setNextMethod (e) {
+  setNextMethod(e) {
     this.closestIEpolyfill(e.target);
 
-    let data = parsers.default.getExternalData(this.options, this.form);
+    const data = parsers.default.getExternalData(this.options, this.form);
 
     if (this.options.preReadRegFormCb) return this.getTokenForApp(data, this.form);
-    if (this.options.registration) return this.registration(parsers.default.getRegistrationData(data), this.form);
+    if (this.options.registration) {
+      return this.registration(parsers.default.getRegistrationData(data), this.form);
+    }
     if (this.options.internal) return this.readRegistration(data, this.form);
 
     if (e.target.classList.contains('is-disabled')) {
@@ -96,38 +97,39 @@ class Form {
     }
   }
 
-  registration (data, form) {
-    let _this = this;
+  registration(data, form) {
+    const _this = this;
 
     api.default.apiRegistration(
       data,
       this.options.internal,
       this.options.partnerTags,
       this.options.loadCb,
-      function(result, response) {
+      (result, response) => {
         if (result) {
           if (_this.options.successRegSendCb) {
-            _this.options.successRegSendCb.map(function(cb) {
+            _this.options.successRegSendCb.map((cb) => {
               cb(response);
-            })
+            });
           }
 
-          return _this.afterSuccessRegistration(data, form)
+          return _this.afterSuccessRegistration(data, form);
         }
 
-        return parsers.default.afterErrorSend(response, form, function(error, type, form) {
+        return parsers.default.afterErrorSend(response, form, (error, type, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
 
           return _this.showErrors(error, type, form);
         });
-      });
+      },
+    );
   }
 
-  getTokenForApp (data, form) {
-    let loginData = this.options.preReadRegFormCb();
-    let _this = this;
+  getTokenForApp(data, form) {
+    const loginData = this.options.preReadRegFormCb();
+    const _this = this;
 
     if (loginData) return this.sendApplication(data, form, loginData);
 
@@ -135,132 +137,131 @@ class Form {
       this.options.internal,
       this.options.partnerTags,
       this.options.loadCb,
-      function(apiData) {
+      (apiData) => {
         if (apiData.result) {
-          let token = apiData.response.meta.token;
+          const token = apiData.response.meta.token;
 
           if (_this.options.successRegSendCb) {
-            _this.options.successRegSendCb.map(function(cb) {
+            _this.options.successRegSendCb.map((cb) => {
               cb(apiData.response);
-            })
+            });
           }
 
           if (!_this.options.registration) {
             return _this.sendApplication(data, form, token);
-            
           }
         } else {
-          return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
+          return parsers.default.afterErrorSend(apiData.response, form, (error, type, form) => {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(apiData.response);
             }
 
             return _this.showErrors(error, type, form);
           });
-
         }
       });
   }
 
-  readRegistration (data, form) {
-    let _this = this;
+  readRegistration(data, form) {
+    const _this = this;
 
     api.default.apiReadRegistration(data,
       this.options.internal,
       this.options.partnerTags,
       this.options.loadCb,
-      function(apiData) {
+      (apiData) => {
         if (apiData.sendApp) {
-          let token = apiData.response.meta.token;
+          const token = apiData.response.meta.token;
 
           if (apiData.result || !_this.options.internal) {
             if (_this.options.successRegSendCb) {
-              _this.options.successRegSendCb.map(function(cb) {
+              _this.options.successRegSendCb.map((cb) => {
                 cb(apiData.response);
-              })
+              });
             }
 
             return _this.sendApplication(data, form, token);
-
-          } else {
-            let errorResponse = {
-              responseJSON: {
-                errors: {
-                  detail: {
-                    email: {
-                      recordFound: "Ваш email уже зарегистрирован"
-                    }
-                  }
-                }
-              }
-            };
-
-            _this.sendApplication(data, form, token);
-
-            return parsers.default.afterErrorSend(errorResponse, form, function(error, type, form) {
-              if (_this.options.errorRegSendCb) {
-                _this.options.errorRegSendCb(errorResponse);
-              }
-
-              return _this.showErrors(error, type, form);
-            });
-
           }
+          const errorResponse = {
+            responseJSON: {
+              errors: {
+                detail: {
+                  email: {
+                    recordFound: 'Ваш email уже зарегистрирован',
+                  },
+                },
+              },
+            },
+          };
 
-        } else {
-          return parsers.default.afterErrorSend(apiData.response, form, function(error, type, form) {
+          _this.sendApplication(data, form, token);
+
+          return parsers.default.afterErrorSend(errorResponse, form, (error, type, form) => {
             if (_this.options.errorRegSendCb) {
-              _this.options.errorRegSendCb(apiData.response);
+              _this.options.errorRegSendCb(errorResponse);
             }
 
             return _this.showErrors(error, type, form);
           });
-
         }
+        return parsers.default.afterErrorSend(apiData.response, form, (error, type, form) => {
+          if (_this.options.errorRegSendCb) {
+            _this.options.errorRegSendCb(apiData.response);
+          }
+
+          return _this.showErrors(error, type, form);
+        });
       });
   }
 
-  sendApplication (data, form, token) {
-    let _this = this;
+  sendApplication(data, form, token) {
+    const _this = this;
 
-    api.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function(result, response) {
-      if (result) {
-        if (_this.options.successAppSendCb) {
-          _this.options.successAppSendCb.map(function(cb) {
-            cb(response);
-          })
+    api.default.apiSendApplication(
+      data,
+      this.options.internal,
+      this.options.partnerTags,
+      token,
+      this.options.loadCb,
+      (result, response) => {
+        if (result) {
+          if (_this.options.successAppSendCb) {
+            _this.options.successAppSendCb.map((cb) => {
+              cb(response);
+            });
+          }
+
+          return _this.afterSuccessSend(response, form);
         }
 
-        return _this.afterSuccessSend(response, form);
-      }
+        return parsers.default.afterErrorSend(response, form, (error, type, form) => {
+          if (_this.options.errorRegSendCb) {
+            _this.options.errorRegSendCb(response);
+          }
 
-      return parsers.default.afterErrorSend(response, form, function(error, type, form) {
-        if (_this.options.errorRegSendCb) {
-          _this.options.errorRegSendCb(response);
-        }
-
-        return _this.showErrors(error, type, form);
-      });
-    });
+          return _this.showErrors(error, type, form);
+        });
+      },
+    );
   }
 
-  toRedirect () {
+  toRedirect() {
     if (this.options.redirectToEd) {
-      setTimeout(function() {
+      setTimeout(() => {
         window.location = 'https://englishdom.com/home/user/login';
       }, 4000);
     }
   }
 
-  afterSuccessRegistration (data, form) {
+  afterSuccessRegistration(data, form) {
     this.afterSuccessSend(data, form);
   }
 
-  afterSuccessSend (response, form) {
+  afterSuccessSend(response, form) {
     this.hideErrors(form);
 
     // TODO remove document.querySelector
-    let successSendBlock = document.querySelector('.js-success-send-ed-form');
+    const successSendBlock = document.querySelector('.js-success-send-ed-form');
 
     if (!form.classList.contains('is-success')) {
       form.classList.add('is-success');
@@ -273,71 +274,72 @@ class Form {
     this.toRedirect(response);
   }
 
-  setSuccessText (text, el) {
-    let successSendBlock = el.querySelector('.js-success-send-ed-form');
+  setSuccessText(text, el) {
+    const successSendBlock = el.querySelector('.js-success-send-ed-form');
 
     if (successSendBlock && text) {
       successSendBlock.innerHTML = text;
     }
   }
 
-  showErrors (errors, parent) {
+  showErrors(errors, parent) {
     this.hideErrors(parent);
 
     errors.forEach((error) => {
-      let errorInput = parent.querySelector('.js-' + error.name);
+      const errorInput = parent.querySelector(`.js-${error.name}`);
 
       if (errorInput && !errorInput.classList.contains('is-error')) {
         errorInput.classList.add('is-error');
       }
 
-      let errorField = parent.querySelector('.js-error-' + error.name);
+      const errorField = parent.querySelector(`.js-error-${error.name}`);
 
       if (errorField && !errorField.classList.contains('is-error')) {
         errorField.classList.add('is-error');
       }
 
       if (errorField) errorField.innerHTML = error.text;
-    })
+    });
   }
 
-  hideErrors (form) {
-    let inputs = form.querySelectorAll('input');
+  hideErrors(form) {
+    const inputs = form.querySelectorAll('input');
 
-    for (let i=0; i < inputs.length; i++) {
+    for (let i = 0; i < inputs.length; i = +1) {
       inputs[i].classList.remove('is-error');
     }
 
-    let errors = form.querySelectorAll('.js-error-field');
+    const errors = form.querySelectorAll('.js-error-field');
 
-    for (let i=0; i < errors.length; i++) {
+    for (let i = 0; i < errors.length; i = +1) {
       errors[i].classList.remove('is-error');
       errors[i].innerHTML = '';
     }
   }
 
-  closestIEpolyfill (Element) {
+  closestIEpolyfill(Element) {
     if (!Element.__proto__.closest) {
-
-      Element.__proto__.closest = function(css) {
+      Element.__proto__.closest = (css) => {
         let node = this;
 
         while (node) {
-          node.matches = node.matches || node.webkitMatchesSelector || node.msMatchesSelector || node.mozMatchesSelector;
+          node.matches = node.matches
+            || node.webkitMatchesSelector
+            || node.msMatchesSelector
+            || node.mozMatchesSelector;
 
           if (node.matches(css)) return node;
-          else node = node.parentElement;
+          node = node.parentElement;
         }
         return null;
       };
     }
   }
 
-  close () {
+  close() {
     this.button.removeEventListener('click', this.buttonListener, false);
     this.inputPhone.removeEventListener('click', this.buttonListener, false);
   }
-
 }
 
 function init(options) {
@@ -367,7 +369,7 @@ function uninit(instance) {
     instance.close();
     formInstances.splice(formInstances.indexOf(instance), 1);
   } else {
-    for (let i = 0; i < formInstances.length; i++) {
+    for (let i = 0; i < formInstances.length; i = +1) {
       formInstances[i].close();
     }
 
@@ -375,7 +377,7 @@ function uninit(instance) {
   }
 }
 
-module.exports = { init: init, uninit: uninit };
+module.exports = { init, uninit };
 
 window.logicInit = init;
 window.logicUninit = uninit;
