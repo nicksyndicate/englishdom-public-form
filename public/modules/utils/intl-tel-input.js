@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import 'input-tel';
 
-function init() {
-  const $input = $('.js-ed-form-tel-number');
+function init(el) {
+  const $input = $(el).find('.js-ed-form-tel-number');
 
   return setIntlTel($input);
 }
