@@ -11,7 +11,7 @@ class Form {
     this.form = options.formEl;
 
     if (this.options.phone) {
-      this.$iti = intTelInput.default();
+      this.$iti = intTelInput.default(this.form);
       if (this.form) this.setPhoneBlurEvent(this.form);
     }
 
