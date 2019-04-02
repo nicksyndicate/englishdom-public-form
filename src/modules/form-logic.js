@@ -15,7 +15,7 @@ class Form {
     this.form = options.formEl;
 
     if (this.options.phone) {
-      this.$iti = intTelInput.default(this.form);
+      this.$iti = intTelInput(this.form);
       if (this.form) this.setPhoneBlurEvent(this.form);
     }
 
@@ -40,7 +40,7 @@ class Form {
   setButtons(el) {
     this.button = el.querySelector('.js-ed-form-button');
 
-    if(this.button) {
+    if(!el.querySelector('.js-ed-form-button')) {
       console.error(formMurkupError('.js-ed-form-button'));
     }
 
@@ -384,7 +384,7 @@ function uninit(instance) {
   }
 }
 
-export default { init, uninit };
+module.exports = { init, uninit };
 
 window.logicInit = init;
 window.logicUninit = uninit;

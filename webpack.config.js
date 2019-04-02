@@ -30,17 +30,11 @@ module.exports = {
     })],
   },
 
-  /*resolve: {
-    modules: ['<%= project.modules %>', '<%= project.vendor %>'],
-
+  resolve: {
     alias: {
-      logic: vendorsPath('form-logic/form-logic'),
-      jquery: vendorsPath('jquery/dist/jquery'),
-      underscore: vendorsPath('underscore/underscore'),
       'input-tel': vendorsPath('intl-tel-input/build/js/intlTelInput'),
-      'babel-polyfill': vendorsPath('babel-polyfill/dist/polyfill'),
     },
-  },*/
+  },
 
   module: {
     rules: [

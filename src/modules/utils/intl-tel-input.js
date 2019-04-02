@@ -1,5 +1,5 @@
 import $ from 'jquery';
-// import 'input-tel';
+import 'input-tel';
 
 function init(el) {
   const $input = $(el).find('.js-ed-form-tel-number');
