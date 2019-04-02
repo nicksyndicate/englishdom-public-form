@@ -1,9 +1,13 @@
-const $ = require('jquery');
-const api = require('./utils/form-api');
-const parsers = require('./utils/form-parsers');
-const intTelInput = require('./utils/intl-tel-input');
+import $ from 'jquery';
+import api from './utils/form-api';
+import parsers from './utils/form-parsers';
+import intTelInput from './utils/intl-tel-input';
 
 let formInstances = [];
+
+const formMurkupError = (elSelector) =>
+  `Element with selector ${elSelector} not found in englishdom-form murkup. Please check that you have correctly copied
+  form murkup to your page.`;
 
 class Form {
   constructor(options) {
@@ -35,6 +39,10 @@ class Form {
 
   setButtons(el) {
     this.button = el.querySelector('.js-ed-form-button');
+
+    if(this.button) {
+      console.error(formMurkupError('.js-ed-form-button'));
+    }
 
     this.button.addEventListener('click', this.buttonListener, false);
   }
@@ -376,7 +384,7 @@ function uninit(instance) {
   }
 }
 
-module.exports = { init, uninit };
+export default { init, uninit };
 
 window.logicInit = init;
 window.logicUninit = uninit;
