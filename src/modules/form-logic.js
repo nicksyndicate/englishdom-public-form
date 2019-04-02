@@ -29,6 +29,26 @@ class Form {
 
     if (this.form) this.setButtons(this.form);
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
+
+    this.checkMurkup();
+  }
+
+  checkMurkup() {
+    if(!document.querySelector('.js-ed-form-button')) {
+      console.log(formMurkupError('.js-ed-form-button'));
+    }
+
+    if(!document.querySelector('.js-ed-form-tel-number')) {
+      console.log(formMurkupError('.js-ed-form-tel-number'));
+    }
+
+    if(!document.querySelector('.js-success-send-ed-form')) {
+      console.log(formMurkupError('.js-success-send-ed-form'));
+    }
+
+    if(!document.querySelector('.js-error-field')) {
+      console.log(formMurkupError('.js-error-field'));
+    }
   }
 
   buttonListener(e) {
@@ -39,10 +59,6 @@ class Form {
 
   setButtons(el) {
     this.button = el.querySelector('.js-ed-form-button');
-
-    if(!el.querySelector('.js-ed-form-button')) {
-      console.error(formMurkupError('.js-ed-form-button'));
-    }
 
     this.button.addEventListener('click', this.buttonListener, false);
   }
