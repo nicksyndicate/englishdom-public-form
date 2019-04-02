@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const vendorsPath = (plugin) => path.resolve(__dirname, `./public/vendor-js/${plugin}`);
+const vendorsPath = (plugin) => path.join(__dirname, `./public/vendor-js/${plugin}`);
 
 module.exports = {
   devtool: 'source-map',
@@ -30,8 +30,8 @@ module.exports = {
     })],
   },
 
-  resolve: {
-    // modules: ['<%= project.modules %>', '<%= project.vendor %>'],
+  /*resolve: {
+    modules: ['<%= project.modules %>', '<%= project.vendor %>'],
 
     alias: {
       logic: vendorsPath('form-logic/form-logic'),
@@ -40,7 +40,7 @@ module.exports = {
       'input-tel': vendorsPath('intl-tel-input/build/js/intlTelInput'),
       'babel-polyfill': vendorsPath('babel-polyfill/dist/polyfill'),
     },
-  },
+  },*/
 
   module: {
     rules: [
