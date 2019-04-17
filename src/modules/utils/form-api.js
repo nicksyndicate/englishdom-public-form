@@ -1,6 +1,7 @@
 import $ from 'jquery';
-import _ from 'underscore';
+import _ from 'lodash';
 import parsers from './form-parsers';
+import refreshToken from './refresh-token';
 
 function getUrl(isInternal) {
   return isInternal ? '' : 'https://englishdom.com';
@@ -50,31 +51,33 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
     data,
   };
 
-  $.ajax({
-    type: 'POST',
-    url: `${getUrl(internal)}/api-public/user/registration${utm}`,
-    dataType: 'json',
-    timeout: 40000,
-    contentType: 'application/vnd.api+json',
-    data: JSON.stringify(sendData),
-    headers: {
-      'X-Client-Id': getClientId(),
-    },
-    beforeSend() {
-      if (loadCb) loadCb.start();
-    },
+  refreshToken().then((header) => {
+    $.ajax({
+      type: 'POST',
+      url: `${getUrl(internal)}/api-public/user/registration${utm}`,
+      dataType: 'json',
+      timeout: 40000,
+      contentType: 'application/vnd.api+json',
+      data: JSON.stringify(sendData),
+      headers: Object.assign({
+        'X-Client-Id': getClientId(),
+      }, header),
+      beforeSend() {
+        if (loadCb) loadCb.start();
+      },
 
-    success(response) {
-      parsers.setCookie('jwt', response.meta.token);
+      success(response) {
+        parsers.setCookie('jwt', response.meta.token);
 
-      cb(true, response);
-    },
-    error(response) {
-      cb(false, response);
-    },
-    complete() {
-      if (loadCb) loadCb.end();
-    },
+        cb(true, response);
+      },
+      error(response) {
+        cb(false, response);
+      },
+      complete() {
+        if (loadCb) loadCb.end();
+      },
+    });
   });
 }
 
@@ -86,29 +89,31 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
     data,
   };
 
-  $.ajax({
-    type: 'POST',
-    url: `${getUrl(internal)}/api-public/user/read-registration${utm}`,
-    dataType: 'json',
-    timeout: 40000,
-    contentType: 'application/vnd.api+json',
-    data: JSON.stringify(sendData),
-    headers: {
-      'X-Client-Id': getClientId(),
-    },
-    beforeSend() {
-      if (loadCb) loadCb.start();
-    },
-    success(response) {
-      cb({ result: true, response });
+  refreshToken().then((header) => {
+    $.ajax({
+      type: 'POST',
+      url: `${getUrl(internal)}/api-public/user/read-registration${utm}`,
+      dataType: 'json',
+      timeout: 40000,
+      contentType: 'application/vnd.api+json',
+      data: JSON.stringify(sendData),
+      headers: Object.assign({
+        'X-Client-Id': getClientId(),
+      }, header),
+      beforeSend() {
+        if (loadCb) loadCb.start();
+      },
+      success(response) {
+        cb({ result: true, response });
 
-      if (loadCb) loadCb.end();
-    },
-    error(response) {
-      cb({ result: false, response });
+        if (loadCb) loadCb.end();
+      },
+      error(response) {
+        cb({ result: false, response });
 
-      if (loadCb) loadCb.end();
-    },
+        if (loadCb) loadCb.end();
+      },
+    });
   });
 }
 
@@ -120,34 +125,36 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
     data,
   };
 
-  $.ajax({
-    type: 'POST',
-    url: `${getUrl(internal)}/api-public/user/read-registration${utm}`,
-    dataType: 'json',
-    timeout: 40000,
-    contentType: 'application/vnd.api+json',
-    data: JSON.stringify(sendData),
-    headers: {
-      'X-Client-Id': getClientId(),
-    },
-    statusCode: {
-      200(response) {
-        cb({ result: false, response, sendApp: true });
+  refreshToken().then((header) => {
+    $.ajax({
+      type: 'POST',
+      url: `${getUrl(internal)}/api-public/user/read-registration${utm}`,
+      dataType: 'json',
+      timeout: 40000,
+      contentType: 'application/vnd.api+json',
+      data: JSON.stringify(sendData),
+      headers: Object.assign({
+        'X-Client-Id': getClientId(),
+      }, header),
+      statusCode: {
+        200(response) {
+          cb({ result: false, response, sendApp: true });
+        },
+        201(response) {
+          cb({ result: true, response, sendApp: true });
+
+          if (loadCb) loadCb.end();
+        },
       },
-      201(response) {
-        cb({ result: true, response, sendApp: true });
+      beforeSend() {
+        if (loadCb) loadCb.start();
+      },
+      error(response) {
+        cb({ result: false, response, sendApp: false });
 
         if (loadCb) loadCb.end();
       },
-    },
-    beforeSend() {
-      if (loadCb) loadCb.start();
-    },
-    error(response) {
-      cb({ result: false, response, sendApp: false });
-
-      if (loadCb) loadCb.end();
-    },
+    });
   });
 }
 
