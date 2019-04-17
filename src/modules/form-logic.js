@@ -108,11 +108,11 @@ class Form {
   setNextMethod(e) {
     this.closestIEpolyfill(e.target);
 
-    const data = parsers.default.getExternalData(this.options, this.form);
+    const data = parsers.getExternalData(this.options, this.form);
 
     if (this.options.preReadRegFormCb) return this.getTokenForApp(data, this.form);
     if (this.options.registration) {
-      return this.registration(parsers.default.getRegistrationData(data), this.form);
+      return this.registration(parsers.getRegistrationData(data), this.form);
     }
     if (this.options.internal) return this.readRegistration(data, this.form);
 
@@ -124,7 +124,7 @@ class Form {
   registration(data, form) {
     const _this = this;
 
-    api.default.apiRegistration(
+    api.apiRegistration(
       data,
       this.options.internal,
       this.options.partnerTags,
@@ -140,7 +140,7 @@ class Form {
           return _this.afterSuccessRegistration(data, form);
         }
 
-        return parsers.default.afterErrorSend(response, form, (error, type, form) => {
+        return parsers.afterErrorSend(response, form, (error, type, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
@@ -157,7 +157,7 @@ class Form {
 
     if (loginData) return this.sendApplication(data, form, loginData);
 
-    api.default.apiGetToken(data,
+    api.apiGetToken(data,
       this.options.internal,
       this.options.partnerTags,
       this.options.loadCb,
@@ -175,7 +175,7 @@ class Form {
             return _this.sendApplication(data, form, token);
           }
         } else {
-          return parsers.default.afterErrorSend(apiData.response, form, (error, type, form) => {
+          return parsers.afterErrorSend(apiData.response, form, (error, type, form) => {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(apiData.response);
             }
@@ -189,7 +189,7 @@ class Form {
   readRegistration(data, form) {
     const _this = this;
 
-    api.default.apiReadRegistration(data,
+    api.apiReadRegistration(data,
       this.options.internal,
       this.options.partnerTags,
       this.options.loadCb,
@@ -220,7 +220,7 @@ class Form {
 
           _this.sendApplication(data, form, token);
 
-          return parsers.default.afterErrorSend(errorResponse, form, (error, type, form) => {
+          return parsers.afterErrorSend(errorResponse, form, (error, type, form) => {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(errorResponse);
             }
@@ -228,7 +228,7 @@ class Form {
             return _this.showErrors(error, type, form);
           });
         }
-        return parsers.default.afterErrorSend(apiData.response, form, (error, type, form) => {
+        return parsers.afterErrorSend(apiData.response, form, (error, type, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(apiData.response);
           }
@@ -241,7 +241,7 @@ class Form {
   sendApplication(data, form, token) {
     const _this = this;
 
-    api.default.apiSendApplication(
+    api.apiSendApplication(
       data,
       this.options.internal,
       this.options.partnerTags,
@@ -258,7 +258,7 @@ class Form {
           return _this.afterSuccessSend(response, form);
         }
 
-        return parsers.default.afterErrorSend(response, form, (error, type, form) => {
+        return parsers.afterErrorSend(response, form, (error, type, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
