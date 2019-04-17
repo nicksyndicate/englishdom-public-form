@@ -1,9 +1,13 @@
-const $ = require('jquery');
-const api = require('./utils/form-api');
-const parsers = require('./utils/form-parsers');
-const intTelInput = require('./utils/intl-tel-input');
+import $ from 'jquery';
+import api from './utils/form-api';
+import parsers from './utils/form-parsers';
+import intTelInput from './utils/intl-tel-input';
 
 let formInstances = [];
+
+const formMurkupError = (elSelector) =>
+  `Element with selector ${elSelector} not found in englishdom-form murkup. Please check that you have correctly copied
+  form murkup to your page.`;
 
 class Form {
   constructor(options) {
@@ -11,7 +15,7 @@ class Form {
     this.form = options.formEl;
 
     if (this.options.phone) {
-      this.$iti = intTelInput.default(this.form);
+      this.$iti = intTelInput(this.form);
       if (this.form) this.setPhoneBlurEvent(this.form);
     }
 
@@ -25,6 +29,26 @@ class Form {
 
     if (this.form) this.setButtons(this.form);
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
+
+    this.checkMurkup();
+  }
+
+  checkMurkup() {
+    if(!document.querySelector('.js-ed-form-button')) {
+      console.log(formMurkupError('.js-ed-form-button'));
+    }
+
+    if(!document.querySelector('.js-ed-form-tel-number')) {
+      console.log(formMurkupError('.js-ed-form-tel-number'));
+    }
+
+    if(!document.querySelector('.js-success-send-ed-form')) {
+      console.log(formMurkupError('.js-success-send-ed-form'));
+    }
+
+    if(!document.querySelector('.js-error-field')) {
+      console.log(formMurkupError('.js-error-field'));
+    }
   }
 
   buttonListener(e) {
