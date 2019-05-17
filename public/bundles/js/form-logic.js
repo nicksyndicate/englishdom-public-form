@@ -27824,13 +27824,14 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
     timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
-    headers: {
+    headers: (0, _extends2.default)({
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
-      Authorization1: "Bearer ".concat(token),
       'X-Client-Id': getClientId()
-    },
+    }, token ? {
+      Authorization1: "Bearer ".concat(token)
+    } : {}),
     beforeSend: function beforeSend() {
       if (loadCb) loadCb.start();
     },

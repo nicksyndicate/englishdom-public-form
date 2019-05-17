@@ -174,13 +174,14 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
     timeout: 40000,
     contentType: 'application/vnd.api+json',
     data: JSON.stringify(sendData),
-    headers: {
+    headers: Object.assign({
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
-      Authorization1: `Bearer ${token}`,
       'X-Client-Id': getClientId(),
-    },
+    }, token ? {
+      Authorization1: `Bearer ${token}`,
+    } : {}),
     beforeSend() {
       if (loadCb) loadCb.start();
     },
