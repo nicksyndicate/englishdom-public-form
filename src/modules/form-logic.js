@@ -101,6 +101,15 @@ class Form {
 
         // block btn
         this.button.classList.add('is-disabled');
+
+        if (this.options.errorPhoneEvent) {
+          this.options.errorPhoneEvent({
+            number: this.$iti.intlTelInput('getNumber'),
+            error: errorMap[this.$iti.intlTelInput('getValidationError')],
+            country: this.$iti.intlTelInput('getSelectedCountryData').iso2,
+            page: window.location.origin + window.location.pathname,
+          });
+        }
       }
     }
   }

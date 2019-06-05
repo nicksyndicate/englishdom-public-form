@@ -146,6 +146,7 @@ successRegSendCb | array | undefined | callbacks array, которые вызы�
 successAppSendCb | array | undefined | callbacks array, которые вызываются после успешной отправки формы подачи заявки
 errorRegSendCb | function | undefined | callback, который вызывается при ошибке регистрации на сайте englishdom
 AMOCRMTagFormAttribute | string | undefined | название атрибута, если указан то из этого атрибута возьмется строка и отправиться в АМО где вставиться как тег к сделке
+errorPhoneEvent | function | undefined | callback, который вызывается при ошибке ввода не верного телефона с параметрами {number: string; error: string; country: string, page: string}
 
 ClassName | Tag/Default ClassName | Default | Description
 ------ | ---- | ------- | -----------
