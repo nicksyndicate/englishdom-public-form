@@ -27198,7 +27198,6 @@ var _formParsers = _interopRequireDefault(__webpack_require__(4));
 var _intlTelInput = _interopRequireDefault(__webpack_require__(14));
 
 var formInstances = [];
-alert(111222);
 
 var formMurkupError = function formMurkupError(elSelector) {
   return "Element with selector ".concat(elSelector, " not found in englishdom-form murkup. Please check that you have correctly copied\n  form murkup to your page.");
