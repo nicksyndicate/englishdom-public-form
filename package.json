@@ -1,6 +1,6 @@
 {
   "name": "englishdom-form",
-  "version": "0.4.62",
+  "version": "0.4.63",
   "description": "englishdom form api for external includes",
   "main": "index.js",
   "dependencies": {
@@ -39,6 +39,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
+    "build-profile": "webpack --profile --json > webpack-stats.json",
     "dev": "webpack-dev-server"
   },
   "author": "englishdom",
