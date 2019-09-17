@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import md5 from 'blueimp-md5/js/md5';
-import _ from 'lodash';
+import _get from 'lodash/get';
 
 const k = s => s.split('').map(c => String.fromCharCode(c.charCodeAt() - 1)).join('');
 
@@ -12,7 +12,7 @@ export default function () {
       success: (response) => {
         resolve({
           [k('Y.DTSG.Uplfo')]: md5(
-            `${_.get(response, k('ebub/buusjcvuft/ydtsg'))}${k('wXbwV2MRTCFsFxxPc59p5:Iv{LZ:HOmq')}`,
+            `${_get(response, k('ebub/buusjcvuft/ydtsg'))}${k('wXbwV2MRTCFsFxxPc59p5:Iv{LZ:HOmq')}`,
           ),
         });
       },

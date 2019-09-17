@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import api from './utils/form-api';
 import parsers from './utils/form-parsers';
 import intTelInput from './utils/intl-tel-input';
