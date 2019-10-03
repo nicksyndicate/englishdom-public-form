@@ -10353,10 +10353,12 @@ function () {
     (0, _classCallCheck2.default)(this, Form);
     this.options = options;
     this.form = options.formEl;
+    this.buttonListener = this.buttonListener.bind(this);
+    this.hideErrorByInput = this.hideErrorByInput.bind(this);
 
     if (this.options.phone) {
       this.$iti = (0, _intlTelInput.default)(this.form);
-      if (this.form) this.setPhoneBlurEvent(this.form);
+      if (this.form) this.setFormInputsEvent(this.form);
     }
 
     if (this.options.initFormCb) {
@@ -10365,7 +10367,6 @@ function () {
       });
     }
 
-    this.buttonListener = this.buttonListener.bind(this);
     if (this.form) this.setButtons(this.form);
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
     this.checkMurkup();
@@ -10403,10 +10404,9 @@ function () {
       this.button.addEventListener('click', this.buttonListener, false);
     }
   }, {
-    key: "setPhoneBlurEvent",
-    value: function setPhoneBlurEvent(el) {
-      this.inputPhone = el.querySelector('.js-ed-form-tel-number');
-      if (this.inputPhone) this.inputPhone.addEventListener('blur', this.blurPhoneEvent.bind(this), false);
+    key: "setFormInputsEvent",
+    value: function setFormInputsEvent(form) {
+      form.addEventListener('keyup', this.hideErrorByInput);
     }
   }, {
     key: "blurPhoneEvent",
@@ -10415,22 +10415,21 @@ function () {
       this.checkValidity();
     }
   }, {
+    key: "isPhoneInvalid",
+    value: function isPhoneInvalid() {
+      return !this.$iti.intlTelInput('isValidNumber');
+    }
+  }, {
     key: "checkValidity",
-    value: function checkValidity() {
+    value: function checkValidity(parent) {
       var errorMap = ['Неправильный номер', 'Такого кода страны не существует', 'Номер слишком короткий', 'Номер слишком длинный', 'Неправильный номер'];
 
       if (this.$iti) {
-        this.hideErrors(this.form); // reset block btn
-
-        this.button.classList.remove('is-disabled');
-
-        if (!this.$iti.intlTelInput('isValidNumber')) {
+        if (this.isPhoneInvalid()) {
           this.showErrors([{
             text: errorMap[this.$iti.intlTelInput('getValidationError')],
             name: 'phone'
-          }], this.form); // block btn
-
-          this.button.classList.add('is-disabled');
+          }], parent, this.form, false);
 
           if (this.options.errorPhoneEvent) {
             this.options.errorPhoneEvent({
@@ -10478,12 +10477,12 @@ function () {
           return _this.afterSuccessRegistration(data, form);
         }
 
-        return _formParsers.default.afterErrorSend(response, form, function (error, type, form) {
+        return _formParsers.default.afterErrorSend(response, form, function (error, parent, form) {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
 
-          return _this.showErrors(error, type, form);
+          return _this.showErrors(error, parent, form);
         });
       });
     }
@@ -10510,12 +10509,14 @@ function () {
             return _this.sendApplication(data, form, token);
           }
         } else {
-          return _formParsers.default.afterErrorSend(apiData.response, form, function (error, type, form) {
+          return _formParsers.default.afterErrorSend(apiData.response, form, function (error, parent, form) {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(apiData.response);
             }
 
-            return _this.showErrors(error, type, form);
+            _this.showErrors(error, parent, form);
+
+            _this.checkValidity(parent);
           });
         }
       });
@@ -10553,28 +10554,31 @@ function () {
 
           _this.sendApplication(data, form, token);
 
-          return _formParsers.default.afterErrorSend(errorResponse, form, function (error, type, form) {
+          return _formParsers.default.afterErrorSend(errorResponse, form, function (error, parent, form) {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(errorResponse);
             }
 
-            return _this.showErrors(error, type, form);
+            return _this.showErrors(error, parent, form);
           });
         }
 
-        return _formParsers.default.afterErrorSend(apiData.response, form, function (error, type, form) {
+        return _formParsers.default.afterErrorSend(apiData.response, form, function (error, parent, form) {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(apiData.response);
           }
 
-          return _this.showErrors(error, type, form);
+          return _this.showErrors(error, parent, form);
         });
       });
     }
   }, {
     key: "sendApplication",
     value: function sendApplication(data, form, token) {
-      var _this = this;
+      var _this = this; // reset phone send to backend because front validation doesnt pass
+
+
+      if (_this.isPhoneInvalid()) data.phone = '';
 
       _formApi.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function (result, response) {
         if (result) {
@@ -10587,12 +10591,12 @@ function () {
           return _this.afterSuccessSend(response, form);
         }
 
-        return _formParsers.default.afterErrorSend(response, form, function (error, type, form) {
+        return _formParsers.default.afterErrorSend(response, form, function (error, parent, form) {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
 
-          return _this.showErrors(error, type, form);
+          return _this.showErrors(error, parent, form);
         });
       });
     }
@@ -10638,8 +10642,9 @@ function () {
     }
   }, {
     key: "showErrors",
-    value: function showErrors(errors, parent) {
-      this.hideErrors(parent);
+    value: function showErrors(errors, parent, form) {
+      var isHideErrors = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+      if (isHideErrors) this.hideErrors(parent);
       errors.forEach(function (error) {
         var errorInput = parent.querySelector(".js-".concat(error.name));
 
@@ -10655,6 +10660,7 @@ function () {
 
         if (errorField) errorField.innerHTML = error.text;
       });
+      if (errors.length) this.button.classList.add('is-disabled');
     }
   }, {
     key: "hideErrors",
@@ -10672,6 +10678,39 @@ function () {
 
         errors[_i].innerHTML = '';
       }
+
+      this.button.classList.remove('is-disabled');
+    }
+  }, {
+    key: "hideError",
+    value: function hideError(input) {
+      var errorTextEls = input.parentElement.parentElement.querySelector('.js-error-field');
+      input.classList.remove('is-error');
+
+      if (errorTextEls) {
+        errorTextEls.classList.remove('is-error');
+        errorTextEls.innerHTML = '';
+      }
+    }
+  }, {
+    key: "isValidForm",
+    value: function isValidForm(form) {
+      var ifValidForm = true;
+      var inputs = form.querySelectorAll('input');
+
+      for (var i = 0; i < inputs.length; i += 1) {
+        if (inputs[i].classList.contains('is-error')) {
+          ifValidForm = false;
+        }
+      }
+
+      return ifValidForm;
+    }
+  }, {
+    key: "hideErrorByInput",
+    value: function hideErrorByInput(event) {
+      this.hideError(event.target);
+      if (this.isValidForm(this.form)) this.button.classList.remove('is-disabled');
     }
   }, {
     key: "closestIEpolyfill",
@@ -10696,6 +10735,7 @@ function () {
     key: "close",
     value: function close() {
       if (this.button) this.button.removeEventListener('click', this.buttonListener, false);
+      if (this.form) this.form.removeEventListener('click', this.hideErrorByInput);
     }
   }]);
   return Form;

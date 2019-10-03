@@ -13,9 +13,12 @@ class Form {
     this.options = options;
     this.form = options.formEl;
 
+    this.buttonListener = this.buttonListener.bind(this);
+    this.hideErrorByInput = this.hideErrorByInput.bind(this);
+
     if (this.options.phone) {
       this.$iti = intTelInput(this.form);
-      if (this.form) this.setPhoneBlurEvent(this.form);
+      if (this.form) this.setFormInputsEvent(this.form);
     }
 
     if (this.options.initFormCb) {
@@ -23,8 +26,6 @@ class Form {
         cb();
       });
     }
-
-    this.buttonListener = this.buttonListener.bind(this);
 
     if (this.form) this.setButtons(this.form);
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
@@ -62,10 +63,8 @@ class Form {
     this.button.addEventListener('click', this.buttonListener, false);
   }
 
-  setPhoneBlurEvent(el) {
-    this.inputPhone = el.querySelector('.js-ed-form-tel-number');
-
-    if (this.inputPhone) this.inputPhone.addEventListener('blur', this.blurPhoneEvent.bind(this), false);
+  setFormInputsEvent(form) {
+    form.addEventListener('keyup', this.hideErrorByInput);
   }
 
   blurPhoneEvent(event) {
@@ -74,7 +73,11 @@ class Form {
     this.checkValidity();
   }
 
-  checkValidity() {
+  isPhoneInvalid() {
+    return !this.$iti.intlTelInput('isValidNumber');
+  }
+
+  checkValidity(parent) {
     const errorMap = [
       'Неправильный номер',
       'Такого кода страны не существует',
@@ -84,22 +87,16 @@ class Form {
     ];
 
     if (this.$iti) {
-      this.hideErrors(this.form);
-
-      // reset block btn
-      this.button.classList.remove('is-disabled');
-
-      if (!this.$iti.intlTelInput('isValidNumber')) {
+      if (this.isPhoneInvalid()) {
         this.showErrors(
           [{
             text: errorMap[this.$iti.intlTelInput('getValidationError')],
             name: 'phone',
           }],
+          parent,
           this.form,
+          false,
         );
-
-        // block btn
-        this.button.classList.add('is-disabled');
 
         if (this.options.errorPhoneEvent) {
           this.options.errorPhoneEvent({
@@ -148,12 +145,12 @@ class Form {
           return _this.afterSuccessRegistration(data, form);
         }
 
-        return parsers.afterErrorSend(response, form, (error, type, form) => {
+        return parsers.afterErrorSend(response, form, (error, parent, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
 
-          return _this.showErrors(error, type, form);
+          return _this.showErrors(error, parent, form);
         });
       },
     );
@@ -183,12 +180,14 @@ class Form {
             return _this.sendApplication(data, form, token);
           }
         } else {
-          return parsers.afterErrorSend(apiData.response, form, (error, type, form) => {
+          return parsers.afterErrorSend(apiData.response, form, (error, parent, form) => {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(apiData.response);
             }
 
-            return _this.showErrors(error, type, form);
+            _this.showErrors(error, parent, form);
+
+            _this.checkValidity(parent);
           });
         }
       });
@@ -228,26 +227,29 @@ class Form {
 
           _this.sendApplication(data, form, token);
 
-          return parsers.afterErrorSend(errorResponse, form, (error, type, form) => {
+          return parsers.afterErrorSend(errorResponse, form, (error, parent, form) => {
             if (_this.options.errorRegSendCb) {
               _this.options.errorRegSendCb(errorResponse);
             }
 
-            return _this.showErrors(error, type, form);
+            return _this.showErrors(error, parent, form);
           });
         }
-        return parsers.afterErrorSend(apiData.response, form, (error, type, form) => {
+        return parsers.afterErrorSend(apiData.response, form, (error, parent, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(apiData.response);
           }
 
-          return _this.showErrors(error, type, form);
+          return _this.showErrors(error, parent, form);
         });
       });
   }
 
   sendApplication(data, form, token) {
     const _this = this;
+
+    // reset phone send to backend because front validation doesnt pass
+    if (_this.isPhoneInvalid()) data.phone = '';
 
     api.apiSendApplication(
       data,
@@ -266,12 +268,12 @@ class Form {
           return _this.afterSuccessSend(response, form);
         }
 
-        return parsers.afterErrorSend(response, form, (error, type, form) => {
+        return parsers.afterErrorSend(response, form, (error, parent, form) => {
           if (_this.options.errorRegSendCb) {
             _this.options.errorRegSendCb(response);
           }
 
-          return _this.showErrors(error, type, form);
+          return _this.showErrors(error, parent, form);
         });
       },
     );
@@ -314,8 +316,8 @@ class Form {
     }
   }
 
-  showErrors(errors, parent) {
-    this.hideErrors(parent);
+  showErrors(errors, parent, form, isHideErrors = true) {
+    if (isHideErrors) this.hideErrors(parent);
 
     errors.forEach((error) => {
       const errorInput = parent.querySelector(`.js-${error.name}`);
@@ -332,6 +334,8 @@ class Form {
 
       if (errorField) errorField.innerHTML = error.text;
     });
+
+    if (errors.length) this.button.classList.add('is-disabled');
   }
 
   hideErrors(form) {
@@ -347,6 +351,38 @@ class Form {
       errors[i].classList.remove('is-error');
       errors[i].innerHTML = '';
     }
+
+    this.button.classList.remove('is-disabled');
+  }
+
+  hideError(input) {
+    const errorTextEls = input.parentElement.parentElement.querySelector('.js-error-field');
+
+    input.classList.remove('is-error');
+
+    if (errorTextEls) {
+      errorTextEls.classList.remove('is-error');
+      errorTextEls.innerHTML = '';
+    }
+  }
+
+  isValidForm(form) {
+    let ifValidForm = true;
+    const inputs = form.querySelectorAll('input');
+
+    for (let i = 0; i < inputs.length; i += 1) {
+      if (inputs[i].classList.contains('is-error')) {
+        ifValidForm = false;
+      }
+    }
+
+    return ifValidForm;
+  }
+
+  hideErrorByInput(event) {
+    this.hideError(event.target);
+
+    if (this.isValidForm(this.form)) this.button.classList.remove('is-disabled');
   }
 
   closestIEpolyfill(Element) {
@@ -370,6 +406,7 @@ class Form {
 
   close() {
     if (this.button) this.button.removeEventListener('click', this.buttonListener, false);
+    if (this.form) this.form.removeEventListener('click', this.hideErrorByInput);
   }
 }
 
