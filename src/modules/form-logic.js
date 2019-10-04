@@ -249,7 +249,7 @@ class Form {
     const _this = this;
 
     // reset phone send to backend because front validation doesnt pass
-    if (_this.isPhoneInvalid()) data.phone = '';
+    if (_this.isPhoneInvalid()) data.attributes.phone = '';
 
     api.apiSendApplication(
       data,
