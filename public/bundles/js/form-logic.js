@@ -10353,6 +10353,7 @@ function () {
     (0, _classCallCheck2.default)(this, Form);
     this.options = options;
     this.form = options.formEl;
+    this.checkMurkup();
     this.buttonListener = this.buttonListener.bind(this);
     this.hideErrorByInput = this.hideErrorByInput.bind(this);
 
@@ -10369,17 +10370,16 @@ function () {
 
     if (this.form) this.setButtons(this.form);
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
-    this.checkMurkup();
   }
 
   (0, _createClass2.default)(Form, [{
     key: "checkMurkup",
     value: function checkMurkup() {
-      if (!document.querySelector('.js-ed-form-button')) {
+      if (!this.form.querySelector('.js-ed-form-button')) {
         console.log(formMurkupError('.js-ed-form-button'));
       }
 
-      if (!document.querySelector('.js-ed-form-tel-number')) {
+      if (!this.form.querySelector('.js-ed-form-tel-number')) {
         console.log(formMurkupError('.js-ed-form-tel-number'));
       }
 
@@ -10387,8 +10387,24 @@ function () {
         console.log(formMurkupError('.js-success-send-ed-form'));
       }
 
-      if (!document.querySelector('.js-error-field')) {
+      if (!this.form.querySelector('.js-error-field')) {
         console.log(formMurkupError('.js-error-field'));
+      }
+
+      if (!this.form.querySelector('.js-email')) {
+        console.log(formMurkupError('.js-email'));
+      }
+
+      if (!this.form.querySelector('.js-phone')) {
+        console.log(formMurkupError('.js-phone'));
+      }
+
+      if (!this.form.querySelector('.js-error-phone')) {
+        console.log(formMurkupError('.js-error-phone'));
+      }
+
+      if (!this.form.querySelector('.js-error-email')) {
+        console.log(formMurkupError('.js-error-email'));
       }
     }
   }, {
@@ -10491,8 +10507,10 @@ function () {
     value: function getTokenForApp(data, form) {
       var loginData = this.options.preReadRegFormCb();
 
-      var _this = this;
+      var _this = this; // reset phone send to backend because front validation doesnt pass
 
+
+      if (_this.isPhoneInvalid()) data.attributes.phone = '';
       if (loginData) return this.sendApplication(data, form, loginData);
 
       _formApi.default.apiGetToken(data, this.options.internal, this.options.partnerTags, this.options.loadCb, function (apiData) {
@@ -10596,7 +10614,9 @@ function () {
             _this.options.errorRegSendCb(response);
           }
 
-          return _this.showErrors(error, parent, form);
+          _this.showErrors(error, parent, form);
+
+          _this.checkValidity(parent);
         });
       });
     }

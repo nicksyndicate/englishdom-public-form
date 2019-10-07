@@ -13,6 +13,8 @@ class Form {
     this.options = options;
     this.form = options.formEl;
 
+    this.checkMurkup();
+
     this.buttonListener = this.buttonListener.bind(this);
     this.hideErrorByInput = this.hideErrorByInput.bind(this);
 
@@ -29,16 +31,14 @@ class Form {
 
     if (this.form) this.setButtons(this.form);
     if (this.form) this.setSuccessText(this.options.successSendText, this.form);
-
-    this.checkMurkup();
   }
 
   checkMurkup() {
-    if(!document.querySelector('.js-ed-form-button')) {
+    if (!this.form.querySelector('.js-ed-form-button')) {
       console.log(formMurkupError('.js-ed-form-button'));
     }
 
-    if(!document.querySelector('.js-ed-form-tel-number')) {
+    if (!this.form.querySelector('.js-ed-form-tel-number')) {
       console.log(formMurkupError('.js-ed-form-tel-number'));
     }
 
@@ -46,8 +46,24 @@ class Form {
       console.log(formMurkupError('.js-success-send-ed-form'));
     }
 
-    if(!document.querySelector('.js-error-field')) {
+    if (!this.form.querySelector('.js-error-field')) {
       console.log(formMurkupError('.js-error-field'));
+    }
+
+    if (!this.form.querySelector('.js-email')) {
+      console.log(formMurkupError('.js-email'));
+    }
+
+    if (!this.form.querySelector('.js-phone')) {
+      console.log(formMurkupError('.js-phone'));
+    }
+
+    if (!this.form.querySelector('.js-error-phone')) {
+      console.log(formMurkupError('.js-error-phone'));
+    }
+
+    if (!this.form.querySelector('.js-error-email')) {
+      console.log(formMurkupError('.js-error-email'));
     }
   }
 
@@ -159,6 +175,9 @@ class Form {
   getTokenForApp(data, form) {
     const loginData = this.options.preReadRegFormCb();
     const _this = this;
+
+    // reset phone send to backend because front validation doesnt pass
+    if (_this.isPhoneInvalid()) data.attributes.phone = '';
 
     if (loginData) return this.sendApplication(data, form, loginData);
 
@@ -273,7 +292,9 @@ class Form {
             _this.options.errorRegSendCb(response);
           }
 
-          return _this.showErrors(error, parent, form);
+          _this.showErrors(error, parent, form);
+
+          _this.checkValidity(parent);
         });
       },
     );
