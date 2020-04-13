@@ -10660,8 +10660,7 @@ var Form = /*#__PURE__*/function () {
     }
   }, {
     key: "addPriorityToTags",
-    value: function addPriorityToTags(_ref) {
-      var tagsRaw = _ref.tagsRaw;
+    value: function addPriorityToTags(tagsRaw) {
       var tags = tagsRaw;
       var dataForLog = {};
       var rawData = {
@@ -10721,7 +10720,10 @@ var Form = /*#__PURE__*/function () {
 
       if (_this.isPhoneInvalid()) data.attributes.phone = ''; // add priority to tags
 
-      data.tags = this.addPriorityToTags(data);
+      try {
+        data.attributes.tags = this.addPriorityToTags(data.attributes.tags);
+      } catch (e) {//
+      }
 
       _formApi.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function (result, response) {
         if (result) {

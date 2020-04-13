@@ -274,7 +274,7 @@ class Form {
       });
   }
 
-  addPriorityToTags({ tagsRaw }) {
+  addPriorityToTags(tagsRaw) {
     let tags = tagsRaw;
     let dataForLog = {};
     const rawData = {
@@ -354,7 +354,11 @@ class Form {
     if (_this.isPhoneInvalid()) data.attributes.phone = '';
 
     // add priority to tags
-    data.tags = this.addPriorityToTags(data);
+    try {
+      data.attributes.tags = this.addPriorityToTags(data.attributes.tags);
+    } catch (e) {
+      //
+    }
 
     api.apiSendApplication(
       data,
