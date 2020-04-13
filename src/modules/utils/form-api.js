@@ -17,33 +17,6 @@ function getClientId() {
   return clientId;
 }
 
-function getUserId() {
-  const id = document.body.getAttribute('data-user-id');
-
-  return id;
-}
-
-function apiGetDataFromServer(internal, cb, loadCb) {
-  $.ajax({
-    url: `${getUrl(internal)}/api-public/logged-user/`,
-    contentType: 'application/vnd.api+json',
-    dataType: 'json',
-    timeout: 40000,
-    headers: {
-      Authorization1: null,
-    },
-    beforeSend() {
-      if (loadCb) loadCb.start();
-    },
-    success(response) {
-      if (cb) cb.call(response.data.attributes);
-    },
-    complete() {
-      if (loadCb) loadCb.end();
-    },
-  });
-}
-
 function apiRegistration(data, internal, tags, loadCb, cb) {
   const utm = tags || '';
   const sendData = {
@@ -198,10 +171,8 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
 }
 
 export default {
-  getUserId,
   apiGetToken,
   apiRegistration,
-  apiGetDataFromServer,
   apiReadRegistration,
   apiSendApplication,
 };

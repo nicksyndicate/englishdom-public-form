@@ -1,8 +1,18 @@
+import sbjs from 'sourcebuster';
+import _get from 'lodash/get';
+
 import api from './utils/form-api';
 import parsers from './utils/form-parsers';
 import intTelInput from './utils/intl-tel-input';
+import {
+  getK,
+  getPeriod,
+  pageConverter,
+  gmtConverter,
+} from './utils/lead-priority';
 
 let formInstances = [];
+sbjs.init();
 
 const formMurkupError = (elSelector) =>
   `Element with selector ${elSelector} not found in englishdom-form murkup. Please check that you have correctly copied
@@ -264,11 +274,87 @@ class Form {
       });
   }
 
+  addPriorityToTags({ tagsRaw }) {
+    let tags = tagsRaw;
+    let dataForLog = {};
+    const rawData = {
+      source: _get(sbjs, 'get.current.src'),
+      medium: _get(sbjs, 'get.current.mdm'),
+      fromPage: window.location.pathname,
+      country: document.body.getAttribute('data-country'),
+      hour: (new Date()).getUTCHours(),
+      month: (new Date()).getUTCMonth() + 1,
+      gmt: (new Date()).getTimezoneOffset(),
+      dayOfWeek: (new Date()).getUTCDay() + 1, // день недели (в формате вс- 1, сб- 7),
+      hash: window.location.hash,
+    };
+
+    dataForLog = {
+      ...rawData,
+    };
+
+    const data = {
+      ...rawData,
+      fromPage: pageConverter(rawData.fromPage),
+      gmt: gmtConverter(rawData.gmt),
+    };
+
+    dataForLog = {
+      ...dataForLog,
+      fromPageNew: data.fromPage,
+      gmtNew: data.gmt,
+    };
+
+    const k = getK(data, (kObj) => {
+      dataForLog = {
+        ...dataForLog,
+        ...kObj,
+      };
+    });
+
+    dataForLog = {
+      ...dataForLog,
+      k,
+    };
+
+    const priority = getPeriod(k);
+
+    dataForLog = {
+      ...dataForLog,
+      priority,
+    };
+
+    const score = `Score:${priority}`;
+
+    // send to amplitude for testing
+    // try if global facade exists
+    try {
+      facade.publish('user-action', 'application-scoring', dataForLog);
+    } catch (e) {
+      //
+    }
+
+    if (tags) {
+      const tagsArray = tags.split(',');
+
+      tagsArray.push(score);
+
+      tags = tagsArray.join(',');
+    } else {
+      tags = score;
+    }
+
+    return tags;
+  }
+
   sendApplication(data, form, token) {
     const _this = this;
 
     // reset phone send to backend because front validation doesnt pass
     if (_this.isPhoneInvalid()) data.attributes.phone = '';
+
+    // add priority to tags
+    data.tags = this.addPriorityToTags(data);
 
     api.apiSendApplication(
       data,

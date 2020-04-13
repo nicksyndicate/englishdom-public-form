@@ -77,11 +77,11 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/var/www/englishdom-public-form/";
+/******/ 	__webpack_require__.p = "/home/nick/englishdom-public-form/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -98,6 +98,69 @@ module.exports = _interopRequireDefault;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(13);
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = getNative(Object, 'create');
+
+module.exports = nativeCreate;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var eq = __webpack_require__(49);
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+module.exports = assocIndexOf;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isKeyable = __webpack_require__(55);
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+module.exports = getMapData;
+
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9918,69 +9981,6 @@ return jQuery;
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(12);
-
-/* Built-in method references that are verified to be native. */
-var nativeCreate = getNative(Object, 'create');
-
-module.exports = nativeCreate;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var eq = __webpack_require__(50);
-
-/**
- * Gets the index at which the `key` is found in `array` of key-value pairs.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {*} key The key to search for.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function assocIndexOf(array, key) {
-  var length = array.length;
-  while (length--) {
-    if (eq(array[length][0], key)) {
-      return length;
-    }
-  }
-  return -1;
-}
-
-module.exports = assocIndexOf;
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isKeyable = __webpack_require__(56);
-
-/**
- * Gets the data for `map`.
- *
- * @private
- * @param {Object} map The map to query.
- * @param {string} key The reference key.
- * @returns {*} Returns the map data.
- */
-function getMapData(map, key) {
-  var data = map.__data__;
-  return isKeyable(key)
-    ? data[typeof key == 'string' ? 'string' : 'hash']
-    : data.map;
-}
-
-module.exports = getMapData;
-
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
@@ -10016,8 +10016,8 @@ module.exports = isArray;
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(11),
-    isObjectLike = __webpack_require__(29);
+var baseGetTag = __webpack_require__(12),
+    isObjectLike = __webpack_require__(28);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -10063,7 +10063,7 @@ module.exports = Symbol;
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(25);
+var freeGlobal = __webpack_require__(24);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -10100,6 +10100,160 @@ module.exports = _extends;
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGet = __webpack_require__(21);
+
+/**
+ * Gets the value at `path` of `object`. If the resolved value is
+ * `undefined`, the `defaultValue` is returned in its place.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.7.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @param {*} [defaultValue] The value returned for `undefined` resolved values.
+ * @returns {*} Returns the resolved value.
+ * @example
+ *
+ * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+ *
+ * _.get(object, 'a[0].b.c');
+ * // => 3
+ *
+ * _.get(object, ['a', '0', 'b', 'c']);
+ * // => 3
+ *
+ * _.get(object, 'a.b.c', 'default');
+ * // => 'default'
+ */
+function get(object, path, defaultValue) {
+  var result = object == null ? undefined : baseGet(object, path);
+  return result === undefined ? defaultValue : result;
+}
+
+module.exports = get;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(7),
+    getRawTag = __webpack_require__(26),
+    objectToString = __webpack_require__(27);
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsNative = __webpack_require__(36),
+    getValue = __webpack_require__(41);
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+module.exports = getNative;
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10226,101 +10380,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(7),
-    getRawTag = __webpack_require__(27),
-    objectToString = __webpack_require__(28);
-
-/** `Object#toString` result references. */
-var nullTag = '[object Null]',
-    undefinedTag = '[object Undefined]';
-
-/** Built-in value references. */
-var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
-
-/**
- * The base implementation of `getTag` without fallbacks for buggy environments.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
- */
-function baseGetTag(value) {
-  if (value == null) {
-    return value === undefined ? undefinedTag : nullTag;
-  }
-  return (symToStringTag && symToStringTag in Object(value))
-    ? getRawTag(value)
-    : objectToString(value);
-}
-
-module.exports = baseGetTag;
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsNative = __webpack_require__(37),
-    getValue = __webpack_require__(42);
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = getValue(object, key);
-  return baseIsNative(value) ? value : undefined;
-}
-
-module.exports = getNative;
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
-}
-
-module.exports = isObject;
-
-
-/***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10330,25 +10390,33 @@ var _interopRequireDefault = __webpack_require__(0);
 
 var _extends2 = _interopRequireDefault(__webpack_require__(9));
 
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(15));
+var _objectSpread2 = _interopRequireDefault(__webpack_require__(17));
 
-var _createClass2 = _interopRequireDefault(__webpack_require__(16));
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(18));
 
-var _formApi = _interopRequireDefault(__webpack_require__(17));
+var _createClass2 = _interopRequireDefault(__webpack_require__(19));
 
-var _formParsers = _interopRequireDefault(__webpack_require__(10));
+var _sourcebuster = _interopRequireDefault(__webpack_require__(20));
 
-var _intlTelInput = _interopRequireDefault(__webpack_require__(64));
+var _get2 = _interopRequireDefault(__webpack_require__(11));
+
+var _formApi = _interopRequireDefault(__webpack_require__(63));
+
+var _formParsers = _interopRequireDefault(__webpack_require__(15));
+
+var _intlTelInput = _interopRequireDefault(__webpack_require__(66));
+
+var _leadPriority = __webpack_require__(69);
 
 var formInstances = [];
+
+_sourcebuster.default.init();
 
 var formMurkupError = function formMurkupError(elSelector) {
   return "Element with selector ".concat(elSelector, " not found in englishdom-form murkup. Please check that you have correctly copied\n  form murkup to your page.");
 };
 
-var Form =
-/*#__PURE__*/
-function () {
+var Form = /*#__PURE__*/function () {
   function Form(options) {
     (0, _classCallCheck2.default)(this, Form);
     this.options = options;
@@ -10591,12 +10659,69 @@ function () {
       });
     }
   }, {
+    key: "addPriorityToTags",
+    value: function addPriorityToTags(_ref) {
+      var tagsRaw = _ref.tagsRaw;
+      var tags = tagsRaw;
+      var dataForLog = {};
+      var rawData = {
+        source: (0, _get2.default)(_sourcebuster.default, 'get.current.src'),
+        medium: (0, _get2.default)(_sourcebuster.default, 'get.current.mdm'),
+        fromPage: window.location.pathname,
+        country: document.body.getAttribute('data-country'),
+        hour: new Date().getUTCHours(),
+        month: new Date().getUTCMonth() + 1,
+        gmt: new Date().getTimezoneOffset(),
+        dayOfWeek: new Date().getUTCDay() + 1,
+        // день недели (в формате вс- 1, сб- 7),
+        hash: window.location.hash
+      };
+      dataForLog = (0, _objectSpread2.default)({}, rawData);
+      var data = (0, _objectSpread2.default)({}, rawData, {
+        fromPage: (0, _leadPriority.pageConverter)(rawData.fromPage),
+        gmt: (0, _leadPriority.gmtConverter)(rawData.gmt)
+      });
+      dataForLog = (0, _objectSpread2.default)({}, dataForLog, {
+        fromPageNew: data.fromPage,
+        gmtNew: data.gmt
+      });
+      var k = (0, _leadPriority.getK)(data, function (kObj) {
+        dataForLog = (0, _objectSpread2.default)({}, dataForLog, kObj);
+      });
+      dataForLog = (0, _objectSpread2.default)({}, dataForLog, {
+        k: k
+      });
+      var priority = (0, _leadPriority.getPeriod)(k);
+      dataForLog = (0, _objectSpread2.default)({}, dataForLog, {
+        priority: priority
+      });
+      var score = "Score:".concat(priority); // send to amplitude for testing
+      // try if global facade exists
+
+      try {
+        facade.publish('user-action', 'application-scoring', dataForLog);
+      } catch (e) {//
+      }
+
+      if (tags) {
+        var tagsArray = tags.split(',');
+        tagsArray.push(score);
+        tags = tagsArray.join(',');
+      } else {
+        tags = score;
+      }
+
+      return tags;
+    }
+  }, {
     key: "sendApplication",
     value: function sendApplication(data, form, token) {
       var _this = this; // reset phone send to backend because front validation doesnt pass
 
 
-      if (_this.isPhoneInvalid()) data.attributes.phone = '';
+      if (_this.isPhoneInvalid()) data.attributes.phone = ''; // add priority to tags
+
+      data.tags = this.addPriorityToTags(data);
 
       _formApi.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function (result, response) {
         if (result) {
@@ -10801,7 +10926,34 @@ window.logicInit = init;
 window.logicUninit = uninit;
 
 /***/ }),
-/* 15 */
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var defineProperty = __webpack_require__(10);
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+module.exports = _objectSpread;
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports) {
 
 function _classCallCheck(instance, Constructor) {
@@ -10813,7 +10965,7 @@ function _classCallCheck(instance, Constructor) {
 module.exports = _classCallCheck;
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -10835,7 +10987,2152 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 17 */
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var require;var require;!function(e){if(true)module.exports=e();else { var f; }}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return require(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+"use strict";
+
+var init = _dereq_('./init');
+
+var sbjs = {
+  init: function(prefs) {
+    this.get = init(prefs);
+    if (prefs && prefs.callback && typeof prefs.callback === 'function') {
+      prefs.callback(this.get);
+    }
+  }
+};
+
+module.exports = sbjs;
+},{"./init":6}],2:[function(_dereq_,module,exports){
+"use strict";
+
+var terms = _dereq_('./terms'),
+    utils = _dereq_('./helpers/utils');
+
+var data = {
+
+  containers: {
+    current:          'sbjs_current',
+    current_extra:    'sbjs_current_add',
+    first:            'sbjs_first',
+    first_extra:      'sbjs_first_add',
+    session:          'sbjs_session',
+    udata:            'sbjs_udata',
+    promocode:        'sbjs_promo'
+  },
+
+  service: {
+    migrations:       'sbjs_migrations'
+  },
+
+  delimiter:          '|||',
+
+  aliases: {
+
+    main: {
+      type:           'typ',
+      source:         'src',
+      medium:         'mdm',
+      campaign:       'cmp',
+      content:        'cnt',
+      term:           'trm'
+    },
+
+    extra: {
+      fire_date:      'fd',
+      entrance_point: 'ep',
+      referer:        'rf'
+    },
+
+    session: {
+      pages_seen:     'pgs',
+      current_page:   'cpg'
+    },
+
+    udata: {
+      visits:         'vst',
+      ip:             'uip',
+      agent:          'uag'
+    },
+
+    promo:            'code'
+
+  },
+
+  pack: {
+
+    main: function(sbjs) {
+      return (
+        data.aliases.main.type      + '=' + sbjs.type     + data.delimiter +
+        data.aliases.main.source    + '=' + sbjs.source   + data.delimiter +
+        data.aliases.main.medium    + '=' + sbjs.medium   + data.delimiter +
+        data.aliases.main.campaign  + '=' + sbjs.campaign + data.delimiter +
+        data.aliases.main.content   + '=' + sbjs.content  + data.delimiter +
+        data.aliases.main.term      + '=' + sbjs.term
+      );
+    },
+
+    extra: function(timezone_offset) {
+      return (
+        data.aliases.extra.fire_date      + '=' + utils.setDate(new Date, timezone_offset) + data.delimiter +
+        data.aliases.extra.entrance_point + '=' + document.location.href                   + data.delimiter +
+        data.aliases.extra.referer        + '=' + (document.referrer || terms.none)
+      );
+    },
+
+    user: function(visits, user_ip) {
+      return (
+        data.aliases.udata.visits + '=' + visits  + data.delimiter +
+        data.aliases.udata.ip     + '=' + user_ip + data.delimiter +
+        data.aliases.udata.agent  + '=' + navigator.userAgent
+      );
+    },
+
+    session: function(pages) {
+      return (
+      data.aliases.session.pages_seen   + '=' + pages + data.delimiter +
+      data.aliases.session.current_page + '=' + document.location.href
+      );
+    },
+
+    promo: function(promo) {
+      return (
+        data.aliases.promo + '=' + utils.setLeadingZeroToInt(utils.randomInt(promo.min, promo.max), promo.max.toString().length)
+      );
+    }
+
+  }
+};
+
+module.exports = data;
+},{"./helpers/utils":5,"./terms":9}],3:[function(_dereq_,module,exports){
+"use strict";
+
+var delimiter = _dereq_('../data').delimiter;
+
+module.exports = {
+
+  encodeData: function(s) {
+    return encodeURIComponent(s).replace(/\!/g, '%21')
+                                .replace(/\~/g, '%7E')
+                                .replace(/\*/g, '%2A')
+                                .replace(/\'/g, '%27')
+                                .replace(/\(/g, '%28')
+                                .replace(/\)/g, '%29');
+  },
+
+  decodeData: function(s) {
+    try {
+      return decodeURIComponent(s).replace(/\%21/g, '!')
+                                  .replace(/\%7E/g, '~')
+                                  .replace(/\%2A/g, '*')
+                                  .replace(/\%27/g, "'")
+                                  .replace(/\%28/g, '(')
+                                  .replace(/\%29/g, ')');
+    } catch(err1) {
+      // try unescape for backward compatibility
+      try { return unescape(s); } catch(err2) { return ''; }
+    }
+  },
+
+  set: function(name, value, minutes, domain, excl_subdomains) {
+    var expires, basehost;
+
+    if (minutes) {
+      var date = new Date();
+      date.setTime(date.getTime() + (minutes * 60 * 1000));
+      expires = '; expires=' + date.toGMTString();
+    } else {
+      expires = '';
+    }
+    if (domain && !excl_subdomains) {
+      basehost = ';domain=.' + domain;
+    } else {
+      basehost = '';
+    }
+    document.cookie = this.encodeData(name) + '=' + this.encodeData(value) + expires + basehost + '; path=/';
+  },
+
+  get: function(name) {
+    var nameEQ = this.encodeData(name) + '=',
+        ca = document.cookie.split(';');
+
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') { c = c.substring(1, c.length); }
+      if (c.indexOf(nameEQ) === 0) {
+        return this.decodeData(c.substring(nameEQ.length, c.length));
+      }
+    }
+    return null;
+  },
+
+  destroy: function(name, domain, excl_subdomains) {
+    this.set(name, '', -1, domain, excl_subdomains);
+  },
+
+  parse: function(yummy) {
+
+    var cookies = [],
+        data    = {};
+
+    if (typeof yummy === 'string') {
+      cookies.push(yummy);
+    } else {
+      for (var prop in yummy) {
+        if (yummy.hasOwnProperty(prop)) {
+          cookies.push(yummy[prop]);
+        }
+      }
+    }
+
+    for (var i1 = 0; i1 < cookies.length; i1++) {
+      var cookie_array;
+      data[this.unsbjs(cookies[i1])] = {};
+      if (this.get(cookies[i1])) {
+        cookie_array = this.get(cookies[i1]).split(delimiter);
+      } else {
+        cookie_array = [];
+      }
+      for (var i2 = 0; i2 < cookie_array.length; i2++) {
+        var tmp_array = cookie_array[i2].split('='),
+            result_array = tmp_array.splice(0, 1);
+        result_array.push(tmp_array.join('='));
+        data[this.unsbjs(cookies[i1])][result_array[0]] = this.decodeData(result_array[1]);
+      }
+    }
+
+    return data;
+
+  },
+
+  unsbjs: function (string) {
+    return string.replace('sbjs_', '');
+  }
+
+};
+
+},{"../data":2}],4:[function(_dereq_,module,exports){
+"use strict";
+
+module.exports = {
+
+  parse: function(str) {
+    var o = this.parseOptions,
+        m = o.parser[o.strictMode ? 'strict' : 'loose'].exec(str),
+        uri = {},
+        i = 14;
+
+    while (i--) { uri[o.key[i]] = m[i] || ''; }
+
+    uri[o.q.name] = {};
+    uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+      if ($1) { uri[o.q.name][$1] = $2; }
+    });
+
+    return uri;
+  },
+
+  parseOptions: {
+    strictMode: false,
+    key: ['source','protocol','authority','userInfo','user','password','host','port','relative','path','directory','file','query','anchor'],
+    q: {
+      name:   'queryKey',
+      parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+    },
+    parser: {
+      strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+      loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+    }
+  },
+
+  getParam: function(custom_params) {
+    var query_string = {},
+        query = custom_params ? custom_params : window.location.search.substring(1),
+        vars = query.split('&');
+
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split('=');
+      if (typeof query_string[pair[0]] === 'undefined') {
+        query_string[pair[0]] = pair[1];
+      } else if (typeof query_string[pair[0]] === 'string') {
+        var arr = [ query_string[pair[0]], pair[1] ];
+        query_string[pair[0]] = arr;
+      } else {
+        query_string[pair[0]].push(pair[1]);
+      }
+    }
+    return query_string;
+  },
+
+  getHost: function(request) {
+    return this.parse(request).host.replace('www.', '');
+  }
+
+};
+},{}],5:[function(_dereq_,module,exports){
+"use strict";
+
+module.exports = {
+
+  escapeRegexp: function(string) {
+    return string.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  },
+
+  setDate: function(date, offset) {
+    var utc_offset    = date.getTimezoneOffset() / 60,
+        now_hours     = date.getHours(),
+        custom_offset = offset || offset === 0 ? offset : -utc_offset;
+
+    date.setHours(now_hours + utc_offset + custom_offset);
+
+    var year    = date.getFullYear(),
+        month   = this.setLeadingZeroToInt(date.getMonth() + 1,   2),
+        day     = this.setLeadingZeroToInt(date.getDate(),        2),
+        hour    = this.setLeadingZeroToInt(date.getHours(),       2),
+        minute  = this.setLeadingZeroToInt(date.getMinutes(),     2),
+        second  = this.setLeadingZeroToInt(date.getSeconds(),     2);
+
+    return (year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+  },
+
+  setLeadingZeroToInt: function(num, size) {
+    var s = num + '';
+    while (s.length < size) { s = '0' + s; }
+    return s;
+  },
+
+  randomInt: function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+};
+
+},{}],6:[function(_dereq_,module,exports){
+"use strict";
+
+var data        = _dereq_('./data'),
+    terms       = _dereq_('./terms'),
+    cookies     = _dereq_('./helpers/cookies'),
+    uri         = _dereq_('./helpers/uri'),
+    utils       = _dereq_('./helpers/utils'),
+    params      = _dereq_('./params'),
+    migrations  = _dereq_('./migrations');
+
+module.exports = function(prefs) {
+
+  var p         = params.fetch(prefs);
+  var get_param = uri.getParam();
+  var domain    = p.domain.host,
+      isolate   = p.domain.isolate,
+      lifetime  = p.lifetime;
+
+  migrations.go(lifetime, domain, isolate);
+
+  var __sbjs_type,
+      __sbjs_source,
+      __sbjs_medium,
+      __sbjs_campaign,
+      __sbjs_content,
+      __sbjs_term;
+
+  function mainData() {
+    var sbjs_data;
+    if (
+        typeof get_param.utm_source        !== 'undefined' ||
+        typeof get_param.utm_medium        !== 'undefined' ||
+        typeof get_param.utm_campaign      !== 'undefined' ||
+        typeof get_param.utm_content       !== 'undefined' ||
+        typeof get_param.utm_term          !== 'undefined' ||
+        typeof get_param.gclid             !== 'undefined' ||
+        typeof get_param.yclid             !== 'undefined' ||
+        typeof get_param[p.campaign_param] !== 'undefined'
+      ) {
+      setFirstAndCurrentExtraData();
+      sbjs_data = getData(terms.traffic.utm);
+    } else if (checkReferer(terms.traffic.organic)) {
+      setFirstAndCurrentExtraData();
+      sbjs_data = getData(terms.traffic.organic);
+    } else if (!cookies.get(data.containers.session) && checkReferer(terms.traffic.referral)) {
+      setFirstAndCurrentExtraData();
+      sbjs_data = getData(terms.traffic.referral);
+    } else if (!cookies.get(data.containers.first) && !cookies.get(data.containers.current)) {
+      setFirstAndCurrentExtraData();
+      sbjs_data = getData(terms.traffic.typein);
+    } else {
+      return cookies.get(data.containers.current);
+    }
+
+    return sbjs_data;
+  }
+
+  function getData(type) {
+
+    switch (type) {
+
+      case terms.traffic.utm:
+
+        __sbjs_type = terms.traffic.utm;
+
+        if (typeof get_param.utm_source !== 'undefined') {
+          __sbjs_source = get_param.utm_source;
+        } else if (typeof get_param.gclid !== 'undefined') {
+          __sbjs_source = 'google';
+        } else if (typeof get_param.yclid !== 'undefined') {
+          __sbjs_source = 'yandex';  
+        } else {
+          __sbjs_source = terms.none;
+        }
+
+        if (typeof get_param.utm_medium !== 'undefined') {
+          __sbjs_medium = get_param.utm_medium;
+        } else if (typeof get_param.gclid !== 'undefined') {
+          __sbjs_medium = 'cpc';
+        } else if (typeof get_param.yclid !== 'undefined') {
+          __sbjs_medium = 'cpc';  
+        } else {
+          __sbjs_medium = terms.none;
+        }
+
+        if (typeof get_param.utm_campaign !== 'undefined') {
+          __sbjs_campaign = get_param.utm_campaign;
+        } else if (typeof get_param[p.campaign_param] !== 'undefined') {
+          __sbjs_campaign = get_param[p.campaign_param];
+        } else if (typeof get_param.gclid !== 'undefined') {
+          __sbjs_campaign = 'google_cpc';
+        } else if (typeof get_param.yclid !== 'undefined') {
+          __sbjs_campaign = 'yandex_cpc';  
+        } else {
+          __sbjs_campaign = terms.none;
+        }
+
+        __sbjs_content  = get_param.utm_content || terms.none;
+        __sbjs_term     = getUtmTerm()          || terms.none;
+        break;
+
+      case terms.traffic.organic:
+        __sbjs_type     = terms.traffic.organic;
+        __sbjs_source   = __sbjs_source || uri.getHost(document.referrer);
+        __sbjs_medium   = terms.referer.organic;
+        __sbjs_campaign = terms.none;
+        __sbjs_content  = terms.none;
+        __sbjs_term     = terms.none;
+        break;
+
+      case terms.traffic.referral:
+        __sbjs_type     = terms.traffic.referral;
+        __sbjs_source   = __sbjs_source || uri.getHost(document.referrer);
+        __sbjs_medium   = __sbjs_medium || terms.referer.referral;
+        __sbjs_campaign = terms.none;
+        __sbjs_content  = uri.parse(document.referrer).path;
+        __sbjs_term     = terms.none;
+        break;
+
+      case terms.traffic.typein:
+        __sbjs_type     = terms.traffic.typein;
+        __sbjs_source   = p.typein_attributes.source;
+        __sbjs_medium   = p.typein_attributes.medium;
+        __sbjs_campaign = terms.none;
+        __sbjs_content  = terms.none;
+        __sbjs_term     = terms.none;
+        break;
+
+      default:
+        __sbjs_type     = terms.oops;
+        __sbjs_source   = terms.oops;
+        __sbjs_medium   = terms.oops;
+        __sbjs_campaign = terms.oops;
+        __sbjs_content  = terms.oops;
+        __sbjs_term     = terms.oops;
+    }
+    var sbjs_data = {
+      type:             __sbjs_type,
+      source:           __sbjs_source,
+      medium:           __sbjs_medium,
+      campaign:         __sbjs_campaign,
+      content:          __sbjs_content,
+      term:             __sbjs_term
+    };
+
+    return data.pack.main(sbjs_data);
+
+  }
+
+  function getUtmTerm() {
+    var referer = document.referrer;
+    if (get_param.utm_term) {
+      return get_param.utm_term;
+    } else if (referer && uri.parse(referer).host && uri.parse(referer).host.match(/^(?:.*\.)?yandex\..{2,9}$/i)) {
+      try {
+        return uri.getParam(uri.parse(document.referrer).query).text;
+      } catch (err) {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  function checkReferer(type) {
+    var referer = document.referrer;
+    switch(type) {
+      case terms.traffic.organic:
+        return (!!referer && checkRefererHost(referer) && isOrganic(referer));
+      case terms.traffic.referral:
+        return (!!referer && checkRefererHost(referer) && isReferral(referer));
+      default:
+        return false;
+    }
+  }
+
+  function checkRefererHost(referer) {
+    if (p.domain) {
+      if (!isolate) {
+        var host_regex = new RegExp('^(?:.*\\.)?' + utils.escapeRegexp(domain) + '$', 'i');
+        return !(uri.getHost(referer).match(host_regex));
+      } else {
+        return (uri.getHost(referer) !== uri.getHost(domain));
+      }
+    } else {
+      return (uri.getHost(referer) !== uri.getHost(document.location.href));
+    }
+  }
+
+  function isOrganic(referer) {
+
+    var y_host  = 'yandex',
+        y_param = 'text',
+        g_host  = 'google';
+
+    var y_host_regex  = new RegExp('^(?:.*\\.)?'  + utils.escapeRegexp(y_host)  + '\\..{2,9}$'),
+        y_param_regex = new RegExp('.*'           + utils.escapeRegexp(y_param) + '=.*'),
+        g_host_regex  = new RegExp('^(?:www\\.)?' + utils.escapeRegexp(g_host)  + '\\..{2,9}$');
+
+    if (
+        !!uri.parse(referer).query &&
+        !!uri.parse(referer).host.match(y_host_regex) &&
+        !!uri.parse(referer).query.match(y_param_regex)
+      ) {
+      __sbjs_source = y_host;
+      return true;
+    } else if (!!uri.parse(referer).host.match(g_host_regex)) {
+      __sbjs_source = g_host;
+      return true;
+    } else if (!!uri.parse(referer).query) {
+      for (var i = 0; i < p.organics.length; i++) {
+        if (
+            uri.parse(referer).host.match(new RegExp('^(?:.*\\.)?' + utils.escapeRegexp(p.organics[i].host)  + '$', 'i')) &&
+            uri.parse(referer).query.match(new RegExp('.*'         + utils.escapeRegexp(p.organics[i].param) + '=.*', 'i'))
+          ) {
+          __sbjs_source = p.organics[i].display || p.organics[i].host;
+          return true;
+        }
+        if (i + 1 === p.organics.length) {
+          return false;
+        }
+      }
+    } else {
+      return false;
+    }
+  }
+
+  function isReferral(referer) {
+    if (p.referrals.length > 0) {
+      for (var i = 0; i < p.referrals.length; i++) {
+        if (uri.parse(referer).host.match(new RegExp('^(?:.*\\.)?' + utils.escapeRegexp(p.referrals[i].host) + '$', 'i'))) {
+          __sbjs_source = p.referrals[i].display  || p.referrals[i].host;
+          __sbjs_medium = p.referrals[i].medium   || terms.referer.referral;
+          return true;
+        }
+        if (i + 1 === p.referrals.length) {
+          __sbjs_source = uri.getHost(referer);
+          return true;
+        }
+      }
+    } else {
+      __sbjs_source = uri.getHost(referer);
+      return true;
+    }
+  }
+
+  function setFirstAndCurrentExtraData() {
+    cookies.set(data.containers.current_extra, data.pack.extra(p.timezone_offset), lifetime, domain, isolate);
+    if (!cookies.get(data.containers.first_extra)) {
+      cookies.set(data.containers.first_extra, data.pack.extra(p.timezone_offset), lifetime, domain, isolate);
+    }
+  }
+
+  (function setData() {
+
+    // Main data
+    cookies.set(data.containers.current, mainData(), lifetime, domain, isolate);
+    if (!cookies.get(data.containers.first)) {
+      cookies.set(data.containers.first, cookies.get(data.containers.current), lifetime, domain, isolate);
+    }
+
+    // User data
+    var visits, udata;
+    if (!cookies.get(data.containers.udata)) {
+      visits  = 1;
+      udata   = data.pack.user(visits, p.user_ip);
+    } else {
+      visits  = parseInt(cookies.parse(data.containers.udata)[cookies.unsbjs(data.containers.udata)][data.aliases.udata.visits]) || 1;
+      visits  = cookies.get(data.containers.session) ? visits : visits + 1;
+      udata   = data.pack.user(visits, p.user_ip);
+    }
+    cookies.set(data.containers.udata, udata, lifetime, domain, isolate);
+
+    // Session
+    var pages_count;
+    if (!cookies.get(data.containers.session)) {
+      pages_count = 1;
+    } else {
+      pages_count = parseInt(cookies.parse(data.containers.session)[cookies.unsbjs(data.containers.session)][data.aliases.session.pages_seen]) || 1;
+      pages_count += 1;
+    }
+    cookies.set(data.containers.session, data.pack.session(pages_count), p.session_length, domain, isolate);
+
+    // Promocode
+    if (p.promocode && !cookies.get(data.containers.promocode)) {
+      cookies.set(data.containers.promocode, data.pack.promo(p.promocode), lifetime, domain, isolate);
+    }
+
+  })();
+
+  return cookies.parse(data.containers);
+
+};
+},{"./data":2,"./helpers/cookies":3,"./helpers/uri":4,"./helpers/utils":5,"./migrations":7,"./params":8,"./terms":9}],7:[function(_dereq_,module,exports){
+"use strict";
+
+var data    = _dereq_('./data'),
+    cookies = _dereq_('./helpers/cookies');
+
+module.exports = {
+
+  go: function(lifetime, domain, isolate) {
+
+    var migrate = this.migrations,
+        _with   = { l: lifetime, d: domain, i: isolate };
+
+    var i;
+
+    if (!cookies.get(data.containers.first) && !cookies.get(data.service.migrations)) {
+
+      var mids = [];
+      for (i = 0; i < migrate.length; i++) { mids.push(migrate[i].id); }
+
+      var advance = '';
+      for (i = 0; i < mids.length; i++) {
+        advance += mids[i] + '=1';
+        if (i < mids.length - 1) { advance += data.delimiter; }
+      }
+      cookies.set(data.service.migrations, advance, _with.l, _with.d, _with.i);
+
+    } else if (!cookies.get(data.service.migrations)) {
+
+      // We have only one migration for now, so just
+      for (i = 0; i < migrate.length; i++) {
+        migrate[i].go(migrate[i].id, _with);
+      }
+
+    }
+
+  },
+
+  migrations: [
+
+    {
+      id: '1418474375998',
+      version: '1.0.0-beta',
+      go: function(mid, _with) {
+
+        var success = mid + '=1',
+            fail    = mid + '=0';
+
+        var safeReplace = function($0, $1, $2) {
+          return ($1 || $2 ? $0 : data.delimiter);
+        };
+
+        try {
+
+          // Switch delimiter and renew cookies
+          var _in = [];
+          for (var prop in data.containers) {
+            if (data.containers.hasOwnProperty(prop)) {
+              _in.push(data.containers[prop]);
+            }
+          }
+
+          for (var i = 0; i < _in.length; i++) {
+            if (cookies.get(_in[i])) {
+              var buffer = cookies.get(_in[i]).replace(/(\|)?\|(\|)?/g, safeReplace);
+              cookies.destroy(_in[i], _with.d, _with.i);
+              cookies.destroy(_in[i], _with.d, !_with.i);
+              cookies.set(_in[i], buffer, _with.l, _with.d, _with.i);
+            }
+          }
+
+          // Update `session`
+          if (cookies.get(data.containers.session)) {
+            cookies.set(data.containers.session, data.pack.session(0), _with.l, _with.d, _with.i);
+          }
+
+          // Yay!
+          cookies.set(data.service.migrations, success, _with.l, _with.d, _with.i);
+
+        } catch (err) {
+          // Oops
+          cookies.set(data.service.migrations, fail, _with.l, _with.d, _with.i);
+        }
+      }
+    }
+
+  ]
+
+};
+},{"./data":2,"./helpers/cookies":3}],8:[function(_dereq_,module,exports){
+"use strict";
+
+var terms = _dereq_('./terms'),
+    uri   = _dereq_('./helpers/uri');
+
+module.exports = {
+
+  fetch: function(prefs) {
+
+    var user   = prefs || {},
+        params = {};
+
+    // Set `lifetime of the cookie` in months
+    params.lifetime = this.validate.checkFloat(user.lifetime) || 6;
+    params.lifetime = parseInt(params.lifetime * 30 * 24 * 60);
+
+    // Set `session length` in minutes
+    params.session_length = this.validate.checkInt(user.session_length) || 30;
+
+    // Set `timezone offset` in hours
+    params.timezone_offset = this.validate.checkInt(user.timezone_offset);
+
+    // Set `campaign param` for AdWords links
+    params.campaign_param = user.campaign_param || false;
+
+    // Set `user ip`
+    params.user_ip = user.user_ip || terms.none;
+
+    // Set `promocode`
+    if (user.promocode) {
+      params.promocode = {};
+      params.promocode.min = parseInt(user.promocode.min) || 100000;
+      params.promocode.max = parseInt(user.promocode.max) || 999999;
+    } else {
+      params.promocode = false;
+    }
+
+    // Set `typein attributes`
+    if (user.typein_attributes && user.typein_attributes.source && user.typein_attributes.medium) {
+      params.typein_attributes = {};
+      params.typein_attributes.source = user.typein_attributes.source;
+      params.typein_attributes.medium = user.typein_attributes.medium;
+    } else {
+      params.typein_attributes = { source: '(direct)', medium: '(none)' };
+    }
+
+    // Set `domain`
+    if (user.domain && this.validate.isString(user.domain)) {
+      params.domain = { host: user.domain, isolate: false };
+    } else if (user.domain && user.domain.host) {
+      params.domain = user.domain;
+    } else {
+      params.domain = { host: uri.getHost(document.location.hostname), isolate: false };
+    }
+
+    // Set `referral sources`
+    params.referrals = [];
+
+    if (user.referrals && user.referrals.length > 0) {
+      for (var ir = 0; ir < user.referrals.length; ir++) {
+        if (user.referrals[ir].host) {
+          params.referrals.push(user.referrals[ir]);
+        }
+      }
+    }
+
+    // Set `organic sources`
+    params.organics = [];
+
+    if (user.organics && user.organics.length > 0) {
+      for (var io = 0; io < user.organics.length; io++) {
+        if (user.organics[io].host && user.organics[io].param) {
+          params.organics.push(user.organics[io]);
+        }
+      }
+    }
+
+    params.organics.push({ host: 'bing.com',      param: 'q',     display: 'bing'            });
+    params.organics.push({ host: 'yahoo.com',     param: 'p',     display: 'yahoo'           });
+    params.organics.push({ host: 'about.com',     param: 'q',     display: 'about'           });
+    params.organics.push({ host: 'aol.com',       param: 'q',     display: 'aol'             });
+    params.organics.push({ host: 'ask.com',       param: 'q',     display: 'ask'             });
+    params.organics.push({ host: 'globososo.com', param: 'q',     display: 'globo'           });
+    params.organics.push({ host: 'go.mail.ru',    param: 'q',     display: 'go.mail.ru'      });
+    params.organics.push({ host: 'rambler.ru',    param: 'query', display: 'rambler'         });
+    params.organics.push({ host: 'tut.by',        param: 'query', display: 'tut.by'          });
+
+    params.referrals.push({ host: 't.co',                         display: 'twitter.com'     });
+    params.referrals.push({ host: 'plus.url.google.com',          display: 'plus.google.com' });
+
+
+    return params;
+
+  },
+
+  validate: {
+
+    checkFloat: function(v) {
+      return v && this.isNumeric(parseFloat(v)) ? parseFloat(v) : false;
+    },
+
+    checkInt: function(v) {
+      return v && this.isNumeric(parseInt(v)) ? parseInt(v) : false;
+    },
+
+    isNumeric: function(v){
+      return !isNaN(v);
+    },
+
+    isString: function(v) {
+      return Object.prototype.toString.call(v) === '[object String]';
+    }
+
+  }
+
+};
+},{"./helpers/uri":4,"./terms":9}],9:[function(_dereq_,module,exports){
+"use strict";
+
+module.exports = {
+
+  traffic: {
+    utm:        'utm',
+    organic:    'organic',
+    referral:   'referral',
+    typein:     'typein'
+  },
+
+  referer: {
+    referral:   'referral',
+    organic:    'organic',
+    social:     'social'
+  },
+
+  none:         '(none)',
+  oops:         '(Houston, we have a problem)'
+
+};
+
+},{}]},{},[1])(1)
+});
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var castPath = __webpack_require__(22),
+    toKey = __webpack_require__(62);
+
+/**
+ * The base implementation of `_.get` without support for default values.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @returns {*} Returns the resolved value.
+ */
+function baseGet(object, path) {
+  path = castPath(path, object);
+
+  var index = 0,
+      length = path.length;
+
+  while (object != null && index < length) {
+    object = object[toKey(path[index++])];
+  }
+  return (index && index == length) ? object : undefined;
+}
+
+module.exports = baseGet;
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArray = __webpack_require__(5),
+    isKey = __webpack_require__(23),
+    stringToPath = __webpack_require__(29),
+    toString = __webpack_require__(59);
+
+/**
+ * Casts `value` to a path array if it's not one.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {Array} Returns the cast property path array.
+ */
+function castPath(value, object) {
+  if (isArray(value)) {
+    return value;
+  }
+  return isKey(value, object) ? [value] : stringToPath(toString(value));
+}
+
+module.exports = castPath;
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArray = __webpack_require__(5),
+    isSymbol = __webpack_require__(6);
+
+/** Used to match property names within property paths. */
+var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
+    reIsPlainProp = /^\w*$/;
+
+/**
+ * Checks if `value` is a property name and not a property path.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+ */
+function isKey(value, object) {
+  if (isArray(value)) {
+    return false;
+  }
+  var type = typeof value;
+  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
+      value == null || isSymbol(value)) {
+    return true;
+  }
+  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
+    (object != null && value in Object(object));
+}
+
+module.exports = isKey;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(25)))
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(7);
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var memoizeCapped = __webpack_require__(30);
+
+/** Used to match property names within property paths. */
+var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+/** Used to match backslashes in property paths. */
+var reEscapeChar = /\\(\\)?/g;
+
+/**
+ * Converts `string` to a property path array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the property path array.
+ */
+var stringToPath = memoizeCapped(function(string) {
+  var result = [];
+  if (string.charCodeAt(0) === 46 /* . */) {
+    result.push('');
+  }
+  string.replace(rePropName, function(match, number, quote, subString) {
+    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
+  });
+  return result;
+});
+
+module.exports = stringToPath;
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var memoize = __webpack_require__(31);
+
+/** Used as the maximum memoize cache size. */
+var MAX_MEMOIZE_SIZE = 500;
+
+/**
+ * A specialized version of `_.memoize` which clears the memoized function's
+ * cache when it exceeds `MAX_MEMOIZE_SIZE`.
+ *
+ * @private
+ * @param {Function} func The function to have its output memoized.
+ * @returns {Function} Returns the new memoized function.
+ */
+function memoizeCapped(func) {
+  var result = memoize(func, function(key) {
+    if (cache.size === MAX_MEMOIZE_SIZE) {
+      cache.clear();
+    }
+    return key;
+  });
+
+  var cache = result.cache;
+  return result;
+}
+
+module.exports = memoizeCapped;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var MapCache = __webpack_require__(32);
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/**
+ * Creates a function that memoizes the result of `func`. If `resolver` is
+ * provided, it determines the cache key for storing the result based on the
+ * arguments provided to the memoized function. By default, the first argument
+ * provided to the memoized function is used as the map cache key. The `func`
+ * is invoked with the `this` binding of the memoized function.
+ *
+ * **Note:** The cache is exposed as the `cache` property on the memoized
+ * function. Its creation may be customized by replacing the `_.memoize.Cache`
+ * constructor with one whose instances implement the
+ * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * method interface of `clear`, `delete`, `get`, `has`, and `set`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to have its output memoized.
+ * @param {Function} [resolver] The function to resolve the cache key.
+ * @returns {Function} Returns the new memoized function.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': 2 };
+ * var other = { 'c': 3, 'd': 4 };
+ *
+ * var values = _.memoize(_.values);
+ * values(object);
+ * // => [1, 2]
+ *
+ * values(other);
+ * // => [3, 4]
+ *
+ * object.a = 2;
+ * values(object);
+ * // => [1, 2]
+ *
+ * // Modify the result cache.
+ * values.cache.set(object, ['a', 'b']);
+ * values(object);
+ * // => ['a', 'b']
+ *
+ * // Replace `_.memoize.Cache`.
+ * _.memoize.Cache = WeakMap;
+ */
+function memoize(func, resolver) {
+  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments,
+        key = resolver ? resolver.apply(this, args) : args[0],
+        cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result) || cache;
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || MapCache);
+  return memoized;
+}
+
+// Expose `MapCache`.
+memoize.Cache = MapCache;
+
+module.exports = memoize;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var mapCacheClear = __webpack_require__(33),
+    mapCacheDelete = __webpack_require__(54),
+    mapCacheGet = __webpack_require__(56),
+    mapCacheHas = __webpack_require__(57),
+    mapCacheSet = __webpack_require__(58);
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+module.exports = MapCache;
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Hash = __webpack_require__(34),
+    ListCache = __webpack_require__(46),
+    Map = __webpack_require__(53);
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+module.exports = mapCacheClear;
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var hashClear = __webpack_require__(35),
+    hashDelete = __webpack_require__(42),
+    hashGet = __webpack_require__(43),
+    hashHas = __webpack_require__(44),
+    hashSet = __webpack_require__(45);
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+module.exports = Hash;
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(1);
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+  this.size = 0;
+}
+
+module.exports = hashClear;
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isFunction = __webpack_require__(37),
+    isMasked = __webpack_require__(38),
+    isObject = __webpack_require__(14),
+    toSource = __webpack_require__(40);
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+module.exports = baseIsNative;
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(12),
+    isObject = __webpack_require__(14);
+
+/** `Object#toString` result references. */
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    proxyTag = '[object Proxy]';
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  if (!isObject(value)) {
+    return false;
+  }
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+  var tag = baseGetTag(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+module.exports = isFunction;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var coreJsData = __webpack_require__(39);
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+module.exports = isMasked;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(8);
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+module.exports = coreJsData;
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to convert.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+module.exports = toSource;
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+module.exports = getValue;
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  var result = this.has(key) && delete this.__data__[key];
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = hashDelete;
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(1);
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+module.exports = hashGet;
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(1);
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
+}
+
+module.exports = hashHas;
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(1);
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  this.size += this.has(key) ? 0 : 1;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+module.exports = hashSet;
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var listCacheClear = __webpack_require__(47),
+    listCacheDelete = __webpack_require__(48),
+    listCacheGet = __webpack_require__(50),
+    listCacheHas = __webpack_require__(51),
+    listCacheSet = __webpack_require__(52);
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+module.exports = ListCache;
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports) {
+
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+  this.size = 0;
+}
+
+module.exports = listCacheClear;
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(2);
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  --this.size;
+  return true;
+}
+
+module.exports = listCacheDelete;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports) {
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+module.exports = eq;
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(2);
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+module.exports = listCacheGet;
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(2);
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+module.exports = listCacheHas;
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(2);
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    ++this.size;
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+module.exports = listCacheSet;
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(13),
+    root = __webpack_require__(8);
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(3);
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  var result = getMapData(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = mapCacheDelete;
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+module.exports = isKeyable;
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(3);
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+module.exports = mapCacheGet;
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(3);
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+module.exports = mapCacheHas;
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(3);
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  var data = getMapData(this, key),
+      size = data.size;
+
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+module.exports = mapCacheSet;
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseToString = __webpack_require__(60);
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : baseToString(value);
+}
+
+module.exports = toString;
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(7),
+    arrayMap = __webpack_require__(61),
+    isArray = __webpack_require__(5),
+    isSymbol = __webpack_require__(6);
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = baseToString;
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+module.exports = arrayMap;
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSymbol = __webpack_require__(6);
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+function toKey(value) {
+  if (typeof value == 'string' || isSymbol(value)) {
+    return value;
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = toKey;
+
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10850,11 +13147,11 @@ exports.default = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(9));
 
-var _jquery = _interopRequireDefault(__webpack_require__(1));
+var _jquery = _interopRequireDefault(__webpack_require__(4));
 
-var _formParsers = _interopRequireDefault(__webpack_require__(10));
+var _formParsers = _interopRequireDefault(__webpack_require__(15));
 
-var _refreshToken = _interopRequireDefault(__webpack_require__(18));
+var _refreshToken = _interopRequireDefault(__webpack_require__(64));
 
 function getUrl(isInternal) {
   return isInternal ? '' : 'https://englishdom.com';
@@ -10870,32 +13167,6 @@ function getClientId() {
   }
 
   return clientId;
-}
-
-function getUserId() {
-  var id = document.body.getAttribute('data-user-id');
-  return id;
-}
-
-function apiGetDataFromServer(internal, cb, loadCb) {
-  _jquery.default.ajax({
-    url: "".concat(getUrl(internal), "/api-public/logged-user/"),
-    contentType: 'application/vnd.api+json',
-    dataType: 'json',
-    timeout: 40000,
-    headers: {
-      Authorization1: null
-    },
-    beforeSend: function beforeSend() {
-      if (loadCb) loadCb.start();
-    },
-    success: function success(response) {
-      if (cb) cb.call(response.data.attributes);
-    },
-    complete: function complete() {
-      if (loadCb) loadCb.end();
-    }
-  });
 }
 
 function apiRegistration(data, internal, tags, loadCb, cb) {
@@ -11057,17 +13328,15 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
 }
 
 var _default = {
-  getUserId: getUserId,
   apiGetToken: apiGetToken,
   apiRegistration: apiRegistration,
-  apiGetDataFromServer: apiGetDataFromServer,
   apiReadRegistration: apiReadRegistration,
   apiSendApplication: apiSendApplication
 };
 exports.default = _default;
 
 /***/ }),
-/* 18 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11080,13 +13349,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(19));
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(10));
 
-var _jquery = _interopRequireDefault(__webpack_require__(1));
+var _jquery = _interopRequireDefault(__webpack_require__(4));
 
-var _md = _interopRequireDefault(__webpack_require__(20));
+var _md = _interopRequireDefault(__webpack_require__(65));
 
-var _get2 = _interopRequireDefault(__webpack_require__(21));
+var _get2 = _interopRequireDefault(__webpack_require__(11));
 
 var k = function k(s) {
   return s.split('').map(function (c) {
@@ -11107,28 +13376,7 @@ function _default() {
 }
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty;
-
-/***/ }),
-/* 20 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11152,52 +13400,122 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
 
 /* global define */
 
+/* eslint-disable strict */
+
 ;(function ($) {
   'use strict'
 
-  /*
-  * Add integers, wrapping at 2^32. This uses 16-bit operations internally
-  * to work around bugs in some JS interpreters.
-  */
-  function safeAdd (x, y) {
+  /**
+   * Add integers, wrapping at 2^32.
+   * This uses 16-bit operations internally to work around bugs in interpreters.
+   *
+   * @param {number} x First integer
+   * @param {number} y Second integer
+   * @returns {number} Sum
+   */
+  function safeAdd(x, y) {
     var lsw = (x & 0xffff) + (y & 0xffff)
     var msw = (x >> 16) + (y >> 16) + (lsw >> 16)
     return (msw << 16) | (lsw & 0xffff)
   }
 
-  /*
-  * Bitwise rotate a 32-bit number to the left.
-  */
-  function bitRotateLeft (num, cnt) {
+  /**
+   * Bitwise rotate a 32-bit number to the left.
+   *
+   * @param {number} num 32-bit number
+   * @param {number} cnt Rotation count
+   * @returns {number} Rotated number
+   */
+  function bitRotateLeft(num, cnt) {
     return (num << cnt) | (num >>> (32 - cnt))
   }
 
-  /*
-  * These functions implement the four basic operations the algorithm uses.
-  */
-  function md5cmn (q, a, b, x, s, t) {
+  /**
+   * Basic operation the algorithm uses.
+   *
+   * @param {number} q q
+   * @param {number} a a
+   * @param {number} b b
+   * @param {number} x x
+   * @param {number} s s
+   * @param {number} t t
+   * @returns {number} Result
+   */
+  function md5cmn(q, a, b, x, s, t) {
     return safeAdd(bitRotateLeft(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b)
   }
-  function md5ff (a, b, c, d, x, s, t) {
+  /**
+   * Basic operation the algorithm uses.
+   *
+   * @param {number} a a
+   * @param {number} b b
+   * @param {number} c c
+   * @param {number} d d
+   * @param {number} x x
+   * @param {number} s s
+   * @param {number} t t
+   * @returns {number} Result
+   */
+  function md5ff(a, b, c, d, x, s, t) {
     return md5cmn((b & c) | (~b & d), a, b, x, s, t)
   }
-  function md5gg (a, b, c, d, x, s, t) {
+  /**
+   * Basic operation the algorithm uses.
+   *
+   * @param {number} a a
+   * @param {number} b b
+   * @param {number} c c
+   * @param {number} d d
+   * @param {number} x x
+   * @param {number} s s
+   * @param {number} t t
+   * @returns {number} Result
+   */
+  function md5gg(a, b, c, d, x, s, t) {
     return md5cmn((b & d) | (c & ~d), a, b, x, s, t)
   }
-  function md5hh (a, b, c, d, x, s, t) {
+  /**
+   * Basic operation the algorithm uses.
+   *
+   * @param {number} a a
+   * @param {number} b b
+   * @param {number} c c
+   * @param {number} d d
+   * @param {number} x x
+   * @param {number} s s
+   * @param {number} t t
+   * @returns {number} Result
+   */
+  function md5hh(a, b, c, d, x, s, t) {
     return md5cmn(b ^ c ^ d, a, b, x, s, t)
   }
-  function md5ii (a, b, c, d, x, s, t) {
+  /**
+   * Basic operation the algorithm uses.
+   *
+   * @param {number} a a
+   * @param {number} b b
+   * @param {number} c c
+   * @param {number} d d
+   * @param {number} x x
+   * @param {number} s s
+   * @param {number} t t
+   * @returns {number} Result
+   */
+  function md5ii(a, b, c, d, x, s, t) {
     return md5cmn(c ^ (b | ~d), a, b, x, s, t)
   }
 
-  /*
-  * Calculate the MD5 of an array of little-endian words, and a bit length.
-  */
-  function binlMD5 (x, len) {
+  /**
+   * Calculate the MD5 of an array of little-endian words, and a bit length.
+   *
+   * @param {Array} x Array of little-endian words
+   * @param {number} len Bit length
+   * @returns {Array<number>} MD5 Array
+   */
+  function binlMD5(x, len) {
     /* append padding */
-    x[len >> 5] |= 0x80 << (len % 32)
-    x[((len + 64) >>> 9 << 4) + 14] = len
+    x[len >> 5] |= 0x80 << len % 32
+    x[(((len + 64) >>> 9) << 4) + 14] = len
 
     var i
     var olda
@@ -11291,24 +13609,30 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
     return [a, b, c, d]
   }
 
-  /*
-  * Convert an array of little-endian words to a string
-  */
-  function binl2rstr (input) {
+  /**
+   * Convert an array of little-endian words to a string
+   *
+   * @param {Array<number>} input MD5 Array
+   * @returns {string} MD5 string
+   */
+  function binl2rstr(input) {
     var i
     var output = ''
     var length32 = input.length * 32
     for (i = 0; i < length32; i += 8) {
-      output += String.fromCharCode((input[i >> 5] >>> (i % 32)) & 0xff)
+      output += String.fromCharCode((input[i >> 5] >>> i % 32) & 0xff)
     }
     return output
   }
 
-  /*
-  * Convert a raw string to an array of little-endian words
-  * Characters >255 have their high-byte silently ignored.
-  */
-  function rstr2binl (input) {
+  /**
+   * Convert a raw string to an array of little-endian words
+   * Characters >255 have their high-byte silently ignored.
+   *
+   * @param {string} input Raw input string
+   * @returns {Array<number>} Array of little-endian words
+   */
+  function rstr2binl(input) {
     var i
     var output = []
     output[(input.length >> 2) - 1] = undefined
@@ -11317,22 +13641,29 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
     }
     var length8 = input.length * 8
     for (i = 0; i < length8; i += 8) {
-      output[i >> 5] |= (input.charCodeAt(i / 8) & 0xff) << (i % 32)
+      output[i >> 5] |= (input.charCodeAt(i / 8) & 0xff) << i % 32
     }
     return output
   }
 
-  /*
-  * Calculate the MD5 of a raw string
-  */
-  function rstrMD5 (s) {
+  /**
+   * Calculate the MD5 of a raw string
+   *
+   * @param {string} s Input string
+   * @returns {string} Raw MD5 string
+   */
+  function rstrMD5(s) {
     return binl2rstr(binlMD5(rstr2binl(s), s.length * 8))
   }
 
-  /*
-  * Calculate the HMAC-MD5, of a key and some data (raw strings)
-  */
-  function rstrHMACMD5 (key, data) {
+  /**
+   * Calculates the HMAC-MD5 of a key and some data (raw strings)
+   *
+   * @param {string} key HMAC key
+   * @param {string} data Raw input string
+   * @returns {string} Raw MD5 string
+   */
+  function rstrHMACMD5(key, data) {
     var i
     var bkey = rstr2binl(key)
     var ipad = []
@@ -11350,10 +13681,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
     return binl2rstr(binlMD5(opad.concat(hash), 512 + 128))
   }
 
-  /*
-  * Convert a raw string to a hex string
-  */
-  function rstr2hex (input) {
+  /**
+   * Convert a raw string to a hex string
+   *
+   * @param {string} input Raw input string
+   * @returns {string} Hex encoded string
+   */
+  function rstr2hex(input) {
     var hexTab = '0123456789abcdef'
     var output = ''
     var x
@@ -11365,30 +13699,66 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
     return output
   }
 
-  /*
-  * Encode a string as utf-8
-  */
-  function str2rstrUTF8 (input) {
+  /**
+   * Encode a string as UTF-8
+   *
+   * @param {string} input Input string
+   * @returns {string} UTF8 string
+   */
+  function str2rstrUTF8(input) {
     return unescape(encodeURIComponent(input))
   }
 
-  /*
-  * Take string arguments and return either raw or hex encoded strings
-  */
-  function rawMD5 (s) {
+  /**
+   * Encodes input string as raw MD5 string
+   *
+   * @param {string} s Input string
+   * @returns {string} Raw MD5 string
+   */
+  function rawMD5(s) {
     return rstrMD5(str2rstrUTF8(s))
   }
-  function hexMD5 (s) {
+  /**
+   * Encodes input string as Hex encoded string
+   *
+   * @param {string} s Input string
+   * @returns {string} Hex encoded string
+   */
+  function hexMD5(s) {
     return rstr2hex(rawMD5(s))
   }
-  function rawHMACMD5 (k, d) {
+  /**
+   * Calculates the raw HMAC-MD5 for the given key and data
+   *
+   * @param {string} k HMAC key
+   * @param {string} d Input string
+   * @returns {string} Raw MD5 string
+   */
+  function rawHMACMD5(k, d) {
     return rstrHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d))
   }
-  function hexHMACMD5 (k, d) {
+  /**
+   * Calculates the Hex encoded HMAC-MD5 for the given key and data
+   *
+   * @param {string} k HMAC key
+   * @param {string} d Input string
+   * @returns {string} Raw MD5 string
+   */
+  function hexHMACMD5(k, d) {
     return rstr2hex(rawHMACMD5(k, d))
   }
 
-  function md5 (string, key, raw) {
+  /**
+   * Calculates MD5 value for a given string.
+   * If a key is provided, calculates the HMAC-MD5 value.
+   * Returns a Hex encoded string unless the raw argument is given.
+   *
+   * @param {string} string Input string
+   * @param {string} [key] HMAC key
+   * @param {boolean} [raw] Raw output switch
+   * @returns {string} MD5 output
+   */
+  function md5(string, key, raw) {
     if (!key) {
       if (!raw) {
         return hexMD5(string)
@@ -11411,1341 +13781,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGet = __webpack_require__(22);
-
-/**
- * Gets the value at `path` of `object`. If the resolved value is
- * `undefined`, the `defaultValue` is returned in its place.
- *
- * @static
- * @memberOf _
- * @since 3.7.0
- * @category Object
- * @param {Object} object The object to query.
- * @param {Array|string} path The path of the property to get.
- * @param {*} [defaultValue] The value returned for `undefined` resolved values.
- * @returns {*} Returns the resolved value.
- * @example
- *
- * var object = { 'a': [{ 'b': { 'c': 3 } }] };
- *
- * _.get(object, 'a[0].b.c');
- * // => 3
- *
- * _.get(object, ['a', '0', 'b', 'c']);
- * // => 3
- *
- * _.get(object, 'a.b.c', 'default');
- * // => 'default'
- */
-function get(object, path, defaultValue) {
-  var result = object == null ? undefined : baseGet(object, path);
-  return result === undefined ? defaultValue : result;
-}
-
-module.exports = get;
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var castPath = __webpack_require__(23),
-    toKey = __webpack_require__(63);
-
-/**
- * The base implementation of `_.get` without support for default values.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {Array|string} path The path of the property to get.
- * @returns {*} Returns the resolved value.
- */
-function baseGet(object, path) {
-  path = castPath(path, object);
-
-  var index = 0,
-      length = path.length;
-
-  while (object != null && index < length) {
-    object = object[toKey(path[index++])];
-  }
-  return (index && index == length) ? object : undefined;
-}
-
-module.exports = baseGet;
-
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isArray = __webpack_require__(5),
-    isKey = __webpack_require__(24),
-    stringToPath = __webpack_require__(30),
-    toString = __webpack_require__(60);
-
-/**
- * Casts `value` to a path array if it's not one.
- *
- * @private
- * @param {*} value The value to inspect.
- * @param {Object} [object] The object to query keys on.
- * @returns {Array} Returns the cast property path array.
- */
-function castPath(value, object) {
-  if (isArray(value)) {
-    return value;
-  }
-  return isKey(value, object) ? [value] : stringToPath(toString(value));
-}
-
-module.exports = castPath;
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isArray = __webpack_require__(5),
-    isSymbol = __webpack_require__(6);
-
-/** Used to match property names within property paths. */
-var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
-    reIsPlainProp = /^\w*$/;
-
-/**
- * Checks if `value` is a property name and not a property path.
- *
- * @private
- * @param {*} value The value to check.
- * @param {Object} [object] The object to query keys on.
- * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
- */
-function isKey(value, object) {
-  if (isArray(value)) {
-    return false;
-  }
-  var type = typeof value;
-  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
-      value == null || isSymbol(value)) {
-    return true;
-  }
-  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
-    (object != null && value in Object(object));
-}
-
-module.exports = isKey;
-
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-
-module.exports = freeGlobal;
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(26)))
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(7);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString = objectProto.toString;
-
-/** Built-in value references. */
-var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
-
-/**
- * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the raw `toStringTag`.
- */
-function getRawTag(value) {
-  var isOwn = hasOwnProperty.call(value, symToStringTag),
-      tag = value[symToStringTag];
-
-  try {
-    value[symToStringTag] = undefined;
-    var unmasked = true;
-  } catch (e) {}
-
-  var result = nativeObjectToString.call(value);
-  if (unmasked) {
-    if (isOwn) {
-      value[symToStringTag] = tag;
-    } else {
-      delete value[symToStringTag];
-    }
-  }
-  return result;
-}
-
-module.exports = getRawTag;
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString = objectProto.toString;
-
-/**
- * Converts `value` to a string using `Object.prototype.toString`.
- *
- * @private
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- */
-function objectToString(value) {
-  return nativeObjectToString.call(value);
-}
-
-module.exports = objectToString;
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return value != null && typeof value == 'object';
-}
-
-module.exports = isObjectLike;
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var memoizeCapped = __webpack_require__(31);
-
-/** Used to match property names within property paths. */
-var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
-
-/** Used to match backslashes in property paths. */
-var reEscapeChar = /\\(\\)?/g;
-
-/**
- * Converts `string` to a property path array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the property path array.
- */
-var stringToPath = memoizeCapped(function(string) {
-  var result = [];
-  if (string.charCodeAt(0) === 46 /* . */) {
-    result.push('');
-  }
-  string.replace(rePropName, function(match, number, quote, subString) {
-    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
-  });
-  return result;
-});
-
-module.exports = stringToPath;
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var memoize = __webpack_require__(32);
-
-/** Used as the maximum memoize cache size. */
-var MAX_MEMOIZE_SIZE = 500;
-
-/**
- * A specialized version of `_.memoize` which clears the memoized function's
- * cache when it exceeds `MAX_MEMOIZE_SIZE`.
- *
- * @private
- * @param {Function} func The function to have its output memoized.
- * @returns {Function} Returns the new memoized function.
- */
-function memoizeCapped(func) {
-  var result = memoize(func, function(key) {
-    if (cache.size === MAX_MEMOIZE_SIZE) {
-      cache.clear();
-    }
-    return key;
-  });
-
-  var cache = result.cache;
-  return result;
-}
-
-module.exports = memoizeCapped;
-
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var MapCache = __webpack_require__(33);
-
-/** Error message constants. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/**
- * Creates a function that memoizes the result of `func`. If `resolver` is
- * provided, it determines the cache key for storing the result based on the
- * arguments provided to the memoized function. By default, the first argument
- * provided to the memoized function is used as the map cache key. The `func`
- * is invoked with the `this` binding of the memoized function.
- *
- * **Note:** The cache is exposed as the `cache` property on the memoized
- * function. Its creation may be customized by replacing the `_.memoize.Cache`
- * constructor with one whose instances implement the
- * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
- * method interface of `clear`, `delete`, `get`, `has`, and `set`.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Function
- * @param {Function} func The function to have its output memoized.
- * @param {Function} [resolver] The function to resolve the cache key.
- * @returns {Function} Returns the new memoized function.
- * @example
- *
- * var object = { 'a': 1, 'b': 2 };
- * var other = { 'c': 3, 'd': 4 };
- *
- * var values = _.memoize(_.values);
- * values(object);
- * // => [1, 2]
- *
- * values(other);
- * // => [3, 4]
- *
- * object.a = 2;
- * values(object);
- * // => [1, 2]
- *
- * // Modify the result cache.
- * values.cache.set(object, ['a', 'b']);
- * values(object);
- * // => ['a', 'b']
- *
- * // Replace `_.memoize.Cache`.
- * _.memoize.Cache = WeakMap;
- */
-function memoize(func, resolver) {
-  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
-    throw new TypeError(FUNC_ERROR_TEXT);
-  }
-  var memoized = function() {
-    var args = arguments,
-        key = resolver ? resolver.apply(this, args) : args[0],
-        cache = memoized.cache;
-
-    if (cache.has(key)) {
-      return cache.get(key);
-    }
-    var result = func.apply(this, args);
-    memoized.cache = cache.set(key, result) || cache;
-    return result;
-  };
-  memoized.cache = new (memoize.Cache || MapCache);
-  return memoized;
-}
-
-// Expose `MapCache`.
-memoize.Cache = MapCache;
-
-module.exports = memoize;
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var mapCacheClear = __webpack_require__(34),
-    mapCacheDelete = __webpack_require__(55),
-    mapCacheGet = __webpack_require__(57),
-    mapCacheHas = __webpack_require__(58),
-    mapCacheSet = __webpack_require__(59);
-
-/**
- * Creates a map cache object to store key-value pairs.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function MapCache(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-// Add methods to `MapCache`.
-MapCache.prototype.clear = mapCacheClear;
-MapCache.prototype['delete'] = mapCacheDelete;
-MapCache.prototype.get = mapCacheGet;
-MapCache.prototype.has = mapCacheHas;
-MapCache.prototype.set = mapCacheSet;
-
-module.exports = MapCache;
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Hash = __webpack_require__(35),
-    ListCache = __webpack_require__(47),
-    Map = __webpack_require__(54);
-
-/**
- * Removes all key-value entries from the map.
- *
- * @private
- * @name clear
- * @memberOf MapCache
- */
-function mapCacheClear() {
-  this.size = 0;
-  this.__data__ = {
-    'hash': new Hash,
-    'map': new (Map || ListCache),
-    'string': new Hash
-  };
-}
-
-module.exports = mapCacheClear;
-
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var hashClear = __webpack_require__(36),
-    hashDelete = __webpack_require__(43),
-    hashGet = __webpack_require__(44),
-    hashHas = __webpack_require__(45),
-    hashSet = __webpack_require__(46);
-
-/**
- * Creates a hash object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function Hash(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-// Add methods to `Hash`.
-Hash.prototype.clear = hashClear;
-Hash.prototype['delete'] = hashDelete;
-Hash.prototype.get = hashGet;
-Hash.prototype.has = hashHas;
-Hash.prototype.set = hashSet;
-
-module.exports = Hash;
-
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(2);
-
-/**
- * Removes all key-value entries from the hash.
- *
- * @private
- * @name clear
- * @memberOf Hash
- */
-function hashClear() {
-  this.__data__ = nativeCreate ? nativeCreate(null) : {};
-  this.size = 0;
-}
-
-module.exports = hashClear;
-
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isFunction = __webpack_require__(38),
-    isMasked = __webpack_require__(39),
-    isObject = __webpack_require__(13),
-    toSource = __webpack_require__(41);
-
-/**
- * Used to match `RegExp`
- * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
- */
-var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-
-/** Used to detect host constructors (Safari). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to detect if a method is native. */
-var reIsNative = RegExp('^' +
-  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
-  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-);
-
-/**
- * The base implementation of `_.isNative` without bad shim checks.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a native function,
- *  else `false`.
- */
-function baseIsNative(value) {
-  if (!isObject(value) || isMasked(value)) {
-    return false;
-  }
-  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
-  return pattern.test(toSource(value));
-}
-
-module.exports = baseIsNative;
-
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGetTag = __webpack_require__(11),
-    isObject = __webpack_require__(13);
-
-/** `Object#toString` result references. */
-var asyncTag = '[object AsyncFunction]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    proxyTag = '[object Proxy]';
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  if (!isObject(value)) {
-    return false;
-  }
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 9 which returns 'object' for typed arrays and other constructors.
-  var tag = baseGetTag(value);
-  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
-}
-
-module.exports = isFunction;
-
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var coreJsData = __webpack_require__(40);
-
-/** Used to detect methods masquerading as native. */
-var maskSrcKey = (function() {
-  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-  return uid ? ('Symbol(src)_1.' + uid) : '';
-}());
-
-/**
- * Checks if `func` has its source masked.
- *
- * @private
- * @param {Function} func The function to check.
- * @returns {boolean} Returns `true` if `func` is masked, else `false`.
- */
-function isMasked(func) {
-  return !!maskSrcKey && (maskSrcKey in func);
-}
-
-module.exports = isMasked;
-
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var root = __webpack_require__(8);
-
-/** Used to detect overreaching core-js shims. */
-var coreJsData = root['__core-js_shared__'];
-
-module.exports = coreJsData;
-
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports) {
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/**
- * Converts `func` to its source code.
- *
- * @private
- * @param {Function} func The function to convert.
- * @returns {string} Returns the source code.
- */
-function toSource(func) {
-  if (func != null) {
-    try {
-      return funcToString.call(func);
-    } catch (e) {}
-    try {
-      return (func + '');
-    } catch (e) {}
-  }
-  return '';
-}
-
-module.exports = toSource;
-
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports) {
-
-/**
- * Gets the value at `key` of `object`.
- *
- * @private
- * @param {Object} [object] The object to query.
- * @param {string} key The key of the property to get.
- * @returns {*} Returns the property value.
- */
-function getValue(object, key) {
-  return object == null ? undefined : object[key];
-}
-
-module.exports = getValue;
-
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-/**
- * Removes `key` and its value from the hash.
- *
- * @private
- * @name delete
- * @memberOf Hash
- * @param {Object} hash The hash to modify.
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function hashDelete(key) {
-  var result = this.has(key) && delete this.__data__[key];
-  this.size -= result ? 1 : 0;
-  return result;
-}
-
-module.exports = hashDelete;
-
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(2);
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Gets the hash value for `key`.
- *
- * @private
- * @name get
- * @memberOf Hash
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function hashGet(key) {
-  var data = this.__data__;
-  if (nativeCreate) {
-    var result = data[key];
-    return result === HASH_UNDEFINED ? undefined : result;
-  }
-  return hasOwnProperty.call(data, key) ? data[key] : undefined;
-}
-
-module.exports = hashGet;
-
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(2);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Checks if a hash value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf Hash
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function hashHas(key) {
-  var data = this.__data__;
-  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
-}
-
-module.exports = hashHas;
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(2);
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/**
- * Sets the hash `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf Hash
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the hash instance.
- */
-function hashSet(key, value) {
-  var data = this.__data__;
-  this.size += this.has(key) ? 0 : 1;
-  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
-  return this;
-}
-
-module.exports = hashSet;
-
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var listCacheClear = __webpack_require__(48),
-    listCacheDelete = __webpack_require__(49),
-    listCacheGet = __webpack_require__(51),
-    listCacheHas = __webpack_require__(52),
-    listCacheSet = __webpack_require__(53);
-
-/**
- * Creates an list cache object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function ListCache(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-// Add methods to `ListCache`.
-ListCache.prototype.clear = listCacheClear;
-ListCache.prototype['delete'] = listCacheDelete;
-ListCache.prototype.get = listCacheGet;
-ListCache.prototype.has = listCacheHas;
-ListCache.prototype.set = listCacheSet;
-
-module.exports = ListCache;
-
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-/**
- * Removes all key-value entries from the list cache.
- *
- * @private
- * @name clear
- * @memberOf ListCache
- */
-function listCacheClear() {
-  this.__data__ = [];
-  this.size = 0;
-}
-
-module.exports = listCacheClear;
-
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(3);
-
-/** Used for built-in method references. */
-var arrayProto = Array.prototype;
-
-/** Built-in value references. */
-var splice = arrayProto.splice;
-
-/**
- * Removes `key` and its value from the list cache.
- *
- * @private
- * @name delete
- * @memberOf ListCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function listCacheDelete(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    return false;
-  }
-  var lastIndex = data.length - 1;
-  if (index == lastIndex) {
-    data.pop();
-  } else {
-    splice.call(data, index, 1);
-  }
-  --this.size;
-  return true;
-}
-
-module.exports = listCacheDelete;
-
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports) {
-
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
-
-module.exports = eq;
-
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(3);
-
-/**
- * Gets the list cache value for `key`.
- *
- * @private
- * @name get
- * @memberOf ListCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function listCacheGet(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  return index < 0 ? undefined : data[index][1];
-}
-
-module.exports = listCacheGet;
-
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(3);
-
-/**
- * Checks if a list cache value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf ListCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function listCacheHas(key) {
-  return assocIndexOf(this.__data__, key) > -1;
-}
-
-module.exports = listCacheHas;
-
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(3);
-
-/**
- * Sets the list cache `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf ListCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the list cache instance.
- */
-function listCacheSet(key, value) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    ++this.size;
-    data.push([key, value]);
-  } else {
-    data[index][1] = value;
-  }
-  return this;
-}
-
-module.exports = listCacheSet;
-
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(12),
-    root = __webpack_require__(8);
-
-/* Built-in method references that are verified to be native. */
-var Map = getNative(root, 'Map');
-
-module.exports = Map;
-
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(4);
-
-/**
- * Removes `key` and its value from the map.
- *
- * @private
- * @name delete
- * @memberOf MapCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function mapCacheDelete(key) {
-  var result = getMapData(this, key)['delete'](key);
-  this.size -= result ? 1 : 0;
-  return result;
-}
-
-module.exports = mapCacheDelete;
-
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is suitable for use as unique object key.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
- */
-function isKeyable(value) {
-  var type = typeof value;
-  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
-    ? (value !== '__proto__')
-    : (value === null);
-}
-
-module.exports = isKeyable;
-
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(4);
-
-/**
- * Gets the map value for `key`.
- *
- * @private
- * @name get
- * @memberOf MapCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function mapCacheGet(key) {
-  return getMapData(this, key).get(key);
-}
-
-module.exports = mapCacheGet;
-
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(4);
-
-/**
- * Checks if a map value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf MapCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function mapCacheHas(key) {
-  return getMapData(this, key).has(key);
-}
-
-module.exports = mapCacheHas;
-
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(4);
-
-/**
- * Sets the map `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf MapCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the map cache instance.
- */
-function mapCacheSet(key, value) {
-  var data = getMapData(this, key),
-      size = data.size;
-
-  data.set(key, value);
-  this.size += data.size == size ? 0 : 1;
-  return this;
-}
-
-module.exports = mapCacheSet;
-
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseToString = __webpack_require__(61);
-
-/**
- * Converts `value` to a string. An empty string is returned for `null`
- * and `undefined` values. The sign of `-0` is preserved.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- * @example
- *
- * _.toString(null);
- * // => ''
- *
- * _.toString(-0);
- * // => '-0'
- *
- * _.toString([1, 2, 3]);
- * // => '1,2,3'
- */
-function toString(value) {
-  return value == null ? '' : baseToString(value);
-}
-
-module.exports = toString;
-
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(7),
-    arrayMap = __webpack_require__(62),
-    isArray = __webpack_require__(5),
-    isSymbol = __webpack_require__(6);
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol ? Symbol.prototype : undefined,
-    symbolToString = symbolProto ? symbolProto.toString : undefined;
-
-/**
- * The base implementation of `_.toString` which doesn't convert nullish
- * values to empty strings.
- *
- * @private
- * @param {*} value The value to process.
- * @returns {string} Returns the string.
- */
-function baseToString(value) {
-  // Exit early for strings to avoid a performance hit in some environments.
-  if (typeof value == 'string') {
-    return value;
-  }
-  if (isArray(value)) {
-    // Recursively convert values (susceptible to call stack limits).
-    return arrayMap(value, baseToString) + '';
-  }
-  if (isSymbol(value)) {
-    return symbolToString ? symbolToString.call(value) : '';
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-module.exports = baseToString;
-
-
-/***/ }),
-/* 62 */
-/***/ (function(module, exports) {
-
-/**
- * A specialized version of `_.map` for arrays without support for iteratee
- * shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the new mapped array.
- */
-function arrayMap(array, iteratee) {
-  var index = -1,
-      length = array == null ? 0 : array.length,
-      result = Array(length);
-
-  while (++index < length) {
-    result[index] = iteratee(array[index], index, array);
-  }
-  return result;
-}
-
-module.exports = arrayMap;
-
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isSymbol = __webpack_require__(6);
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/**
- * Converts `value` to a string key if it's not a string or symbol.
- *
- * @private
- * @param {*} value The value to inspect.
- * @returns {string|symbol} Returns the key.
- */
-function toKey(value) {
-  if (typeof value == 'string' || isSymbol(value)) {
-    return value;
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-module.exports = toKey;
-
-
-/***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12758,9 +13794,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _jquery = _interopRequireDefault(__webpack_require__(1));
+var _jquery = _interopRequireDefault(__webpack_require__(4));
 
-__webpack_require__(65);
+__webpack_require__(67);
 
 function init(el) {
   var $input = (0, _jquery.default)(el).find('.js-ed-form-tel-number');
@@ -12802,7 +13838,7 @@ var _default = init;
 exports.default = _default;
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12810,7 +13846,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 var _interopRequireDefault = __webpack_require__(0);
 
-var _typeof2 = _interopRequireDefault(__webpack_require__(66));
+var _typeof2 = _interopRequireDefault(__webpack_require__(68));
 
 /*
 International Telephone Input v6.4.1
@@ -12819,7 +13855,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
 // wrap in UMD - see https://github.com/umdjs/umd/blob/master/jqueryPluginCommonjs.js
 (function (factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
       factory($, window, document);
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -14214,7 +15250,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
 });
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports) {
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
@@ -14234,6 +15270,239 @@ function _typeof(obj) {
 }
 
 module.exports = _typeof;
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.gmtConverter = exports.pageConverter = exports.getPeriod = exports.getK = void 0;
+
+var _rawdata = _interopRequireDefault(__webpack_require__(70));
+
+var _parseData = _interopRequireDefault(__webpack_require__(71));
+
+// interface LeadPriority {
+//   source: string,
+//   medium: string,
+//   fromPage: string,
+// }
+var kTable = (0, _parseData.default)(_rawdata.default);
+
+var getK = function getK(kObject, analyticsCb) // : LeadPriority
+{
+  var kObj = {};
+  var country = kObject.country,
+      dayOfWeek = kObject.dayOfWeek,
+      fromPage = kObject.fromPage,
+      gmt = kObject.gmt,
+      hour = kObject.hour,
+      medium = kObject.medium,
+      month = kObject.month,
+      source = kObject.source,
+      hash = kObject.hash;
+
+  var getKFromTable = function getKFromTable(key, param) {
+    return param ? kTable[key][param] ? kTable[key][param] : kTable[key]['none'] || 0 : kTable[key]['(not_set)'] || 0;
+  };
+
+  try {
+    kObj = {
+      kCountry: getKFromTable('country', country),
+      kDayOfWeek: getKFromTable('dayOfWeek', dayOfWeek),
+      kFromPage: getKFromTable('fromPage', fromPage),
+      kGmt: getKFromTable('gmt', gmt),
+      kHour: getKFromTable('hour', hour),
+      kMedium: getKFromTable('medium', medium),
+      kMonth: getKFromTable('month', month),
+      kSource: getKFromTable('source', source),
+      kHash: getKFromTable('hash', hash)
+    };
+  } catch (e) {
+    console.error(e);
+  }
+
+  if (analyticsCb) analyticsCb(kObj);
+  var kSum = kObj.kCountry + kObj.kDayOfWeek + kObj.kFromPage + kObj.kGmt + kObj.kHour + kObj.kMedium + kObj.kMonth + kObj.kSource + kObj.kHash;
+  var k;
+
+  if (kSum !== 0) {
+    // main formula
+    var kRaw = 1 + Math.exp(-kSum); // round to 9 decimal
+
+    k = Math.round(1 / kRaw * Math.pow(10, 9)) / Math.pow(10, 9);
+  } else {
+    k = 0;
+  }
+
+  return k;
+};
+
+exports.getK = getK;
+
+var getPeriod = function getPeriod(num) // num: number
+{
+  // finding high and low period
+  var priorityL = 0;
+  var priorityH = 1;
+  var period = '';
+
+  if (num === 0) {
+    period = '0-10';
+  } else if (num === 1) {
+    period = '90-100';
+  } else {
+    priorityL = Math.floor(num * 10);
+    priorityH = Math.ceil(num * 10);
+    period = "".concat(priorityL, "0-").concat(priorityH, "0");
+  }
+
+  return period;
+};
+
+exports.getPeriod = getPeriod;
+
+var pageConverter = function pageConverter(url) {
+  var urlArray = url.split('/');
+  var result;
+
+  if (urlArray[1] === 'l') {
+    result = ['', urlArray[1], urlArray[2], ''].join('/');
+  } else if (urlArray[1] === '') {
+    result = ['', ''].join('/');
+  } else {
+    result = ['', urlArray[1], ''].join('/');
+  }
+
+  return result;
+};
+
+exports.pageConverter = pageConverter;
+
+var gmtConverter = function gmtConverter(timeGMTOffset) {
+  var time = timeGMTOffset / 60;
+  var h = parseInt(time, 10);
+  var m = timeGMTOffset % 60;
+  if (h === 0 && m === 0) return '0';
+
+  if (m === 0) {
+    return "".concat(Math.sign(time) === -1 ? '+' : '-').concat(Math.abs(h));
+  }
+
+  return "".concat(Math.sign(time) === -1 ? '+' : '-').concat(Math.abs(h), ":").concat(Math.abs(m));
+};
+
+exports.gmtConverter = gmtConverter;
+
+/***/ }),
+/* 70 */
+/***/ (function(module) {
+
+module.exports = [{"p":"co","v":"RU","c":"1,999990273"},{"p":"co","v":"UA","c":"1,847436365"},{"p":"co","v":"US","c":"1,607654266"},{"p":"co","v":"PL","c":"1,332612731"},{"p":"co","v":"BY","c":"0,9758825358"},{"p":"co","v":"AZ","c":"-0,1549247658"},{"p":"co","v":"KZ","c":"-0,2019805335"},{"p":"co","v":"UZ","c":"-1,585007932"},{"p":"co","v":"TJ","c":"-3,192818532"},{"p":"co","v":"KG","c":"-4,075304157"},{"p":"co","v":"(not_set)","c":0},{"p":"co","v":"none","c":"1,253657037"},{"p":"dr","v":2,"c":"0,164564992"},{"p":"dr","v":4,"c":"0,04461309382"},{"p":"dr","v":3,"c":"-0,004566247962"},{"p":"dr","v":5,"c":"-0,02841061346"},{"p":"dr","v":1,"c":"-0,02882606424"},{"p":"dr","v":6,"c":"-0,1044230261"},{"p":"dr","v":7,"c":"-0,2357548465"},{"p":"dr","v":"(not_set)","c":0},{"p":"dr","v":"none","c":0},{"p":"fh","v":"#kogda-ispolzuetsya-was-were","c":"4,412380007"},{"p":"fh","v":"#5","c":"3,568036352"},{"p":"fh","v":"#course-goals","c":"2,341455193"},{"p":"fh","v":"#certificate","c":"2,040646384"},{"p":"fh","v":"#1/","c":"1,883202085"},{"p":"fh","v":"#programs","c":"1,778596245"},{"p":"fh","v":"#application-main-page-1","c":"1,749873342"},{"p":"fh","v":"#","c":"1,681079906"},{"p":"fh","v":"#freelesson","c":"1,670799683"},{"p":"fh","v":"#teachers","c":"1,241999451"},{"p":"fh","v":"#application-main","c":"0,7649677523"},{"p":"fh","v":"#scroll-to-form","c":"0,4645014643"},{"p":"fh","v":"#application-kids","c":"0,3108298127"},{"p":"fh","v":"#kak-ispolzovat-socseti-dlya-izucheniya-anglijskogo","c":"-0,01112899559"},{"p":"fh","v":"#s-chego-luchshe-nachat-izuchenie-anglijskogo-s-rebenkom","c":"-0,01136185667"},{"p":"fh","v":"#chtenie-osnovnyh-kombinacij-soglasnyh-v-anglijskom-yazyke","c":"-0,01633049828"},{"p":"fh","v":"#podgotovka-k-sobesedovaniyu-na-anglijskom","c":"-0,02017344542"},{"p":"fh","v":"#otvechaem-na-blagodarnost-na-anglijskom-yazyke","c":"-0,02425580839"},{"p":"fh","v":"#top-10-obuchayushchih-multfilmov-dlya-detej","c":"-0,02547547185"},{"p":"fh","v":"#sovety-po-izucheniyu-anglijskogo-dlya-nachinayushchih","c":"-0,0312414221"},{"p":"fh","v":"#comments","c":"-0,03229992841"},{"p":"fh","v":"#pochemu-znat-maty-na-anglijskom-ehto-vazhno","c":"-0,03378701148"},{"p":"fh","v":"#this-i-that","c":"-0,04460781744"},{"p":"fh","v":"#uroven-intermediate-chto-ehto-znachit","c":"-0,04881493397"},{"p":"fh","v":"#https://www.englishdom.com/","c":"-0,04967435667"},{"p":"fh","v":"#chto-takoe-ehkzamen-toefl","c":"-0,05262684972"},{"p":"fh","v":"#rol-imeni-sushchestvitelnogo","c":"-0,05454596948"},{"p":"fh","v":"#upotreblenie-either-neither-i-both","c":"-0,05489724531"},{"p":"fh","v":"#one-little-finger","c":"-0,06086770589"},{"p":"fh","v":"#dlya-chego-nuzhen-razgovornyj-anglijskij","c":"-0,06258195067"},{"p":"fh","v":"#glagoly-fizicheskogo-vospriyatiya-verbs-of-physical-perception","c":"-0,06822127074"},{"p":"fh","v":"#srok-obucheniya-na-urovne-elementary","c":"-0,07104182798"},{"p":"fh","v":"#chto-nuzhno-ponimat-i-kak-dejstvovat","c":"-0,07270602437"},{"p":"fh","v":"#urovni-anglijskogo-yazyka","c":"-0,07713474259"},{"p":"fh","v":"#tablica-iz-1000-samyh-vstrechaemyh-slov-v-anglijskom","c":"-0,0791941048"},{"p":"fh","v":"#7","c":"-0,08418858117"},{"p":"fh","v":"#yak-vivchiti-vs-chasi-na-angl-jsk-j","c":"-0,09410895399"},{"p":"fh","v":"#oshibki-pri-napisanii-rezyume","c":"-0,09536907265"},{"p":"fh","v":"#visnovok","c":"-0,09871947273"},{"p":"fh","v":"#sposoby-izucheniya-razgovornogo-anglijskogo-onlajn","c":"-0,1007089886"},{"p":"fh","v":"#9","c":"-0,103885137"},{"p":"fh","v":"#prichini-zajmatis-angl-jskoyu-po-skajpu-z-vchitelem","c":"-0,1075354644"},{"p":"fh","v":"#kak-video-uroki-pomogayut-detyam","c":"-0,1111789567"},{"p":"fh","v":"#nuzhno-li-uchit-anglijskij-yazyk-vzroslomu","c":"-0,1112335246"},{"p":"fh","v":"#ser-ali-na-angl-jsk-j-dlya-r-znogo-r-vnya","c":"-0,1205931169"},{"p":"fh","v":"#kak-nauchitsya-amerikanskomu-akcentu","c":"-0,1212520088"},{"p":"fh","v":"#frukty","c":"-0,1232680685"},{"p":"fh","v":"#zv-ropol-s-zootopia","c":"-0,1309268763"},{"p":"fh","v":"#13","c":"-0,1312489995"},{"p":"fh","v":"#ache","c":"-0,1315948352"},{"p":"fh","v":"#zamoviti-stolik","c":"-0,1320483265"},{"p":"fh","v":"#chastini-tuluba","c":"-0,1329331738"},{"p":"fh","v":"#skolko-vremeni-neobhodimo-dlya-izucheniya-razgovornogo-anglijskogo","c":"-0,1329608339"},{"p":"fh","v":"#resursy-dlya-izucheniya-anglijskogo-samostoyatelno","c":"-0,1385616356"},{"p":"fh","v":"#the-good-grammar-book","c":"-0,1436258601"},{"p":"fh","v":"#shcho-take-past-simple","c":"-0,1451906326"},{"p":"fh","v":"#rukovodstvo-po-izucheniyu-anglijskogo-s-nulya","c":"-0,1459978036"},{"p":"fh","v":"#yak-angl-jsk-multf-lmi-dopomagayut-d-tyam-vchiti-movu","c":"-0,1487589983"},{"p":"fh","v":"#11","c":"-0,1503563999"},{"p":"fh","v":"#dlya-chogo-potr-bno-shvidko-vivchiti-angl-jsku","c":"-0,1513030234"},{"p":"fh","v":"#top-7-igr-chtoby-uluchshit-razgovornyj-anglijskij","c":"-0,1521293667"},{"p":"fh","v":"#tv-r-na-temu-moya-podorozh","c":"-0,1521455386"},{"p":"fh","v":"#korol-lev-the-lion-king","c":"-0,1581350249"},{"p":"fh","v":"#mulan-mulan","c":"-0,1600779251"},{"p":"fh","v":"#essay-on-my-future-career","c":"-0,1615267902"},{"p":"fh","v":"#sovety-na-budushchee","c":"-0,1704029734"},{"p":"fh","v":"#shcho-take-ese-z-angl-jsko","c":"-0,1740936437"},{"p":"fh","v":"#osnovnye-slova-i-vyrazheniya-dlya-izucheniya","c":"-0,1756107659"},{"p":"fh","v":"#chto-takoe-specialnyj-vopros","c":"-0,1776188381"},{"p":"fh","v":"#luchshie-prilozheniya-dlya-izucheniya-anglijskogo","c":"-0,1799849487"},{"p":"fh","v":"#kak-izuchat-anglijskij-yazyk-vo-2-klasse-samostoyatelno","c":"-0,1806045837"},{"p":"fh","v":"#koli-krashche-pochati-vivchennya-angl-jsko","c":"-0,1815638762"},{"p":"fh","v":"#kogda-luchshe-nachat-izuchenie-anglijskogo","c":"-0,1848568061"},{"p":"fh","v":"#prostota-zalog-uspekha","c":"-0,1890817522"},{"p":"fh","v":"#urovni-vladeniya-anglijskim-yazykom","c":"-0,1912530799"},{"p":"fh","v":"#uchebniki-dlya-it-specialistov","c":"-0,2095832905"},{"p":"fh","v":"#top-15-slov-dlya-ispolzovaniya-v-delovom-anglijskom","c":"-0,212551797"},{"p":"fh","v":"#tekst-i-perevod-pesni-in-my-mind","c":"-0,2196512195"},{"p":"fh","v":"#audioknigi-na-anglijskom-onlajn","c":"-0,2204486167"},{"p":"fh","v":"#neobhodimyj-uroven-znaniya-anglijskogo-dlya-testirovshchika","c":"-0,225119156"},{"p":"fh","v":"#realno-li-vyuchit-anglijskij-za-mesyac-nedelyu-24-chasa","c":"-0,2264074252"},{"p":"fh","v":"#100-samih-populyarnih-nepravilnih-d-sl-v-u-angl-jsk-j","c":"-0,2277868303"},{"p":"fh","v":"#programmy-dlya-izucheniya-anglijskogo-yazyka","c":"-0,2361605445"},{"p":"fh","v":"#pristegnite-remni","c":"-0,2388936736"},{"p":"fh","v":"#realno-li-ehto","c":"-0,2421471903"},{"p":"fh","v":"#chem-otlichaetsya-uroven-beginner-ot-elementary","c":"-0,2468085816"},{"p":"fh","v":"#chitannya-osnovnih-komb-nac-j-prigolosnih-v-angl-jsk-j-mov","c":"-0,2556889082"},{"p":"fh","v":"#yak-priskoriti-vivchennya-angl-jsko-samost-jno","c":"-0,2677742504"},{"p":"fh","v":"#s-chego-luchshe-nachinat-izuchat-anglijskij-yazyk-vtoroklassniku","c":"-0,2698409332"},{"p":"fh","v":"#tablica","c":"-0,2706665407"},{"p":"fh","v":"#zaklyuchenie","c":"-0,2711594849"},{"p":"fh","v":"#chto-vklyuchaet-v-sebya-kurs-izucheniya-yazyka-na-urovne-elementary","c":"-0,2740463042"},{"p":"fh","v":"#delovoj-anglijskij-dlya-finansistov","c":"-0,2743802795"},{"p":"fh","v":"#ser-ali-i-f-lmi-angl-jskoyu-movoyu","c":"-0,2827328883"},{"p":"fh","v":"#uroven-yazyka-preintermediate-chto-ehto-znachit","c":"-0,288526363"},{"p":"fh","v":"#top-10-ser-al-v-angl-jskoyu-movoyu","c":"-0,2909627665"},{"p":"fh","v":"#perev-r-sv-j-r-ven-angl-jsko-movi","c":"-0,2940441841"},{"p":"fh","v":"#kak-luchshe-uchit-transkripciyu-zvukov-dlya-detej","c":"-0,296613151"},{"p":"fh","v":"#4library","c":"-0,3026243797"},{"p":"fh","v":"#5-tip-v-pitan-v-angl-jsk","c":"-0,3159985493"},{"p":"fh","v":"#vidi-navchalnih-gor-na-angl-jsk-j","c":"-0,3323479577"},{"p":"fh","v":"#struktura-d-lovogo-lista","c":"-0,346942299"},{"p":"fh","v":"#preimushchestva-nashego-testa-na-znanie-anglijskogo-yazyka","c":"-0,3552449905"},{"p":"fh","v":"#prosto-pro-angl-jsk-chasi","c":"-0,4163754259"},{"p":"fh","v":"#ed-teachers","c":"-0,46254984"},{"p":"fh","v":"#ser-ali-angl-jskoyu-movoyu-z-subtitrami","c":"-0,4655017149"},{"p":"fh","v":"#4","c":"-0,4905118286"},{"p":"fh","v":"#6","c":"-0,5024160774"},{"p":"fh","v":"#abc-song","c":"-0,507320984"},{"p":"fh","v":"#2","c":"-0,5941182381"},{"p":"fh","v":"#reviews","c":"-0,636579948"},{"p":"fh","v":"#kak-pravilno-perevodit-s-anglijskogo","c":"-0,6675599816"},{"p":"fh","v":"#aud-oknigi-angl-jskoyu-movoyu-onlajn","c":"-0,7127425742"},{"p":"fh","v":"#application-skype-page-1","c":"-0,7810335159"},{"p":"fh","v":"#modern-approach","c":"-0,8231928962"},{"p":"fh","v":"#3","c":"-0,8835143745"},{"p":"fh","v":"#_=_","c":"-0,9617301395"},{"p":"fh","v":"#1","c":"-1,348019089"},{"p":"fh","v":"(not_set)","c":"0,4247920535"},{"p":"fh","v":"none","c":0},{"p":"fp","v":"contacts","c":"3,627364738"},{"p":"fp","v":"/l/devby","c":"3,51833327"},{"p":"fp","v":"promo","c":"1,884990114"},{"p":"fp","v":"otzyvy","c":"1,880890499"},{"p":"fp","v":"process","c":"1,861912678"},{"p":"fp","v":"invited","c":"1,844740196"},{"p":"fp","v":"school","c":"1,83150475"},{"p":"fp","v":"prices","c":"1,771582861"},{"p":"fp","v":"/l/enguide","c":"1,657563748"},{"p":"fp","v":"ua","c":"1,634573717"},{"p":"fp","v":"skype","c":"1,324746507"},{"p":"fp","v":"/l/friday19","c":"1,277237252"},{"p":"fp","v":"/l/english-school","c":"1,204975499"},{"p":"fp","v":"/","c":"0,9979918312"},{"p":"fp","v":"/l/biz","c":"0,9653190493"},{"p":"fp","v":"kids","c":"0,7717745983"},{"p":"fp","v":"/l/2womansdayli","c":"0,6344920819"},{"p":"fp","v":"course","c":"0,6130301584"},{"p":"fp","v":"test-your-english-level","c":"0,6025823969"},{"p":"fp","v":"/l/mar19","c":"0,5598143128"},{"p":"fp","v":"/l/wkle","c":"0,5504747765"},{"p":"fp","v":"repetitors","c":"0,4071252621"},{"p":"fp","v":"/l/it20","c":"0,4026651406"},{"p":"fp","v":"home","c":"0,3731183427"},{"p":"fp","v":"/l/english_native","c":"0,3696947238"},{"p":"fp","v":"main_type-c","c":"0,3586533147"},{"p":"fp","v":"/l/feb19","c":"0,3053356335"},{"p":"fp","v":"/l/english_digital","c":"0,239960912"},{"p":"fp","v":"/l/english_august","c":"0,1977002036"},{"p":"fp","v":"/l/onismogli20","c":"0,1390164709"},{"p":"fp","v":"city","c":"0,1300496905"},{"p":"fp","v":"/l/jedi20","c":"0,1064243428"},{"p":"fp","v":"/l/english_for_business","c":"0,08831503261"},{"p":"fp","v":"/l/english_beginners","c":"0,08702963957"},{"p":"fp","v":"/l/new-year18","c":"0,08388856265"},{"p":"fp","v":"/l/english_for_programmers","c":"0,04612774856"},{"p":"fp","v":"/l/speaking","c":"-0,02601501026"},{"p":"fp","v":"/l/english_a","c":"-0,03351710669"},{"p":"fp","v":"main_type-d","c":"-0,04538155642"},{"p":"fp","v":"/l/musk19","c":"-0,04548895663"},{"p":"fp","v":"/l/blackfriday18","c":"-0,04953267781"},{"p":"fp","v":"/l/backtoschool18","c":"-0,06141157437"},{"p":"fp","v":"/l/more18","c":"-0,07890308725"},{"p":"fp","v":"/l/2englishchoice","c":"-0,08219692406"},{"p":"fp","v":"/l/english_it","c":"-0,1111166847"},{"p":"fp","v":"main_type-b","c":"-0,21340905"},{"p":"fp","v":"/l/2partnernik","c":"-0,2406553418"},{"p":"fp","v":"/l/newyear20","c":"-0,2577480343"},{"p":"fp","v":"/l/enbox20","c":"-0,2773676314"},{"p":"fp","v":"/l/2vancouverok","c":"-0,3838242485"},{"p":"fp","v":"/l/jan18","c":"-0,4541944796"},{"p":"fp","v":"/l/chugaister","c":"-0,4597125601"},{"p":"fp","v":"/l/english_lessons","c":"-0,468713207"},{"p":"fp","v":"/l/it19","c":"-0,4766988239"},{"p":"fp","v":"/l/youtube_main","c":"-0,4771349931"},{"p":"fp","v":"/l/template-promo","c":"-0,4842509004"},{"p":"fp","v":"/l/may19","c":"-0,5732961435"},{"p":"fp","v":"/l/english_travel","c":"-0,5950087442"},{"p":"fp","v":"/l/echoice","c":"-0,6550431221"},{"p":"fp","v":"/l/english_r","c":"-0,6657429413"},{"p":"fp","v":"/l/englishbox","c":"-0,6986246594"},{"p":"fp","v":"grammarcards","c":"-0,713488389"},{"p":"fp","v":"skills","c":"-0,7316129021"},{"p":"fp","v":"android","c":"-0,8110651006"},{"p":"fp","v":"/l/po-serialam","c":"-0,8880706839"},{"p":"fp","v":"/l/newyear20-2","c":"-0,9027622814"},{"p":"fp","v":"/l/english_online","c":"-1,054403265"},{"p":"fp","v":"/l/english_a2","c":"-1,070522107"},{"p":"fp","v":"/l/http:","c":"-1,075946531"},{"p":"fp","v":"/l/halloweenglish19","c":"-1,114345031"},{"p":"fp","v":"/l/vno","c":"-1,141487325"},{"p":"fp","v":"/l/newyear20-new","c":"-1,182078527"},{"p":"fp","v":"online-free","c":"-1,222081225"},{"p":"fp","v":"l-youtube","c":"-1,224359406"},{"p":"fp","v":"/l/youtube2","c":"-1,242560473"},{"p":"fp","v":"/l/burenok","c":"-1,535725505"},{"p":"fp","v":"/l/march20","c":"-1,909260026"},{"p":"fp","v":"blog","c":"-1,926449149"},{"p":"fp","v":"/l/english_a_ukr","c":"-2,184339542"},{"p":"fp","v":"/l/2tpynak","c":"-2,429025316"},{"p":"fp","v":"/l/english_s","c":"-2,474445172"},{"p":"fp","v":"(not_set)","c":0},{"p":"fp","v":"none","c":0},{"p":"gm","v":"+3:30","c":"1,358074269"},{"p":"gm","v":"+2","c":"1,314698474"},{"p":"gm","v":"+1","c":"1,310105983"},{"p":"gm","v":0,"c":"1,090226018"},{"p":"gm","v":"+11","c":"1,084737402"},{"p":"gm","v":-3,"c":"0,9921381523"},{"p":"gm","v":"+3","c":"0,9730115259"},{"p":"gm","v":"+10","c":"0,7538614069"},{"p":"gm","v":-5,"c":"0,7254063711"},{"p":"gm","v":"+9","c":"0,4802845419"},{"p":"gm","v":"+0","c":"0,4774469445"},{"p":"gm","v":-6,"c":"0,4048600409"},{"p":"gm","v":-4,"c":"0,3397338746"},{"p":"gm","v":"+12","c":"0,224776577"},{"p":"gm","v":"+7","c":"0,1567389506"},{"p":"gm","v":-7,"c":"0,1080407647"},{"p":"gm","v":"+5","c":"0,04871658121"},{"p":"gm","v":"-2:30","c":"-0,003392678519"},{"p":"gm","v":"+10:30","c":"-0,148449144"},{"p":"gm","v":"+8","c":"-0,1485194263"},{"p":"gm","v":"+4","c":"-0,1504072842"},{"p":"gm","v":"+6","c":"-0,2905688494"},{"p":"gm","v":-8,"c":"-0,3678961646"},{"p":"gm","v":"+9:30","c":"-0,4156954773"},{"p":"gm","v":"+5:45","c":"-0,6816246482"},{"p":"gm","v":"+13","c":"-0,6892698495"},{"p":"gm","v":-12,"c":"-0,8379907874"},{"p":"gm","v":-2,"c":"-1,084345503"},{"p":"gm","v":"+14","c":"-1,087352413"},{"p":"gm","v":-11,"c":"-1,832034359"},{"p":"gm","v":"+4:30","c":"-1,962168054"},{"p":"gm","v":"+5:30","c":"-2,335692853"},{"p":"gm","v":"(not_set)","c":0},{"p":"gm","v":"none","c":0},{"p":"hr","v":3,"c":"0,5678689886"},{"p":"hr","v":12,"c":"0,2799453493"},{"p":"hr","v":9,"c":"0,271888357"},{"p":"hr","v":8,"c":"0,2500029405"},{"p":"hr","v":10,"c":"0,2222729473"},{"p":"hr","v":7,"c":"0,1973627968"},{"p":"hr","v":14,"c":"0,1931114105"},{"p":"hr","v":13,"c":"0,1699830473"},{"p":"hr","v":4,"c":"0,1517131006"},{"p":"hr","v":11,"c":"0,1170060413"},{"p":"hr","v":6,"c":"0,1047919013"},{"p":"hr","v":15,"c":"0,03525138117"},{"p":"hr","v":5,"c":"-0,03297175157"},{"p":"hr","v":16,"c":"-0,04629200469"},{"p":"hr","v":18,"c":"-0,1056112258"},{"p":"hr","v":2,"c":"-0,1062722838"},{"p":"hr","v":17,"c":"-0,1195603385"},{"p":"hr","v":0,"c":"-0,1561951627"},{"p":"hr","v":20,"c":"-0,1829389214"},{"p":"hr","v":19,"c":"-0,278226194"},{"p":"hr","v":1,"c":"-0,2881631726"},{"p":"hr","v":22,"c":"-0,3316790595"},{"p":"hr","v":21,"c":"-0,3336527078"},{"p":"hr","v":23,"c":"-0,7724381518"},{"p":"hr","v":"(not_set)","c":0},{"p":"hr","v":"none","c":0},{"p":"cm","v":"selevit+ed-5b13a4973a63a","c":"4,207427423"},{"p":"cm","v":"dmitriy.komarovskiy+mrk-5a60cb61359b1","c":"3,195779494"},{"p":"cm","v":"enguide","c":"3,173118361"},{"p":"cm","v":"study","c":"2,994850086"},{"p":"cm","v":"englisher","c":"2,931053966"},{"p":"cm","v":"social_cpc_c8","c":"2,929551278"},{"p":"cm","v":"smirnowwanya-5d08b8bde44df","c":"2,874576577"},{"p":"cm","v":"jacky853-5bbdb786bd15c","c":"2,837041689"},{"p":"cm","v":"maksimartemovrich-5d4af37fbbf16","c":"2,769405532"},{"p":"cm","v":"feuata-5a7e42ab095e6","c":"2,695126687"},{"p":"cm","v":"kuzser00-5e13a7784a7f1","c":"2,655571368"},{"p":"cm","v":"vladred31207-5e2c5d23ebadc","c":"2,636012172"},{"p":"cm","v":"anzhelanamyatova-5d0c74a83eb6b","c":"2,63568374"},{"p":"cm","v":"lelang","c":"2,535577307"},{"p":"cm","v":"schoolrate","c":"2,524259407"},{"p":"cm","v":"social_cpc_c9","c":"2,504942433"},{"p":"cm","v":"GB 2","c":"2,396117411"},{"p":"cm","v":"mirlancer-5d931ae5aece8","c":"2,381500993"},{"p":"cm","v":"tashika_05-5b0aedf80a453","c":"2,316006638"},{"p":"cm","v":"vladimir-5b0a9f4995d21","c":"2,299475976"},{"p":"cm","v":"promo","c":"2,171426357"},{"p":"cm","v":"it_bursa","c":"2,171320069"},{"p":"cm","v":"lead","c":"2,066561672"},{"p":"cm","v":"tpynak-5bc88fcb36ed9","c":"1,978292184"},{"p":"cm","v":"ira-5e3823aa46e76","c":"1,975973465"},{"p":"cm","v":"wm.morozov1-5b28d392783c8","c":"1,898448477"},{"p":"cm","v":"kate.gramarye-5c66a5c7523ec","c":"1,824728074"},{"p":"cm","v":"cpc_c28","c":"1,814362191"},{"p":"cm","v":"Vladimir+2","c":"1,812584438"},{"p":"cm","v":"alinoidy-5b21bffc096fb","c":"1,488346902"},{"p":"cm","v":"miss_tramell","c":"1,419614444"},{"p":"cm","v":"blog","c":"1,392830369"},{"p":"cm","v":"gribas93-5cd6c2dff41fb","c":"1,381095285"},{"p":"cm","v":"cpc_c20","c":"1,355383453"},{"p":"cm","v":"elenaruvel","c":"1,27539611"},{"p":"cm","v":"pr","c":"1,222753355"},{"p":"cm","v":"apps","c":"1,171859858"},{"p":"cm","v":"event","c":"1,14865376"},{"p":"cm","v":"cpc_c30","c":"1,106479112"},{"p":"cm","v":"spa","c":"0,9953608294"},{"p":"cm","v":"invite","c":"1,922539073"},{"p":"cm","v":"cpc_c2","c":"0,9431905595"},{"p":"cm","v":"cpc_c22","c":"0,8786211375"},{"p":"cm","v":"brand","c":"0,8414511655"},{"p":"cm","v":"irrrra-5a2f907c74fcb","c":"0,8169842322"},{"p":"cm","v":"email","c":"0,7844217737"},{"p":"cm","v":"artur.agapov-5b840b81a94bf","c":"0,7842668527"},{"p":"cm","v":"webinar","c":"0,7839335152"},{"p":"cm","v":"(none)","c":"0,768065122"},{"p":"cm","v":"partnerka","c":"0,648538998"},{"p":"cm","v":"golicyj-5b3f4229f40d8","c":"0,6344920819"},{"p":"cm","v":"agnaev.92-5d39e0c38b652","c":"0,5910294682"},{"p":"cm","v":"tayben-5b9a52ff5b9de","c":"0,576982498"},{"p":"cm","v":"dbochkarev-5b88e1d9778d3","c":"0,5632639226"},{"p":"cm","v":"social","c":"0,4808029096"},{"p":"cm","v":"webpush","c":"0,4388655025"},{"p":"cm","v":"banner","c":"0,4052682339"},{"p":"cm","v":"social_cpc_c2","c":"0,391959224"},{"p":"cm","v":"cpc_c15","c":"0,2597675004"},{"p":"cm","v":"xordaooo-5d0b4f39f2802","c":"0,1848226902"},{"p":"cm","v":"cpc","c":"0,1361734547"},{"p":"cm","v":"partner","c":"0,1227201896"},{"p":"cm","v":"organic","c":"0,1215289353"},{"p":"cm","v":"social_cpc","c":"0,02027345733"},{"p":"cm","v":"zomro-studio-5ca5c9f0ad3ee","c":"0,01118860188"},{"p":"cm","v":"UnicornEnglishSite-5d656799a8b0c","c":"-0,01307609028"},{"p":"cm","v":"article","c":"-0,01366614935"},{"p":"cm","v":"aleksandr_zevak-5c7ff3020b3ee","c":"-0,01865917821"},{"p":"cm","v":"esoman-5c8e22daca3ca","c":"-0,02459412072"},{"p":"cm","v":"whatmessenger-5c5738e22d9e0","c":"-0,0252465545"},{"p":"cm","v":"ankadr123-5b94ceca57b5d","c":"-0,03180665097"},{"p":"cm","v":"social_target","c":"-0,03468071585"},{"p":"cm","v":"moyvizitka-5c73d3da7993a","c":"-0,0399884039"},{"p":"cm","v":"oleg-5aba9496470dd","c":"-0,04031713503"},{"p":"cm","v":"referral","c":"-0,04239176593"},{"p":"cm","v":"mobstrm-5d0a216ba2e79","c":"-0,0424690238"},{"p":"cm","v":"cpa tg","c":"-0,05879810479"},{"p":"cm","v":"olga7.vishnya-5bb217ed105c2","c":"-0,06743546208"},{"p":"cm","v":"freelancer.ultra-5b69f8e35d2f9","c":"-0,08117503846"},{"p":"cm","v":"diagon-alley-5b75997e5c224","c":"-0,08379267157"},{"p":"cm","v":"alexgertskin-5e3bba8f532e7","c":"-0,09204641084"},{"p":"cm","v":"videotrend24-5ba67c451b3ea","c":"-0,09453797286"},{"p":"cm","v":"agru2-5bc63e80681f3","c":"-0,09472736635"},{"p":"cm","v":"sme1.nik-5bdfffc84e5a5","c":"-0,09738442042"},{"p":"cm","v":"partners","c":"-0,09964187567"},{"p":"cm","v":"semion.inozemtsev-5c5be5157d19b","c":"-0,1025823505"},{"p":"cm","v":"sunlightmd067-5ca07a8084858","c":"-0,12056111"},{"p":"cm","v":"cpc_c16","c":"-0,1222893871"},{"p":"cm","v":"Lenaconvert8-5cfe3e2519cac","c":"-0,1252772686"},{"p":"cm","v":"smesh-5a849cbead20e","c":"-0,1305885763"},{"p":"cm","v":"pr_apps","c":"-0,1408255478"},{"p":"cm","v":"kuklin-rman-5b8296d536ac6","c":"-0,1609011103"},{"p":"cm","v":"Instagram_Feed","c":"-0,1781342544"},{"p":"cm","v":"mbirdapp-5e4eb028a7e8f","c":"-0,18075155"},{"p":"cm","v":"grigo1843-5c2e3408dd77f","c":"-0,1807517596"},{"p":"cm","v":"banners","c":"-0,1817328849"},{"p":"cm","v":"Facebook_Mobile_Feed","c":"-0,1854421163"},{"p":"cm","v":"kondrashov","c":"-0,1946620642"},{"p":"cm","v":"artte","c":"-0,1964121117"},{"p":"cm","v":"andzela.rysaeva-5e4902b3db916","c":"-0,201446112"},{"p":"cm","v":"video","c":"-0,2034248965"},{"p":"cm","v":"sms","c":"-0,2118080598"},{"p":"cm","v":"alexandrartil-5e6f1f6baaa46","c":"-0,2187494796"},{"p":"cm","v":"denissorokin1990-5c1aa1cbd49b6","c":"-0,2188889572"},{"p":"cm","v":"anastasia_nedelko-5c2712044d422","c":"-0,2344272453"},{"p":"cm","v":"mail","c":"-0,2455447066"},{"p":"cm","v":"artteemm123-5d334bd20202c","c":"-0,2467854685"},{"p":"cm","v":"mysterio78-5ccc2f4564549","c":"-0,2543407485"},{"p":"cm","v":"hobbydobby-5c51a6c749bcf","c":"-0,2573336909"},{"p":"cm","v":"push","c":"-0,2640230935"},{"p":"cm","v":"dolby8066-5c08089178a97","c":"-0,2692262263"},{"p":"cm","v":"nikola_001-5c48686d2c202","c":"-0,2765388244"},{"p":"cm","v":"hype","c":"-0,2770570909"},{"p":"cm","v":"timlein96","c":"-0,2782421301"},{"p":"cm","v":"dreweu-5d8f35b8a6a5d","c":"-0,3068259065"},{"p":"cm","v":"scuns-134145-5cbf1b19f2a8c","c":"-0,3078593227"},{"p":"cm","v":"elena.1705-5bd188e09fbd7","c":"-0,3121929395"},{"p":"cm","v":"rashidsalyakaev-5cd18f958416d","c":"-0,3274660286"},{"p":"cm","v":"sergey-5d919060d771d","c":"-0,3449335199"},{"p":"cm","v":"cpc_c27","c":"-0,3469238952"},{"p":"cm","v":"Nykkolayforwork-5b9b931f41e11","c":"-0,3496455326"},{"p":"cm","v":"larionovdenis-5be74cf7ea2ef","c":"-0,3556725868"},{"p":"cm","v":"pzle","c":"-0,3570220593"},{"p":"cm","v":"cpc_c26","c":"-0,3622185111"},{"p":"cm","v":"social_cpc_c16","c":"-0,3622972614"},{"p":"cm","v":"pompa2015-59374e7333c0d","c":"-0,365176532"},{"p":"cm","v":"qa.englishdom+TEST222y-5d1c54927132a","c":"-0,368342904"},{"p":"cm","v":"partnernik25-5d2b35cc6c736","c":"-0,3703103123"},{"p":"cm","v":"hhru","c":"-0,380778328"},{"p":"cm","v":"city_business_school","c":"-0,3906717499"},{"p":"cm","v":"banner_page","c":"-0,398585261"},{"p":"cm","v":"edelweissco-5d0b69f82b2c7","c":"-0,3986094619"},{"p":"cm","v":"denis-5d62b74ac9bb0","c":"-0,4071224488"},{"p":"cm","v":"ksemell1975-5cb2de4804e33","c":"-0,4133047983"},{"p":"cm","v":"rek-5e01de351cfa4","c":"-0,4144092409"},{"p":"cm","v":"set","c":"-0,417842358"},{"p":"cm","v":"basir235-5bfb75b16c6a4","c":"-0,4226864032"},{"p":"cm","v":"SNM02051978-5d2df28fb38e2","c":"-0,4295057916"},{"p":"cm","v":"mobiteach.ltd-5ce7d399564e7","c":"-0,4374991266"},{"p":"cm","v":"a.bm2013-5c52fcb47c746","c":"-0,4418416071"},{"p":"cm","v":"proglib.adv-5bacf777440ff","c":"-0,44555299"},{"p":"cm","v":"ramis797-5e4a0e7e198b5","c":"-0,450507138"},{"p":"cm","v":"alexpir1974-5cd28a6f4ee52","c":"-0,4516797853"},{"p":"cm","v":"dathos-5c8cee5453cf4","c":"-0,4536185411"},{"p":"cm","v":"raven2020-5dfcc3840d04f","c":"-0,4544674803"},{"p":"cm","v":"ira-elsva-5cd97ec325f99","c":"-0,4549843435"},{"p":"cm","v":"dobovo.top-5c442384e08d3","c":"-0,4621684596"},{"p":"cm","v":"Sergio2514-5dbd316cab09c","c":"-0,4680718454"},{"p":"cm","v":"ibabloman-5c35a4f4d19b9","c":"-0,4734211073"},{"p":"cm","v":"guruit-5e4bde6a10bba","c":"-0,4808419566"},{"p":"cm","v":"english112-5ca8ea65522d2","c":"-0,4824562711"},{"p":"cm","v":"port-90-5d1872d6a6225","c":"-0,4884953947"},{"p":"cm","v":"kotok13dima-59c2ad16626dc","c":"-0,5067827628"},{"p":"cm","v":"d.miller+nativeenglish-5d4983c6c176c","c":"-0,513238499"},{"p":"cm","v":"business","c":"-0,5266680348"},{"p":"cm","v":"narrative","c":"-0,5513361068"},{"p":"cm","v":"cpa+englishchoice","c":"-0,5721736581"},{"p":"cm","v":"kozh.andrew-5d49c6c8e5c8f","c":"-0,5814199079"},{"p":"cm","v":"teaser","c":"-0,5818448386"},{"p":"cm","v":"starpony78-5d5e673edeafa","c":"-0,5877578044"},{"p":"cm","v":"traficcash-5c875b990acc6","c":"-0,5951587345"},{"p":"cm","v":"viua787-5dc39cd97ffc8","c":"-0,6014275807"},{"p":"cm","v":"ams779-5c812d6d7f64b","c":"-0,6156803615"},{"p":"cm","v":"katerinau333-5c66ccdd04585","c":"-0,627812217"},{"p":"cm","v":"118sergey-5e528b4c1e874","c":"-0,6370974858"},{"p":"cm","v":"allonlineschools-5d811bc0734c0","c":"-0,6421868497"},{"p":"cm","v":"sergpitus-5cb56d85e308c","c":"-0,6430997908"},{"p":"cm","v":"vsekyrsy","c":"-0,6458863998"},{"p":"cm","v":"cpc_c29","c":"-0,6524397937"},{"p":"cm","v":"egorfedorov3-5c3072ef2e903","c":"-0,6850059594"},{"p":"cm","v":"tizer_nets 2","c":"-0,718469324"},{"p":"cm","v":"infohit","c":"-0,7227411087"},{"p":"cm","v":"cpc_c19","c":"-0,7289076118"},{"p":"cm","v":"digibroc-5abe9f0e14a50","c":"-0,7294816005"},{"p":"cm","v":"ruzz89-5c247ebfbca8b","c":"-0,7325533616"},{"p":"cm","v":"thebestpart-5dc413d2390d1","c":"-0,7544937654"},{"p":"cm","v":"tvova-80-5c10e02ade00a","c":"-0,7569023829"},{"p":"cm","v":"tiptopenglish.ru-5d762a509134c","c":"-0,7623334839"},{"p":"cm","v":"cmob","c":"-0,7921910714"},{"p":"cm","v":"anshulzhenko56-5cf3afda0af89","c":"-0,8222381334"},{"p":"cm","v":"cpa_c1","c":"-0,829617951"},{"p":"cm","v":"gala.studio.bg-5e2595d322c81","c":"-0,8328695879"},{"p":"cm","v":"cpa","c":"-0,8657083245"},{"p":"cm","v":"kosareva+2","c":"-0,8713416304"},{"p":"cm","v":"event_webinar","c":"-0,8974768021"},{"p":"cm","v":"vasemenyuk-5b8fea10ccdc1","c":"-0,9062465356"},{"p":"cm","v":"webmaster.dobs-5d233eab15789","c":"-0,9320819236"},{"p":"cm","v":"iuspeha-5bfd6525166d7","c":"-0,938094212"},{"p":"cm","v":"ca","c":"-0,9399855165"},{"p":"cm","v":"andrekaty-5ce4f33a8950d","c":"-0,9648956169"},{"p":"cm","v":"banner_list","c":"-1,011228601"},{"p":"cm","v":"privatbank","c":"-1,05360899"},{"p":"cm","v":"cpa_c13","c":"-1,069175641"},{"p":"cm","v":"social_cpc_c10","c":"-1,085180491"},{"p":"cm","v":"2020english5-5dd638b66c57d","c":"-1,21188415"},{"p":"cm","v":"info-5bd7c4da51593","c":"-1,227674599"},{"p":"cm","v":"siteintenglish-5c7f980fca984","c":"-1,244236995"},{"p":"cm","v":"aceventurion-5cb3113f02418","c":"-1,26223474"},{"p":"cm","v":"olexiy.fedorov-5e6f81781c22e","c":"-1,264959542"},{"p":"cm","v":"social_cpc_c6","c":"-1,283572344"},{"p":"cm","v":"lbdvwork-5e12183eca1cc","c":"-1,312295646"},{"p":"cm","v":"pp-5b6d3b9897a4c","c":"-1,327439639"},{"p":"cm","v":"cpc_c25","c":"-1,333891543"},{"p":"cm","v":"r.nickolaevic-5c2f4386c1121","c":"-1,342128786"},{"p":"cm","v":"facebook","c":"-1,360005003"},{"p":"cm","v":"ngdude.orfu-5c08d38c67ce4","c":"-1,407851083"},{"p":"cm","v":"cpc_c21","c":"-1,410564279"},{"p":"cm","v":"cpa_c6","c":"-1,412224617"},{"p":"cm","v":"info-5db955adde9f8","c":"-1,416180498"},{"p":"cm","v":"all-5bbb852b74f9e","c":"-1,424817768"},{"p":"cm","v":"pen4pals+2","c":"-1,432406034"},{"p":"cm","v":"evgenypron1992-5be3064a8e37d","c":"-1,487186301"},{"p":"cm","v":"kogtev-5b7d06e644d99","c":"-1,522295841"},{"p":"cm","v":"integration","c":"-1,537285261"},{"p":"cm","v":"zanudenzia-5bd56e6a489b6","c":"-1,555708143"},{"p":"cm","v":"cpc_c12","c":"-1,595319395"},{"p":"cm","v":"message","c":"-1,598815581"},{"p":"cm","v":"social_cpc_c7","c":"-1,652353616"},{"p":"cm","v":"info-5da3941e56434","c":"-1,787291338"},{"p":"cm","v":"aleks.cheer96-5dd5ba048f1c8","c":"-1,875549014"},{"p":"cm","v":"romanchervanjov","c":"-1,876991055"},{"p":"cm","v":"cpa_c12","c":"-1,943289352"},{"p":"cm","v":"d.miller+superjob-5d9afceedc015","c":"-2,07397676"},{"p":"cm","v":"nickolai.romanovich-5c404ad9ebc0d","c":"-2,122136352"},{"p":"cm","v":"cpa_c2","c":"-2,490111055"},{"p":"cm","v":"(not_set)","c":"0,6102293084"},{"p":"cm","v":"none","c":0},{"p":"mr","v":10,"c":"0,5291824113"},{"p":"mr","v":9,"c":"0,3596850417"},{"p":"mr","v":8,"c":"0,2860333081"},{"p":"mr","v":11,"c":"0,1393540573"},{"p":"mr","v":12,"c":"0,02369111068"},{"p":"mr","v":7,"c":"0,02254900357"},{"p":"mr","v":5,"c":"-0,07887611198"},{"p":"mr","v":6,"c":"-0,1418351569"},{"p":"mr","v":4,"c":"-0,2559486408"},{"p":"mr","v":1,"c":"-0,2677673012"},{"p":"mr","v":2,"c":"-0,3186981589"},{"p":"mr","v":3,"c":"-0,4901722753"},{"p":"mr","v":"(not_set)","c":0},{"p":"mr","v":"none","c":0},{"p":"cs","v":"foxford","c":"5,345447587"},{"p":"cs","v":"l.messenger.com","c":"4,659101467"},{"p":"cs","v":"click.mail.ru","c":"4,26072908"},{"p":"cs","v":"actualtraffic.ru","c":"3,580222555"},{"p":"cs","v":"schneider-electric.primezone.ru","c":"3,385966259"},{"p":"cs","v":"slb.primezone.ru","c":"3,243219783"},{"p":"cs","v":"miralinks.ru","c":"3,143099658"},{"p":"cs","v":"netology.ru","c":"2,993563039"},{"p":"cs","v":"youtub","c":"2,974589618"},{"p":"cs","v":"google.ru","c":"2,796447985"},{"p":"cs","v":"ok-english.ru","c":"2,768672216"},{"p":"cs","v":"portal.it.ru","c":"2,744621286"},{"p":"cs","v":"lamoda.primezone.ru","c":"2,668475825"},{"p":"cs","v":"newsletter","c":"2,611061648"},{"p":"cs","v":"yandex-uslugi","c":"2,595451701"},{"p":"cs","v":"englishdom.page.link","c":"2,550493079"},{"p":"cs","v":"angliyskiyazik.ru","c":"2,515002935"},{"p":"cs","v":"go.mail.ru","c":"2,458397557"},{"p":"cs","v":"enguide.ua","c":"2,340195436"},{"p":"cs","v":"rabota.ua","c":"2,194077895"},{"p":"cs","v":"totaldict.ru","c":"2,189680231"},{"p":"cs","v":"brochure","c":"2,057310404"},{"p":"cs","v":"dou.ua","c":"2,041602092"},{"p":"cs","v":"raiffeisenbank.primezone.ru","c":"1,962602824"},{"p":"cs","v":"native-english","c":"1,953861538"},{"p":"cs","v":"pfizer.primezone.ru","c":"1,897789093"},{"p":"cs","v":"study.ru","c":"1,861872217"},{"p":"cs","v":"ca","c":"1,844333456"},{"p":"cs","v":"primezone","c":"1,841354094"},{"p":"cs","v":"vse-kursy.com","c":"1,838773922"},{"p":"cs","v":"web.skype.com","c":"1,831110824"},{"p":"cs","v":"facebook.com","c":"1,793759545"},{"p":"cs","v":"study","c":"1,792950599"},{"p":"cs","v":"englishdom.com","c":"1,786605028"},{"p":"cs","v":"edumarket.ru","c":"1,771840908"},{"p":"cs","v":"accounts.google.ru","c":"1,720793331"},{"p":"cs","v":"vc.ru","c":"1,701151376"},{"p":"cs","v":"atawaka.com","c":"1,68773454"},{"p":"cs","v":"native-english.ru","c":"1,659433987"},{"p":"cs","v":"yandex.com","c":"1,607514987"},{"p":"cs","v":"letidor.ru","c":"1,603012164"},{"p":"cs","v":"s7.primezone.ru","c":"1,591446873"},{"p":"cs","v":"cbs","c":"1,590806507"},{"p":"cs","v":"catchenglish","c":"1,578242713"},{"p":"cs","v":"enguide-ua.cdn.ampproject.org","c":"1,574343469"},{"p":"cs","v":"nullrefer.com","c":"1,556888699"},{"p":"cs","v":"ru.search.yahoo.com","c":"1,504706739"},{"p":"cs","v":"itvdn.com","c":"1,486021395"},{"p":"cs","v":"transaction_notification_info","c":"1,476471594"},{"p":"cs","v":"blogger","c":"1,419614444"},{"p":"cs","v":"facebook/instagram","c":"1,38975445"},{"p":"cs","v":"telegram-ppc_analytics","c":"1,375132751"},{"p":"cs","v":"linkedin.com","c":"1,363315151"},{"p":"cs","v":"deworkacy","c":"1,353389879"},{"p":"cs","v":"crm","c":"1,285221694"},{"p":"cs","v":"mindbox","c":"1,264217435"},{"p":"cs","v":"fb","c":"1,237651368"},{"p":"cs","v":"WebPromoExperts","c":"1,22440104"},{"p":"cs","v":"habr.com","c":"1,194452484"},{"p":"cs","v":"l.facebook.com","c":"1,193044137"},{"p":"cs","v":"platforma","c":"1,1732145"},{"p":"cs","v":"enguide.ru","c":"1,172177512"},{"p":"cs","v":"tripmydream","c":"1,166975844"},{"p":"cs","v":"iforum","c":"1,14865376"},{"p":"cs","v":"yandex","c":"1,144488543"},{"p":"cs","v":"habra","c":"1,094529191"},{"p":"cs","v":"mail.google.com","c":"1,072258736"},{"p":"cs","v":"words_mobile-courses-ios","c":"1,050157189"},{"p":"cs","v":"geektimes","c":"0,9785968417"},{"p":"cs","v":"google","c":"0,9574298445"},{"p":"cs","v":"none","c":"0,9518216193"},{"p":"cs","v":"geekbrains","c":"0,8494987372"},{"p":"cs","v":"fb inst","c":"0,8020223644"},{"p":"cs","v":"MyBook","c":"0,7857680889"},{"p":"cs","v":"(direct)","c":"0,768065122"},{"p":"cs","v":"away.vk.com","c":"0,7679225605"},{"p":"cs","v":"duckduckgo","c":"0,7609568776"},{"p":"cs","v":"marketing_promo","c":"0,7448583946"},{"p":"cs","v":"pokupon.ua","c":"0,7377334212"},{"p":"cs","v":"netology","c":"0,7121321973"},{"p":"cs","v":"habrahabr","c":"0,7088522687"},{"p":"cs","v":"ain","c":"0,6919866801"},{"p":"cs","v":"popup1","c":"0,6839781"},{"p":"cs","v":"goIT","c":"0,648538998"},{"p":"cs","v":"bilshe.mastercard.ua","c":"0,6318261873"},{"p":"cs","v":"english-films","c":"0,608537639"},{"p":"cs","v":"uaspeaking","c":"0,5927986299"},{"p":"cs","v":"megogo.net","c":"0,5432876226"},{"p":"cs","v":"m.facebook.com","c":"0,5385643089"},{"p":"cs","v":"facebook","c":"0,5384097389"},{"p":"cs","v":"words_android","c":"0,5285762989"},{"p":"cs","v":"instagram.com","c":"0,4785145383"},{"p":"cs","v":"skillbox","c":"0,4364266989"},{"p":"cs","v":"instagram","c":"0,4186315526"},{"p":"cs","v":"mc.today","c":"0,3894378075"},{"p":"cs","v":"vk","c":"0,3584126276"},{"p":"cs","v":"dou","c":"0,3515000609"},{"p":"cs","v":"pinterest","c":"0,3491484353"},{"p":"cs","v":"mel.fm","c":"0,3141111871"},{"p":"cs","v":"words_ios","c":"0,3087977097"},{"p":"cs","v":"forum.duolingo.com","c":"0,2892430714"},{"p":"cs","v":"telegram","c":"0,2533479673"},{"p":"cs","v":"youtube","c":"0,2226323629"},{"p":"cs","v":"words_mobile-edwords-ios","c":"0,211957355"},{"p":"cs","v":"transaction_notification_pay","c":"0,2056272171"},{"p":"cs","v":"social","c":"0,2045024609"},{"p":"cs","v":"partners","c":"0,1777680148"},{"p":"cs","v":"app.schoology.com","c":"0,1698185584"},{"p":"cs","v":"yandex.ua","c":"0,1102468772"},{"p":"cs","v":"privatbank","c":"0,09916852304"},{"p":"cs","v":"email","c":"0,08101230011"},{"p":"cs","v":"blogs","c":"0,01532756274"},{"p":"cs","v":"yahoo","c":"0,003850188973"},{"p":"cs","v":"instagramk","c":"-0,001454679466"},{"p":"cs","v":"accounts.google.kg","c":"-0,001615250119"},{"p":"cs","v":"schoolioneri.com","c":"-0,003997159516"},{"p":"cs","v":"ask","c":"-0,008262339001"},{"p":"cs","v":"vbpk47.ru","c":"-0,01672911415"},{"p":"cs","v":"skillfactory","c":"-0,01700227257"},{"p":"cs","v":"megogo","c":"-0,01833924874"},{"p":"cs","v":"10.222.0.14","c":"-0,01887928916"},{"p":"cs","v":"pikabu.ru","c":"-0,01973976648"},{"p":"cs","v":"ca.search.yahoo.com","c":"-0,02290391926"},{"p":"cs","v":"facebook_instagram","c":"-0,02886513465"},{"p":"cs","v":"hskwq.com","c":"-0,03056632904"},{"p":"cs","v":"edera","c":"-0,03559671412"},{"p":"cs","v":"campaigns_marketing","c":"-0,03698937408"},{"p":"cs","v":"m.youtube.com","c":"-0,03805914905"},{"p":"cs","v":"catchenglish.ru","c":"-0,04098800035"},{"p":"cs","v":"sites.ziyonet.uz","c":"-0,04117668942"},{"p":"cs","v":"www-forumdaily-com.cdn.ampproject.org","c":"-0,04151982092"},{"p":"cs","v":"rebenok.cn.ua","c":"-0,05261781888"},{"p":"cs","v":"mail.ukr.net","c":"-0,06173797367"},{"p":"cs","v":"vipsearch.top","c":"-0,0715238038"},{"p":"cs","v":"rambler","c":"-0,0721101013"},{"p":"cs","v":"youtube.com","c":"-0,07612007487"},{"p":"cs","v":"edutainme.ru","c":"-0,08569241058"},{"p":"cs","v":"edugram","c":"-0,09566194663"},{"p":"cs","v":"poshukach.com","c":"-0,1042562501"},{"p":"cs","v":"web.facebook.com","c":"-0,110777628"},{"p":"cs","v":"google_plus","c":"-0,1132738872"},{"p":"cs","v":"ofigenno.com","c":"-0,1148707104"},{"p":"cs","v":"m.zen.yandex.ru","c":"-0,1202224518"},{"p":"cs","v":"enguide","c":"-0,1408255478"},{"p":"cs","v":"ok.ru","c":"-0,1425151807"},{"p":"cs","v":"tut.by","c":"-0,1439266644"},{"p":"cs","v":"timelessenglish.com","c":"-0,1465835466"},{"p":"cs","v":"marketgid_rus","c":"-0,1490012617"},{"p":"cs","v":"englishguru","c":"-0,152383899"},{"p":"cs","v":"advertisingclicktracking.online","c":"-0,1554228788"},{"p":"cs","v":"onlinezakladki.ru","c":"-0,1615264274"},{"p":"cs","v":"accounts.youtube.com","c":"-0,1634962005"},{"p":"cs","v":"search.handy-tab.com","c":"-0,1697811674"},{"p":"cs","v":"pro.similarweb.com","c":"-0,1803016339"},{"p":"cs","v":"etxtru","c":"-0,1842247128"},{"p":"cs","v":"gb","c":"-0,2022613517"},{"p":"cs","v":"vodafone","c":"-0,2118080598"},{"p":"cs","v":"yandex.uz","c":"-0,2144616708"},{"p":"cs","v":"reten_2104","c":"-0,2329464665"},{"p":"cs","v":"couponkodi.ru","c":"-0,2355938464"},{"p":"cs","v":"zen","c":"-0,242526568"},{"p":"cs","v":"jewish.org.ua","c":"-0,2443004394"},{"p":"cs","v":"parta.com.ua","c":"-0,2448985147"},{"p":"cs","v":"izito.ru","c":"-0,2506406045"},{"p":"cs","v":"cinemakid","c":"-0,2624285702"},{"p":"cs","v":"gravitec","c":"-0,2640230935"},{"p":"cs","v":"pinterest.com","c":"-0,2701664304"},{"p":"cs","v":"CBS","c":"-0,2710099305"},{"p":"cs","v":"zen.yandex.ru","c":"-0,298127697"},{"p":"cs","v":"promocodetime.com","c":"-0,3003862718"},{"p":"cs","v":"lm.facebook.com","c":"-0,3017808155"},{"p":"cs","v":"cpc","c":"-0,3108715218"},{"p":"cs","v":"facebook_event","c":"-0,3118939742"},{"p":"cs","v":"msn.com","c":"-0,3256084697"},{"p":"cs","v":"dnevnik.mos.ru","c":"-0,3276332053"},{"p":"cs","v":"etutorium","c":"-0,3306459657"},{"p":"cs","v":"codeclub","c":"-0,3310508995"},{"p":"cs","v":"imarketing","c":"-0,3319969998"},{"p":"cs","v":"merriam-webster.com","c":"-0,3447535579"},{"p":"cs","v":"brest.maminforum.com","c":"-0,3485450841"},{"p":"cs","v":"Facebook_Instagram","c":"-0,3635763707"},{"p":"cs","v":"yandex.ru","c":"-0,3676266577"},{"p":"cs","v":"shara.li","c":"-0,374195756"},{"p":"cs","v":"searchencrypt.com","c":"-0,3777334626"},{"p":"cs","v":"int.search.tb.ask.com","c":"-0,387030374"},{"p":"cs","v":"search.avast.com","c":"-0,3975749867"},{"p":"cs","v":"jobs.dou.ua","c":"-0,4042840937"},{"p":"cs","v":"unisender.com","c":"-0,4192261667"},{"p":"cs","v":"propads","c":"-0,4328435769"},{"p":"cs","v":"blogs^_^amp^_^utm_medium=pr^_^amp^_^utm_campaign=habr^_^amp^_^utm_content=memes","c":"-0,4381617502"},{"p":"cs","v":"goodairlanguage.com","c":"-0,4450070522"},{"p":"cs","v":"b.xfreeservice.com","c":"-0,4538030592"},{"p":"cs","v":"words_mobile-courses-android","c":"-0,4565931232"},{"p":"cs","v":"ru.stf.st","c":"-0,463744647"},{"p":"cs","v":"cossa.ru","c":"-0,463834206"},{"p":"cs","v":"ua.jooble.org","c":"-0,465864958"},{"p":"cs","v":"words_mobile-edwords-android","c":"-0,4710355713"},{"p":"cs","v":"wikium","c":"-0,4794647539"},{"p":"cs","v":"Sendsay","c":"-0,4797135269"},{"p":"cs","v":"stroimdom.com.ua","c":"-0,4892525923"},{"p":"cs","v":"press-release","c":"-0,4916816214"},{"p":"cs","v":"thetefluniversity.com","c":"-0,5019165357"},{"p":"cs","v":"youtub...","c":"-0,5026546752"},{"p":"cs","v":"a_b","c":"-0,506125742"},{"p":"cs","v":"business.google.com","c":"-0,5266680348"},{"p":"cs","v":"sharewood.band","c":"-0,5297897729"},{"p":"cs","v":"darkwebs.ws","c":"-0,5371959559"},{"p":"cs","v":"mail.yandex.ru","c":"-0,5566999984"},{"p":"cs","v":"itstep_od","c":"-0,5594377363"},{"p":"cs","v":"admitad.com","c":"-0,5639134222"},{"p":"cs","v":"lms.ithillel.ua","c":"-0,5707282199"},{"p":"cs","v":"ivan-kolobov.livejournal.com","c":"-0,5730672159"},{"p":"cs","v":"sharewood.pro","c":"-0,5786693124"},{"p":"cs","v":"21school","c":"-0,5794466904"},{"p":"cs","v":"pepper.ru","c":"-0,602685527"},{"p":"cs","v":"semeynoe.com","c":"-0,6040270551"},{"p":"cs","v":"promo_webinar","c":"-0,6040729983"},{"p":"cs","v":"m.pikabu.ru","c":"-0,606013487"},{"p":"cs","v":"miped.ru","c":"-0,6106675272"},{"p":"cs","v":"school-58.klasna.com","c":"-0,6125558688"},{"p":"cs","v":"finacademy","c":"-0,6180089299"},{"p":"cs","v":"yandex.com.tr","c":"-0,6282601421"},{"p":"cs","v":"brontp.yandex.ru","c":"-0,6321179819"},{"p":"cs","v":"A_B","c":"-0,6362065686"},{"p":"cs","v":"partner","c":"-0,6362164565"},{"p":"cs","v":"img.ucweb.com","c":"-0,6363868621"},{"p":"cs","v":"corp.englishdom.com","c":"-0,6370642978"},{"p":"cs","v":"megogo.ru","c":"-0,6376372743"},{"p":"cs","v":"otus","c":"-0,6382199663"},{"p":"cs","v":"d3scene.ru","c":"-0,6397769781"},{"p":"cs","v":"mail.pflb.ru","c":"-0,6419030984"},{"p":"cs","v":"jobik.net","c":"-0,657454048"},{"p":"cs","v":"vk.com","c":"-0,659135306"},{"p":"cs","v":"freelancehunt.com","c":"-0,6598786236"},{"p":"cs","v":"guruenglish.ru","c":"-0,6655366213"},{"p":"cs","v":"techrocks.ru","c":"-0,6659054725"},{"p":"cs","v":"lifehacker.ru","c":"-0,6692371113"},{"p":"cs","v":"adwords","c":"-0,6692679439"},{"p":"cs","v":"taplink.cc","c":"-0,6886787372"},{"p":"cs","v":"forumdaily.com","c":"-0,6894297988"},{"p":"cs","v":"marinarusakova.biz","c":"-0,6936351237"},{"p":"cs","v":"karusel.primezone.ru","c":"-0,701499807"},{"p":"cs","v":"news.xopom.com","c":"-0,7061054103"},{"p":"cs","v":"inner","c":"-0,7077036909"},{"p":"cs","v":"avia","c":"-0,7091286299"},{"p":"cs","v":"mail.hh.ru","c":"-0,7213997976"},{"p":"cs","v":"englishgu.ru","c":"-0,7291184121"},{"p":"cs","v":"podcasts.google.com","c":"-0,7338687847"},{"p":"cs","v":"cpcutm_campaign=Akcia_Star_Warst","c":"-0,7427374686"},{"p":"cs","v":"kefline.ru","c":"-0,7429248514"},{"p":"cs","v":"boominfo.ru","c":"-0,744124006"},{"p":"cs","v":"enguide-ru.cdn.ampproject.org","c":"-0,7455748972"},{"p":"cs","v":"rb.ru","c":"-0,7495626531"},{"p":"cs","v":"em.ubrr.ru","c":"-0,7512015458"},{"p":"cs","v":"study_ru","c":"-0,7577725674"},{"p":"cs","v":"afisha_kiev","c":"-0,7616401993"},{"p":"cs","v":"x5.primezone.ru","c":"-0,7763237499"},{"p":"cs","v":"record","c":"-0,7795099242"},{"p":"cs","v":"googleads.g.doubleclick.net","c":"-0,7806671952"},{"p":"cs","v":"bing","c":"-0,795756466"},{"p":"cs","v":"sendpulse","c":"-0,8069745017"},{"p":"cs","v":"mobile.facebook.com","c":"-0,8091717539"},{"p":"cs","v":"ampproject.org","c":"-0,8104007046"},{"p":"cs","v":"kadam","c":"-0,8390469531"},{"p":"cs","v":"DonanimHaber","c":"-0,8540128106"},{"p":"cs","v":"m.vk.com","c":"-0,8585584303"},{"p":"cs","v":"slivup.me","c":"-0,861945694"},{"p":"cs","v":"chrome.google.com","c":"-0,8735647976"},{"p":"cs","v":"werwse.powerr.ru","c":"-0,8760879286"},{"p":"cs","v":"pioneer.primezone.ru","c":"-0,8775135636"},{"p":"cs","v":"apps.apple.com","c":"-0,8827294646"},{"p":"cs","v":"kgo.su","c":"-0,8840540722"},{"p":"cs","v":"ping-sso.schneider-electric.com","c":"-0,8918191717"},{"p":"cs","v":"ecosia.org","c":"-0,9045489759"},{"p":"cs","v":"superdeal.ua","c":"-0,9092788055"},{"p":"cs","v":"etxt.ru","c":"-0,9116511545"},{"p":"cs","v":"pg.primezone.ru","c":"-0,911917767"},{"p":"cs","v":"indulgepassion.site","c":"-0,9157346101"},{"p":"cs","v":"gsearch.mi7.ru","c":"-0,9344107743"},{"p":"cs","v":"work.ua","c":"-0,937664539"},{"p":"cs","v":"mail.aet.in.ua","c":"-0,9410775528"},{"p":"cs","v":"darked.biz","c":"-0,9559483176"},{"p":"cs","v":"pdf","c":"-0,9596288403"},{"p":"cs","v":"megogo.cc","c":"-0,9625231052"},{"p":"cs","v":"the-steppe.com","c":"-0,9696337328"},{"p":"cs","v":"teletype.in","c":"-0,9747248292"},{"p":"cs","v":"vmodenov.blogspot.com","c":"-0,9873120675"},{"p":"cs","v":"mytarget","c":"-0,9929589272"},{"p":"cs","v":"yandex.by","c":"-0,9960272408"},{"p":"cs","v":"mastercard","c":"-0,9984605672"},{"p":"cs","v":"mbox2.i.ua","c":"-1,011750706"},{"p":"cs","v":"target","c":"-1,018886658"},{"p":"cs","v":"web.telegram.org","c":"-1,022822983"},{"p":"cs","v":"belaya-tserkov.hh.ua","c":"-1,02941163"},{"p":"cs","v":"headhunter","c":"-1,030925988"},{"p":"cs","v":"blackbiz.club","c":"-1,043221865"},{"p":"cs","v":"webpromoexperts","c":"-1,048263741"},{"p":"cs","v":"englishdom.amocrm.ru","c":"-1,052003278"},{"p":"cs","v":"e.mail.ru","c":"-1,068919354"},{"p":"cs","v":"spywords.ru","c":"-1,071502492"},{"p":"cs","v":"wikium.ru","c":"-1,079551792"},{"p":"cs","v":"pro_mandri","c":"-1,087284202"},{"p":"cs","v":"prog_kiev","c":"-1,098931959"},{"p":"cs","v":"expertsender","c":"-1,107987444"},{"p":"cs","v":"litres","c":"-1,163391671"},{"p":"cs","v":"bilingual","c":"-1,16578192"},{"p":"cs","v":"MIB","c":"-1,181508653"},{"p":"cs","v":"201940_digest_orig_promo","c":"-1,187864"},{"p":"cs","v":"lolzteam.net","c":"-1,201141043"},{"p":"cs","v":"cityads.com","c":"-1,201226658"},{"p":"cs","v":"proleed","c":"-1,210800134"},{"p":"cs","v":"clc.am","c":"-1,216238801"},{"p":"cs","v":"yandex.fr","c":"-1,225093738"},{"p":"cs","v":"transaction_marketing","c":"-1,241811816"},{"p":"cs","v":"yandex.kz","c":"-1,242038088"},{"p":"cs","v":"book24","c":"-1,264041851"},{"p":"cs","v":"podcast","c":"-1,274415627"},{"p":"cs","v":"start.ubrr.ru","c":"-1,284671765"},{"p":"cs","v":"prostor.mts.com.ua","c":"-1,290186881"},{"p":"cs","v":"m.habr.com","c":"-1,296466603"},{"p":"cs","v":"sbidea.ru","c":"-1,347186178"},{"p":"cs","v":"my.privatbank.ua","c":"-1,369254587"},{"p":"cs","v":"pubg.best","c":"-1,372797882"},{"p":"cs","v":"m.babyblog.ru","c":"-1,374232318"},{"p":"cs","v":"openssource.info","c":"-1,377599943"},{"p":"cs","v":"201940_digest_adv_promo","c":"-1,379035483"},{"p":"cs","v":"aksioma24.ru","c":"-1,387803587"},{"p":"cs","v":"iloveenglish","c":"-1,409813862"},{"p":"cs","v":"secureurl.ukr.net","c":"-1,428527104"},{"p":"cs","v":"telegra.ph","c":"-1,562937231"},{"p":"cs","v":"web-alisa","c":"-1,598815581"},{"p":"cs","v":"careerist","c":"-1,627089576"},{"p":"cs","v":"m.rabota.ua","c":"-1,661190343"},{"p":"cs","v":"preview.page.link","c":"-1,671933201"},{"p":"cs","v":"lifehacker","c":"-1,682045475"},{"p":"cs","v":"pokupon","c":"-1,73155933"},{"p":"cs","v":"sharewood.biz","c":"-1,791682559"},{"p":"cs","v":"mel-fm.cdn.ampproject.org","c":"-1,812973041"},{"p":"cs","v":"presentation_webinar","c":"-1,813190478"},{"p":"cs","v":"l.instagram.com","c":"-2,111596912"},{"p":"cs","v":"eSputnik-trigger","c":"-2,314459686"},{"p":"cs","v":"geekbrains.ru","c":"-2,584433846"},{"p":"cs","v":"theoryandpractice","c":"-2,841590351"},{"p":"cs","v":"campaigns_weekly","c":"-2,901484343"},{"p":"cs","v":"(not_set)","c":"0,6102293084"},{"p":"cs","v":"none","c":0}];
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default(rawDataJSON) {
+  var kTable = {};
+  rawDataJSON.forEach(function (item) {
+    var param = item.p;
+    var value = item.v;
+    var coef = item.c;
+    /*
+      country - co
+      dayofweek_req - dr
+      from_page_hash - fh
+      from_page_pretty - fp
+      gmt - gm
+      hour_req - hr
+      Medium - cm
+      month_req - mr
+      Source - cs
+    * */
+
+    switch (param) {
+      case 'fh':
+        param = 'hash';
+        break;
+
+      case 'cs':
+        param = 'source';
+        break;
+
+      case 'hr':
+        param = 'hour';
+        break;
+
+      case 'gm':
+        param = 'gmt';
+        break;
+
+      case 'fp':
+        param = 'fromPage';
+        break;
+
+      case 'co':
+        param = 'country';
+        break;
+
+      case 'dr':
+        param = 'dayOfWeek';
+        break;
+
+      case 'cm':
+        param = 'medium';
+        break;
+
+      case 'mr':
+        param = 'month';
+        break;
+
+      default:
+        param = item.parameter;
+    }
+
+    if (!kTable[param]) kTable[param] = {}; // add slashes
+
+    if (param === 'fromPage') {
+      if (value !== '/' && value.indexOf('#') !== 0) {
+        if (value.indexOf('/l/') === 0) {
+          value = "".concat(value, "/");
+        } else {
+          value = "/".concat(value, "/");
+        }
+      }
+    } // not add hashs
+
+
+    if (!(param === 'fromPage' && value.indexOf('#') === 0)) {
+      if (coef === 0) {
+        kTable[param][value] = coef;
+      } else {
+        kTable[param][value] = parseFloat(coef.replace(',', '.'));
+      }
+    }
+  });
+  return kTable;
+};
+
+exports.default = _default;
 
 /***/ })
 /******/ ]);
