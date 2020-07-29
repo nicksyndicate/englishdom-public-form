@@ -2,52 +2,52 @@
   {
     "p": "co",
     "v": "RU",
-    "c": "0,9859162158"
+    "c": "0,8084041003"
   },
   {
     "p": "co",
     "v": "UA",
-    "c": "0,8705217349"
+    "c": "0,7709920893"
   },
   {
     "p": "co",
     "v": "US",
-    "c": "0,3984222659"
+    "c": "0,4207226817"
   },
   {
     "p": "co",
     "v": "PL",
-    "c": "0,3402919973"
+    "c": "0,1856661541"
   },
   {
     "p": "co",
     "v": "BY",
-    "c": "0,03852538973"
-  },
-  {
-    "p": "co",
-    "v": "AZ",
-    "c": "-0,6542429932"
+    "c": "0,04506087814"
   },
   {
     "p": "co",
     "v": "KZ",
-    "c": "-0,822718923"
+    "c": "-1,358476642"
   },
   {
     "p": "co",
-    "v": "TJ",
-    "c": "-1,125388511"
+    "v": "AZ",
+    "c": "-1,656149486"
   },
   {
     "p": "co",
     "v": "UZ",
-    "c": "-1,376906741"
+    "c": "-1,970285012"
   },
   {
     "p": "co",
     "v": "KG",
-    "c": "-1,76024765"
+    "c": "-3,74007549"
+  },
+  {
+    "p": "co",
+    "v": "TJ",
+    "c": "-4,274040523"
   },
   {
     "p": "co",
@@ -57,42 +57,42 @@
   {
     "p": "co",
     "v": "none",
-    "c": "0,2890185333"
+    "c": "0,2755582943"
   },
   {
     "p": "dr",
     "v": 2,
-    "c": "-0,2285445538"
+    "c": "-1,34736701"
   },
   {
     "p": "dr",
     "v": 4,
-    "c": "-0,3235503114"
+    "c": "-1,436970643"
   },
   {
     "p": "dr",
     "v": 3,
-    "c": "-0,3742005374"
-  },
-  {
-    "p": "dr",
-    "v": 5,
-    "c": "-0,4099770731"
+    "c": "-1,449421401"
   },
   {
     "p": "dr",
     "v": 1,
-    "c": "-0,416160374"
+    "c": "-1,521956949"
+  },
+  {
+    "p": "dr",
+    "v": 5,
+    "c": "-1,52819462"
   },
   {
     "p": "dr",
     "v": 6,
-    "c": "-0,4760958389"
+    "c": "-1,580880223"
   },
   {
     "p": "dr",
     "v": 7,
-    "c": "-0,588279992"
+    "c": "-1,627832109"
   },
   {
     "p": "dr",
@@ -107,442 +107,717 @@
   {
     "p": "fh",
     "v": "#kogda-ispolzuetsya-was-were",
-    "c": "0,3222644264"
+    "c": "3,930421017"
   },
   {
     "p": "fh",
-    "v": "#5",
-    "c": "0,274216493"
-  },
-  {
-    "p": "fh",
-    "v": "#",
-    "c": "0,2727422533"
-  },
-  {
-    "p": "fh",
-    "v": "#4",
-    "c": "0,2650004515"
-  },
-  {
-    "p": "fh",
-    "v": "#application-main-page-1",
-    "c": "0,1944166663"
-  },
-  {
-    "p": "fh",
-    "v": "#course-goals",
-    "c": "0,1640040305"
-  },
-  {
-    "p": "fh",
-    "v": "#1/",
-    "c": "0,1093554323"
-  },
-  {
-    "p": "fh",
-    "v": "#certificate",
-    "c": "0,07565681813"
-  },
-  {
-    "p": "fh",
-    "v": "#programs",
-    "c": "0,06086117328"
-  },
-  {
-    "p": "fh",
-    "v": "#freelesson",
-    "c": "0,04780201387"
-  },
-  {
-    "p": "fh",
-    "v": "#glagoly-fizicheskogo-vospriyatiya-verbs-of-physical-perception",
-    "c": "-0,01000052942"
+    "v": "#sunday-pervyj-ili-poslednij-den-nedeli",
+    "c": "3,58853947"
   },
   {
     "p": "fh",
     "v": "#13",
-    "c": "-0,01011554059"
+    "c": "3,417590955"
   },
   {
     "p": "fh",
-    "v": "#kak-nauchitsya-amerikanskomu-akcentu",
-    "c": "-0,01013413959"
+    "v": "#5",
+    "c": "3,332276418"
   },
   {
     "p": "fh",
-    "v": "#ache",
-    "c": "-0,01027935892"
+    "v": "#1/",
+    "c": "2,218813115"
   },
   {
     "p": "fh",
-    "v": "#skolko-vremeni-neobhodimo-dlya-izucheniya-razgovornogo-anglijskogo",
-    "c": "-0,01040349841"
+    "v": "#certificate",
+    "c": "1,922468479"
   },
   {
     "p": "fh",
-    "v": "#resursy-dlya-izucheniya-anglijskogo-samostoyatelno",
-    "c": "-0,01074486894"
+    "v": "#freelesson",
+    "c": "1,596353416"
   },
   {
     "p": "fh",
-    "v": "#tv-r-na-temu-moya-podorozh",
-    "c": "-0,01091439695"
+    "v": "#course-goals",
+    "c": "1,534992542"
   },
   {
     "p": "fh",
-    "v": "#zv-ropol-s-zootopia",
-    "c": "-0,01094120519"
+    "v": "#programs",
+    "c": "1,375348407"
   },
   {
     "p": "fh",
-    "v": "#sposoby-izucheniya-razgovornogo-anglijskogo-onlajn",
-    "c": "-0,01097624656"
-  },
-  {
-    "p": "fh",
-    "v": "#11",
-    "c": "-0,01112942888"
-  },
-  {
-    "p": "fh",
-    "v": "#yak-angl-jsk-multf-lmi-dopomagayut-d-tyam-vchiti-movu",
-    "c": "-0,01134794583"
-  },
-  {
-    "p": "fh",
-    "v": "#rukovodstvo-po-izucheniyu-anglijskogo-s-nulya",
-    "c": "-0,01141352041"
-  },
-  {
-    "p": "fh",
-    "v": "#the-good-grammar-book",
-    "c": "-0,01200519731"
-  },
-  {
-    "p": "fh",
-    "v": "#korol-lev-the-lion-king",
-    "c": "-0,0120597789"
-  },
-  {
-    "p": "fh",
-    "v": "#shcho-take-past-simple",
-    "c": "-0,01208412364"
-  },
-  {
-    "p": "fh",
-    "v": "#dlya-chogo-potr-bno-shvidko-vivchiti-angl-jsku",
-    "c": "-0,01226436961"
-  },
-  {
-    "p": "fh",
-    "v": "#mulan-mulan",
-    "c": "-0,01228835715"
-  },
-  {
-    "p": "fh",
-    "v": "#sovety-na-budushchee",
-    "c": "-0,0122931445"
-  },
-  {
-    "p": "fh",
-    "v": "#essay-on-my-future-career",
-    "c": "-0,01229375127"
-  },
-  {
-    "p": "fh",
-    "v": "#top-7-igr-chtoby-uluchshit-razgovornyj-anglijskij",
-    "c": "-0,0124178871"
-  },
-  {
-    "p": "fh",
-    "v": "#osnovnye-slova-i-vyrazheniya-dlya-izucheniya",
-    "c": "-0,01269204546"
-  },
-  {
-    "p": "fh",
-    "v": "#kak-video-uroki-pomogayut-detyam",
-    "c": "-0,01293482231"
+    "v": "#application-main-page-1",
+    "c": "1,375203824"
   },
   {
     "p": "fh",
     "v": "#teachers",
-    "c": "-0,01305611886"
-  },
-  {
-    "p": "fh",
-    "v": "#chto-takoe-specialnyj-vopros",
-    "c": "-0,01320621144"
-  },
-  {
-    "p": "fh",
-    "v": "#shcho-take-ese-z-angl-jsko",
-    "c": "-0,01340920266"
-  },
-  {
-    "p": "fh",
-    "v": "#kak-izuchat-anglijskij-yazyk-vo-2-klasse-samostoyatelno",
-    "c": "-0,01352583675"
-  },
-  {
-    "p": "fh",
-    "v": "#kak-ispolzovat-socseti-dlya-izucheniya-anglijskogo",
-    "c": "-0,01360009447"
-  },
-  {
-    "p": "fh",
-    "v": "#koli-krashche-pochati-vivchennya-angl-jsko",
-    "c": "-0,01379511655"
-  },
-  {
-    "p": "fh",
-    "v": "#luchshie-prilozheniya-dlya-izucheniya-anglijskogo",
-    "c": "-0,01401764764"
-  },
-  {
-    "p": "fh",
-    "v": "#uchebniki-dlya-it-specialistov",
-    "c": "-0,01507184169"
-  },
-  {
-    "p": "fh",
-    "v": "#urovni-vladeniya-anglijskim-yazykom",
-    "c": "-0,01525508161"
-  },
-  {
-    "p": "fh",
-    "v": "#chto-vklyuchaet-v-sebya-kurs-izucheniya-yazyka-na-urovne-elementary",
-    "c": "-0,01560335227"
-  },
-  {
-    "p": "fh",
-    "v": "#tekst-i-perevod-pesni-in-my-mind",
-    "c": "-0,01605167974"
-  },
-  {
-    "p": "fh",
-    "v": "#neobhodimyj-uroven-znaniya-anglijskogo-dlya-testirovshchika",
-    "c": "-0,01622099457"
-  },
-  {
-    "p": "fh",
-    "v": "#prostota-zalog-uspekha",
-    "c": "-0,0162483424"
-  },
-  {
-    "p": "fh",
-    "v": "#audioknigi-na-anglijskom-onlajn",
-    "c": "-0,01646337263"
-  },
-  {
-    "p": "fh",
-    "v": "#realno-li-ehto",
-    "c": "-0,01690334037"
-  },
-  {
-    "p": "fh",
-    "v": "#programmy-dlya-izucheniya-anglijskogo-yazyka",
-    "c": "-0,01721819726"
-  },
-  {
-    "p": "fh",
-    "v": "#top-15-slov-dlya-ispolzovaniya-v-delovom-anglijskom",
-    "c": "-0,01725764243"
-  },
-  {
-    "p": "fh",
-    "v": "#kogda-luchshe-nachat-izuchenie-anglijskogo",
-    "c": "-0,01799413828"
-  },
-  {
-    "p": "fh",
-    "v": "#chem-otlichaetsya-uroven-beginner-ot-elementary",
-    "c": "-0,0181386678"
-  },
-  {
-    "p": "fh",
-    "v": "#100-samih-populyarnih-nepravilnih-d-sl-v-u-angl-jsk-j",
-    "c": "-0,01859703587"
-  },
-  {
-    "p": "fh",
-    "v": "#zaklyuchenie",
-    "c": "-0,01867199015"
-  },
-  {
-    "p": "fh",
-    "v": "#realno-li-vyuchit-anglijskij-za-mesyac-nedelyu-24-chasa",
-    "c": "-0,01879645084"
-  },
-  {
-    "p": "fh",
-    "v": "#s-chego-luchshe-nachinat-izuchat-anglijskij-yazyk-vtoroklassniku",
-    "c": "-0,01900019335"
-  },
-  {
-    "p": "fh",
-    "v": "#delovoj-anglijskij-dlya-finansistov",
-    "c": "-0,01972387878"
-  },
-  {
-    "p": "fh",
-    "v": "#top-10-ser-al-v-angl-jskoyu-movoyu",
-    "c": "-0,02022408321"
-  },
-  {
-    "p": "fh",
-    "v": "#uroven-yazyka-preintermediate-chto-ehto-znachit",
-    "c": "-0,02079312358"
-  },
-  {
-    "p": "fh",
-    "v": "#pristegnite-remni",
-    "c": "-0,02081330975"
-  },
-  {
-    "p": "fh",
-    "v": "#tablica",
-    "c": "-0,02138300609"
-  },
-  {
-    "p": "fh",
-    "v": "#chitannya-osnovnih-komb-nac-j-prigolosnih-v-angl-jsk-j-mov",
-    "c": "-0,02183722059"
-  },
-  {
-    "p": "fh",
-    "v": "#yak-priskoriti-vivchennya-angl-jsko-samost-jno",
-    "c": "-0,02319785929"
-  },
-  {
-    "p": "fh",
-    "v": "#kak-luchshe-uchit-transkripciyu-zvukov-dlya-detej",
-    "c": "-0,0245615447"
-  },
-  {
-    "p": "fh",
-    "v": "#4library",
-    "c": "-0,02514797918"
-  },
-  {
-    "p": "fh",
-    "v": "#perev-r-sv-j-r-ven-angl-jsko-movi",
-    "c": "-0,0252627755"
-  },
-  {
-    "p": "fh",
-    "v": "#preimushchestva-nashego-testa-na-znanie-anglijskogo-yazyka",
-    "c": "-0,02787454499"
-  },
-  {
-    "p": "fh",
-    "v": "#vidi-navchalnih-gor-na-angl-jsk-j",
-    "c": "-0,02820633859"
-  },
-  {
-    "p": "fh",
-    "v": "#ser-ali-i-f-lmi-angl-jskoyu-movoyu",
-    "c": "-0,02855679237"
-  },
-  {
-    "p": "fh",
-    "v": "#5-tip-v-pitan-v-angl-jsk",
-    "c": "-0,02931585438"
-  },
-  {
-    "p": "fh",
-    "v": "#struktura-d-lovogo-lista",
-    "c": "-0,02933071374"
+    "c": "1,280212188"
   },
   {
     "p": "fh",
     "v": "#ed-teachers",
-    "c": "-0,03036140359"
-  },
-  {
-    "p": "fh",
-    "v": "#reviews",
-    "c": "-0,03596864701"
-  },
-  {
-    "p": "fh",
-    "v": "#prosto-pro-angl-jsk-chasi",
-    "c": "-0,0380633979"
-  },
-  {
-    "p": "fh",
-    "v": "#_=_",
-    "c": "-0,0457679385"
-  },
-  {
-    "p": "fh",
-    "v": "#application-skype-page-1",
-    "c": "-0,05025296264"
-  },
-  {
-    "p": "fh",
-    "v": "#ser-ali-angl-jskoyu-movoyu-z-subtitrami",
-    "c": "-0,05129817216"
-  },
-  {
-    "p": "fh",
-    "v": "#abc-song",
-    "c": "-0,05140195646"
-  },
-  {
-    "p": "fh",
-    "v": "#6",
-    "c": "-0,05372085388"
-  },
-  {
-    "p": "fh",
-    "v": "#modern-approach",
-    "c": "-0,0675753965"
-  },
-  {
-    "p": "fh",
-    "v": "#2",
-    "c": "-0,06786420439"
-  },
-  {
-    "p": "fh",
-    "v": "#kak-pravilno-perevodit-s-anglijskogo",
-    "c": "-0,07923594831"
-  },
-  {
-    "p": "fh",
-    "v": "#aud-oknigi-angl-jskoyu-movoyu-onlajn",
-    "c": "-0,08993178319"
-  },
-  {
-    "p": "fh",
-    "v": "#3",
-    "c": "-0,1168953737"
-  },
-  {
-    "p": "fh",
-    "v": "#1",
-    "c": "-0,2663640228"
-  },
-  {
-    "p": "fh",
-    "v": "#application-kids",
-    "c": "-0,3257175899"
+    "c": "0,8998934027"
   },
   {
     "p": "fh",
     "v": "#application-main",
-    "c": "-0,5044449757"
+    "c": "0,6315783048"
+  },
+  {
+    "p": "fh",
+    "v": "#",
+    "c": "0,58394496"
+  },
+  {
+    "p": "fh",
+    "v": "#believer-tekst-i-perevod",
+    "c": "-0,01021238744"
+  },
+  {
+    "p": "fh",
+    "v": "#ooo",
+    "c": "-0,01036403888"
+  },
+  {
+    "p": "fh",
+    "v": "#originalnye-sposoby-nachat-rasskaz-o-sebe-na-anglijskom",
+    "c": "-0,01046058826"
+  },
+  {
+    "p": "fh",
+    "v": "#greeting-song",
+    "c": "-0,01335193424"
+  },
+  {
+    "p": "fh",
+    "v": "#skolko-uchitsya-na-pre-intermediate",
+    "c": "-0,01354843191"
+  },
+  {
+    "p": "fh",
+    "v": "#work",
+    "c": "-0,01379465268"
+  },
+  {
+    "p": "fh",
+    "v": "#ovoshchi",
+    "c": "-0,01629050758"
+  },
+  {
+    "p": "fh",
+    "v": "#glagoly-have-has-had",
+    "c": "-0,01745423187"
+  },
+  {
+    "p": "fh",
+    "v": "#chto-dolzhen-znat-rebenok-v-pervom-klasse",
+    "c": "-0,02054177928"
+  },
+  {
+    "p": "fh",
+    "v": "#podgotovka-k-sobesedovaniyu-na-anglijskom",
+    "c": "-0,02653626512"
+  },
+  {
+    "p": "fh",
+    "v": "#s-chego-luchshe-nachat-izuchenie-anglijskogo-s-rebenkom",
+    "c": "-0,02675614734"
+  },
+  {
+    "p": "fh",
+    "v": "#application-kids",
+    "c": "-0,02844888141"
   },
   {
     "p": "fh",
     "v": "#scroll-to-form",
-    "c": "-0,6684411307"
+    "c": "-0,03101530943"
+  },
+  {
+    "p": "fh",
+    "v": "#chtenie-osnovnyh-kombinacij-soglasnyh-v-anglijskom-yazyke",
+    "c": "-0,03539615485"
+  },
+  {
+    "p": "fh",
+    "v": "#top-10-obuchayushchih-multfilmov-dlya-detej",
+    "c": "-0,04336648684"
+  },
+  {
+    "p": "fh",
+    "v": "#pochemu-znat-maty-na-anglijskom-ehto-vazhno",
+    "c": "-0,05189497763"
+  },
+  {
+    "p": "fh",
+    "v": "#otvechaem-na-blagodarnost-na-anglijskom-yazyke",
+    "c": "-0,05196449567"
+  },
+  {
+    "p": "fh",
+    "v": "#8",
+    "c": "-0,05483335915"
+  },
+  {
+    "p": "fh",
+    "v": "#this-i-that",
+    "c": "-0,05685714364"
+  },
+  {
+    "p": "fh",
+    "v": "#comments",
+    "c": "-0,06395397843"
+  },
+  {
+    "p": "fh",
+    "v": "#chto-dolzhen-umet-pervoklassnik-k-koncu-uchebnogo-goda",
+    "c": "-0,07226509235"
+  },
+  {
+    "p": "fh",
+    "v": "#sovety-po-izucheniyu-anglijskogo-dlya-nachinayushchih",
+    "c": "-0,07337110738"
+  },
+  {
+    "p": "fh",
+    "v": "#upotreblenie-either-neither-i-both",
+    "c": "-0,07450821835"
+  },
+  {
+    "p": "fh",
+    "v": "#chto-takoe-ehkzamen-toefl",
+    "c": "-0,07877166703"
+  },
+  {
+    "p": "fh",
+    "v": "#shcho-take-rezyume",
+    "c": "-0,095050327"
+  },
+  {
+    "p": "fh",
+    "v": "#rol-imeni-sushchestvitelnogo",
+    "c": "-0,09809889759"
+  },
+  {
+    "p": "fh",
+    "v": "#za-skolko-mozhno-vyuchit-anglijskij-yazyk",
+    "c": "-0,09835344868"
+  },
+  {
+    "p": "fh",
+    "v": "#pochemu-hr-stoit-izuchat-anglijskij",
+    "c": "-0,1076572382"
+  },
+  {
+    "p": "fh",
+    "v": "#chto-nuzhno-ponimat-i-kak-dejstvovat",
+    "c": "-0,1215175125"
+  },
+  {
+    "p": "fh",
+    "v": "#tablica-iz-1000-samyh-vstrechaemyh-slov-v-anglijskom",
+    "c": "-0,1319058841"
+  },
+  {
+    "p": "fh",
+    "v": "#urovni-anglijskogo-yazyka",
+    "c": "-0,1339579263"
+  },
+  {
+    "p": "fh",
+    "v": "#anglijskij-dlya-volonterov-chto-ehto",
+    "c": "-0,1397126299"
+  },
+  {
+    "p": "fh",
+    "v": "#second__screen",
+    "c": "-0,1411733903"
+  },
+  {
+    "p": "fh",
+    "v": "#ache",
+    "c": "-0,1485920513"
+  },
+  {
+    "p": "fh",
+    "v": "#9",
+    "c": "-0,1497340827"
+  },
+  {
+    "p": "fh",
+    "v": "#glagoly-fizicheskogo-vospriyatiya-verbs-of-physical-perception",
+    "c": "-0,1502374792"
+  },
+  {
+    "p": "fh",
+    "v": "#kak-ispolzovat-socseti-dlya-izucheniya-anglijskogo",
+    "c": "-0,1556294536"
+  },
+  {
+    "p": "fh",
+    "v": "#https://www.englishdom.com/",
+    "c": "-0,1599339002"
+  },
+  {
+    "p": "fh",
+    "v": "#audirovanie",
+    "c": "-0,164299277"
+  },
+  {
+    "p": "fh",
+    "v": "#frukty",
+    "c": "-0,1651968609"
+  },
+  {
+    "p": "fh",
+    "v": "#yak-priskoriti-vivchennya-angl-jsko-z-vikladachem",
+    "c": "-0,1661355604"
+  },
+  {
+    "p": "fh",
+    "v": "#visnovok",
+    "c": "-0,1683065914"
+  },
+  {
+    "p": "fh",
+    "v": "#oshibki-pri-napisanii-rezyume",
+    "c": "-0,1685179959"
+  },
+  {
+    "p": "fh",
+    "v": "#yak-vivchiti-vs-chasi-na-angl-jsk-j",
+    "c": "-0,1701177123"
+  },
+  {
+    "p": "fh",
+    "v": "#kak-nauchitsya-amerikanskomu-akcentu",
+    "c": "-0,1709561382"
+  },
+  {
+    "p": "fh",
+    "v": "#ser-ali-na-angl-jsk-j-dlya-r-znogo-r-vnya",
+    "c": "-0,1743368632"
+  },
+  {
+    "p": "fh",
+    "v": "#skolko-vremeni-neobhodimo-dlya-izucheniya-razgovornogo-anglijskogo",
+    "c": "-0,1795171658"
+  },
+  {
+    "p": "fh",
+    "v": "#srok-obucheniya-na-urovne-elementary",
+    "c": "-0,1795336526"
+  },
+  {
+    "p": "fh",
+    "v": "#anglijskij-biznes-slovar",
+    "c": "-0,180557457"
+  },
+  {
+    "p": "fh",
+    "v": "#chastini-tuluba",
+    "c": "-0,1813270007"
+  },
+  {
+    "p": "fh",
+    "v": "#prichini-zajmatis-angl-jskoyu-po-skajpu-z-vchitelem",
+    "c": "-0,1817941603"
+  },
+  {
+    "p": "fh",
+    "v": "#zamoviti-stolik",
+    "c": "-0,1832729836"
+  },
+  {
+    "p": "fh",
+    "v": "#resursy-dlya-izucheniya-anglijskogo-samostoyatelno",
+    "c": "-0,1960535814"
+  },
+  {
+    "p": "fh",
+    "v": "#whose",
+    "c": "-0,1966569256"
+  },
+  {
+    "p": "fh",
+    "v": "#top-7-igr-chtoby-uluchshit-razgovornyj-anglijskij",
+    "c": "-0,2009841399"
+  },
+  {
+    "p": "fh",
+    "v": "#the-good-grammar-book",
+    "c": "-0,201651782"
+  },
+  {
+    "p": "fh",
+    "v": "#kak-video-uroki-pomogayut-detyam",
+    "c": "-0,2040022467"
+  },
+  {
+    "p": "fh",
+    "v": "#mulan-mulan",
+    "c": "-0,2077734609"
+  },
+  {
+    "p": "fh",
+    "v": "#sovety-na-budushchee",
+    "c": "-0,2093828187"
+  },
+  {
+    "p": "fh",
+    "v": "#11",
+    "c": "-0,2094978077"
+  },
+  {
+    "p": "fh",
+    "v": "#zv-ropol-s-zootopia",
+    "c": "-0,2096939717"
+  },
+  {
+    "p": "fh",
+    "v": "#tv-r-na-temu-moya-podorozh",
+    "c": "-0,21385146"
+  },
+  {
+    "p": "fh",
+    "v": "#rukovodstvo-po-izucheniyu-anglijskogo-s-nulya",
+    "c": "-0,2143883092"
+  },
+  {
+    "p": "fh",
+    "v": "#osnovnye-slova-i-vyrazheniya-dlya-izucheniya",
+    "c": "-0,2166727687"
+  },
+  {
+    "p": "fh",
+    "v": "#yak-angl-jsk-multf-lmi-dopomagayut-d-tyam-vchiti-movu",
+    "c": "-0,2204671847"
+  },
+  {
+    "p": "fh",
+    "v": "#shcho-take-past-simple",
+    "c": "-0,2308312271"
+  },
+  {
+    "p": "fh",
+    "v": "#koli-krashche-pochati-vivchennya-angl-jsko",
+    "c": "-0,2326384466"
+  },
+  {
+    "p": "fh",
+    "v": "#luchshie-prilozheniya-dlya-izucheniya-anglijskogo",
+    "c": "-0,2338377614"
+  },
+  {
+    "p": "fh",
+    "v": "#dlya-chogo-potr-bno-shvidko-vivchiti-angl-jsku",
+    "c": "-0,2343483728"
+  },
+  {
+    "p": "fh",
+    "v": "#s-chem-mozhno-stolknutsya",
+    "c": "-0,2353264507"
+  },
+  {
+    "p": "fh",
+    "v": "#korol-lev-the-lion-king",
+    "c": "-0,2388103172"
+  },
+  {
+    "p": "fh",
+    "v": "#essay-on-my-future-career",
+    "c": "-0,24356994"
+  },
+  {
+    "p": "fh",
+    "v": "#kak-izuchat-anglijskij-yazyk-vo-2-klasse-samostoyatelno",
+    "c": "-0,248383093"
+  },
+  {
+    "p": "fh",
+    "v": "#kogda-luchshe-nachat-izuchenie-anglijskogo",
+    "c": "-0,2594307397"
+  },
+  {
+    "p": "fh",
+    "v": "#uchebniki-dlya-it-specialistov",
+    "c": "-0,2640191087"
+  },
+  {
+    "p": "fh",
+    "v": "#programmy-dlya-izucheniya-anglijskogo-yazyka",
+    "c": "-0,2654013124"
+  },
+  {
+    "p": "fh",
+    "v": "#tekst-i-perevod-pesni-in-my-mind",
+    "c": "-0,2738964604"
+  },
+  {
+    "p": "fh",
+    "v": "#urovni-vladeniya-anglijskim-yazykom",
+    "c": "-0,2744912272"
+  },
+  {
+    "p": "fh",
+    "v": "#nuzhno-li-uchit-anglijskij-yazyk-vzroslomu",
+    "c": "-0,2773915929"
+  },
+  {
+    "p": "fh",
+    "v": "#audioknigi-na-anglijskom-onlajn",
+    "c": "-0,2776331841"
+  },
+  {
+    "p": "fh",
+    "v": "#uroven-intermediate-chto-ehto-znachit",
+    "c": "-0,2853363973"
+  },
+  {
+    "p": "fh",
+    "v": "#top-15-slov-dlya-ispolzovaniya-v-delovom-anglijskom",
+    "c": "-0,2855526137"
+  },
+  {
+    "p": "fh",
+    "v": "#realno-li-ehto",
+    "c": "-0,2869728704"
+  },
+  {
+    "p": "fh",
+    "v": "#prostota-zalog-uspekha",
+    "c": "-0,2929204231"
+  },
+  {
+    "p": "fh",
+    "v": "#neobhodimyj-uroven-znaniya-anglijskogo-dlya-testirovshchika",
+    "c": "-0,3061187181"
+  },
+  {
+    "p": "fh",
+    "v": "#100-samih-populyarnih-nepravilnih-d-sl-v-u-angl-jsk-j",
+    "c": "-0,3116834069"
+  },
+  {
+    "p": "fh",
+    "v": "#zaklyuchenie",
+    "c": "-0,313368837"
+  },
+  {
+    "p": "fh",
+    "v": "#s-chego-luchshe-nachinat-izuchat-anglijskij-yazyk-vtoroklassniku",
+    "c": "-0,315413306"
+  },
+  {
+    "p": "fh",
+    "v": "#yak-shvidko-vivchiti-angl-jsk-slova",
+    "c": "-0,3322769376"
+  },
+  {
+    "p": "fh",
+    "v": "#chto-nuzhno-osvoit-v-pervuyu-ochered",
+    "c": "-0,3344774434"
+  },
+  {
+    "p": "fh",
+    "v": "#pristegnite-remni",
+    "c": "-0,3383770156"
+  },
+  {
+    "p": "fh",
+    "v": "#dlya-chego-nuzhen-razgovornyj-anglijskij",
+    "c": "-0,3410252922"
+  },
+  {
+    "p": "fh",
+    "v": "#chto-vklyuchaet-v-sebya-kurs-izucheniya-yazyka-na-urovne-elementary",
+    "c": "-0,3415498709"
+  },
+  {
+    "p": "fh",
+    "v": "#shcho-take-ese-z-angl-jsko",
+    "c": "-0,3457334546"
+  },
+  {
+    "p": "fh",
+    "v": "#tablica",
+    "c": "-0,3472321223"
+  },
+  {
+    "p": "fh",
+    "v": "#delovoj-anglijskij-dlya-finansistov",
+    "c": "-0,3547715496"
+  },
+  {
+    "p": "fh",
+    "v": "#uroven-yazyka-preintermediate-chto-ehto-znachit",
+    "c": "-0,3589018863"
+  },
+  {
+    "p": "fh",
+    "v": "#kak-luchshe-uchit-transkripciyu-zvukov-dlya-detej",
+    "c": "-0,3715459907"
+  },
+  {
+    "p": "fh",
+    "v": "#sposoby-izucheniya-razgovornogo-anglijskogo-onlajn",
+    "c": "-0,3724734918"
+  },
+  {
+    "p": "fh",
+    "v": "#ser-ali-i-f-lmi-angl-jskoyu-movoyu",
+    "c": "-0,3740151087"
+  },
+  {
+    "p": "fh",
+    "v": "#yak-priskoriti-vivchennya-angl-jsko-samost-jno",
+    "c": "-0,3752149511"
+  },
+  {
+    "p": "fh",
+    "v": "#top-10-ser-al-v-angl-jskoyu-movoyu",
+    "c": "-0,3873539905"
+  },
+  {
+    "p": "fh",
+    "v": "#7",
+    "c": "-0,3977576196"
+  },
+  {
+    "p": "fh",
+    "v": "#realno-li-vyuchit-anglijskij-za-mesyac-nedelyu-24-chasa",
+    "c": "-0,4028814263"
+  },
+  {
+    "p": "fh",
+    "v": "#chem-otlichaetsya-uroven-beginner-ot-elementary",
+    "c": "-0,407189083"
+  },
+  {
+    "p": "fh",
+    "v": "#perev-r-sv-j-r-ven-angl-jsko-movi",
+    "c": "-0,4084630691"
+  },
+  {
+    "p": "fh",
+    "v": "#4library",
+    "c": "-0,4151569153"
+  },
+  {
+    "p": "fh",
+    "v": "#vidi-navchalnih-gor-na-angl-jsk-j",
+    "c": "-0,4258802066"
+  },
+  {
+    "p": "fh",
+    "v": "#grammaticheskie-temy",
+    "c": "-0,438582475"
+  },
+  {
+    "p": "fh",
+    "v": "#5-tip-v-pitan-v-angl-jsk",
+    "c": "-0,439924661"
+  },
+  {
+    "p": "fh",
+    "v": "#preimushchestva-nashego-testa-na-znanie-anglijskogo-yazyka",
+    "c": "-0,4416827544"
+  },
+  {
+    "p": "fh",
+    "v": "#chitannya-osnovnih-komb-nac-j-prigolosnih-v-angl-jsk-j-mov",
+    "c": "-0,4603196196"
+  },
+  {
+    "p": "fh",
+    "v": "#struktura-d-lovogo-lista",
+    "c": "-0,4666273327"
+  },
+  {
+    "p": "fh",
+    "v": "#abc-song",
+    "c": "-0,6460561925"
+  },
+  {
+    "p": "fh",
+    "v": "#6",
+    "c": "-0,6501346482"
+  },
+  {
+    "p": "fh",
+    "v": "#4",
+    "c": "-0,6653096235"
+  },
+  {
+    "p": "fh",
+    "v": "#prosto-pro-angl-jsk-chasi",
+    "c": "-0,8289260551"
+  },
+  {
+    "p": "fh",
+    "v": "#ser-ali-angl-jskoyu-movoyu-z-subtitrami",
+    "c": "-0,8398114527"
+  },
+  {
+    "p": "fh",
+    "v": "#kak-pravilno-perevodit-s-anglijskogo",
+    "c": "-0,8673495063"
+  },
+  {
+    "p": "fh",
+    "v": "#2",
+    "c": "-0,9300220425"
+  },
+  {
+    "p": "fh",
+    "v": "#reviews",
+    "c": "-0,9573551218"
+  },
+  {
+    "p": "fh",
+    "v": "#aud-oknigi-angl-jskoyu-movoyu-onlajn",
+    "c": "-0,9674835829"
+  },
+  {
+    "p": "fh",
+    "v": "#modern-approach",
+    "c": "-1,012763103"
+  },
+  {
+    "p": "fh",
+    "v": "#application-skype-page-1",
+    "c": "-1,014982573"
+  },
+  {
+    "p": "fh",
+    "v": "#_=_",
+    "c": "-1,019259341"
+  },
+  {
+    "p": "fh",
+    "v": "#modal-form",
+    "c": "-1,104103408"
+  },
+  {
+    "p": "fh",
+    "v": "#3",
+    "c": "-1,167706866"
+  },
+  {
+    "p": "fh",
+    "v": "#1",
+    "c": "-1,800480712"
   },
   {
     "p": "fh",
     "v": "(not_set)",
-    "c": "-0,8741032774"
+    "c": "0,1731917273"
   },
   {
     "p": "fh",
@@ -552,432 +827,477 @@
   {
     "p": "fp",
     "v": "contacts",
-    "c": "2,604777986"
-  },
-  {
-    "p": "fp",
-    "v": "promo",
-    "c": "1,65643399"
-  },
-  {
-    "p": "fp",
-    "v": "prices",
-    "c": "1,428000877"
-  },
-  {
-    "p": "fp",
-    "v": "invited",
-    "c": "1,271637372"
-  },
-  {
-    "p": "fp",
-    "v": "process",
-    "c": "1,148973555"
-  },
-  {
-    "p": "fp",
-    "v": "skype",
-    "c": "0,8816252642"
-  },
-  {
-    "p": "fp",
-    "v": "/l/friday19",
-    "c": "0,7802224496"
-  },
-  {
-    "p": "fp",
-    "v": "/",
-    "c": "0,7169181288"
-  },
-  {
-    "p": "fp",
-    "v": "ua",
-    "c": "0,5118526873"
+    "c": "3,65806323"
   },
   {
     "p": "fp",
     "v": "/l/devby",
-    "c": "0,5058803904"
-  },
-  {
-    "p": "fp",
-    "v": "kids",
-    "c": "0,4668052383"
-  },
-  {
-    "p": "fp",
-    "v": "course",
-    "c": "0,2936293177"
-  },
-  {
-    "p": "fp",
-    "v": "test-your-english-level",
-    "c": "0,2637796639"
-  },
-  {
-    "p": "fp",
-    "v": "/l/enguide",
-    "c": "0,2016426823"
+    "c": "3,501161896"
   },
   {
     "p": "fp",
     "v": "/l/family20",
-    "c": "0,1836975842"
+    "c": "2,705182472"
   },
   {
     "p": "fp",
-    "v": "otzyvy",
-    "c": "0,1714565547"
-  },
-  {
-    "p": "fp",
-    "v": "school",
-    "c": "0,1663052643"
-  },
-  {
-    "p": "fp",
-    "v": "home",
-    "c": "0,1437717624"
-  },
-  {
-    "p": "fp",
-    "v": "/l/mar19",
-    "c": "0,1400693231"
-  },
-  {
-    "p": "fp",
-    "v": "/l/biz",
-    "c": "0,1233672058"
-  },
-  {
-    "p": "fp",
-    "v": "/l/onismogli20",
-    "c": "0,1224707625"
-  },
-  {
-    "p": "fp",
-    "v": "main_type-c",
-    "c": "0,08278124372"
-  },
-  {
-    "p": "fp",
-    "v": "/l/it20",
-    "c": "0,07867453714"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english-school",
-    "c": "0,07365148697"
-  },
-  {
-    "p": "fp",
-    "v": "repetitors",
-    "c": "0,06029552708"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_digital",
-    "c": "0,05190219246"
-  },
-  {
-    "p": "fp",
-    "v": "/l/feb19",
-    "c": "0,01718517401"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_native",
-    "c": "0,01687937167"
-  },
-  {
-    "p": "fp",
-    "v": "/l/blackfriday18",
-    "c": "-0,001530435287"
+    "v": "promo",
+    "c": "2,468175718"
   },
   {
     "p": "fp",
     "v": "/l/more18",
-    "c": "-0,004134649833"
+    "c": "2,012190616"
   },
   {
     "p": "fp",
-    "v": "/l/backtoschool18",
-    "c": "-0,01023833351"
+    "v": "/l/english_digital",
+    "c": "1,948529617"
   },
   {
     "p": "fp",
-    "v": "/l/2womansdayli",
-    "c": "-0,01656509848"
+    "v": "process",
+    "c": "1,913795821"
   },
   {
     "p": "fp",
-    "v": "/l/jan18",
-    "c": "-0,01709213986"
+    "v": "otzyvy",
+    "c": "1,902786372"
   },
   {
     "p": "fp",
-    "v": "/l/english_it",
-    "c": "-0,01815175221"
+    "v": "prices",
+    "c": "1,77141805"
   },
   {
     "p": "fp",
-    "v": "/l/template-promo",
-    "c": "-0,01865282554"
+    "v": "invited",
+    "c": "1,679797954"
   },
   {
     "p": "fp",
-    "v": "city",
-    "c": "-0,01942712521"
+    "v": "/l/enguide",
+    "c": "1,467554151"
   },
   {
     "p": "fp",
-    "v": "/l/2partnernik",
-    "c": "-0,0220713811"
+    "v": "skype",
+    "c": "1,445480299"
   },
   {
     "p": "fp",
-    "v": "/l/echoice",
-    "c": "-0,02377667235"
+    "v": "school",
+    "c": "1,430868243"
   },
   {
     "p": "fp",
-    "v": "/l/family2020",
-    "c": "-0,02409846567"
+    "v": "/l/friday19",
+    "c": "1,208265625"
   },
   {
     "p": "fp",
-    "v": "/l/jedi20",
-    "c": "-0,02805775115"
-  },
-  {
-    "p": "fp",
-    "v": "/l/wkle",
-    "c": "-0,03468560895"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_august",
-    "c": "-0,03555947259"
-  },
-  {
-    "p": "fp",
-    "v": "/l/newyear20-2",
-    "c": "-0,05042406486"
-  },
-  {
-    "p": "fp",
-    "v": "/l/http:",
-    "c": "-0,05064753262"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_online",
-    "c": "-0,05118334385"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_beginners",
-    "c": "-0,05503629684"
-  },
-  {
-    "p": "fp",
-    "v": "/l/newyear20-new",
-    "c": "-0,05857101879"
+    "v": "ua",
+    "c": "1,192328298"
   },
   {
     "p": "fp",
     "v": "/l/english_for_business",
-    "c": "-0,05926398427"
+    "c": "1,116023613"
   },
   {
     "p": "fp",
-    "v": "/l/vno",
-    "c": "-0,06241903264"
+    "v": "/",
+    "c": "0,9626153449"
   },
   {
     "p": "fp",
-    "v": "/l/youtube2",
-    "c": "-0,06520702075"
+    "v": "/l/june20",
+    "c": "0,9140235607"
+  },
+  {
+    "p": "fp",
+    "v": "/l/biz",
+    "c": "0,8588905733"
+  },
+  {
+    "p": "fp",
+    "v": "kids",
+    "c": "0,8519443216"
+  },
+  {
+    "p": "fp",
+    "v": "/l/2womansdayli",
+    "c": "0,6863291843"
+  },
+  {
+    "p": "fp",
+    "v": "/l/wkle",
+    "c": "0,5683235816"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english-school",
+    "c": "0,5422921114"
+  },
+  {
+    "p": "fp",
+    "v": "course",
+    "c": "0,5035110134"
+  },
+  {
+    "p": "fp",
+    "v": "courses",
+    "c": "0,4888960544"
+  },
+  {
+    "p": "fp",
+    "v": "/l/bbq20",
+    "c": "0,4612829722"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_native",
+    "c": "0,4473930206"
+  },
+  {
+    "p": "fp",
+    "v": "/l/mar19",
+    "c": "0,3998568498"
+  },
+  {
+    "p": "fp",
+    "v": "repetitors",
+    "c": "0,3165153028"
   },
   {
     "p": "fp",
     "v": "/l/2englishchoice",
-    "c": "-0,07452421269"
+    "c": "0,3055044251"
   },
   {
     "p": "fp",
-    "v": "/l/goonline20",
-    "c": "-0,07740176651"
-  },
-  {
-    "p": "fp",
-    "v": "/l/stayhome20",
-    "c": "-0,07869676771"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_for_programmers",
-    "c": "-0,08380841492"
-  },
-  {
-    "p": "fp",
-    "v": "main_type-d",
-    "c": "-0,1149192511"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_lessons",
-    "c": "-0,1198606914"
-  },
-  {
-    "p": "fp",
-    "v": "/l/2vancouverok",
-    "c": "-0,1283939145"
-  },
-  {
-    "p": "fp",
-    "v": "/l/speaking",
-    "c": "-0,1361055826"
-  },
-  {
-    "p": "fp",
-    "v": "/l/2tpynak",
-    "c": "-0,1509256541"
-  },
-  {
-    "p": "fp",
-    "v": "/l/new-year18",
-    "c": "-0,1632914402"
-  },
-  {
-    "p": "fp",
-    "v": "/l/musk19",
-    "c": "-0,179090447"
+    "v": "main_type-c",
+    "c": "0,2998403737"
   },
   {
     "p": "fp",
     "v": "/l/english_a_ukr",
-    "c": "-0,2507227983"
+    "c": "0,2937920116"
   },
   {
     "p": "fp",
-    "v": "/l/english_a",
-    "c": "-0,2675795278"
+    "v": "/l/jedi20",
+    "c": "0,2751929097"
   },
   {
     "p": "fp",
-    "v": "main_type-b",
-    "c": "-0,3113163335"
+    "v": "/l/feb19",
+    "c": "0,2456818321"
   },
   {
     "p": "fp",
-    "v": "/l/english_s",
-    "c": "-0,3292816377"
+    "v": "home",
+    "c": "0,2213835966"
   },
   {
     "p": "fp",
-    "v": "/l/enbox20",
-    "c": "-0,3383720296"
+    "v": "city",
+    "c": "0,196896348"
   },
   {
     "p": "fp",
-    "v": "/l/po-serialam",
-    "c": "-0,344846165"
+    "v": "/l/english_beginners",
+    "c": "0,1367833707"
   },
   {
     "p": "fp",
-    "v": "ios",
-    "c": "-0,3741138525"
-  },
-  {
-    "p": "fp",
-    "v": "/l/newyear20",
-    "c": "-0,4212170432"
-  },
-  {
-    "p": "fp",
-    "v": "/l/chugaister",
-    "c": "-0,4330416575"
-  },
-  {
-    "p": "fp",
-    "v": "/l/youtube_main",
-    "c": "-0,433990637"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_r",
-    "c": "-0,4678740607"
-  },
-  {
-    "p": "fp",
-    "v": "/l/english_travel",
-    "c": "-0,4680563483"
-  },
-  {
-    "p": "fp",
-    "v": "online-free",
-    "c": "-0,4834746254"
-  },
-  {
-    "p": "fp",
-    "v": "/l/it19",
-    "c": "-0,5153626779"
+    "v": "/l/english_august",
+    "c": "0,115185659"
   },
   {
     "p": "fp",
     "v": "/l/march20",
-    "c": "-0,540439677"
+    "c": "0,1095502015"
   },
   {
     "p": "fp",
-    "v": "/l/english_a2",
-    "c": "-0,5785858959"
+    "v": "/l/english_for_programmers",
+    "c": "0,05661622811"
   },
   {
     "p": "fp",
-    "v": "skills",
-    "c": "-0,6139547005"
+    "v": "main_type-b",
+    "c": "0,049941972"
   },
   {
     "p": "fp",
-    "v": "/l/halloweenglish19",
-    "c": "-0,6450273586"
+    "v": "/l/new-year18",
+    "c": "-0,03022814556"
   },
   {
     "p": "fp",
-    "v": "grammarcards",
-    "c": "-0,6873705393"
+    "v": "/l/blackfriday18",
+    "c": "-0,04831665713"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_a",
+    "c": "-0,08591254145"
+  },
+  {
+    "p": "fp",
+    "v": "/l/musk19",
+    "c": "-0,09637552953"
+  },
+  {
+    "p": "fp",
+    "v": "/l/speaking",
+    "c": "-0,104942134"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_it",
+    "c": "-0,1274554481"
+  },
+  {
+    "p": "fp",
+    "v": "/l/newyear20",
+    "c": "-0,1892655414"
+  },
+  {
+    "p": "fp",
+    "v": "/l/onismogli20",
+    "c": "-0,2000268619"
+  },
+  {
+    "p": "fp",
+    "v": "/l/enbox20",
+    "c": "-0,2005372734"
+  },
+  {
+    "p": "fp",
+    "v": "/l/2partnernik",
+    "c": "-0,2416978516"
+  },
+  {
+    "p": "fp",
+    "v": "/l/it20",
+    "c": "-0,2594678878"
+  },
+  {
+    "p": "fp",
+    "v": "/l/2vancouverok",
+    "c": "-0,3559720636"
+  },
+  {
+    "p": "fp",
+    "v": "/l/backtoschool18",
+    "c": "-0,4283415448"
+  },
+  {
+    "p": "fp",
+    "v": "/l/chugaister",
+    "c": "-0,4348584597"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_lessons",
+    "c": "-0,5392370958"
+  },
+  {
+    "p": "fp",
+    "v": "/l/newyear20-2",
+    "c": "-0,5435163683"
+  },
+  {
+    "p": "fp",
+    "v": "/l/youtube_main",
+    "c": "-0,5859029051"
+  },
+  {
+    "p": "fp",
+    "v": "/l/stayhome20",
+    "c": "-0,5945908651"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_travel",
+    "c": "-0,5964376457"
   },
   {
     "p": "fp",
     "v": "/l/may19",
-    "c": "-0,7658606383"
+    "c": "-0,617005118"
+  },
+  {
+    "p": "fp",
+    "v": "/l/echoice",
+    "c": "-0,7281332811"
+  },
+  {
+    "p": "fp",
+    "v": "/l/jan18",
+    "c": "-0,7394145794"
+  },
+  {
+    "p": "fp",
+    "v": "/l/it19",
+    "c": "-0,7460287222"
   },
   {
     "p": "fp",
     "v": "/l/englishbox",
-    "c": "-0,8315020496"
+    "c": "-0,7465756067"
   },
   {
     "p": "fp",
-    "v": "android",
-    "c": "-0,8324867654"
+    "v": "skills",
+    "c": "-0,7787758513"
   },
   {
     "p": "fp",
-    "v": "l-youtube",
-    "c": "-0,8908049163"
+    "v": "/l/english_kids",
+    "c": "-0,7814509067"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_r",
+    "c": "-0,7962987601"
+  },
+  {
+    "p": "fp",
+    "v": "ios",
+    "c": "-0,824967297"
+  },
+  {
+    "p": "fp",
+    "v": "main_type-d",
+    "c": "-0,8318318527"
+  },
+  {
+    "p": "fp",
+    "v": "grammarcards",
+    "c": "-0,8560048918"
+  },
+  {
+    "p": "fp",
+    "v": "/l/a1an",
+    "c": "-0,9304764169"
   },
   {
     "p": "fp",
     "v": "/l/burenok",
-    "c": "-1,026137944"
+    "c": "-0,9413405868"
+  },
+  {
+    "p": "fp",
+    "v": "test-your-english-level",
+    "c": "-0,9636206592"
+  },
+  {
+    "p": "fp",
+    "v": "/l/family2020",
+    "c": "-0,9719140705"
+  },
+  {
+    "p": "fp",
+    "v": "online-free",
+    "c": "-0,9745154582"
+  },
+  {
+    "p": "fp",
+    "v": "/l/template-promo",
+    "c": "-1,011342843"
+  },
+  {
+    "p": "fp",
+    "v": "/l/free-time",
+    "c": "-1,013715204"
+  },
+  {
+    "p": "fp",
+    "v": "/l/newyear20-new",
+    "c": "-1,033971452"
+  },
+  {
+    "p": "fp",
+    "v": "android",
+    "c": "-1,054671603"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_a2",
+    "c": "-1,089951474"
+  },
+  {
+    "p": "fp",
+    "v": "l-youtube",
+    "c": "-1,116317377"
+  },
+  {
+    "p": "fp",
+    "v": "/l/halloweenglish19",
+    "c": "-1,13501335"
+  },
+  {
+    "p": "fp",
+    "v": "/l/http:",
+    "c": "-1,142567467"
+  },
+  {
+    "p": "fp",
+    "v": "/l/youtube2",
+    "c": "-1,277443038"
+  },
+  {
+    "p": "fp",
+    "v": "/l/kids20",
+    "c": "-1,523938097"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_online",
+    "c": "-1,729004961"
+  },
+  {
+    "p": "fp",
+    "v": "/l/ielts",
+    "c": "-1,739532357"
   },
   {
     "p": "fp",
     "v": "blog",
-    "c": "-2,096264244"
+    "c": "-1,890789253"
+  },
+  {
+    "p": "fp",
+    "v": "/l/switch20",
+    "c": "-2,271847254"
+  },
+  {
+    "p": "fp",
+    "v": "/l/vno",
+    "c": "-2,489073667"
+  },
+  {
+    "p": "fp",
+    "v": "/l/english_s",
+    "c": "-2,588326075"
+  },
+  {
+    "p": "fp",
+    "v": "/l/2tpynak",
+    "c": "-2,698281778"
+  },
+  {
+    "p": "fp",
+    "v": "/l/po-serialam",
+    "c": "-3,13436799"
+  },
+  {
+    "p": "fp",
+    "v": "/l/goonline20",
+    "c": "-3,390895631"
   },
   {
     "p": "fp",
@@ -988,171 +1308,176 @@
     "p": "fp",
     "v": "none",
     "c": 0
-  },
-  {
-    "p": "gm",
-    "v": "+2",
-    "c": "0,6566983477"
-  },
-  {
-    "p": "gm",
-    "v": "+1",
-    "c": "0,6443910781"
-  },
-  {
-    "p": "gm",
-    "v": "+3",
-    "c": "0,3664475714"
-  },
-  {
-    "p": "gm",
-    "v": -5,
-    "c": "0,3542061982"
-  },
-  {
-    "p": "gm",
-    "v": "+11",
-    "c": "0,2993313773"
-  },
-  {
-    "p": "gm",
-    "v": 0,
-    "c": "0,2893455555"
-  },
-  {
-    "p": "gm",
-    "v": "+10",
-    "c": "0,1800925001"
   },
   {
     "p": "gm",
     "v": "+3:30",
-    "c": "0,1340702184"
+    "c": "1,077437408"
   },
   {
     "p": "gm",
-    "v": "+0",
-    "c": "0,05044857251"
+    "v": "+2",
+    "c": "0,9684977317"
   },
   {
     "p": "gm",
-    "v": "+6:30",
-    "c": "-0,0002512041851"
-  },
-  {
-    "p": "gm",
-    "v": "-2:30:00",
-    "c": "-0,003679647561"
-  },
-  {
-    "p": "gm",
-    "v": "+10:30",
-    "c": "-0,006420852709"
-  },
-  {
-    "p": "gm",
-    "v": "+9:30",
-    "c": "-0,02257345997"
-  },
-  {
-    "p": "gm",
-    "v": -2,
-    "c": "-0,04609818147"
-  },
-  {
-    "p": "gm",
-    "v": "+5:45",
-    "c": "-0,04718974045"
-  },
-  {
-    "p": "gm",
-    "v": -6,
-    "c": "-0,0563058182"
-  },
-  {
-    "p": "gm",
-    "v": -12,
-    "c": "-0,05640506844"
-  },
-  {
-    "p": "gm",
-    "v": "+13",
-    "c": "-0,05798041874"
-  },
-  {
-    "p": "gm",
-    "v": "+14",
-    "c": "-0,06104904493"
-  },
-  {
-    "p": "gm",
-    "v": "+9",
-    "c": "-0,08237853166"
+    "v": "+1",
+    "c": "0,8930771876"
   },
   {
     "p": "gm",
     "v": -4,
-    "c": "-0,1448899802"
+    "c": "0,8587022543"
+  },
+  {
+    "p": "gm",
+    "v": "+11",
+    "c": "0,856701036"
+  },
+  {
+    "p": "gm",
+    "v": -5,
+    "c": "0,7721642985"
+  },
+  {
+    "p": "gm",
+    "v": "+3",
+    "c": "0,7213647081"
+  },
+  {
+    "p": "gm",
+    "v": 0,
+    "c": "0,6555672288"
+  },
+  {
+    "p": "gm",
+    "v": "+10",
+    "c": "0,6215151762"
+  },
+  {
+    "p": "gm",
+    "v": "+0",
+    "c": "0,2044626859"
+  },
+  {
+    "p": "gm",
+    "v": "+9",
+    "c": "0,1915409135"
   },
   {
     "p": "gm",
     "v": -3,
-    "c": "-0,147387837"
+    "c": "0,174503913"
   },
   {
     "p": "gm",
-    "v": -11,
-    "c": "-0,1805736407"
-  },
-  {
-    "p": "gm",
-    "v": "+12",
-    "c": "-0,1847447336"
-  },
-  {
-    "p": "gm",
-    "v": -7,
-    "c": "-0,1956829406"
-  },
-  {
-    "p": "gm",
-    "v": "+4:30",
-    "c": "-0,2156786518"
-  },
-  {
-    "p": "gm",
-    "v": -8,
-    "c": "-0,365213916"
+    "v": -6,
+    "c": "0,03095937861"
   },
   {
     "p": "gm",
     "v": "+7",
-    "c": "-0,4252838511"
+    "c": "0,002436555757"
   },
   {
     "p": "gm",
-    "v": "+5:30",
-    "c": "-0,4339010651"
+    "v": "+6:30",
+    "c": "-0,001555046182"
   },
   {
     "p": "gm",
     "v": "+5",
-    "c": "-0,5929060311"
+    "c": "-0,06270632895"
   },
   {
     "p": "gm",
-    "v": "+8",
-    "c": "-0,6102412634"
+    "v": -7,
+    "c": "-0,1193867146"
+  },
+  {
+    "p": "gm",
+    "v": "+12",
+    "c": "-0,1242838376"
+  },
+  {
+    "p": "gm",
+    "v": "+10:30",
+    "c": "-0,2114846329"
   },
   {
     "p": "gm",
     "v": "+4",
-    "c": "-0,7392430198"
+    "c": "-0,2685324976"
+  },
+  {
+    "p": "gm",
+    "v": -1,
+    "c": "-0,4427141324"
+  },
+  {
+    "p": "gm",
+    "v": "+8",
+    "c": "-0,4443434833"
   },
   {
     "p": "gm",
     "v": "+6",
-    "c": "-1,115761201"
+    "c": "-0,6467498983"
+  },
+  {
+    "p": "gm",
+    "v": -10,
+    "c": "-0,7669955415"
+  },
+  {
+    "p": "gm",
+    "v": -8,
+    "c": "-0,7986589004"
+  },
+  {
+    "p": "gm",
+    "v": "+5:45",
+    "c": "-0,9628266426"
+  },
+  {
+    "p": "gm",
+    "v": "+9:30",
+    "c": "-0,9698284166"
+  },
+  {
+    "p": "gm",
+    "v": "+13",
+    "c": "-1,136850476"
+  },
+  {
+    "p": "gm",
+    "v": -2,
+    "c": "-1,29161652"
+  },
+  {
+    "p": "gm",
+    "v": -12,
+    "c": "-1,427654158"
+  },
+  {
+    "p": "gm",
+    "v": "+14",
+    "c": "-1,642794484"
+  },
+  {
+    "p": "gm",
+    "v": -11,
+    "c": "-1,950083383"
+  },
+  {
+    "p": "gm",
+    "v": "+4:30",
+    "c": "-2,286239749"
+  },
+  {
+    "p": "gm",
+    "v": "+5:30",
+    "c": "-2,966248588"
   },
   {
     "p": "gm",
@@ -1167,122 +1492,122 @@
   {
     "p": "hr",
     "v": 3,
-    "c": "0,2502848398"
-  },
-  {
-    "p": "hr",
-    "v": 12,
-    "c": "0,1630955134"
+    "c": "-0,004825171896"
   },
   {
     "p": "hr",
     "v": 9,
-    "c": "0,1369627089"
-  },
-  {
-    "p": "hr",
-    "v": 8,
-    "c": "0,126809014"
+    "c": "-0,1569595545"
   },
   {
     "p": "hr",
     "v": 10,
-    "c": "0,1179646554"
+    "c": "-0,1769530327"
   },
   {
     "p": "hr",
-    "v": 14,
-    "c": "0,08968300558"
+    "v": 8,
+    "c": "-0,1892987748"
+  },
+  {
+    "p": "hr",
+    "v": 12,
+    "c": "-0,1993663511"
   },
   {
     "p": "hr",
     "v": 13,
-    "c": "0,08233972289"
+    "c": "-0,2320746121"
+  },
+  {
+    "p": "hr",
+    "v": 14,
+    "c": "-0,242792442"
   },
   {
     "p": "hr",
     "v": 7,
-    "c": "0,05057401834"
-  },
-  {
-    "p": "hr",
-    "v": 6,
-    "c": "0,001782874835"
+    "c": "-0,2917974048"
   },
   {
     "p": "hr",
     "v": 11,
-    "c": "-0,009307764906"
+    "c": "-0,3252715962"
   },
   {
     "p": "hr",
     "v": 4,
-    "c": "-0,05131477084"
-  },
-  {
-    "p": "hr",
-    "v": 15,
-    "c": "-0,07294950728"
+    "c": "-0,330024069"
   },
   {
     "p": "hr",
     "v": 16,
-    "c": "-0,1420816929"
+    "c": "-0,3583351425"
   },
   {
     "p": "hr",
-    "v": 5,
-    "c": "-0,1524356526"
-  },
-  {
-    "p": "hr",
-    "v": 17,
-    "c": "-0,1944007321"
+    "v": 15,
+    "c": "-0,3762207274"
   },
   {
     "p": "hr",
     "v": 18,
-    "c": "-0,2108742874"
+    "c": "-0,4042920467"
   },
   {
     "p": "hr",
     "v": 0,
-    "c": "-0,2367805832"
+    "c": "-0,4057260407"
   },
   {
     "p": "hr",
-    "v": 20,
-    "c": "-0,2503120313"
+    "v": 6,
+    "c": "-0,4323744412"
   },
   {
     "p": "hr",
     "v": 2,
-    "c": "-0,2526083897"
+    "c": "-0,4357296797"
+  },
+  {
+    "p": "hr",
+    "v": 17,
+    "c": "-0,5207905617"
+  },
+  {
+    "p": "hr",
+    "v": 5,
+    "c": "-0,5454034258"
   },
   {
     "p": "hr",
     "v": 19,
-    "c": "-0,3504849964"
+    "c": "-0,613690927"
   },
   {
     "p": "hr",
-    "v": 1,
-    "c": "-0,3670850246"
-  },
-  {
-    "p": "hr",
-    "v": 22,
-    "c": "-0,4139374203"
+    "v": 20,
+    "c": "-0,6871526308"
   },
   {
     "p": "hr",
     "v": 21,
-    "c": "-0,4494540928"
+    "c": "-0,7193784281"
+  },
+  {
+    "p": "hr",
+    "v": 22,
+    "c": "-0,7833778234"
+  },
+  {
+    "p": "hr",
+    "v": 1,
+    "c": "-0,9351890086"
   },
   {
     "p": "hr",
     "v": 23,
-    "c": "-0,6822780873"
+    "c": "-1,125599063"
   },
   {
     "p": "hr",
@@ -1296,1198 +1621,1488 @@
   },
   {
     "p": "cm",
-    "v": "lelang",
-    "c": "1,349530936"
+    "v": "selevit+ed-5b13a4973a63a",
+    "c": "3,897797736"
   },
   {
     "p": "cm",
     "v": "enguide",
-    "c": "1,308036282"
-  },
-  {
-    "p": "cm",
-    "v": "pr",
-    "c": "0,8412034258"
-  },
-  {
-    "p": "cm",
-    "v": "GB 2",
-    "c": "0,7349949959"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c2",
-    "c": "0,6327225104"
-  },
-  {
-    "p": "cm",
-    "v": "invite",
-    "c": "1,177397194"
-  },
-  {
-    "p": "cm",
-    "v": "englisher",
-    "c": "0,5694138916"
-  },
-  {
-    "p": "cm",
-    "v": "kuzser00-5e13a7784a7f1",
-    "c": "0,5138649905"
-  },
-  {
-    "p": "cm",
-    "v": "blog",
-    "c": "0,4920468733"
-  },
-  {
-    "p": "cm",
-    "v": "wm.morozov1-5b28d392783c8",
-    "c": "0,482273255"
-  },
-  {
-    "p": "cm",
-    "v": "lead",
-    "c": "0,3814936802"
-  },
-  {
-    "p": "cm",
-    "v": "promo",
-    "c": "0,364306018"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c20",
-    "c": "0,3225657543"
-  },
-  {
-    "p": "cm",
-    "v": "kupriyanovap-5e3be04bb1de8",
-    "c": "0,3148880035"
-  },
-  {
-    "p": "cm",
-    "v": "(none)",
-    "c": "0,3042173613"
-  },
-  {
-    "p": "cm",
-    "v": "selevit+ed-5b13a4973a63a",
-    "c": "0,3000116214"
-  },
-  {
-    "p": "cm",
-    "v": "ira-5e3823aa46e76",
-    "c": "0,2937268309"
-  },
-  {
-    "p": "cm",
-    "v": "tpynak-5bc88fcb36ed9",
-    "c": "0,2603586675"
-  },
-  {
-    "p": "cm",
-    "v": "apps",
-    "c": "0,2584679379"
-  },
-  {
-    "p": "cm",
-    "v": "tashika_05-5b0aedf80a453",
-    "c": "0,2515671847"
-  },
-  {
-    "p": "cm",
-    "v": "Vladimir+2",
-    "c": "0,2439648627"
-  },
-  {
-    "p": "cm",
-    "v": "vladred31207-5e2c5d23ebadc",
-    "c": "0,2259275816"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c22",
-    "c": "0,2249491577"
+    "c": "3,724323044"
   },
   {
     "p": "cm",
     "v": "study",
-    "c": "0,2246277883"
+    "c": "3,280941911"
+  },
+  {
+    "p": "cm",
+    "v": "socialmedia+2",
+    "c": "3,212781581"
   },
   {
     "p": "cm",
     "v": "dmitriy.komarovskiy+mrk-5a60cb61359b1",
-    "c": "0,2136873935"
+    "c": "3,199121466"
   },
   {
     "p": "cm",
-    "v": "social_cpc_c8",
-    "c": "0,2131284973"
-  },
-  {
-    "p": "cm",
-    "v": "jacky853-5bbdb786bd15c",
-    "c": "0,210815076"
-  },
-  {
-    "p": "cm",
-    "v": "social_cpc_c9",
-    "c": "0,1999275778"
-  },
-  {
-    "p": "cm",
-    "v": "schoolrate",
-    "c": "0,1975087725"
-  },
-  {
-    "p": "cm",
-    "v": "kate.gramarye-5c66a5c7523ec",
-    "c": "0,1823418095"
+    "v": "vse-kursy",
+    "c": "3,145324332"
   },
   {
     "p": "cm",
     "v": "smirnowwanya-5d08b8bde44df",
-    "c": "0,1779529649"
-  },
-  {
-    "p": "cm",
-    "v": "anzhelanamyatova-5d0c74a83eb6b",
-    "c": "0,1730857438"
-  },
-  {
-    "p": "cm",
-    "v": "vladimir-5b0a9f4995d21",
-    "c": "0,1688050156"
-  },
-  {
-    "p": "cm",
-    "v": "maksimartemovrich-5d4af37fbbf16",
-    "c": "0,1679333902"
-  },
-  {
-    "p": "cm",
-    "v": "it_bursa",
-    "c": "0,1678941531"
-  },
-  {
-    "p": "cm",
-    "v": "feuata-5a7e42ab095e6",
-    "c": "0,1667460663"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c29",
-    "c": "0,1529766198"
-  },
-  {
-    "p": "cm",
-    "v": "event",
-    "c": "0,1393627386"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c28",
-    "c": "0,1378088169"
-  },
-  {
-    "p": "cm",
-    "v": "mirlancer-5d931ae5aece8",
-    "c": "0,1231440679"
-  },
-  {
-    "p": "cm",
-    "v": "social",
-    "c": "0,1223697451"
-  },
-  {
-    "p": "cm",
-    "v": "miss_tramell",
-    "c": "0,117092195"
-  },
-  {
-    "p": "cm",
-    "v": "email",
-    "c": "0,1158869377"
-  },
-  {
-    "p": "cm",
-    "v": "alinoidy-5b21bffc096fb",
-    "c": "0,1057093115"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c30",
-    "c": "0,08130250928"
-  },
-  {
-    "p": "cm",
-    "v": "(not set)",
-    "c": "0,07699876829"
-  },
-  {
-    "p": "cm",
-    "v": "partnerka",
-    "c": "0,07542676148"
-  },
-  {
-    "p": "cm",
-    "v": "brand",
-    "c": "0,06171267173"
-  },
-  {
-    "p": "cm",
-    "v": "banners",
-    "c": "0,04797223065"
-  },
-  {
-    "p": "cm",
-    "v": "elenaruvel",
-    "c": "0,0387636097"
-  },
-  {
-    "p": "cm",
-    "v": "gribas93-5cd6c2dff41fb",
-    "c": "0,03578463094"
-  },
-  {
-    "p": "cm",
-    "v": "banner",
-    "c": "0,02409664487"
-  },
-  {
-    "p": "cm",
-    "v": "webinar",
-    "c": "0,02030221065"
-  },
-  {
-    "p": "cm",
-    "v": "tayben-5b9a52ff5b9de",
-    "c": "0,002144372742"
-  },
-  {
-    "p": "cm",
-    "v": "diplom_tut-5c7fde417426f",
-    "c": "-0,001093266364"
-  },
-  {
-    "p": "cm",
-    "v": "goodtoknow",
-    "c": "-0,001161848366"
-  },
-  {
-    "p": "cm",
-    "v": "UnicornEnglishSite-5d656799a8b0c",
-    "c": "-0,001190037077"
-  },
-  {
-    "p": "cm",
-    "v": "aleksandr_zevak-5c7ff3020b3ee",
-    "c": "-0,001379329031"
-  },
-  {
-    "p": "cm",
-    "v": "ankadr123-5b94ceca57b5d",
-    "c": "-0,002284795252"
-  },
-  {
-    "p": "cm",
-    "v": "whatmessenger-5c5738e22d9e0",
-    "c": "-0,002296786458"
-  },
-  {
-    "p": "cm",
-    "v": "esoman-5c8e22daca3ca",
-    "c": "-0,002303190133"
-  },
-  {
-    "p": "cm",
-    "v": "mobstrm-5d0a216ba2e79",
-    "c": "-0,003064636425"
-  },
-  {
-    "p": "cm",
-    "v": "oleg-5aba9496470dd",
-    "c": "-0,004373635822"
-  },
-  {
-    "p": "cm",
-    "v": "moyvizitka-5c73d3da7993a",
-    "c": "-0,0047661335"
-  },
-  {
-    "p": "cm",
-    "v": "olga7.vishnya-5bb217ed105c2",
-    "c": "-0,005432346192"
-  },
-  {
-    "p": "cm",
-    "v": "ivannarcissov-5e4b943dc5a8a",
-    "c": "-0,005870264646"
-  },
-  {
-    "p": "cm",
-    "v": "smesh-5a849cbead20e",
-    "c": "-0,00587027975"
-  },
-  {
-    "p": "cm",
-    "v": "alexgertskin-5e3bba8f532e7",
-    "c": "-0,005982488739"
-  },
-  {
-    "p": "cm",
-    "v": "freelancer.ultra-5b69f8e35d2f9",
-    "c": "-0,006037200732"
-  },
-  {
-    "p": "cm",
-    "v": "cpa tg",
-    "c": "-0,007116002327"
-  },
-  {
-    "p": "cm",
-    "v": "sme1.nik-5bdfffc84e5a5",
-    "c": "-0,007200325714"
-  },
-  {
-    "p": "cm",
-    "v": "semion.inozemtsev-5c5be5157d19b",
-    "c": "-0,007208504253"
-  },
-  {
-    "p": "cm",
-    "v": "videotrend24-5ba67c451b3ea",
-    "c": "-0,007361151597"
-  },
-  {
-    "p": "cm",
-    "v": "sunlightmd067-5ca07a8084858",
-    "c": "-0,007850868402"
-  },
-  {
-    "p": "cm",
-    "v": "Lenaconvert8-5cfe3e2519cac",
-    "c": "-0,008667528364"
-  },
-  {
-    "p": "cm",
-    "v": "pr_apps",
-    "c": "-0,009722233901"
-  },
-  {
-    "p": "cm",
-    "v": "kuklin-rman-5b8296d536ac6",
-    "c": "-0,009879739051"
-  },
-  {
-    "p": "cm",
-    "v": "grigo1843-5c2e3408dd77f",
-    "c": "-0,01108616754"
-  },
-  {
-    "p": "cm",
-    "v": "shtoikak-5b9118c7a2730",
-    "c": "-0,01132526831"
-  },
-  {
-    "p": "cm",
-    "v": "salid-5e7b740a293c2",
-    "c": "-0,01180884122"
-  },
-  {
-    "p": "cm",
-    "v": "artte",
-    "c": "-0,01282085627"
-  },
-  {
-    "p": "cm",
-    "v": "hype",
-    "c": "-0,01497326111"
-  },
-  {
-    "p": "cm",
-    "v": "kondrashov",
-    "c": "-0,01505822551"
-  },
-  {
-    "p": "cm",
-    "v": "alexandrartil-5e6f1f6baaa46",
-    "c": "-0,01514627213"
-  },
-  {
-    "p": "cm",
-    "v": "denissorokin1990-5c1aa1cbd49b6",
-    "c": "-0,01536546497"
-  },
-  {
-    "p": "cm",
-    "v": "mysterio78-5ccc2f4564549",
-    "c": "-0,01595225929"
-  },
-  {
-    "p": "cm",
-    "v": "dolby8066-5c08089178a97",
-    "c": "-0,01616918562"
-  },
-  {
-    "p": "cm",
-    "v": "golicyj-5b3f4229f40d8",
-    "c": "-0,01656509848"
-  },
-  {
-    "p": "cm",
-    "v": "hobbydobby-5c51a6c749bcf",
-    "c": "-0,0167897787"
-  },
-  {
-    "p": "cm",
-    "v": "anastasia_nedelko-5c2712044d422",
-    "c": "-0,01697591589"
-  },
-  {
-    "p": "cm",
-    "v": "timlein96",
-    "c": "-0,01732777627"
-  },
-  {
-    "p": "cm",
-    "v": "nikola_001-5c48686d2c202",
-    "c": "-0,01756072617"
-  },
-  {
-    "p": "cm",
-    "v": "artteemm123-5d334bd20202c",
-    "c": "-0,01832968787"
-  },
-  {
-    "p": "cm",
-    "v": "elena.1705-5bd188e09fbd7",
-    "c": "-0,01841201163"
-  },
-  {
-    "p": "cm",
-    "v": "scuns-134145-5cbf1b19f2a8c",
-    "c": "-0,01902061686"
-  },
-  {
-    "p": "cm",
-    "v": "push",
-    "c": "-0,01924463437"
-  },
-  {
-    "p": "cm",
-    "v": "rashidsalyakaev-5cd18f958416d",
-    "c": "-0,02000706211"
-  },
-  {
-    "p": "cm",
-    "v": "mail",
-    "c": "-0,0203729713"
-  },
-  {
-    "p": "cm",
-    "v": "Nykkolayforwork-5b9b931f41e11",
-    "c": "-0,02060528063"
-  },
-  {
-    "p": "cm",
-    "v": "zrr777zrr-5e49ab5c80f50",
-    "c": "-0,02061580991"
-  },
-  {
-    "p": "cm",
-    "v": "dathos-5c8cee5453cf4",
-    "c": "-0,02063050879"
-  },
-  {
-    "p": "cm",
-    "v": "24232456k-5e18da9906aad",
-    "c": "-0,02109588175"
-  },
-  {
-    "p": "cm",
-    "v": "sergey-5d919060d771d",
-    "c": "-0,02113433548"
-  },
-  {
-    "p": "cm",
-    "v": "partner",
-    "c": "-0,02118661032"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c26",
-    "c": "-0,02182606394"
-  },
-  {
-    "p": "cm",
-    "v": "pompa2015-59374e7333c0d",
-    "c": "-0,02231728373"
-  },
-  {
-    "p": "cm",
-    "v": "qa.englishdom+TEST222y-5d1c54927132a",
-    "c": "-0,02266786589"
-  },
-  {
-    "p": "cm",
-    "v": "edelweissco-5d0b69f82b2c7",
-    "c": "-0,02288590582"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c31",
-    "c": "-0,02387631338"
-  },
-  {
-    "p": "cm",
-    "v": "andzela.rysaeva-5e4902b3db916",
-    "c": "-0,02418934176"
-  },
-  {
-    "p": "cm",
-    "v": "video",
-    "c": "-0,02453681353"
-  },
-  {
-    "p": "cm",
-    "v": "SNM02051978-5d2df28fb38e2",
-    "c": "-0,02481880234"
-  },
-  {
-    "p": "cm",
-    "v": "letter",
-    "c": "-0,02507618228"
-  },
-  {
-    "p": "cm",
-    "v": "a.bm2013-5c52fcb47c746",
-    "c": "-0,02517723849"
-  },
-  {
-    "p": "cm",
-    "v": "d.miller+nativeenglish-5d4983c6c176c",
-    "c": "-0,02530803007"
-  },
-  {
-    "p": "cm",
-    "v": "basir235-5bfb75b16c6a4",
-    "c": "-0,02546644793"
-  },
-  {
-    "p": "cm",
-    "v": "larionovdenis-5be74cf7ea2ef",
-    "c": "-0,02599325908"
-  },
-  {
-    "p": "cm",
-    "v": "rek-5e01de351cfa4",
-    "c": "-0,02609820439"
-  },
-  {
-    "p": "cm",
-    "v": "ira-elsva-5cd97ec325f99",
-    "c": "-0,0265005775"
-  },
-  {
-    "p": "cm",
-    "v": "ksemell1975-5cb2de4804e33",
-    "c": "-0,02665007652"
-  },
-  {
-    "p": "cm",
-    "v": "raven2020-5dfcc3840d04f",
-    "c": "-0,02708999535"
-  },
-  {
-    "p": "cm",
-    "v": "dobovo.top-5c442384e08d3",
-    "c": "-0,02721417388"
-  },
-  {
-    "p": "cm",
-    "v": "english112-5ca8ea65522d2",
-    "c": "-0,02766810543"
-  },
-  {
-    "p": "cm",
-    "v": "event_webinar",
-    "c": "-0,02772047195"
-  },
-  {
-    "p": "cm",
-    "v": "port-90-5d1872d6a6225",
-    "c": "-0,02781382639"
-  },
-  {
-    "p": "cm",
-    "v": "agru2-5bc63e80681f3",
-    "c": "-0,02816167832"
-  },
-  {
-    "p": "cm",
-    "v": "hhru",
-    "c": "-0,02866690163"
-  },
-  {
-    "p": "cm",
-    "v": "narrative",
-    "c": "-0,02945218342"
-  },
-  {
-    "p": "cm",
-    "v": "irrrra-5a2f907c74fcb",
-    "c": "-0,03020500111"
-  },
-  {
-    "p": "cm",
-    "v": "social_cpc_c16",
-    "c": "-0,03075623828"
-  },
-  {
-    "p": "cm",
-    "v": "dreweu-5d8f35b8a6a5d",
-    "c": "-0,03112480993"
-  },
-  {
-    "p": "cm",
-    "v": "social_cpc_c10",
-    "c": "-0,03131436964"
-  },
-  {
-    "p": "cm",
-    "v": "pzle",
-    "c": "-0,03168456727"
-  },
-  {
-    "p": "cm",
-    "v": "cmob",
-    "c": "-0,03171484563"
-  },
-  {
-    "p": "cm",
-    "v": "alexpir1974-5cd28a6f4ee52",
-    "c": "-0,0318733419"
-  },
-  {
-    "p": "cm",
-    "v": "partnernik25-5d2b35cc6c736",
-    "c": "-0,03252071452"
-  },
-  {
-    "p": "cm",
-    "v": "starpony78-5d5e673edeafa",
-    "c": "-0,03270777111"
-  },
-  {
-    "p": "cm",
-    "v": "viua787-5dc39cd97ffc8",
-    "c": "-0,03277296427"
-  },
-  {
-    "p": "cm",
-    "v": "kozh.andrew-5d49c6c8e5c8f",
-    "c": "-0,0329024684"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c27",
-    "c": "-0,03421695319"
-  },
-  {
-    "p": "cm",
-    "v": "kotok13dima-59c2ad16626dc",
-    "c": "-0,03433779605"
-  },
-  {
-    "p": "cm",
-    "v": "guruit-5e4bde6a10bba",
-    "c": "-0,03449064914"
-  },
-  {
-    "p": "cm",
-    "v": "business",
-    "c": "-0,03488924368"
-  },
-  {
-    "p": "cm",
-    "v": "allonlineschools-5d811bc0734c0",
-    "c": "-0,0351147067"
-  },
-  {
-    "p": "cm",
-    "v": "madam_shazly",
-    "c": "-0,03572489808"
-  },
-  {
-    "p": "cm",
-    "v": "Facebook_Desktop_Feed",
-    "c": "-0,03652756171"
-  },
-  {
-    "p": "cm",
-    "v": "mbirdapp-5e4eb028a7e8f",
-    "c": "-0,03688893131"
-  },
-  {
-    "p": "cm",
-    "v": "proglib.adv-5bacf777440ff",
-    "c": "-0,03695433005"
-  },
-  {
-    "p": "cm",
-    "v": "mobiteach.ltd-5ce7d399564e7",
-    "c": "-0,03822531912"
-  },
-  {
-    "p": "cm",
-    "v": "ibabloman-5c35a4f4d19b9",
-    "c": "-0,04030928679"
-  },
-  {
-    "p": "cm",
-    "v": "city_business_school",
-    "c": "-0,04157675235"
-  },
-  {
-    "p": "cm",
-    "v": "cpa_c1",
-    "c": "-0,04215203009"
-  },
-  {
-    "p": "cm",
-    "v": "teaser",
-    "c": "-0,04399399406"
-  },
-  {
-    "p": "cm",
-    "v": "tvova-80-5c10e02ade00a",
-    "c": "-0,04425732526"
-  },
-  {
-    "p": "cm",
-    "v": "ams779-5c812d6d7f64b",
-    "c": "-0,04528483768"
-  },
-  {
-    "p": "cm",
-    "v": "ramis797-5e4a0e7e198b5",
-    "c": "-0,04562259437"
-  },
-  {
-    "p": "cm",
-    "v": "digibroc-5abe9f0e14a50",
-    "c": "-0,04826859525"
-  },
-  {
-    "p": "cm",
-    "v": "katerinau333-5c66ccdd04585",
-    "c": "-0,04869733681"
-  },
-  {
-    "p": "cm",
-    "v": "egorfedorov3-5c3072ef2e903",
-    "c": "-0,05064686537"
-  },
-  {
-    "p": "cm",
-    "v": "thebestpart-5dc413d2390d1",
-    "c": "-0,05074783159"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c15",
-    "c": "-0,05087404476"
-  },
-  {
-    "p": "cm",
-    "v": "siteintenglish-5c7f980fca984",
-    "c": "-0,05110806009"
-  },
-  {
-    "p": "cm",
-    "v": "Sergio2514-5dbd316cab09c",
-    "c": "-0,05143122584"
-  },
-  {
-    "p": "cm",
-    "v": "tizer_nets 2",
-    "c": "-0,05173973689"
-  },
-  {
-    "p": "cm",
-    "v": "traficcash-5c875b990acc6",
-    "c": "-0,05230870335"
-  },
-  {
-    "p": "cm",
-    "v": "Instagram_Feed",
-    "c": "-0,05322070743"
-  },
-  {
-    "p": "cm",
-    "v": "cpa+englishchoice",
-    "c": "-0,05554444875"
-  },
-  {
-    "p": "cm",
-    "v": "banner_page",
-    "c": "-0,05562024732"
-  },
-  {
-    "p": "cm",
-    "v": "tiptopenglish.ru-5d762a509134c",
-    "c": "-0,05585583661"
-  },
-  {
-    "p": "cm",
-    "v": "sergpitus-5cb56d85e308c",
-    "c": "-0,0563442488"
-  },
-  {
-    "p": "cm",
-    "v": "cpa_c13",
-    "c": "-0,05961242137"
-  },
-  {
-    "p": "cm",
-    "v": "infohit",
-    "c": "-0,06009009296"
-  },
-  {
-    "p": "cm",
-    "v": "set",
-    "c": "-0,06202762598"
+    "c": "3,015026785"
   },
   {
     "p": "cm",
     "v": "kosareva+2",
-    "c": "-0,06203389125"
+    "c": "2,966632379"
   },
   {
     "p": "cm",
-    "v": "webmaster.dobs-5d233eab15789",
-    "c": "-0,06355617647"
+    "v": "vladimir-5b0a9f4995d21",
+    "c": "2,886309519"
   },
   {
     "p": "cm",
-    "v": "vasemenyuk-5b8fea10ccdc1",
-    "c": "-0,06428734801"
+    "v": "feuata-5a7e42ab095e6",
+    "c": "2,833746057"
   },
   {
     "p": "cm",
-    "v": "banner_list",
-    "c": "-0,06662467483"
+    "v": "vladred31207-5e2c5d23ebadc",
+    "c": "2,805727201"
   },
   {
     "p": "cm",
-    "v": "anshulzhenko56-5cf3afda0af89",
-    "c": "-0,06807635576"
+    "v": "it_bursa",
+    "c": "2,785881013"
   },
   {
     "p": "cm",
-    "v": "ruzz89-5c247ebfbca8b",
-    "c": "-0,0712768429"
+    "v": "yan-5ec585b044fbf",
+    "c": "2,781599285"
   },
   {
     "p": "cm",
-    "v": "dbochkarev-5b88e1d9778d3",
-    "c": "-0,07477479584"
+    "v": "anzhelanamyatova-5d0c74a83eb6b",
+    "c": "2,778923782"
   },
   {
     "p": "cm",
-    "v": "cpc_c16",
-    "c": "-0,07549169667"
+    "v": "kuzser00-5e13a7784a7f1",
+    "c": "2,777380857"
   },
   {
     "p": "cm",
-    "v": "agnaev.92-5d39e0c38b652",
-    "c": "-0,0858367029"
+    "v": "lelang",
+    "c": "2,772660723"
   },
   {
     "p": "cm",
-    "v": "vsekyrsy",
-    "c": "-0,08931696603"
+    "v": "maksimartemovrich-5d4af37fbbf16",
+    "c": "2,771675966"
   },
   {
     "p": "cm",
-    "v": "gala.studio.bg-5e2595d322c81",
-    "c": "-0,09219557817"
+    "v": "englisher",
+    "c": "2,758802106"
   },
   {
     "p": "cm",
-    "v": "iuspeha-5bfd6525166d7",
-    "c": "-0,1003487136"
+    "v": "jacky853-5bbdb786bd15c",
+    "c": "2,639355036"
   },
   {
     "p": "cm",
-    "v": "info-5bd7c4da51593",
-    "c": "-0,1015234681"
+    "v": "social_cpc_c8",
+    "c": "2,547220898"
   },
   {
     "p": "cm",
-    "v": "facebook",
-    "c": "-0,1018670477"
+    "v": "Facebook_Desktop_Feed",
+    "c": "2,534747551"
   },
   {
     "p": "cm",
-    "v": "andrekaty-5ce4f33a8950d",
-    "c": "-0,1105672137"
+    "v": "GB 2",
+    "c": "2,527890685"
   },
   {
     "p": "cm",
-    "v": "artur.agapov-5b840b81a94bf",
-    "c": "-0,1145376089"
+    "v": "mirlancer-5d931ae5aece8",
+    "c": "2,515623921"
   },
   {
     "p": "cm",
-    "v": "cpc_c21",
-    "c": "-0,1216164805"
+    "v": "tashika_05-5b0aedf80a453",
+    "c": "2,423985317"
   },
   {
     "p": "cm",
-    "v": "cpa_c6",
-    "c": "-0,1240113226"
+    "v": "schoolrate",
+    "c": "2,334377234"
   },
   {
     "p": "cm",
-    "v": "Facebook_Mobile_Feed",
-    "c": "-0,1297554157"
+    "v": "cpc_c20",
+    "c": "2,319530558"
   },
   {
     "p": "cm",
-    "v": "social_cpc_c6",
-    "c": "-0,1303976741"
+    "v": "wm.morozov1-5b28d392783c8",
+    "c": "2,255079729"
   },
   {
     "p": "cm",
-    "v": "2020english5-5dd638b66c57d",
-    "c": "-0,1306697369"
+    "v": "alinoidy-5b21bffc096fb",
+    "c": "2,236603018"
   },
   {
     "p": "cm",
-    "v": "118sergey-5e528b4c1e874",
-    "c": "-0,131293937"
+    "v": "lead",
+    "c": "2,193468494"
   },
   {
     "p": "cm",
-    "v": "privatbank",
-    "c": "-0,144330699"
+    "v": "intergration",
+    "c": "2,153673066"
   },
   {
     "p": "cm",
-    "v": "aceventurion-5cb3113f02418",
-    "c": "-0,1507074695"
+    "v": "miss_tramell",
+    "c": "2,11038138"
   },
   {
     "p": "cm",
-    "v": "referral",
-    "c": "-0,1531565046"
+    "v": "kupriyanovap-5e3be04bb1de8",
+    "c": "2,101664772"
   },
   {
     "p": "cm",
-    "v": "social_cpc_c2",
-    "c": "-0,1586964995"
+    "v": "kate.gramarye-5c66a5c7523ec",
+    "c": "2,033339363"
   },
   {
     "p": "cm",
-    "v": "ca",
-    "c": "-0,1651367019"
+    "v": "tpynak-5bc88fcb36ed9",
+    "c": "1,964395616"
   },
   {
     "p": "cm",
-    "v": "pp-5b6d3b9897a4c",
-    "c": "-0,1665953437"
+    "v": "Vladimir+2",
+    "c": "1,88286147"
   },
   {
     "p": "cm",
-    "v": "zanudenzia-5bd56e6a489b6",
-    "c": "-0,1668774523"
+    "v": "promo",
+    "c": "1,875893414"
   },
   {
     "p": "cm",
-    "v": "lbdvwork-5e12183eca1cc",
-    "c": "-0,1725416266"
+    "v": "ira-5e3823aa46e76",
+    "c": "1,795803897"
   },
   {
     "p": "cm",
-    "v": "social_target",
-    "c": "-0,1734658083"
+    "v": "goodtoknow",
+    "c": "1,688981297"
   },
   {
     "p": "cm",
-    "v": "webpush",
-    "c": "-0,1786645677"
+    "v": "gribas93-5cd6c2dff41fb",
+    "c": "1,56273231"
   },
   {
     "p": "cm",
-    "v": "pen4pals+2",
-    "c": "-0,1837016958"
+    "v": "pr",
+    "c": "1,407485959"
   },
   {
     "p": "cm",
-    "v": "r.nickolaevic-5c2f4386c1121",
-    "c": "-0,1870845142"
+    "v": "elenaruvel",
+    "c": "1,401840429"
   },
   {
     "p": "cm",
-    "v": "integration",
-    "c": "-0,1875743608"
+    "v": "cpc_c22",
+    "c": "1,291812272"
   },
   {
     "p": "cm",
-    "v": "cpc",
-    "c": "-0,1889378709"
+    "v": "salid-5e7b740a293c2",
+    "c": "1,286383675"
   },
   {
     "p": "cm",
-    "v": "xordaooo-5d0b4f39f2802",
-    "c": "-0,1892061241"
-  },
-  {
-    "p": "cm",
-    "v": "social_cpc_c7",
-    "c": "-0,1948899212"
+    "v": "blog",
+    "c": "1,22255975"
   },
   {
     "p": "cm",
     "v": "all-5bbb852b74f9e",
-    "c": "-0,2194548022"
+    "c": "1,209834648"
   },
   {
     "p": "cm",
-    "v": "kogtev-5b7d06e644d99",
-    "c": "-0,2267151915"
-  },
-  {
-    "p": "cm",
-    "v": "spa",
-    "c": "-0,234824268"
-  },
-  {
-    "p": "cm",
-    "v": "evgenypron1992-5be3064a8e37d",
-    "c": "-0,235330675"
-  },
-  {
-    "p": "cm",
-    "v": "cpc_c25",
-    "c": "-0,2371197844"
-  },
-  {
-    "p": "cm",
-    "v": "organic",
-    "c": "-0,2381312018"
+    "v": "cpc_c2",
+    "c": "0,9992088375"
   },
   {
     "p": "cm",
     "v": "diagon-alley-5b75997e5c224",
-    "c": "-0,2431833981"
+    "c": "0,983770181"
   },
   {
     "p": "cm",
-    "v": "aleks.cheer96-5dd5ba048f1c8",
-    "c": "-0,2838185341"
+    "v": "apps",
+    "c": "0,9414855233"
   },
   {
     "p": "cm",
-    "v": "cpa_c12",
-    "c": "-0,2859902688"
+    "v": "artur.agapov-5b840b81a94bf",
+    "c": "0,9219623017"
   },
   {
     "p": "cm",
-    "v": "sms",
-    "c": "-0,2971736684"
+    "v": "invite",
+    "c": "1,782202013"
   },
   {
     "p": "cm",
-    "v": "info-5da3941e56434",
-    "c": "-0,297854326"
+    "v": "brand",
+    "c": "0,8786012598"
   },
   {
     "p": "cm",
-    "v": "info-5db955adde9f8",
-    "c": "-0,2993388247"
+    "v": "event",
+    "c": "0,836515033"
   },
   {
     "p": "cm",
-    "v": "article",
-    "c": "-0,3013131374"
+    "v": "irrrra-5a2f907c74fcb",
+    "c": "0,8091506319"
   },
   {
     "p": "cm",
-    "v": "ngdude.orfu-5c08d38c67ce4",
-    "c": "-0,3091198074"
+    "v": "banner",
+    "c": "0,7825173316"
   },
   {
     "p": "cm",
-    "v": "zomro-studio-5ca5c9f0ad3ee",
-    "c": "-0,3091256909"
+    "v": "webinar",
+    "c": "0,7682334486"
   },
   {
     "p": "cm",
-    "v": "romanchervanjov",
-    "c": "-0,3234322236"
+    "v": "agnaev.92-5d39e0c38b652",
+    "c": "0,719336771"
   },
   {
     "p": "cm",
-    "v": "social_cpc",
-    "c": "-0,3302987693"
+    "v": "social",
+    "c": "0,6877437597"
   },
   {
     "p": "cm",
-    "v": "olexiy.fedorov-5e6f81781c22e",
-    "c": "-0,3339414671"
+    "v": "golicyj-5b3f4229f40d8",
+    "c": "0,6863291843"
   },
   {
     "p": "cm",
-    "v": "cpa_c2",
-    "c": "-0,3630455667"
+    "v": "dbochkarev-5b88e1d9778d3",
+    "c": "0,6638913572"
   },
   {
     "p": "cm",
-    "v": "cpc_c19",
-    "c": "-0,3845994686"
+    "v": "email",
+    "c": "0,6487101247"
   },
   {
     "p": "cm",
-    "v": "partners",
-    "c": "-0,4690869238"
+    "v": "tayben-5b9a52ff5b9de",
+    "c": "0,6443557964"
   },
   {
     "p": "cm",
-    "v": "d.miller+superjob-5d9afceedc015",
-    "c": "-0,4784470034"
+    "v": "cpc_c28",
+    "c": "0,6350807482"
+  },
+  {
+    "p": "cm",
+    "v": "(none)",
+    "c": "0,6219498062"
   },
   {
     "p": "cm",
     "v": "denis-5d62b74ac9bb0",
-    "c": "-0,5551655395"
+    "c": "0,6201881396"
   },
   {
     "p": "cm",
-    "v": "message",
-    "c": "-0,5680696029"
+    "v": "spa",
+    "c": "0,6017799744"
   },
   {
     "p": "cm",
-    "v": "nickolai.romanovich-5c404ad9ebc0d",
-    "c": "-0,5763348414"
+    "v": "partnerka",
+    "c": "0,594007769"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c29",
+    "c": "0,5126568931"
+  },
+  {
+    "p": "cm",
+    "v": "partner",
+    "c": "0,4615677656"
+  },
+  {
+    "p": "cm",
+    "v": "article",
+    "c": "0,3940157641"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c16",
+    "c": "0,3731585603"
+  },
+  {
+    "p": "cm",
+    "v": "cpc",
+    "c": "0,2975237345"
+  },
+  {
+    "p": "cm",
+    "v": "organic",
+    "c": "0,2882543438"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c15",
+    "c": "0,2341045541"
+  },
+  {
+    "p": "cm",
+    "v": "webpush",
+    "c": "0,211941755"
+  },
+  {
+    "p": "cm",
+    "v": "xordaooo-5d0b4f39f2802",
+    "c": "0,1807922164"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc",
+    "c": "0,12208215"
+  },
+  {
+    "p": "cm",
+    "v": "banners",
+    "c": "0,02755088532"
+  },
+  {
+    "p": "cm",
+    "v": "edm250880-5e40dfa8846c0",
+    "c": "-0,001518166764"
+  },
+  {
+    "p": "cm",
+    "v": "schools_module",
+    "c": "-0,001764375422"
+  },
+  {
+    "p": "cm",
+    "v": "potok-expert-5af04431834ee",
+    "c": "-0,002543113108"
+  },
+  {
+    "p": "cm",
+    "v": "diplom_tut-5c7fde417426f",
+    "c": "-0,003101670992"
+  },
+  {
+    "p": "cm",
+    "v": "m.e.kotenkov-5e908856e2e61",
+    "c": "-0,01143147174"
+  },
+  {
+    "p": "cm",
+    "v": "semixor777-5eb04ace6ca6b",
+    "c": "-0,01221800302"
+  },
+  {
+    "p": "cm",
+    "v": "webinars2020",
+    "c": "-0,01311416835"
+  },
+  {
+    "p": "cm",
+    "v": "UnicornEnglishSite-5d656799a8b0c",
+    "c": "-0,01363907544"
+  },
+  {
+    "p": "cm",
+    "v": "aleksandr_zevak-5c7ff3020b3ee",
+    "c": "-0,01686754198"
+  },
+  {
+    "p": "cm",
+    "v": "zomro-studio-5ca5c9f0ad3ee",
+    "c": "-0,0194980368"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c30",
+    "c": "-0,0219206328"
+  },
+  {
+    "p": "cm",
+    "v": "esoman-5c8e22daca3ca",
+    "c": "-0,02490214052"
+  },
+  {
+    "p": "cm",
+    "v": "ankadr123-5b94ceca57b5d",
+    "c": "-0,02602724639"
+  },
+  {
+    "p": "cm",
+    "v": "shapolov_alexey04-5d8c94d811c66",
+    "c": "-0,02639927383"
+  },
+  {
+    "p": "cm",
+    "v": "whatmessenger-5c5738e22d9e0",
+    "c": "-0,02895512126"
+  },
+  {
+    "p": "cm",
+    "v": "mobstrm-5d0a216ba2e79",
+    "c": "-0,03122746591"
+  },
+  {
+    "p": "cm",
+    "v": "Юнистади 2",
+    "c": "-0,03708601531"
+  },
+  {
+    "p": "cm",
+    "v": "moyvizitka-5c73d3da7993a",
+    "c": "-0,03778434921"
+  },
+  {
+    "p": "cm",
+    "v": "soundcloud",
+    "c": "-0,04911378194"
+  },
+  {
+    "p": "cm",
+    "v": "oleg-5aba9496470dd",
+    "c": "-0,05680837189"
+  },
+  {
+    "p": "cm",
+    "v": "mbirdapp-5e4eb028a7e8f",
+    "c": "-0,05988652468"
+  },
+  {
+    "p": "cm",
+    "v": "integration",
+    "c": "-0,06144936546"
+  },
+  {
+    "p": "cm",
+    "v": "freelancer.ultra-5b69f8e35d2f9",
+    "c": "-0,06262407891"
+  },
+  {
+    "p": "cm",
+    "v": "cpa tg",
+    "c": "-0,0673761917"
+  },
+  {
+    "p": "cm",
+    "v": "maksat111276-5ea2e48c94ffd",
+    "c": "-0,07454554898"
+  },
+  {
+    "p": "cm",
+    "v": "irinakozyreva131-5e9b675c921c8",
+    "c": "-0,07891047074"
+  },
+  {
+    "p": "cm",
+    "v": "hypetraffic2018-5e9aa6f2aabfc",
+    "c": "-0,08285472075"
+  },
+  {
+    "p": "cm",
+    "v": "olga7.vishnya-5bb217ed105c2",
+    "c": "-0,08841030207"
+  },
+  {
+    "p": "cm",
+    "v": "alexgertskin-5e3bba8f532e7",
+    "c": "-0,08850245731"
+  },
+  {
+    "p": "cm",
+    "v": "amgrigoryan-5e8b6dc873e57",
+    "c": "-0,09128833292"
+  },
+  {
+    "p": "cm",
+    "v": "ivannarcissov-5e4b943dc5a8a",
+    "c": "-0,09148871962"
+  },
+  {
+    "p": "cm",
+    "v": "sme1.nik-5bdfffc84e5a5",
+    "c": "-0,09324394123"
+  },
+  {
+    "p": "cm",
+    "v": "ynisullivan-5ec286213d7e6",
+    "c": "-0,09380716725"
+  },
+  {
+    "p": "cm",
+    "v": "shestistrunka.rf-5ed6322892692",
+    "c": "-0,1002938204"
+  },
+  {
+    "p": "cm",
+    "v": "sunlightmd067-5ca07a8084858",
+    "c": "-0,1091944022"
+  },
+  {
+    "p": "cm",
+    "v": "videotrend24-5ba67c451b3ea",
+    "c": "-0,1150883747"
+  },
+  {
+    "p": "cm",
+    "v": "Lenaconvert8-5cfe3e2519cac",
+    "c": "-0,1153295669"
+  },
+  {
+    "p": "cm",
+    "v": "smesh-5a849cbead20e",
+    "c": "-0,1310322215"
+  },
+  {
+    "p": "cm",
+    "v": "ruslanas.safiulinas-5e80b2a5a1d06",
+    "c": "-0,1503243805"
+  },
+  {
+    "p": "cm",
+    "v": "artte",
+    "c": "-0,1565017623"
+  },
+  {
+    "p": "cm",
+    "v": "A",
+    "c": "-0,1680759575"
+  },
+  {
+    "p": "cm",
+    "v": "dvolochnik-5e9c3218d8a3d",
+    "c": "-0,174450395"
+  },
+  {
+    "p": "cm",
+    "v": "anastasia_nedelko-5c2712044d422",
+    "c": "-0,1790869085"
+  },
+  {
+    "p": "cm",
+    "v": "grigo1843-5c2e3408dd77f",
+    "c": "-0,1848452191"
+  },
+  {
+    "p": "cm",
+    "v": "shtoikak-5b9118c7a2730",
+    "c": "-0,187125719"
+  },
+  {
+    "p": "cm",
+    "v": "artteemm123-5d334bd20202c",
+    "c": "-0,205299923"
+  },
+  {
+    "p": "cm",
+    "v": "kuklin-rman-5b8296d536ac6",
+    "c": "-0,2066914076"
+  },
+  {
+    "p": "cm",
+    "v": "hobbydobby-5c51a6c749bcf",
+    "c": "-0,2082823501"
+  },
+  {
+    "p": "cm",
+    "v": "test.partnerki.englishdom-5eb2b911433de",
+    "c": "-0,2093811517"
+  },
+  {
+    "p": "cm",
+    "v": "alexandrartil-5e6f1f6baaa46",
+    "c": "-0,215552548"
+  },
+  {
+    "p": "cm",
+    "v": "kondrashov",
+    "c": "-0,2243533964"
+  },
+  {
+    "p": "cm",
+    "v": "shikari2367-5e588ae294d7e",
+    "c": "-0,226410096"
+  },
+  {
+    "p": "cm",
+    "v": "dolby8066-5c08089178a97",
+    "c": "-0,228064675"
+  },
+  {
+    "p": "cm",
+    "v": "mysterio78-5ccc2f4564549",
+    "c": "-0,2371393835"
+  },
+  {
+    "p": "cm",
+    "v": "konstantyn.gordienko-5eecbb41454ce",
+    "c": "-0,2561212526"
+  },
+  {
+    "p": "cm",
+    "v": "timlein96",
+    "c": "-0,2594574111"
+  },
+  {
+    "p": "cm",
+    "v": "maria.butterfly-5e7c6ac28fc73",
+    "c": "-0,2666314075"
+  },
+  {
+    "p": "cm",
+    "v": "pavlo.mavrich-5e9aa55d52df8",
+    "c": "-0,2671449707"
+  },
+  {
+    "p": "cm",
+    "v": "denis_9703-5ec11b33d786f",
+    "c": "-0,2684277449"
+  },
+  {
+    "p": "cm",
+    "v": "nargizeka-5ecb71deaf247",
+    "c": "-0,2704120777"
+  },
+  {
+    "p": "cm",
+    "v": "context",
+    "c": "-0,2729458155"
+  },
+  {
+    "p": "cm",
+    "v": "alexnavmksatnet-5e9dab2a74196",
+    "c": "-0,2740256849"
+  },
+  {
+    "p": "cm",
+    "v": "psa777-5e91dbb64b208",
+    "c": "-0,2749693829"
+  },
+  {
+    "p": "cm",
+    "v": "{{placement}}",
+    "c": "-0,2813423662"
+  },
+  {
+    "p": "cm",
+    "v": "nikola_001-5c48686d2c202",
+    "c": "-0,2832364045"
+  },
+  {
+    "p": "cm",
+    "v": "sms",
+    "c": "-0,2947222696"
+  },
+  {
+    "p": "cm",
+    "v": "Nykkolayforwork-5b9b931f41e11",
+    "c": "-0,303416228"
+  },
+  {
+    "p": "cm",
+    "v": "mail",
+    "c": "-0,3036611799"
+  },
+  {
+    "p": "cm",
+    "v": "dathos-5c8cee5453cf4",
+    "c": "-0,3064488722"
+  },
+  {
+    "p": "cm",
+    "v": "elena.1705-5bd188e09fbd7",
+    "c": "-0,31098265"
+  },
+  {
+    "p": "cm",
+    "v": "rashidsalyakaev-5cd18f958416d",
+    "c": "-0,3205468707"
+  },
+  {
+    "p": "cm",
+    "v": "andzela.rysaeva-5e4902b3db916",
+    "c": "-0,3219647152"
+  },
+  {
+    "p": "cm",
+    "v": "info-5ed8cef4ee436",
+    "c": "-0,3279998699"
+  },
+  {
+    "p": "cm",
+    "v": "piskind-5ec798af664e3",
+    "c": "-0,3280808751"
+  },
+  {
+    "p": "cm",
+    "v": "sergey-5d919060d771d",
+    "c": "-0,3312711667"
+  },
+  {
+    "p": "cm",
+    "v": "zrr777zrr-5e49ab5c80f50",
+    "c": "-0,3324041944"
+  },
+  {
+    "p": "cm",
+    "v": "scuns-134145-5cbf1b19f2a8c",
+    "c": "-0,3372742013"
+  },
+  {
+    "p": "cm",
+    "v": "ksyniayurjeva-5eceed1f94876",
+    "c": "-0,342301334"
+  },
+  {
+    "p": "cm",
+    "v": "pzle",
+    "c": "-0,3447033537"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc_c9",
+    "c": "-0,3469599886"
+  },
+  {
+    "p": "cm",
+    "v": "a.bm2013-5c52fcb47c746",
+    "c": "-0,3502270766"
+  },
+  {
+    "p": "cm",
+    "v": "partnernik25-5d2b35cc6c736",
+    "c": "-0,3539988689"
+  },
+  {
+    "p": "cm",
+    "v": "edelweissco-5d0b69f82b2c7",
+    "c": "-0,3573871855"
+  },
+  {
+    "p": "cm",
+    "v": "pompa2015-59374e7333c0d",
+    "c": "-0,3580313313"
+  },
+  {
+    "p": "cm",
+    "v": "24232456k-5e18da9906aad",
+    "c": "-0,3604460677"
+  },
+  {
+    "p": "cm",
+    "v": "best-trade24-5ec29482a4d5f",
+    "c": "-0,3636358088"
+  },
+  {
+    "p": "cm",
+    "v": "basir235-5bfb75b16c6a4",
+    "c": "-0,3666134481"
+  },
+  {
+    "p": "cm",
+    "v": "larionovdenis-5be74cf7ea2ef",
+    "c": "-0,3717811257"
+  },
+  {
+    "p": "cm",
+    "v": "qa.englishdom+TEST222y-5d1c54927132a",
+    "c": "-0,3815567345"
+  },
+  {
+    "p": "cm",
+    "v": "SNM02051978-5d2df28fb38e2",
+    "c": "-0,38332246"
+  },
+  {
+    "p": "cm",
+    "v": "bk_irina-5eb0e8985198b",
+    "c": "-0,3854813455"
+  },
+  {
+    "p": "cm",
+    "v": "referral",
+    "c": "-0,3945179824"
+  },
+  {
+    "p": "cm",
+    "v": "port-90-5d1872d6a6225",
+    "c": "-0,3993105739"
+  },
+  {
+    "p": "cm",
+    "v": "ksemell1975-5cb2de4804e33",
+    "c": "-0,4074764163"
+  },
+  {
+    "p": "cm",
+    "v": "narrative",
+    "c": "-0,410045514"
+  },
+  {
+    "p": "cm",
+    "v": "agru2-5bc63e80681f3",
+    "c": "-0,4137331023"
+  },
+  {
+    "p": "cm",
+    "v": "hhru",
+    "c": "-0,4155593202"
+  },
+  {
+    "p": "cm",
+    "v": "urokov100.ru-5e4245b7d09e1",
+    "c": "-0,4230443321"
+  },
+  {
+    "p": "cm",
+    "v": "dobovo.top-5c442384e08d3",
+    "c": "-0,4284960098"
+  },
+  {
+    "p": "cm",
+    "v": "movietape.tg-5e8c60c442019",
+    "c": "-0,4286814729"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c19",
+    "c": "-0,4298925925"
+  },
+  {
+    "p": "cm",
+    "v": "raven2020-5dfcc3840d04f",
+    "c": "-0,4317962579"
+  },
+  {
+    "p": "cm",
+    "v": "banner_page",
+    "c": "-0,44379116"
+  },
+  {
+    "p": "cm",
+    "v": "city_business_school",
+    "c": "-0,4458994939"
+  },
+  {
+    "p": "cm",
+    "v": "ira-elsva-5cd97ec325f99",
+    "c": "-0,4462532061"
+  },
+  {
+    "p": "cm",
+    "v": "av_fedoseeva-5ee8cbb308fb0",
+    "c": "-0,4465078248"
+  },
+  {
+    "p": "cm",
+    "v": "proglib.adv-5bacf777440ff",
+    "c": "-0,4468801378"
+  },
+  {
+    "p": "cm",
+    "v": "xorowuykanal-5df36c818dd29",
+    "c": "-0,4531849657"
+  },
+  {
+    "p": "cm",
+    "v": "guruit-5e4bde6a10bba",
+    "c": "-0,4563666623"
+  },
+  {
+    "p": "cm",
+    "v": "english112-5ca8ea65522d2",
+    "c": "-0,4573156846"
+  },
+  {
+    "p": "cm",
+    "v": "mobiteach.ltd-5ce7d399564e7",
+    "c": "-0,4663800006"
+  },
+  {
+    "p": "cm",
+    "v": "partners",
+    "c": "-0,4846559801"
+  },
+  {
+    "p": "cm",
+    "v": "kotok13dima-59c2ad16626dc",
+    "c": "-0,4972461851"
+  },
+  {
+    "p": "cm",
+    "v": "letter",
+    "c": "-0,5052479626"
+  },
+  {
+    "p": "cm",
+    "v": "promotion.of.stores- 5e9c4fa567db5",
+    "c": "-0,5056643539"
+  },
+  {
+    "p": "cm",
+    "v": "alexpir1974-5cd28a6f4ee52",
+    "c": "-0,509266458"
+  },
+  {
+    "p": "cm",
+    "v": "d.miller+225546-5ee23e1e26470",
+    "c": "-0,5151878856"
+  },
+  {
+    "p": "cm",
+    "v": "ibabloman-5c35a4f4d19b9",
+    "c": "-0,5163260657"
+  },
+  {
+    "p": "cm",
+    "v": "zholobenko88-5e8aa88b2d70b",
+    "c": "-0,5171997634"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c26",
+    "c": "-0,5196282156"
+  },
+  {
+    "p": "cm",
+    "v": "social_target",
+    "c": "-0,5196750967"
+  },
+  {
+    "p": "cm",
+    "v": "ramis797-5e4a0e7e198b5",
+    "c": "-0,5513874903"
+  },
+  {
+    "p": "cm",
+    "v": "kozh.andrew-5d49c6c8e5c8f",
+    "c": "-0,5516368375"
+  },
+  {
+    "p": "cm",
+    "v": "Sergio2514-5dbd316cab09c",
+    "c": "-0,5532592501"
+  },
+  {
+    "p": "cm",
+    "v": "starpony78-5d5e673edeafa",
+    "c": "-0,5557899536"
+  },
+  {
+    "p": "cm",
+    "v": "viua787-5dc39cd97ffc8",
+    "c": "-0,561383678"
+  },
+  {
+    "p": "cm",
+    "v": "tim77177-5e973cd00a607",
+    "c": "-0,5689013818"
+  },
+  {
+    "p": "cm",
+    "v": "learn",
+    "c": "-0,5868299188"
+  },
+  {
+    "p": "cm",
+    "v": "ams779-5c812d6d7f64b",
+    "c": "-0,5917338546"
+  },
+  {
+    "p": "cm",
+    "v": "d.miller+nativeenglish-5d4983c6c176c",
+    "c": "-0,5934836588"
+  },
+  {
+    "p": "cm",
+    "v": "traficcash-5c875b990acc6",
+    "c": "-0,6006898392"
+  },
+  {
+    "p": "cm",
+    "v": "allonlineschools-5d811bc0734c0",
+    "c": "-0,6192633728"
+  },
+  {
+    "p": "cm",
+    "v": "kfa59-5eb10ba8bc960",
+    "c": "-0,6196259466"
+  },
+  {
+    "p": "cm",
+    "v": "OlegD",
+    "c": "-0,6310015113"
+  },
+  {
+    "p": "cm",
+    "v": "sergpitus-5cb56d85e308c",
+    "c": "-0,6339180763"
+  },
+  {
+    "p": "cm",
+    "v": "golddirektor1-5d909cb881f64",
+    "c": "-0,6428185998"
+  },
+  {
+    "p": "cm",
+    "v": "katerinau333-5c66ccdd04585",
+    "c": "-0,6448407695"
+  },
+  {
+    "p": "cm",
+    "v": "samisvetim-5edc368bcf8d3",
+    "c": "-0,6548986122"
+  },
+  {
+    "p": "cm",
+    "v": "kireevt-5ee3b53e3325b",
+    "c": "-0,6620141697"
+  },
+  {
+    "p": "cm",
+    "v": "teaser",
+    "c": "-0,6643466575"
+  },
+  {
+    "p": "cm",
+    "v": "thebestpart-5dc413d2390d1",
+    "c": "-0,6692992402"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc_c16",
+    "c": "-0,6747414637"
+  },
+  {
+    "p": "cm",
+    "v": "tizer_nets 2",
+    "c": "-0,6894281392"
+  },
+  {
+    "p": "cm",
+    "v": "cpa_c1",
+    "c": "-0,6915913733"
+  },
+  {
+    "p": "cm",
+    "v": "dreweu-5d8f35b8a6a5d",
+    "c": "-0,6948466678"
+  },
+  {
+    "p": "cm",
+    "v": "ohmyenglish",
+    "c": "-0,6999083607"
+  },
+  {
+    "p": "cm",
+    "v": "set",
+    "c": "-0,7018307299"
+  },
+  {
+    "p": "cm",
+    "v": "ruzz89-5c247ebfbca8b",
+    "c": "-0,7189162122"
+  },
+  {
+    "p": "cm",
+    "v": "cpa+englishchoice",
+    "c": "-0,7311850691"
+  },
+  {
+    "p": "cm",
+    "v": "tiptopenglish.ru-5d762a509134c",
+    "c": "-0,7364055055"
+  },
+  {
+    "p": "cm",
+    "v": "egorfedorov3-5c3072ef2e903",
+    "c": "-0,7393028217"
+  },
+  {
+    "p": "cm",
+    "v": "digibroc-5abe9f0e14a50",
+    "c": "-0,7552604573"
+  },
+  {
+    "p": "cm",
+    "v": "anshulzhenko56-5cf3afda0af89",
+    "c": "-0,7553677825"
+  },
+  {
+    "p": "cm",
+    "v": "tvova-80-5c10e02ade00a",
+    "c": "-0,7614789965"
+  },
+  {
+    "p": "cm",
+    "v": "hype",
+    "c": "-0,773276147"
+  },
+  {
+    "p": "cm",
+    "v": "pr_apps",
+    "c": "-0,7898752099"
+  },
+  {
+    "p": "cm",
+    "v": "business",
+    "c": "-0,8073778439"
+  },
+  {
+    "p": "cm",
+    "v": "ca",
+    "c": "-0,8146894785"
+  },
+  {
+    "p": "cm",
+    "v": "infohit",
+    "c": "-0,8147432111"
+  },
+  {
+    "p": "cm",
+    "v": "cpm",
+    "c": "-0,8181118408"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c31",
+    "c": "-0,8190509474"
+  },
+  {
+    "p": "cm",
+    "v": "gala.studio.bg-5e2595d322c81",
+    "c": "-0,8216001643"
+  },
+  {
+    "p": "cm",
+    "v": "vasemenyuk-5b8fea10ccdc1",
+    "c": "-0,8223893256"
+  },
+  {
+    "p": "cm",
+    "v": "madam_shazly",
+    "c": "-0,8409828958"
+  },
+  {
+    "p": "cm",
+    "v": "cmob",
+    "c": "-0,8632058733"
+  },
+  {
+    "p": "cm",
+    "v": "s.konyaeva-5e9446825a958",
+    "c": "-0,8682896457"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c27",
+    "c": "-0,8763422166"
+  },
+  {
+    "p": "cm",
+    "v": "iuspeha-5bfd6525166d7",
+    "c": "-0,9135804719"
+  },
+  {
+    "p": "cm",
+    "v": "belydmi-5efc8395e52cb",
+    "c": "-0,9138514834"
+  },
+  {
+    "p": "cm",
+    "v": "webmaster.dobs-5d233eab15789",
+    "c": "-0,9195712505"
+  },
+  {
+    "p": "cm",
+    "v": "Instagram_Feed",
+    "c": "-0,9368551902"
+  },
+  {
+    "p": "cm",
+    "v": "andrekaty-5ce4f33a8950d",
+    "c": "-0,9413678246"
+  },
+  {
+    "p": "cm",
+    "v": "event_webinar",
+    "c": "-0,9617206367"
+  },
+  {
+    "p": "cm",
+    "v": "vsekyrsy",
+    "c": "-0,9915101209"
+  },
+  {
+    "p": "cm",
+    "v": "cpa_c13",
+    "c": "-1,00237964"
+  },
+  {
+    "p": "cm",
+    "v": "118sergey-5e528b4c1e874",
+    "c": "-1,014573072"
   },
   {
     "p": "cm",
     "v": "cpa",
-    "c": "-0,5796614581"
+    "c": "-1,019919073"
+  },
+  {
+    "p": "cm",
+    "v": "rek-5e01de351cfa4",
+    "c": "-1,037241007"
+  },
+  {
+    "p": "cm",
+    "v": "push",
+    "c": "-1,074317201"
+  },
+  {
+    "p": "cm",
+    "v": "(not set)",
+    "c": "-1,108308157"
+  },
+  {
+    "p": "cm",
+    "v": "banner_list",
+    "c": "-1,1162523"
+  },
+  {
+    "p": "cm",
+    "v": "siteintenglish-5c7f980fca984",
+    "c": "-1,140532049"
+  },
+  {
+    "p": "cm",
+    "v": "didkovskaya",
+    "c": "-1,149744997"
+  },
+  {
+    "p": "cm",
+    "v": "info-5e96d74555ba2",
+    "c": "-1,16355599"
+  },
+  {
+    "p": "cm",
+    "v": "mariakross-5e9618e4c7dd0",
+    "c": "-1,208913802"
+  },
+  {
+    "p": "cm",
+    "v": "cpa_c6",
+    "c": "-1,217110531"
+  },
+  {
+    "p": "cm",
+    "v": "aceventurion-5cb3113f02418",
+    "c": "-1,23752832"
+  },
+  {
+    "p": "cm",
+    "v": "2020english5-5dd638b66c57d",
+    "c": "-1,27905784"
+  },
+  {
+    "p": "cm",
+    "v": "info-5bd7c4da51593",
+    "c": "-1,290564404"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc_c10",
+    "c": "-1,293362529"
+  },
+  {
+    "p": "cm",
+    "v": "lbdvwork-5e12183eca1cc",
+    "c": "-1,322464581"
+  },
+  {
+    "p": "cm",
+    "v": "pp-5b6d3b9897a4c",
+    "c": "-1,341308811"
+  },
+  {
+    "p": "cm",
+    "v": "r.nickolaevic-5c2f4386c1121",
+    "c": "-1,345264999"
+  },
+  {
+    "p": "cm",
+    "v": "ngdude.orfu-5c08d38c67ce4",
+    "c": "-1,348216394"
+  },
+  {
+    "p": "cm",
+    "v": "pen4pals+2",
+    "c": "-1,387310728"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c21",
+    "c": "-1,418563078"
+  },
+  {
+    "p": "cm",
+    "v": "facebook",
+    "c": "-1,43300134"
+  },
+  {
+    "p": "cm",
+    "v": "zanudenzia-5bd56e6a489b6",
+    "c": "-1,441978738"
+  },
+  {
+    "p": "cm",
+    "v": "evgenypron1992-5be3064a8e37d",
+    "c": "-1,475786843"
+  },
+  {
+    "p": "cm",
+    "v": "info-5db955adde9f8",
+    "c": "-1,492051833"
+  },
+  {
+    "p": "cm",
+    "v": "privatbank",
+    "c": "-1,507206416"
+  },
+  {
+    "p": "cm",
+    "v": "kogtev-5b7d06e644d99",
+    "c": "-1,521445851"
+  },
+  {
+    "p": "cm",
+    "v": "Facebook_Mobile_Feed",
+    "c": "-1,535023491"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc_c2",
+    "c": "-1,562818738"
+  },
+  {
+    "p": "cm",
+    "v": "anshulzhenko-5d237a553dfaf",
+    "c": "-1,623072816"
+  },
+  {
+    "p": "cm",
+    "v": "video",
+    "c": "-1,711695925"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc_c6",
+    "c": "-1,740327341"
+  },
+  {
+    "p": "cm",
+    "v": "info-5da3941e56434",
+    "c": "-1,792156149"
+  },
+  {
+    "p": "cm",
+    "v": "aleks.cheer96-5dd5ba048f1c8",
+    "c": "-1,81677586"
+  },
+  {
+    "p": "cm",
+    "v": "romanchervanjov",
+    "c": "-1,845648919"
+  },
+  {
+    "p": "cm",
+    "v": "message",
+    "c": "-1,944311664"
+  },
+  {
+    "p": "cm",
+    "v": "d.miller+superjob-5d9afceedc015",
+    "c": "-1,983612406"
+  },
+  {
+    "p": "cm",
+    "v": "olexiy.fedorov-5e6f81781c22e",
+    "c": "-2,062895084"
   },
   {
     "p": "cm",
     "v": "cpc_c12",
-    "c": "-1,093806009"
+    "c": "-2,140998809"
+  },
+  {
+    "p": "cm",
+    "v": "cpc_c25",
+    "c": "-2,2152394"
+  },
+  {
+    "p": "cm",
+    "v": "nickolai.romanovich-5c404ad9ebc0d",
+    "c": "-2,238416689"
+  },
+  {
+    "p": "cm",
+    "v": "social_cpc_c7",
+    "c": "-2,307587081"
+  },
+  {
+    "p": "cm",
+    "v": "cpa_c12",
+    "c": "-2,578191331"
+  },
+  {
+    "p": "cm",
+    "v": "cpa_c2",
+    "c": "-3,12448337"
   },
   {
     "p": "cm",
     "v": "(not_set)",
-    "c": "0,05267472577"
+    "c": "0,4218257377"
   },
   {
     "p": "cm",
@@ -2497,62 +3112,62 @@
   {
     "p": "mr",
     "v": 10,
-    "c": "0,2606916986"
+    "c": "-0,3701692734"
   },
   {
     "p": "mr",
     "v": 9,
-    "c": "0,1090358254"
+    "c": "-0,5613445182"
   },
   {
     "p": "mr",
     "v": 8,
-    "c": "0,02283766403"
+    "c": "-0,6041627221"
   },
   {
     "p": "mr",
     "v": 11,
-    "c": "-0,09708782303"
+    "c": "-0,7229071643"
   },
   {
     "p": "mr",
     "v": 12,
-    "c": "-0,1906257832"
-  },
-  {
-    "p": "mr",
-    "v": 7,
-    "c": "-0,2118129237"
+    "c": "-0,8000385388"
   },
   {
     "p": "mr",
     "v": 5,
-    "c": "-0,3131284798"
+    "c": "-0,8499706971"
   },
   {
     "p": "mr",
-    "v": 6,
-    "c": "-0,3699305961"
-  },
-  {
-    "p": "mr",
-    "v": 1,
-    "c": "-0,4619909665"
+    "v": 7,
+    "c": "-0,9761855077"
   },
   {
     "p": "mr",
     "v": 4,
-    "c": "-0,4749949067"
+    "c": "-1,041573945"
+  },
+  {
+    "p": "mr",
+    "v": 6,
+    "c": "-1,080362909"
+  },
+  {
+    "p": "mr",
+    "v": 1,
+    "c": "-1,102625842"
   },
   {
     "p": "mr",
     "v": 2,
-    "c": "-0,5021816919"
+    "c": "-1,152301583"
   },
   {
     "p": "mr",
     "v": 3,
-    "c": "-0,5876206976"
+    "c": "-1,230980256"
   },
   {
     "p": "mr",
@@ -2566,1808 +3181,2153 @@
   },
   {
     "p": "cs",
-    "v": "enguide.ua",
-    "c": "0,8840895975"
-  },
-  {
-    "p": "cs",
-    "v": "facebook.com",
-    "c": "0,7563820101"
-  },
-  {
-    "p": "cs",
-    "v": "englishdom.com",
-    "c": "0,623856287"
-  },
-  {
-    "p": "cs",
-    "v": "click.mail.ru",
-    "c": "0,6225575901"
-  },
-  {
-    "p": "cs",
-    "v": "netology.ru",
-    "c": "0,5999181362"
-  },
-  {
-    "p": "cs",
-    "v": "ca",
-    "c": "0,5600097559"
-  },
-  {
-    "p": "cs",
-    "v": "yandex",
-    "c": "0,5295757895"
-  },
-  {
-    "p": "cs",
-    "v": "dou.ua",
-    "c": "0,519535933"
-  },
-  {
-    "p": "cs",
     "v": "foxford",
-    "c": "0,5184639983"
+    "c": "5,3056425"
   },
   {
     "p": "cs",
     "v": "l.messenger.com",
-    "c": "0,5122243556"
+    "c": "4,397401686"
   },
   {
     "p": "cs",
-    "v": "transaction_notification_info",
-    "c": "0,5006348463"
+    "v": "click.mail.ru",
+    "c": "4,378531453"
   },
   {
     "p": "cs",
-    "v": "habrahabr",
-    "c": "0,4654415938"
-  },
-  {
-    "p": "cs",
-    "v": "words_mobile-courses-ios",
-    "c": "0,42211845"
-  },
-  {
-    "p": "cs",
-    "v": "habra",
-    "c": "0,3859532165"
-  },
-  {
-    "p": "cs",
-    "v": "go.mail.ru",
-    "c": "0,3761113926"
-  },
-  {
-    "p": "cs",
-    "v": "google",
-    "c": "0,3483816769"
-  },
-  {
-    "p": "cs",
-    "v": "newsletter",
-    "c": "0,334522687"
-  },
-  {
-    "p": "cs",
-    "v": "words_android",
-    "c": "0,3257700201"
-  },
-  {
-    "p": "cs",
-    "v": "(direct)",
-    "c": "0,3042173613"
-  },
-  {
-    "p": "cs",
-    "v": "telegram-ppc_analytics",
-    "c": "0,2872468885"
-  },
-  {
-    "p": "cs",
-    "v": "marketing_promo",
-    "c": "0,2800659294"
-  },
-  {
-    "p": "cs",
-    "v": "wikium",
-    "c": "0,2719622855"
-  },
-  {
-    "p": "cs",
-    "v": "words_ios",
-    "c": "0,2684244652"
-  },
-  {
-    "p": "cs",
-    "v": "slb.primezone.ru",
-    "c": "0,2680518742"
-  },
-  {
-    "p": "cs",
-    "v": "primezone",
-    "c": "0,2672456823"
-  },
-  {
-    "p": "cs",
-    "v": "cbs",
-    "c": "0,2653028566"
-  },
-  {
-    "p": "cs",
-    "v": "study.ru",
-    "c": "0,2613563475"
-  },
-  {
-    "p": "cs",
-    "v": "schneider-electric.primezone.ru",
-    "c": "0,2565532064"
-  },
-  {
-    "p": "cs",
-    "v": "totaldict.ru",
-    "c": "0,2549233443"
-  },
-  {
-    "p": "cs",
-    "v": "miralinks.ru",
-    "c": "0,2423825647"
-  },
-  {
-    "p": "cs",
-    "v": "actualtraffic.ru",
-    "c": "0,2418090048"
-  },
-  {
-    "p": "cs",
-    "v": "habr.com",
-    "c": "0,2337352184"
-  },
-  {
-    "p": "cs",
-    "v": "native-english",
-    "c": "0,2239183531"
-  },
-  {
-    "p": "cs",
-    "v": "linkedin.com",
-    "c": "0,2234621849"
-  },
-  {
-    "p": "cs",
-    "v": "portal.it.ru",
-    "c": "0,2227831898"
-  },
-  {
-    "p": "cs",
-    "v": "fb inst",
-    "c": "0,2039905448"
-  },
-  {
-    "p": "cs",
-    "v": "enguide.ru",
-    "c": "0,1967226571"
-  },
-  {
-    "p": "cs",
-    "v": "vc.ru",
-    "c": "0,1959883873"
-  },
-  {
-    "p": "cs",
-    "v": "google.ru",
-    "c": "0,1927960229"
-  },
-  {
-    "p": "cs",
-    "v": "ok-english.ru",
-    "c": "0,1899595487"
-  },
-  {
-    "p": "cs",
-    "v": "youtub",
-    "c": "0,1875220717"
-  },
-  {
-    "p": "cs",
-    "v": "lamoda.primezone.ru",
-    "c": "0,1709829353"
-  },
-  {
-    "p": "cs",
-    "v": "yandex-uslugi",
-    "c": "0,1692768873"
-  },
-  {
-    "p": "cs",
-    "v": "words_mobile-edwords-ios",
-    "c": "0,1682464795"
-  },
-  {
-    "p": "cs",
-    "v": "catchenglish",
-    "c": "0,1678333335"
-  },
-  {
-    "p": "cs",
-    "v": "brochure",
-    "c": "0,1674347026"
-  },
-  {
-    "p": "cs",
-    "v": "enguide-ua.cdn.ampproject.org",
-    "c": "0,1664961937"
-  },
-  {
-    "p": "cs",
-    "v": "englishdom.page.link",
-    "c": "0,1594579894"
-  },
-  {
-    "p": "cs",
-    "v": "platforma",
-    "c": "0,1564693901"
-  },
-  {
-    "p": "cs",
-    "v": "crm",
-    "c": "0,1535910584"
-  },
-  {
-    "p": "cs",
-    "v": "rabota.ua",
-    "c": "0,148167447"
-  },
-  {
-    "p": "cs",
-    "v": "iforum",
-    "c": "0,1393627386"
-  },
-  {
-    "p": "cs",
-    "v": "angliyskiyazik.ru",
-    "c": "0,1306531811"
-  },
-  {
-    "p": "cs",
-    "v": "partners",
-    "c": "0,1247100519"
-  },
-  {
-    "p": "cs",
-    "v": "geektimes",
-    "c": "0,1246725987"
-  },
-  {
-    "p": "cs",
-    "v": "atawaka.com",
-    "c": "0,1169377131"
-  },
-  {
-    "p": "cs",
-    "v": "mindbox",
-    "c": "0,1164167215"
-  },
-  {
-    "p": "cs",
-    "v": "nullrefer.com",
-    "c": "0,1160183155"
-  },
-  {
-    "p": "cs",
-    "v": "geekbrains",
-    "c": "0,1121313096"
-  },
-  {
-    "p": "cs",
-    "v": "netology",
-    "c": "0,1116321156"
-  },
-  {
-    "p": "cs",
-    "v": "yandex.com",
-    "c": "0,1114751568"
-  },
-  {
-    "p": "cs",
-    "v": "vse-kursy.com",
-    "c": "0,1100212623"
-  },
-  {
-    "p": "cs",
-    "v": "raiffeisenbank.primezone.ru",
-    "c": "0,1080738317"
-  },
-  {
-    "p": "cs",
-    "v": "l.facebook.com",
-    "c": "0,107608886"
-  },
-  {
-    "p": "cs",
-    "v": "accounts.google.ru",
-    "c": "0,105352014"
-  },
-  {
-    "p": "cs",
-    "v": "facebook/instagram",
-    "c": "0,09721913632"
-  },
-  {
-    "p": "cs",
-    "v": "ru.search.yahoo.com",
-    "c": "0,0963471977"
-  },
-  {
-    "p": "cs",
-    "v": "pfizer.primezone.ru",
-    "c": "0,09201177336"
-  },
-  {
-    "p": "cs",
-    "v": "native-english.ru",
-    "c": "0,0835943993"
-  },
-  {
-    "p": "cs",
-    "v": "letidor.ru",
-    "c": "0,08341074057"
-  },
-  {
-    "p": "cs",
-    "v": "blogger",
-    "c": "0,08136729688"
-  },
-  {
-    "p": "cs",
-    "v": "web.skype.com",
-    "c": "0,0802006242"
-  },
-  {
-    "p": "cs",
-    "v": "goIT",
-    "c": "0,07542676148"
-  },
-  {
-    "p": "cs",
-    "v": "edumarket.ru",
-    "c": "0,07435934272"
-  },
-  {
-    "p": "cs",
-    "v": "fb",
-    "c": "0,06904623025"
-  },
-  {
-    "p": "cs",
-    "v": "s7.primezone.ru",
-    "c": "0,0651060242"
-  },
-  {
-    "p": "cs",
-    "v": "tripmydream",
-    "c": "0,06360806101"
-  },
-  {
-    "p": "cs",
-    "v": "WebPromoExperts",
-    "c": "0,0589422558"
-  },
-  {
-    "p": "cs",
-    "v": "my.privatbank.ua",
-    "c": "0,05578981106"
-  },
-  {
-    "p": "cs",
-    "v": "deworkacy",
-    "c": "0,05290840576"
-  },
-  {
-    "p": "cs",
-    "v": "itvdn.com",
-    "c": "0,04829162703"
-  },
-  {
-    "p": "cs",
-    "v": "ain",
-    "c": "0,04546290718"
-  },
-  {
-    "p": "cs",
-    "v": "mail.google.com",
-    "c": "0,04165058037"
-  },
-  {
-    "p": "cs",
-    "v": "duckduckgo",
-    "c": "0,03385326225"
-  },
-  {
-    "p": "cs",
-    "v": "popup1",
-    "c": "0,02660527954"
-  },
-  {
-    "p": "cs",
-    "v": "megogo.net",
-    "c": "0,02106820789"
-  },
-  {
-    "p": "cs",
-    "v": "MyBook",
-    "c": "0,01674522182"
-  },
-  {
-    "p": "cs",
-    "v": "uaspeaking",
-    "c": "0,01607554628"
-  },
-  {
-    "p": "cs",
-    "v": "instagramk",
-    "c": "-0,001019042586"
-  },
-  {
-    "p": "cs",
-    "v": "10.222.0.14",
-    "c": "-0,001201092534"
-  },
-  {
-    "p": "cs",
-    "v": "campaigns_marketing",
-    "c": "-0,001366466971"
-  },
-  {
-    "p": "cs",
-    "v": "accounts.google.kg",
-    "c": "-0,001388480865"
-  },
-  {
-    "p": "cs",
-    "v": "talkrooms.ru",
-    "c": "-0,00142523011"
-  },
-  {
-    "p": "cs",
-    "v": "ca.search.yahoo.com",
-    "c": "-0,001644484597"
-  },
-  {
-    "p": "cs",
-    "v": "viber",
-    "c": "-0,001721045379"
-  },
-  {
-    "p": "cs",
-    "v": "m.youtube.com",
-    "c": "-0,001861426352"
-  },
-  {
-    "p": "cs",
-    "v": "yahoo",
-    "c": "-0,001978808815"
-  },
-  {
-    "p": "cs",
-    "v": "megogo",
-    "c": "-0,002035103663"
-  },
-  {
-    "p": "cs",
-    "v": "www-forumdaily-com.cdn.ampproject.org",
-    "c": "-0,002345954404"
-  },
-  {
-    "p": "cs",
-    "v": "catchenglish.ru",
-    "c": "-0,002525480266"
-  },
-  {
-    "p": "cs",
-    "v": "rebenok.cn.ua",
-    "c": "-0,00288450481"
-  },
-  {
-    "p": "cs",
-    "v": "mail.ukr.net",
-    "c": "-0,00320495139"
-  },
-  {
-    "p": "cs",
-    "v": "ar.egemen.kz",
-    "c": "-0,00330242714"
-  },
-  {
-    "p": "cs",
-    "v": "vipsearch.top",
-    "c": "-0,003916430602"
-  },
-  {
-    "p": "cs",
-    "v": "hskwq.com",
-    "c": "-0,004144646912"
-  },
-  {
-    "p": "cs",
-    "v": "schoolioneri.com",
-    "c": "-0,004533099897"
-  },
-  {
-    "p": "cs",
-    "v": "search.startpage.media",
-    "c": "-0,004588702674"
-  },
-  {
-    "p": "cs",
-    "v": "sites.ziyonet.uz",
-    "c": "-0,005356279615"
-  },
-  {
-    "p": "cs",
-    "v": "study",
-    "c": "-0,005496814313"
-  },
-  {
-    "p": "cs",
-    "v": "google_plus",
-    "c": "-0,005599840313"
-  },
-  {
-    "p": "cs",
-    "v": "edutainme.ru",
-    "c": "-0,006042181894"
-  },
-  {
-    "p": "cs",
-    "v": "web.facebook.com",
-    "c": "-0,00612594917"
-  },
-  {
-    "p": "cs",
-    "v": "m.zen.yandex.ru",
-    "c": "-0,006143151651"
-  },
-  {
-    "p": "cs",
-    "v": "tut.by",
-    "c": "-0,006248103716"
-  },
-  {
-    "p": "cs",
-    "v": "accounts.youtube.com",
-    "c": "-0,006986497913"
-  },
-  {
-    "p": "cs",
-    "v": "reten_2104",
-    "c": "-0,007210364604"
-  },
-  {
-    "p": "cs",
-    "v": "poshukach.com",
-    "c": "-0,007366017021"
+    "v": "online.qaday.org",
+    "c": "3,939251697"
   },
   {
     "p": "cs",
     "v": "etxtru",
-    "c": "-0,007506323014"
+    "c": "3,620697915"
   },
   {
     "p": "cs",
-    "v": "dnevnik.ru",
-    "c": "-0,008314148371"
+    "v": "actualtraffic.ru",
+    "c": "3,518947756"
   },
   {
     "p": "cs",
-    "v": "kniga_biz",
-    "c": "-0,008387149628"
+    "v": "youtub",
+    "c": "3,470315713"
   },
   {
     "p": "cs",
-    "v": "onlinezakladki.ru",
-    "c": "-0,008570233864"
+    "v": "schneider-electric.primezone.ru",
+    "c": "3,311062785"
   },
   {
     "p": "cs",
-    "v": "timelessenglish.com",
-    "c": "-0,008749898646"
+    "v": "miralinks.ru",
+    "c": "3,098362884"
   },
   {
     "p": "cs",
-    "v": "transaction_notification_pay",
-    "c": "-0,009702301672"
+    "v": "nielsen.primezone.ru",
+    "c": "3,0320287"
   },
   {
     "p": "cs",
-    "v": "enguide",
-    "c": "-0,009722233901"
+    "v": "itvdn",
+    "c": "2,974455189"
   },
   {
     "p": "cs",
-    "v": "search.handy-tab.com",
-    "c": "-0,01009739267"
+    "v": "portal.it.ru",
+    "c": "2,967621308"
   },
   {
     "p": "cs",
-    "v": "rambler",
-    "c": "-0,01017681883"
+    "v": "slb.primezone.ru",
+    "c": "2,958401657"
   },
   {
     "p": "cs",
-    "v": "pro.similarweb.com",
-    "c": "-0,01024068554"
+    "v": "netology.ru",
+    "c": "2,914918154"
   },
   {
     "p": "cs",
-    "v": "webmail.aruba.it",
-    "c": "-0,01034138605"
+    "v": "google.ru",
+    "c": "2,861328047"
   },
   {
     "p": "cs",
-    "v": "englishguru",
-    "c": "-0,01083406227"
+    "v": "ain.ua",
+    "c": "2,719805969"
   },
   {
     "p": "cs",
-    "v": "customerio",
-    "c": "-0,01107005111"
+    "v": "newsletter",
+    "c": "2,699919631"
   },
   {
     "p": "cs",
-    "v": "gb",
-    "c": "-0,01112598743"
+    "v": "ok-english.ru",
+    "c": "2,680556104"
   },
   {
     "p": "cs",
-    "v": "CBS",
-    "c": "-0,01153421713"
+    "v": "lamoda.primezone.ru",
+    "c": "2,674424924"
   },
   {
     "p": "cs",
-    "v": "egemen.kz",
-    "c": "-0,01190869135"
+    "v": "enguide.ua",
+    "c": "2,674049682"
   },
   {
     "p": "cs",
-    "v": "couponkodi.ru",
-    "c": "-0,012304204"
+    "v": "yandex-uslugi",
+    "c": "2,561925865"
   },
   {
     "p": "cs",
-    "v": "jewish.org.ua",
-    "c": "-0,01275422897"
+    "v": "abbott.benefactory.ru",
+    "c": "2,542350553"
   },
   {
     "p": "cs",
-    "v": "promocodetime.com",
-    "c": "-0,01299988057"
+    "v": "dou.ua",
+    "c": "2,53746706"
   },
   {
     "p": "cs",
-    "v": "marketgid_rus",
-    "c": "-0,01300780547"
+    "v": "vc.ru",
+    "c": "2,525869189"
   },
   {
     "p": "cs",
-    "v": "cinemakid",
-    "c": "-0,01333712726"
+    "v": "englishdom.page.link",
+    "c": "2,452857351"
   },
   {
     "p": "cs",
-    "v": "parta.com.ua",
-    "c": "-0,0134100888"
+    "v": "my.privatbank.ua",
+    "c": "2,431954696"
   },
   {
     "p": "cs",
-    "v": "etutorium",
-    "c": "-0,01403934188"
+    "v": "cbs",
+    "c": "2,428526156"
   },
   {
     "p": "cs",
-    "v": "msn.com",
-    "c": "-0,01567184382"
+    "v": "otvet.mail.ru",
+    "c": "2,417986278"
   },
   {
     "p": "cs",
     "v": "pokupon.ua",
-    "c": "-0,0157193964"
+    "c": "2,400283434"
   },
   {
     "p": "cs",
-    "v": "izito.ru",
-    "c": "-0,01573664913"
+    "v": "raiffeisenbank.primezone.ru",
+    "c": "2,346183334"
   },
   {
     "p": "cs",
-    "v": "facebook_event",
-    "c": "-0,01693503433"
+    "v": "native-english",
+    "c": "2,298166981"
   },
   {
     "p": "cs",
-    "v": "dnevnik.mos.ru",
-    "c": "-0,01707991512"
+    "v": "totaldict.ru",
+    "c": "2,259841381"
   },
   {
     "p": "cs",
-    "v": "Sendsay",
-    "c": "-0,01717626055"
+    "v": "web.skype.com",
+    "c": "2,231570101"
   },
   {
     "p": "cs",
-    "v": "yandex.ru",
-    "c": "-0,01808859738"
+    "v": "brochure",
+    "c": "2,111950408"
   },
   {
     "p": "cs",
-    "v": "codeclub",
-    "c": "-0,01812375029"
+    "v": "wikium",
+    "c": "2,093277755"
   },
   {
     "p": "cs",
-    "v": "brest.maminforum.com",
-    "c": "-0,01827459549"
+    "v": "primezone",
+    "c": "2,066095452"
   },
   {
     "p": "cs",
-    "v": "merriam-webster.com",
-    "c": "-0,01858335459"
+    "v": "angliyskiyazik.ru",
+    "c": "1,99786753"
   },
   {
     "p": "cs",
-    "v": "pinterest.com",
-    "c": "-0,01876907702"
-  },
-  {
-    "p": "cs",
-    "v": "unisender.com",
-    "c": "-0,01917683146"
-  },
-  {
-    "p": "cs",
-    "v": "gravitec",
-    "c": "-0,01924463437"
-  },
-  {
-    "p": "cs",
-    "v": "imarketing",
-    "c": "-0,01980808185"
-  },
-  {
-    "p": "cs",
-    "v": "searchencrypt.com",
-    "c": "-0,02002070521"
-  },
-  {
-    "p": "cs",
-    "v": "search.avast.com",
-    "c": "-0,02034715344"
-  },
-  {
-    "p": "cs",
-    "v": "cpcutm_campaign=Akcia_Star_Warst",
-    "c": "-0,02083341731"
-  },
-  {
-    "p": "cs",
-    "v": "jobs.dou.ua",
-    "c": "-0,02101466567"
-  },
-  {
-    "p": "cs",
-    "v": "int.search.tb.ask.com",
-    "c": "-0,02128680021"
-  },
-  {
-    "p": "cs",
-    "v": "yandex.uz",
-    "c": "-0,02138421863"
-  },
-  {
-    "p": "cs",
-    "v": "cossa.ru",
-    "c": "-0,02180700577"
-  },
-  {
-    "p": "cs",
-    "v": "press-release",
-    "c": "-0,02191523552"
-  },
-  {
-    "p": "cs",
-    "v": "shara.li",
-    "c": "-0,02238527074"
-  },
-  {
-    "p": "cs",
-    "v": "ru.stf.st",
-    "c": "-0,02333488188"
-  },
-  {
-    "p": "cs",
-    "v": "lead-magnet.affise.com",
-    "c": "-0,02354875919"
-  },
-  {
-    "p": "cs",
-    "v": "ua.jooble.org",
-    "c": "-0,0239329274"
-  },
-  {
-    "p": "cs",
-    "v": "goodairlanguage.com",
-    "c": "-0,02405427534"
-  },
-  {
-    "p": "cs",
-    "v": "stroimdom.com.ua",
-    "c": "-0,02417512509"
-  },
-  {
-    "p": "cs",
-    "v": "21school",
-    "c": "-0,02435855966"
-  },
-  {
-    "p": "cs",
-    "v": "thetefluniversity.com",
-    "c": "-0,02443633522"
-  },
-  {
-    "p": "cs",
-    "v": "linkedin",
-    "c": "-0,02507618228"
-  },
-  {
-    "p": "cs",
-    "v": "ofigenno.com",
-    "c": "-0,02590100778"
-  },
-  {
-    "p": "cs",
-    "v": "promo_webinar",
-    "c": "-0,02606432372"
-  },
-  {
-    "p": "cs",
-    "v": "600l_2_gr",
-    "c": "-0,0260753912"
-  },
-  {
-    "p": "cs",
-    "v": "a_b",
-    "c": "-0,0266761846"
-  },
-  {
-    "p": "cs",
-    "v": "mail.yandex.ru",
-    "c": "-0,02729383571"
-  },
-  {
-    "p": "cs",
-    "v": "lms.ithillel.ua",
-    "c": "-0,02758876103"
-  },
-  {
-    "p": "cs",
-    "v": "A_B",
-    "c": "-0,02793362694"
-  },
-  {
-    "p": "cs",
-    "v": "pikabu.ru",
-    "c": "-0,02798824708"
-  },
-  {
-    "p": "cs",
-    "v": "darkwebs.ws",
-    "c": "-0,02818079778"
-  },
-  {
-    "p": "cs",
-    "v": "ok.ru",
-    "c": "-0,02831883102"
+    "v": "linkedin.com",
+    "c": "1,994816152"
   },
   {
     "p": "cs",
     "v": "record",
-    "c": "-0,02837766854"
+    "c": "1,961383438"
   },
   {
     "p": "cs",
-    "v": "ivan-kolobov.livejournal.com",
-    "c": "-0,02851953813"
+    "v": "go.mail.ru",
+    "c": "1,898227198"
   },
   {
     "p": "cs",
-    "v": "m.pikabu.ru",
-    "c": "-0,02853261545"
+    "v": "pfizer.primezone.ru",
+    "c": "1,852550062"
   },
   {
     "p": "cs",
-    "v": "otus",
-    "c": "-0,02920532123"
+    "v": "accounts.google.ru",
+    "c": "1,841478568"
   },
   {
     "p": "cs",
-    "v": "itstep_od",
-    "c": "-0,02930033535"
+    "v": "edumarket.ru",
+    "c": "1,825944391"
   },
   {
     "p": "cs",
-    "v": "b.xfreeservice.com",
-    "c": "-0,02937594347"
+    "v": "ca",
+    "c": "1,817175183"
   },
   {
     "p": "cs",
-    "v": "sendpulse",
-    "c": "-0,02995148502"
+    "v": "facebook.com",
+    "c": "1,7944199"
   },
   {
     "p": "cs",
-    "v": "school-58.klasna.com",
-    "c": "-0,03006226835"
+    "v": "cpcutm_campaign=Akcia_Star_Warst",
+    "c": "1,782970746"
   },
   {
     "p": "cs",
-    "v": "taplink.cc",
-    "c": "-0,03061400579"
+    "v": "transaction_notification_info",
+    "c": "1,769520794"
   },
   {
     "p": "cs",
-    "v": "propads",
-    "c": "-0,03098618859"
+    "v": "englishdom.com",
+    "c": "1,757928293"
   },
   {
     "p": "cs",
-    "v": "pepper.ru",
-    "c": "-0,03104311547"
+    "v": "yandex.com",
+    "c": "1,740626161"
   },
   {
     "p": "cs",
-    "v": "semeynoe.com",
-    "c": "-0,03106233662"
+    "v": "vse-kursy.com",
+    "c": "1,731674718"
   },
   {
     "p": "cs",
-    "v": "corp.englishdom.com",
-    "c": "-0,03112509713"
+    "v": "enguide-ua.cdn.ampproject.org",
+    "c": "1,716250077"
   },
   {
     "p": "cs",
-    "v": "adwords",
-    "c": "-0,03137266402"
+    "v": "s7.primezone.ru",
+    "c": "1,683501047"
   },
   {
     "p": "cs",
-    "v": "avia",
-    "c": "-0,03147177497"
+    "v": "native-english.ru",
+    "c": "1,670433378"
   },
   {
     "p": "cs",
-    "v": "blogs^_^amp^_^utm_medium=pr^_^amp^_^utm_campaign=habr^_^amp^_^utm_content=memes",
-    "c": "-0,03150501044"
+    "v": "rabota.ua",
+    "c": "1,641742644"
   },
   {
     "p": "cs",
-    "v": "mail.pflb.ru",
-    "c": "-0,03161177438"
+    "v": "crm",
+    "c": "1,633792657"
   },
   {
     "p": "cs",
-    "v": "d3scene.ru",
-    "c": "-0,03162909886"
+    "v": "letidor.ru",
+    "c": "1,612472767"
   },
   {
     "p": "cs",
-    "v": "guruenglish.ru",
-    "c": "-0,03175771737"
+    "v": "study",
+    "c": "1,603182647"
   },
   {
     "p": "cs",
-    "v": "freelancehunt.com",
-    "c": "-0,03199444523"
+    "v": "nullrefer.com",
+    "c": "1,551529942"
   },
   {
     "p": "cs",
-    "v": "vsemdobra.su",
-    "c": "-0,03205787114"
+    "v": "MyBook",
+    "c": "1,518071208"
   },
   {
     "p": "cs",
-    "v": "jobik.net",
-    "c": "-0,03206623037"
+    "v": "atawaka.com",
+    "c": "1,517653096"
   },
   {
     "p": "cs",
-    "v": "afisha_kiev",
-    "c": "-0,03211613471"
+    "v": "facebook/instagram",
+    "c": "1,476492539"
   },
   {
     "p": "cs",
-    "v": "vk.com",
-    "c": "-0,03223080375"
+    "v": "deworkacy",
+    "c": "1,454680773"
   },
   {
     "p": "cs",
-    "v": "audio-class.ru",
-    "c": "-0,03225161703"
-  },
-  {
-    "p": "cs",
-    "v": "advertisingclicktracking.online",
-    "c": "-0,03226516491"
-  },
-  {
-    "p": "cs",
-    "v": "img.ucweb.com",
-    "c": "-0,03257286038"
-  },
-  {
-    "p": "cs",
-    "v": "lifehacker.ru",
-    "c": "-0,03273166805"
-  },
-  {
-    "p": "cs",
-    "v": "techrocks.ru",
-    "c": "-0,03287020918"
-  },
-  {
-    "p": "cs",
-    "v": "karusel.primezone.ru",
-    "c": "-0,0330025753"
-  },
-  {
-    "p": "cs",
-    "v": "pdf",
-    "c": "-0,0341661564"
-  },
-  {
-    "p": "cs",
-    "v": "englishgu.ru",
-    "c": "-0,0345849109"
-  },
-  {
-    "p": "cs",
-    "v": "podcasts.google.com",
-    "c": "-0,03475013281"
-  },
-  {
-    "p": "cs",
-    "v": "finacademy",
-    "c": "-0,03475124231"
-  },
-  {
-    "p": "cs",
-    "v": "away.vk.com",
-    "c": "-0,03477090767"
-  },
-  {
-    "p": "cs",
-    "v": "mail.hh.ru",
-    "c": "-0,03479912518"
-  },
-  {
-    "p": "cs",
-    "v": "x5.primezone.ru",
-    "c": "-0,0348363511"
-  },
-  {
-    "p": "cs",
-    "v": "business.google.com",
-    "c": "-0,03488924368"
-  },
-  {
-    "p": "cs",
-    "v": "kefline.ru",
-    "c": "-0,03508328293"
-  },
-  {
-    "p": "cs",
-    "v": "em.ubrr.ru",
-    "c": "-0,03516947151"
-  },
-  {
-    "p": "cs",
-    "v": "enguide-ru.cdn.ampproject.org",
-    "c": "-0,035249398"
-  },
-  {
-    "p": "cs",
-    "v": "rb.ru",
-    "c": "-0,03556466345"
-  },
-  {
-    "p": "cs",
-    "v": "vkontakte",
-    "c": "-0,0357476065"
-  },
-  {
-    "p": "cs",
-    "v": "lavasoft.gosearchresults.com",
-    "c": "-0,03766663688"
-  },
-  {
-    "p": "cs",
-    "v": "sharewood.pro",
-    "c": "-0,03777146473"
-  },
-  {
-    "p": "cs",
-    "v": "miped.ru",
-    "c": "-0,0379016217"
-  },
-  {
-    "p": "cs",
-    "v": "ampproject.org",
-    "c": "-0,0379959672"
-  },
-  {
-    "p": "cs",
-    "v": "my.e-klase.lv",
-    "c": "-0,03838579484"
-  },
-  {
-    "p": "cs",
-    "v": "mbox2.i.ua",
-    "c": "-0,03892928291"
-  },
-  {
-    "p": "cs",
-    "v": "chrome.google.com",
-    "c": "-0,03905060816"
-  },
-  {
-    "p": "cs",
-    "v": "indulgepassion.site",
-    "c": "-0,03919180816"
-  },
-  {
-    "p": "cs",
-    "v": "etxt.ru",
-    "c": "-0,03934434109"
-  },
-  {
-    "p": "cs",
-    "v": "mail.aet.in.ua",
-    "c": "-0,0393979789"
-  },
-  {
-    "p": "cs",
-    "v": "pioneer.primezone.ru",
-    "c": "-0,03943488508"
-  },
-  {
-    "p": "cs",
-    "v": "expertsender",
-    "c": "-0,03996047721"
-  },
-  {
-    "p": "cs",
-    "v": "yandex.com.tr",
-    "c": "-0,04005833604"
-  },
-  {
-    "p": "cs",
-    "v": "ping-sso.schneider-electric.com",
-    "c": "-0,0402182666"
-  },
-  {
-    "p": "cs",
-    "v": "pg.primezone.ru",
-    "c": "-0,04026472675"
-  },
-  {
-    "p": "cs",
-    "v": "superdeal.ua",
-    "c": "-0,04027028225"
-  },
-  {
-    "p": "cs",
-    "v": "ecosia.org",
-    "c": "-0,04046331325"
-  },
-  {
-    "p": "cs",
-    "v": "forumdaily.com",
-    "c": "-0,04111245703"
-  },
-  {
-    "p": "cs",
-    "v": "headhunter",
-    "c": "-0,04112487167"
-  },
-  {
-    "p": "cs",
-    "v": "online-hotel-school-rhg.davintoo.com",
-    "c": "-0,04118216371"
-  },
-  {
-    "p": "cs",
-    "v": "spywords.ru",
-    "c": "-0,04197656901"
-  },
-  {
-    "p": "cs",
-    "v": "marinarusakova.biz",
-    "c": "-0,04224958069"
-  },
-  {
-    "p": "cs",
-    "v": "kadam",
-    "c": "-0,04227851087"
-  },
-  {
-    "p": "cs",
-    "v": "201940_digest_orig_promo",
-    "c": "-0,04234064697"
-  },
-  {
-    "p": "cs",
-    "v": "teletype.in",
-    "c": "-0,04241290556"
-  },
-  {
-    "p": "cs",
-    "v": "klasnaocinka.com.ua",
-    "c": "-0,04354882561"
-  },
-  {
-    "p": "cs",
-    "v": "slivup.me",
-    "c": "-0,04371990808"
-  },
-  {
-    "p": "cs",
-    "v": "megogo.ru",
-    "c": "-0,04375360752"
-  },
-  {
-    "p": "cs",
-    "v": "englishdom.amocrm.ru",
-    "c": "-0,04414186157"
-  },
-  {
-    "p": "cs",
-    "v": "apps.apple.com",
-    "c": "-0,04427673602"
-  },
-  {
-    "p": "cs",
-    "v": "study_ru",
-    "c": "-0,04451254807"
-  },
-  {
-    "p": "cs",
-    "v": "werwse.powerr.ru",
-    "c": "-0,04547199979"
-  },
-  {
-    "p": "cs",
-    "v": "aksioma24.ru",
-    "c": "-0,05044772021"
-  },
-  {
-    "p": "cs",
-    "v": "mobile.facebook.com",
-    "c": "-0,05110543199"
-  },
-  {
-    "p": "cs",
-    "v": "blogs",
-    "c": "-0,05327802322"
-  },
-  {
-    "p": "cs",
-    "v": "m.facebook.com",
-    "c": "-0,05360147763"
-  },
-  {
-    "p": "cs",
-    "v": "m.vk.com",
-    "c": "-0,05715730721"
-  },
-  {
-    "p": "cs",
-    "v": "mc.today",
-    "c": "-0,05747296122"
-  },
-  {
-    "p": "cs",
-    "v": "brontp.yandex.ru",
-    "c": "-0,05783781594"
-  },
-  {
-    "p": "cs",
-    "v": "news.xopom.com",
-    "c": "-0,05808494727"
-  },
-  {
-    "p": "cs",
-    "v": "sharewood.band",
-    "c": "-0,05864318122"
-  },
-  {
-    "p": "cs",
-    "v": "gsearch.mi7.ru",
-    "c": "-0,05875489436"
-  },
-  {
-    "p": "cs",
-    "v": "mastercard",
-    "c": "-0,05934528611"
-  },
-  {
-    "p": "cs",
-    "v": "work.ua",
-    "c": "-0,06036680409"
-  },
-  {
-    "p": "cs",
-    "v": "pro_mandri",
-    "c": "-0,06059603399"
-  },
-  {
-    "p": "cs",
-    "v": "youtub...",
-    "c": "-0,06090239457"
-  },
-  {
-    "p": "cs",
-    "v": "podcast",
-    "c": "-0,06161352337"
-  },
-  {
-    "p": "cs",
-    "v": "partner",
-    "c": "-0,06194972365"
-  },
-  {
-    "p": "cs",
-    "v": "webpromoexperts",
-    "c": "-0,06422094491"
-  },
-  {
-    "p": "cs",
-    "v": "MIB",
-    "c": "-0,06495056103"
-  },
-  {
-    "p": "cs",
-    "v": "kgo.su",
-    "c": "-0,0651522477"
-  },
-  {
-    "p": "cs",
-    "v": "mytarget",
-    "c": "-0,06532711627"
-  },
-  {
-    "p": "cs",
-    "v": "201940_digest_adv_promo",
-    "c": "-0,06734694457"
-  },
-  {
-    "p": "cs",
-    "v": "belaya-tserkov.hh.ua",
-    "c": "-0,06761901127"
-  },
-  {
-    "p": "cs",
-    "v": "megogo.cc",
-    "c": "-0,06810368444"
-  },
-  {
-    "p": "cs",
-    "v": "DonanimHaber",
-    "c": "-0,06913840875"
-  },
-  {
-    "p": "cs",
-    "v": "googleads.g.doubleclick.net",
-    "c": "-0,06952678131"
-  },
-  {
-    "p": "cs",
-    "v": "m.babyblog.ru",
-    "c": "-0,06993737842"
-  },
-  {
-    "p": "cs",
-    "v": "darked.biz",
-    "c": "-0,07175290141"
-  },
-  {
-    "p": "cs",
-    "v": "boominfo.ru",
-    "c": "-0,07205002089"
-  },
-  {
-    "p": "cs",
-    "v": "lolzteam.net",
-    "c": "-0,07417445763"
-  },
-  {
-    "p": "cs",
-    "v": "web.telegram.org",
-    "c": "-0,075980397"
-  },
-  {
-    "p": "cs",
-    "v": "blackbiz.club",
-    "c": "-0,07710257517"
-  },
-  {
-    "p": "cs",
-    "v": "e.mail.ru",
-    "c": "-0,07756565914"
-  },
-  {
-    "p": "cs",
-    "v": "prostor.mts.com.ua",
-    "c": "-0,0780172754"
-  },
-  {
-    "p": "cs",
-    "v": "litres",
-    "c": "-0,07901869396"
-  },
-  {
-    "p": "cs",
-    "v": "target",
-    "c": "-0,08125019742"
-  },
-  {
-    "p": "cs",
-    "v": "forum.duolingo.com",
-    "c": "-0,08131813432"
-  },
-  {
-    "p": "cs",
-    "v": "bilingual",
-    "c": "-0,08237661914"
-  },
-  {
-    "p": "cs",
-    "v": "clc.am",
-    "c": "-0,08651848193"
-  },
-  {
-    "p": "cs",
-    "v": "wikium.ru",
-    "c": "-0,08667064569"
-  },
-  {
-    "p": "cs",
-    "v": "the-steppe.com",
-    "c": "-0,08833767418"
-  },
-  {
-    "p": "cs",
-    "v": "instagram.com",
-    "c": "-0,08926108172"
-  },
-  {
-    "p": "cs",
-    "v": "vmodenov.blogspot.com",
-    "c": "-0,08976499564"
+    "v": "ru.search.yahoo.com",
+    "c": "1,43006457"
   },
   {
     "p": "cs",
     "v": "prog_kiev",
-    "c": "-0,09197436976"
+    "c": "1,389262982"
   },
   {
     "p": "cs",
-    "v": "book24",
-    "c": "-0,09540815398"
+    "v": "duckduckgo",
+    "c": "1,268517719"
   },
   {
     "p": "cs",
-    "v": "edera",
-    "c": "-0,101045346"
+    "v": "enguide.ru",
+    "c": "1,23317992"
   },
   {
     "p": "cs",
-    "v": "social",
-    "c": "-0,1010992446"
-  },
-  {
-    "p": "cs",
-    "v": "lm.facebook.com",
-    "c": "-0,1023764569"
-  },
-  {
-    "p": "cs",
-    "v": "cityads.com",
-    "c": "-0,1095146349"
-  },
-  {
-    "p": "cs",
-    "v": "yandex.by",
-    "c": "-0,1160863111"
-  },
-  {
-    "p": "cs",
-    "v": "pubg.best",
-    "c": "-0,1172089387"
-  },
-  {
-    "p": "cs",
-    "v": "openssource.info",
-    "c": "-0,1175984613"
-  },
-  {
-    "p": "cs",
-    "v": "presentation_webinar",
-    "c": "-0,1177491076"
-  },
-  {
-    "p": "cs",
-    "v": "secureurl.ukr.net",
-    "c": "-0,118496462"
-  },
-  {
-    "p": "cs",
-    "v": "facebook",
-    "c": "-0,1218858331"
-  },
-  {
-    "p": "cs",
-    "v": "iloveenglish",
-    "c": "-0,1222449222"
-  },
-  {
-    "p": "cs",
-    "v": "mel.fm",
-    "c": "-0,1227050282"
-  },
-  {
-    "p": "cs",
-    "v": "cpc",
-    "c": "-0,1234972817"
-  },
-  {
-    "p": "cs",
-    "v": "theoryandpractice",
-    "c": "-0,1262775382"
-  },
-  {
-    "p": "cs",
-    "v": "yandex.fr",
-    "c": "-0,1309930206"
-  },
-  {
-    "p": "cs",
-    "v": "campaigns_weekly",
-    "c": "-0,1337719797"
-  },
-  {
-    "p": "cs",
-    "v": "pinterest",
-    "c": "-0,1350045909"
-  },
-  {
-    "p": "cs",
-    "v": "m.rabota.ua",
-    "c": "-0,1367215574"
-  },
-  {
-    "p": "cs",
-    "v": "youtube.com",
-    "c": "-0,1453127578"
-  },
-  {
-    "p": "cs",
-    "v": "bilshe.mastercard.ua",
-    "c": "-0,1468382418"
-  },
-  {
-    "p": "cs",
-    "v": "english-films",
-    "c": "-0,1496095428"
-  },
-  {
-    "p": "cs",
-    "v": "careerist",
-    "c": "-0,1528296408"
-  },
-  {
-    "p": "cs",
-    "v": "vk",
-    "c": "-0,1551268586"
+    "v": "WebPromoExperts",
+    "c": "1,172374295"
   },
   {
     "p": "cs",
     "v": "start.ubrr.ru",
-    "c": "-0,1611038241"
+    "c": "1,164601345"
   },
   {
     "p": "cs",
-    "v": "m.habr.com",
-    "c": "-0,1689231324"
+    "v": "study.ru",
+    "c": "1,162258401"
   },
   {
     "p": "cs",
-    "v": "proleed",
-    "c": "-0,1731515362"
+    "v": "habr.com",
+    "c": "1,139781716"
   },
   {
     "p": "cs",
-    "v": "app.schoology.com",
-    "c": "-0,1762905525"
+    "v": "instagram.com",
+    "c": "1,127338458"
+  },
+  {
+    "p": "cs",
+    "v": "catchenglish",
+    "c": "1,040719662"
+  },
+  {
+    "p": "cs",
+    "v": "bilshe.mastercard.ua",
+    "c": "1,016310832"
+  },
+  {
+    "p": "cs",
+    "v": "itvdn.com",
+    "c": "1,004683189"
+  },
+  {
+    "p": "cs",
+    "v": "mindbox",
+    "c": "0,9988089387"
+  },
+  {
+    "p": "cs",
+    "v": "away.vk.com",
+    "c": "0,9847436157"
+  },
+  {
+    "p": "cs",
+    "v": "mail.google.com",
+    "c": "0,9738560242"
+  },
+  {
+    "p": "cs",
+    "v": "tripmydream",
+    "c": "0,9716883054"
   },
   {
     "p": "cs",
     "v": "dou",
-    "c": "-0,1913200699"
+    "c": "0,9475962786"
   },
   {
     "p": "cs",
-    "v": "yandex.kz",
-    "c": "-0,1921392449"
+    "v": "fb",
+    "c": "0,9462574502"
   },
   {
     "p": "cs",
-    "v": "telegra.ph",
-    "c": "-0,1932213961"
+    "v": "iforum",
+    "c": "0,836515033"
   },
   {
     "p": "cs",
-    "v": "pokupon",
-    "c": "-0,2025289043"
+    "v": "words_mobile-courses-ios",
+    "c": "0,8031609461"
+  },
+  {
+    "p": "cs",
+    "v": "geekbrains",
+    "c": "0,7803325593"
+  },
+  {
+    "p": "cs",
+    "v": "podcast",
+    "c": "0,7749259986"
+  },
+  {
+    "p": "cs",
+    "v": "study_ru",
+    "c": "0,7615115913"
+  },
+  {
+    "p": "cs",
+    "v": "l.facebook.com",
+    "c": "0,7265332854"
+  },
+  {
+    "p": "cs",
+    "v": "netology",
+    "c": "0,7064674681"
+  },
+  {
+    "p": "cs",
+    "v": "popup1",
+    "c": "0,7059913482"
+  },
+  {
+    "p": "cs",
+    "v": "habra",
+    "c": "0,6956865875"
+  },
+  {
+    "p": "cs",
+    "v": "secureurl.ukr.net",
+    "c": "0,6921370194"
+  },
+  {
+    "p": "cs",
+    "v": "m.facebook.com",
+    "c": "0,6833694462"
   },
   {
     "p": "cs",
     "v": "zen.yandex.ru",
-    "c": "-0,2031237778"
-  },
-  {
-    "p": "cs",
-    "v": "preview.page.link",
-    "c": "-0,2100527267"
-  },
-  {
-    "p": "cs",
-    "v": "instagram",
-    "c": "-0,2129751294"
-  },
-  {
-    "p": "cs",
-    "v": "skillbox",
-    "c": "-0,2164496168"
-  },
-  {
-    "p": "cs",
-    "v": "Facebook_Instagram",
-    "c": "-0,2195036849"
-  },
-  {
-    "p": "cs",
-    "v": "mel-fm.cdn.ampproject.org",
-    "c": "-0,2201727702"
-  },
-  {
-    "p": "cs",
-    "v": "bing",
-    "c": "-0,2320898204"
-  },
-  {
-    "p": "cs",
-    "v": "eSputnik-trigger",
-    "c": "-0,2334057646"
-  },
-  {
-    "p": "cs",
-    "v": "admitad.com",
-    "c": "-0,253041554"
-  },
-  {
-    "p": "cs",
-    "v": "yandex.ua",
-    "c": "-0,2850576827"
-  },
-  {
-    "p": "cs",
-    "v": "vodafone",
-    "c": "-0,2971736684"
+    "c": "0,6742713095"
   },
   {
     "p": "cs",
     "v": "facebook_instagram",
-    "c": "-0,3231625543"
+    "c": "0,6461454182"
   },
   {
     "p": "cs",
-    "v": "skillfactory",
-    "c": "-0,3311732527"
+    "v": "marketing_promo",
+    "c": "0,6447081279"
   },
   {
     "p": "cs",
-    "v": "sbidea.ru",
-    "c": "-0,338677604"
+    "v": "yandex",
+    "c": "0,6387574498"
   },
   {
     "p": "cs",
-    "v": "telegram",
-    "c": "-0,3526337475"
+    "v": "platforma",
+    "c": "0,6251864739"
   },
   {
     "p": "cs",
-    "v": "zen",
-    "c": "-0,3769647233"
+    "v": "(direct)",
+    "c": "0,6219498062"
   },
   {
     "p": "cs",
-    "v": "l.instagram.com",
-    "c": "-0,3894939429"
+    "v": "goIT",
+    "c": "0,594007769"
   },
   {
     "p": "cs",
-    "v": "words_mobile-edwords-android",
-    "c": "-0,4133131195"
+    "v": "google",
+    "c": "0,5334067294"
+  },
+  {
+    "p": "cs",
+    "v": "youtube.com",
+    "c": "0,5333680511"
+  },
+  {
+    "p": "cs",
+    "v": "geektimes",
+    "c": "0,5194077705"
+  },
+  {
+    "p": "cs",
+    "v": "habrahabr",
+    "c": "0,5165684017"
+  },
+  {
+    "p": "cs",
+    "v": "words_ios",
+    "c": "0,5153315701"
+  },
+  {
+    "p": "cs",
+    "v": "transaction_notification_pay",
+    "c": "0,5042859692"
+  },
+  {
+    "p": "cs",
+    "v": "telegram-ppc_analytics",
+    "c": "0,5020964316"
+  },
+  {
+    "p": "cs",
+    "v": "fb inst",
+    "c": "0,4101516112"
+  },
+  {
+    "p": "cs",
+    "v": "mybook",
+    "c": "0,3918801152"
+  },
+  {
+    "p": "cs",
+    "v": "mc.today",
+    "c": "0,3839048557"
+  },
+  {
+    "p": "cs",
+    "v": "words_android",
+    "c": "0,3667857984"
   },
   {
     "p": "cs",
     "v": "privatbank",
-    "c": "-0,4336014977"
+    "c": "0,3077112109"
   },
   {
     "p": "cs",
-    "v": "youtube",
-    "c": "-0,4590880344"
+    "v": "yandex.kz",
+    "c": "0,3051674207"
   },
   {
     "p": "cs",
-    "v": "words_mobile-courses-android",
-    "c": "-0,5127783572"
+    "v": "words_mobile-edwords-ios",
+    "c": "0,2973486814"
   },
   {
     "p": "cs",
-    "v": "inner",
-    "c": "-0,5157316153"
+    "v": "ain",
+    "c": "0,2934335251"
+  },
+  {
+    "p": "cs",
+    "v": "landing",
+    "c": "0,2641628394"
+  },
+  {
+    "p": "cs",
+    "v": "skillbox",
+    "c": "0,2585509426"
+  },
+  {
+    "p": "cs",
+    "v": "mctoday",
+    "c": "0,2476756216"
+  },
+  {
+    "p": "cs",
+    "v": "english-films",
+    "c": "0,2177844074"
+  },
+  {
+    "p": "cs",
+    "v": "app.schoology.com",
+    "c": "0,2158768038"
+  },
+  {
+    "p": "cs",
+    "v": "megogo.net",
+    "c": "0,1600471078"
+  },
+  {
+    "p": "cs",
+    "v": "forum.duolingo.com",
+    "c": "0,1549136266"
+  },
+  {
+    "p": "cs",
+    "v": "blogger",
+    "c": "0,1196534869"
+  },
+  {
+    "p": "cs",
+    "v": "mel.fm",
+    "c": "0,08848838473"
+  },
+  {
+    "p": "cs",
+    "v": "edera",
+    "c": "0,06244666684"
+  },
+  {
+    "p": "cs",
+    "v": "facebook",
+    "c": "0,05615458424"
+  },
+  {
+    "p": "cs",
+    "v": "lm.facebook.com",
+    "c": "0,01787725523"
+  },
+  {
+    "p": "cs",
+    "v": "turbo",
+    "c": "-0,001764375422"
+  },
+  {
+    "p": "cs",
+    "v": "bitblago.com",
+    "c": "-0,001882563828"
+  },
+  {
+    "p": "cs",
+    "v": "gamerground.ru",
+    "c": "-0,003172963874"
+  },
+  {
+    "p": "cs",
+    "v": "whatsapp",
+    "c": "-0,004677096832"
+  },
+  {
+    "p": "cs",
+    "v": "accounts.google.kg",
+    "c": "-0,005934720686"
+  },
+  {
+    "p": "cs",
+    "v": "edutainme.ru",
+    "c": "-0,007166711084"
+  },
+  {
+    "p": "cs",
+    "v": "instagramk",
+    "c": "-0,009370887536"
+  },
+  {
+    "p": "cs",
+    "v": "webinar",
+    "c": "-0,01311416835"
+  },
+  {
+    "p": "cs",
+    "v": "vbpk47.ru",
+    "c": "-0,01553765478"
+  },
+  {
+    "p": "cs",
+    "v": "instagram",
+    "c": "-0,01774618101"
+  },
+  {
+    "p": "cs",
+    "v": "schoolioneri.com",
+    "c": "-0,01834127047"
+  },
+  {
+    "p": "cs",
+    "v": "10.222.0.14",
+    "c": "-0,02017701315"
+  },
+  {
+    "p": "cs",
+    "v": "s2.rhsw.biz",
+    "c": "-0,03199112527"
+  },
+  {
+    "p": "cs",
+    "v": "talkrooms.ru",
+    "c": "-0,03440975068"
+  },
+  {
+    "p": "cs",
+    "v": "ca.search.yahoo.com",
+    "c": "-0,03653297805"
+  },
+  {
+    "p": "cs",
+    "v": "au.search.yahoo.com",
+    "c": "-0,03709626661"
+  },
+  {
+    "p": "cs",
+    "v": "catchenglish.ru",
+    "c": "-0,04081559159"
+  },
+  {
+    "p": "cs",
+    "v": "s3.rhsw.biz",
+    "c": "-0,04115495793"
+  },
+  {
+    "p": "cs",
+    "v": "megogo",
+    "c": "-0,04151110962"
+  },
+  {
+    "p": "cs",
+    "v": "m.youtube.com",
+    "c": "-0,04530280409"
+  },
+  {
+    "p": "cs",
+    "v": "campaigns_marketing",
+    "c": "-0,04836050846"
+  },
+  {
+    "p": "cs",
+    "v": "social",
+    "c": "-0,05014613056"
+  },
+  {
+    "p": "cs",
+    "v": "statwatch.ru",
+    "c": "-0,05438446697"
+  },
+  {
+    "p": "cs",
+    "v": "vse-kursy",
+    "c": "-0,05549601956"
+  },
+  {
+    "p": "cs",
+    "v": "ar.egemen.kz",
+    "c": "-0,05762296916"
+  },
+  {
+    "p": "cs",
+    "v": "mail.ukr.net",
+    "c": "-0,05942490261"
+  },
+  {
+    "p": "cs",
+    "v": "rebenok.cn.ua",
+    "c": "-0,06070009282"
+  },
+  {
+    "p": "cs",
+    "v": "hskwq.com",
+    "c": "-0,06898567555"
+  },
+  {
+    "p": "cs",
+    "v": "egemen.kz",
+    "c": "-0,0805065343"
+  },
+  {
+    "p": "cs",
+    "v": "vipsearch.top",
+    "c": "-0,08474682503"
+  },
+  {
+    "p": "cs",
+    "v": "kyporenkokateryna.blogspot.com",
+    "c": "-0,08491005606"
+  },
+  {
+    "p": "cs",
+    "v": "yahoo",
+    "c": "-0,08533253049"
+  },
+  {
+    "p": "cs",
+    "v": "dnevnik.ru",
+    "c": "-0,08668741634"
+  },
+  {
+    "p": "cs",
+    "v": "sites.ziyonet.uz",
+    "c": "-0,08688425053"
+  },
+  {
+    "p": "cs",
+    "v": "uaspeaking",
+    "c": "-0,08734152308"
+  },
+  {
+    "p": "cs",
+    "v": "school.mosreg.ru",
+    "c": "-0,08868954263"
+  },
+  {
+    "p": "cs",
+    "v": "Facebook_Instagram",
+    "c": "-0,08879118168"
+  },
+  {
+    "p": "cs",
+    "v": "search.startpage.media",
+    "c": "-0,1005212742"
+  },
+  {
+    "p": "cs",
+    "v": "englishguru",
+    "c": "-0,1095430909"
+  },
+  {
+    "p": "cs",
+    "v": "web.facebook.com",
+    "c": "-0,1117825554"
+  },
+  {
+    "p": "cs",
+    "v": "englisher",
+    "c": "-0,1198625814"
+  },
+  {
+    "p": "cs",
+    "v": "m.zen.yandex.ru",
+    "c": "-0,1221196267"
+  },
+  {
+    "p": "cs",
+    "v": "ig",
+    "c": "-0,129682314"
+  },
+  {
+    "p": "cs",
+    "v": "accounts.youtube.com",
+    "c": "-0,1372445782"
+  },
+  {
+    "p": "cs",
+    "v": "cpc",
+    "c": "-0,1448528297"
+  },
+  {
+    "p": "cs",
+    "v": "advertisingclicktracking.online",
+    "c": "-0,1509598634"
+  },
+  {
+    "p": "cs",
+    "v": "yandex.ua",
+    "c": "-0,153194622"
+  },
+  {
+    "p": "cs",
+    "v": "rambler",
+    "c": "-0,1560405658"
+  },
+  {
+    "p": "cs",
+    "v": "brainum.ru",
+    "c": "-0,1594350583"
+  },
+  {
+    "p": "cs",
+    "v": "textback",
+    "c": "-0,1713845527"
+  },
+  {
+    "p": "cs",
+    "v": "google_plus",
+    "c": "-0,1781478654"
   },
   {
     "p": "cs",
     "v": "transaction_marketing",
-    "c": "-0,5279820446"
-  },
-  {
-    "p": "cs",
-    "v": "geekbrains.ru",
-    "c": "-0,5373853159"
-  },
-  {
-    "p": "cs",
-    "v": "lifehacker",
-    "c": "-0,564579927"
-  },
-  {
-    "p": "cs",
-    "v": "web-alisa",
-    "c": "-0,5680696029"
-  },
-  {
-    "p": "cs",
-    "v": "email",
-    "c": "-0,8562138651"
+    "c": "-0,1792821107"
   },
   {
     "p": "cs",
     "v": "edugram",
-    "c": "-1,051296702"
+    "c": "-0,1800898576"
+  },
+  {
+    "p": "cs",
+    "v": "vk",
+    "c": "-0,1843609085"
+  },
+  {
+    "p": "cs",
+    "v": "(not set)",
+    "c": "-0,1945005295"
+  },
+  {
+    "p": "cs",
+    "v": "onlinezakladki.ru",
+    "c": "-0,1962180591"
+  },
+  {
+    "p": "cs",
+    "v": "search.handy-tab.com",
+    "c": "-0,1965472123"
+  },
+  {
+    "p": "cs",
+    "v": "gb",
+    "c": "-0,2016355642"
+  },
+  {
+    "p": "cs",
+    "v": "in.search.yahoo.com",
+    "c": "-0,2022828776"
+  },
+  {
+    "p": "cs",
+    "v": "reten_2104",
+    "c": "-0,2023499958"
+  },
+  {
+    "p": "cs",
+    "v": "business.facebook.com",
+    "c": "-0,203237695"
+  },
+  {
+    "p": "cs",
+    "v": "webmail.aruba.it",
+    "c": "-0,2069625456"
+  },
+  {
+    "p": "cs",
+    "v": "cinemakid",
+    "c": "-0,2107280157"
+  },
+  {
+    "p": "cs",
+    "v": "sbidea.ru",
+    "c": "-0,2111924265"
+  },
+  {
+    "p": "cs",
+    "v": "pro.similarweb.com",
+    "c": "-0,2181522437"
+  },
+  {
+    "p": "cs",
+    "v": "tut.by",
+    "c": "-0,2292267953"
+  },
+  {
+    "p": "cs",
+    "v": "adme.ru",
+    "c": "-0,2402132976"
+  },
+  {
+    "p": "cs",
+    "v": "parta.com.ua",
+    "c": "-0,2469109011"
+  },
+  {
+    "p": "cs",
+    "v": "pinterest",
+    "c": "-0,2514834524"
+  },
+  {
+    "p": "cs",
+    "v": "couponkodi.ru",
+    "c": "-0,2594935663"
+  },
+  {
+    "p": "cs",
+    "v": "CBS",
+    "c": "-0,2745129716"
+  },
+  {
+    "p": "cs",
+    "v": "us.search.yahoo.com",
+    "c": "-0,274589803"
+  },
+  {
+    "p": "cs",
+    "v": "ask",
+    "c": "-0,2783660691"
+  },
+  {
+    "p": "cs",
+    "v": "blogs^_^amp^_^utm_medium=pr^_^amp^_^utm_campaign=habr^_^amp^_^utm_content=memes",
+    "c": "-0,2798260632"
+  },
+  {
+    "p": "cs",
+    "v": "izito.ru",
+    "c": "-0,2862550871"
+  },
+  {
+    "p": "cs",
+    "v": "poshukach.com",
+    "c": "-0,2900256317"
+  },
+  {
+    "p": "cs",
+    "v": "telegram",
+    "c": "-0,2938823777"
+  },
+  {
+    "p": "cs",
+    "v": "vodafone",
+    "c": "-0,2947222696"
+  },
+  {
+    "p": "cs",
+    "v": "yandex.uz",
+    "c": "-0,2962576935"
+  },
+  {
+    "p": "cs",
+    "v": "kniga_biz",
+    "c": "-0,3175926262"
+  },
+  {
+    "p": "cs",
+    "v": "campaigns_weekly",
+    "c": "-0,3305790585"
+  },
+  {
+    "p": "cs",
+    "v": "shara.li",
+    "c": "-0,3334142954"
+  },
+  {
+    "p": "cs",
+    "v": "promocodetime.com",
+    "c": "-0,3340256354"
+  },
+  {
+    "p": "cs",
+    "v": "the--steppe-com.cdn.ampproject.org",
+    "c": "-0,3344845089"
+  },
+  {
+    "p": "cs",
+    "v": "dnevnik.mos.ru",
+    "c": "-0,3394286994"
+  },
+  {
+    "p": "cs",
+    "v": "kwork.ru",
+    "c": "-0,3442687523"
+  },
+  {
+    "p": "cs",
+    "v": "files.smotriuchis.ru",
+    "c": "-0,3445286192"
+  },
+  {
+    "p": "cs",
+    "v": "pinterest.com",
+    "c": "-0,349349185"
+  },
+  {
+    "p": "cs",
+    "v": "blogs",
+    "c": "-0,3502466875"
+  },
+  {
+    "p": "cs",
+    "v": "customerio",
+    "c": "-0,3513458919"
+  },
+  {
+    "p": "cs",
+    "v": "youtube",
+    "c": "-0,3524520889"
+  },
+  {
+    "p": "cs",
+    "v": "share-wood.pro",
+    "c": "-0,3529108482"
+  },
+  {
+    "p": "cs",
+    "v": "timelessenglish.com",
+    "c": "-0,3543040435"
+  },
+  {
+    "p": "cs",
+    "v": "english-films.com",
+    "c": "-0,359293208"
+  },
+  {
+    "p": "cs",
+    "v": "digift",
+    "c": "-0,3636264717"
+  },
+  {
+    "p": "cs",
+    "v": "youtub...",
+    "c": "-0,3653787105"
+  },
+  {
+    "p": "cs",
+    "v": "merriam-webster.com",
+    "c": "-0,3654886619"
+  },
+  {
+    "p": "cs",
+    "v": "vimbox.skyeng.ru",
+    "c": "-0,3756636684"
+  },
+  {
+    "p": "cs",
+    "v": "msn.com",
+    "c": "-0,3770565045"
+  },
+  {
+    "p": "cs",
+    "v": "bing",
+    "c": "-0,3807162513"
+  },
+  {
+    "p": "cs",
+    "v": "ikids.su",
+    "c": "-0,3884608645"
+  },
+  {
+    "p": "cs",
+    "v": "search.avast.com",
+    "c": "-0,3919842155"
+  },
+  {
+    "p": "cs",
+    "v": "jobs.dou.ua",
+    "c": "-0,39290565"
+  },
+  {
+    "p": "cs",
+    "v": "searchencrypt.com",
+    "c": "-0,4002175"
+  },
+  {
+    "p": "cs",
+    "v": "m.pikabu.ru",
+    "c": "-0,402252384"
+  },
+  {
+    "p": "cs",
+    "v": "words_mobile-edwords-android",
+    "c": "-0,407763727"
+  },
+  {
+    "p": "cs",
+    "v": "lolzteam.online",
+    "c": "-0,4082416934"
+  },
+  {
+    "p": "cs",
+    "v": "unisender.com",
+    "c": "-0,4101678021"
+  },
+  {
+    "p": "cs",
+    "v": "yandex.ru",
+    "c": "-0,4203787354"
+  },
+  {
+    "p": "cs",
+    "v": "classroom.google.com",
+    "c": "-0,4220490009"
+  },
+  {
+    "p": "cs",
+    "v": "goodairlanguage.com",
+    "c": "-0,4247958718"
+  },
+  {
+    "p": "cs",
+    "v": "img.ucweb.com",
+    "c": "-0,4275213407"
+  },
+  {
+    "p": "cs",
+    "v": "ofigenno.com",
+    "c": "-0,4397353758"
+  },
+  {
+    "p": "cs",
+    "v": "zloy_hr",
+    "c": "-0,4432705073"
+  },
+  {
+    "p": "cs",
+    "v": "lead-magnet.affise.com",
+    "c": "-0,452098059"
+  },
+  {
+    "p": "cs",
+    "v": "int.search.tb.ask.com",
+    "c": "-0,4635291623"
+  },
+  {
+    "p": "cs",
+    "v": "skillfactory",
+    "c": "-0,4658548945"
+  },
+  {
+    "p": "cs",
+    "v": "brest.maminforum.com",
+    "c": "-0,4670358314"
+  },
+  {
+    "p": "cs",
+    "v": "ru.stf.st",
+    "c": "-0,4721622872"
+  },
+  {
+    "p": "cs",
+    "v": "cossa.ru",
+    "c": "-0,4741532783"
+  },
+  {
+    "p": "cs",
+    "v": "s5.rhsw.biz",
+    "c": "-0,4826377769"
+  },
+  {
+    "p": "cs",
+    "v": "stroimdom.com.ua",
+    "c": "-0,4844385228"
+  },
+  {
+    "p": "cs",
+    "v": "linkedin",
+    "c": "-0,5052479626"
+  },
+  {
+    "p": "cs",
+    "v": "delo",
+    "c": "-0,5180302127"
+  },
+  {
+    "p": "cs",
+    "v": "employmentcenter.ru",
+    "c": "-0,5206732967"
+  },
+  {
+    "p": "cs",
+    "v": "b.xfreeservice.com",
+    "c": "-0,5210211593"
+  },
+  {
+    "p": "cs",
+    "v": "21school",
+    "c": "-0,5210880022"
+  },
+  {
+    "p": "cs",
+    "v": "codeclub",
+    "c": "-0,5261522008"
+  },
+  {
+    "p": "cs",
+    "v": "imarketing",
+    "c": "-0,5303512417"
+  },
+  {
+    "p": "cs",
+    "v": "ua.jooble.org",
+    "c": "-0,5360757596"
+  },
+  {
+    "p": "cs",
+    "v": "topthinkblog.ru",
+    "c": "-0,5373801175"
+  },
+  {
+    "p": "cs",
+    "v": "admitad.com",
+    "c": "-0,5388490565"
+  },
+  {
+    "p": "cs",
+    "v": "thetefluniversity.com",
+    "c": "-0,5391497996"
+  },
+  {
+    "p": "cs",
+    "v": "propads",
+    "c": "-0,5406535203"
+  },
+  {
+    "p": "cs",
+    "v": "pikabu.ru",
+    "c": "-0,54071503"
+  },
+  {
+    "p": "cs",
+    "v": "ok.ru",
+    "c": "-0,5534210087"
+  },
+  {
+    "p": "cs",
+    "v": "itstep_od",
+    "c": "-0,5571616023"
+  },
+  {
+    "p": "cs",
+    "v": "bodo.ua",
+    "c": "-0,5737273633"
+  },
+  {
+    "p": "cs",
+    "v": "lms.ithillel.ua",
+    "c": "-0,5752497818"
+  },
+  {
+    "p": "cs",
+    "v": "Sendsay",
+    "c": "-0,5827984474"
+  },
+  {
+    "p": "cs",
+    "v": "darkwebs.ws",
+    "c": "-0,5885188566"
+  },
+  {
+    "p": "cs",
+    "v": "secureurl.fwdcdn.com",
+    "c": "-0,5925378162"
+  },
+  {
+    "p": "cs",
+    "v": "finacademy",
+    "c": "-0,6022825405"
+  },
+  {
+    "p": "cs",
+    "v": "mail.yandex.ru",
+    "c": "-0,6038624685"
+  },
+  {
+    "p": "cs",
+    "v": "ivan-kolobov.livejournal.com",
+    "c": "-0,6038726068"
+  },
+  {
+    "p": "cs",
+    "v": "latifundist.tl",
+    "c": "-0,6051920431"
+  },
+  {
+    "p": "cs",
+    "v": "guruenglish.ru",
+    "c": "-0,6076000049"
+  },
+  {
+    "p": "cs",
+    "v": "taplink.cc",
+    "c": "-0,6150517898"
+  },
+  {
+    "p": "cs",
+    "v": "sf_education",
+    "c": "-0,615418124"
+  },
+  {
+    "p": "cs",
+    "v": "semeynoe.com",
+    "c": "-0,615479336"
+  },
+  {
+    "p": "cs",
+    "v": "jewish.org.ua",
+    "c": "-0,6199210616"
+  },
+  {
+    "p": "cs",
+    "v": "marketgid_rus",
+    "c": "-0,6205218769"
+  },
+  {
+    "p": "cs",
+    "v": "a_b",
+    "c": "-0,6231288294"
+  },
+  {
+    "p": "cs",
+    "v": "jobik.net",
+    "c": "-0,6238744872"
+  },
+  {
+    "p": "cs",
+    "v": "jcoffee.benefactory.ru",
+    "c": "-0,6254142283"
+  },
+  {
+    "p": "cs",
+    "v": "vkontakte",
+    "c": "-0,6303282701"
+  },
+  {
+    "p": "cs",
+    "v": "megogo.ru",
+    "c": "-0,6305195071"
+  },
+  {
+    "p": "cs",
+    "v": "words_mobile-courses-android",
+    "c": "-0,6333777458"
+  },
+  {
+    "p": "cs",
+    "v": "miped.ru",
+    "c": "-0,6342274044"
+  },
+  {
+    "p": "cs",
+    "v": "pepper.ru",
+    "c": "-0,6358607021"
+  },
+  {
+    "p": "cs",
+    "v": "audio-class.ru",
+    "c": "-0,6366507022"
+  },
+  {
+    "p": "cs",
+    "v": "mail.pflb.ru",
+    "c": "-0,6399211514"
+  },
+  {
+    "p": "cs",
+    "v": "werwse.powerr.ru",
+    "c": "-0,645670683"
+  },
+  {
+    "p": "cs",
+    "v": "news.xopom.com",
+    "c": "-0,6458586669"
+  },
+  {
+    "p": "cs",
+    "v": "aravot.am",
+    "c": "-0,6471512704"
+  },
+  {
+    "p": "cs",
+    "v": "karusel.primezone.ru",
+    "c": "-0,6518426182"
+  },
+  {
+    "p": "cs",
+    "v": "school-58.klasna.com",
+    "c": "-0,6545466668"
+  },
+  {
+    "p": "cs",
+    "v": "indulgepassion.site",
+    "c": "-0,6559624668"
+  },
+  {
+    "p": "cs",
+    "v": "lifehacker.ru",
+    "c": "-0,6587086503"
+  },
+  {
+    "p": "cs",
+    "v": "vsemdobra.su",
+    "c": "-0,6619536565"
+  },
+  {
+    "p": "cs",
+    "v": "vk.com",
+    "c": "-0,6620926341"
+  },
+  {
+    "p": "cs",
+    "v": "latifundist.fb1",
+    "c": "-0,6685711775"
+  },
+  {
+    "p": "cs",
+    "v": "techrocks.ru",
+    "c": "-0,6686165526"
+  },
+  {
+    "p": "cs",
+    "v": "my.e-klase.lv",
+    "c": "-0,668652646"
+  },
+  {
+    "p": "cs",
+    "v": "freelancehunt.com",
+    "c": "-0,6707835797"
+  },
+  {
+    "p": "cs",
+    "v": "online-hotel-school-rhg.davintoo.com",
+    "c": "-0,6728781252"
+  },
+  {
+    "p": "cs",
+    "v": "d3scene.ru",
+    "c": "-0,6800838844"
+  },
+  {
+    "p": "cs",
+    "v": "eddev.cf",
+    "c": "-0,6808013569"
+  },
+  {
+    "p": "cs",
+    "v": "s1.rhsw.biz",
+    "c": "-0,6860222558"
+  },
+  {
+    "p": "cs",
+    "v": "em.ubrr.ru",
+    "c": "-0,6957459723"
+  },
+  {
+    "p": "cs",
+    "v": "corp.englishdom.com",
+    "c": "-0,698170717"
+  },
+  {
+    "p": "cs",
+    "v": "promo_webinar",
+    "c": "-0,7043970795"
+  },
+  {
+    "p": "cs",
+    "v": "yandex.com.tr",
+    "c": "-0,7098152055"
+  },
+  {
+    "p": "cs",
+    "v": "enguide-ru.cdn.ampproject.org",
+    "c": "-0,7105229689"
+  },
+  {
+    "p": "cs",
+    "v": "mail.hh.ru",
+    "c": "-0,719942945"
+  },
+  {
+    "p": "cs",
+    "v": "traktor.cc",
+    "c": "-0,7227110282"
+  },
+  {
+    "p": "cs",
+    "v": "pirat.biz",
+    "c": "-0,7275237763"
+  },
+  {
+    "p": "cs",
+    "v": "x5.primezone.ru",
+    "c": "-0,7344045744"
+  },
+  {
+    "p": "cs",
+    "v": "kefline.ru",
+    "c": "-0,7382407349"
+  },
+  {
+    "p": "cs",
+    "v": "mobile.facebook.com",
+    "c": "-0,740400991"
+  },
+  {
+    "p": "cs",
+    "v": "marinarusakova.biz",
+    "c": "-0,7415305052"
+  },
+  {
+    "p": "cs",
+    "v": "press-release",
+    "c": "-0,7417889"
+  },
+  {
+    "p": "cs",
+    "v": "podcasts.google.com",
+    "c": "-0,7463093174"
+  },
+  {
+    "p": "cs",
+    "v": "partner",
+    "c": "-0,7495606739"
+  },
+  {
+    "p": "cs",
+    "v": "ge.primezone.ru",
+    "c": "-0,7598238381"
+  },
+  {
+    "p": "cs",
+    "v": "afisha_kiev",
+    "c": "-0,763626305"
+  },
+  {
+    "p": "cs",
+    "v": "s4.rhsw.biz",
+    "c": "-0,769159686"
+  },
+  {
+    "p": "cs",
+    "v": "enguide",
+    "c": "-0,7898752099"
+  },
+  {
+    "p": "cs",
+    "v": "etutorium",
+    "c": "-0,7945469764"
+  },
+  {
+    "p": "cs",
+    "v": "A_B",
+    "c": "-0,8064665068"
+  },
+  {
+    "p": "cs",
+    "v": "business.google.com",
+    "c": "-0,8073778439"
+  },
+  {
+    "p": "cs",
+    "v": "offline",
+    "c": "-0,8181118408"
+  },
+  {
+    "p": "cs",
+    "v": "chrome.google.com",
+    "c": "-0,8198282855"
+  },
+  {
+    "p": "cs",
+    "v": "600l_2_gr",
+    "c": "-0,8230234023"
+  },
+  {
+    "p": "cs",
+    "v": "googleads.g.doubleclick.net",
+    "c": "-0,8236657727"
+  },
+  {
+    "p": "cs",
+    "v": "the-steppe.com",
+    "c": "-0,8369977397"
+  },
+  {
+    "p": "cs",
+    "v": "otus",
+    "c": "-0,8475348373"
+  },
+  {
+    "p": "cs",
+    "v": "s3.sharewood.bz",
+    "c": "-0,8487826821"
+  },
+  {
+    "p": "cs",
+    "v": "slivup.me",
+    "c": "-0,8491862967"
+  },
+  {
+    "p": "cs",
+    "v": "ampproject.org",
+    "c": "-0,8529565278"
+  },
+  {
+    "p": "cs",
+    "v": "lavasoft.gosearchresults.com",
+    "c": "-0,8573082085"
+  },
+  {
+    "p": "cs",
+    "v": "ping-sso.schneider-electric.com",
+    "c": "-0,8619895728"
+  },
+  {
+    "p": "cs",
+    "v": "apps.apple.com",
+    "c": "-0,8653039371"
+  },
+  {
+    "p": "cs",
+    "v": "liga",
+    "c": "-0,8763750626"
+  },
+  {
+    "p": "cs",
+    "v": "brontp.yandex.ru",
+    "c": "-0,8840574477"
+  },
+  {
+    "p": "cs",
+    "v": "pg.primezone.ru",
+    "c": "-0,8855731427"
+  },
+  {
+    "p": "cs",
+    "v": "partners",
+    "c": "-0,8909819858"
+  },
+  {
+    "p": "cs",
+    "v": "adwords",
+    "c": "-0,8913194527"
+  },
+  {
+    "p": "cs",
+    "v": "etxt.ru",
+    "c": "-0,8932597764"
+  },
+  {
+    "p": "cs",
+    "v": "pioneer.primezone.ru",
+    "c": "-0,9038712727"
+  },
+  {
+    "p": "cs",
+    "v": "sharewood.band",
+    "c": "-0,9062124241"
+  },
+  {
+    "p": "cs",
+    "v": "superdeal.ua",
+    "c": "-0,9140860128"
+  },
+  {
+    "p": "cs",
+    "v": "kgo.su",
+    "c": "-0,9162987437"
+  },
+  {
+    "p": "cs",
+    "v": "sendpulse",
+    "c": "-0,9184326318"
+  },
+  {
+    "p": "cs",
+    "v": "clc.am",
+    "c": "-0,9304522323"
+  },
+  {
+    "p": "cs",
+    "v": "avia",
+    "c": "-0,9365295486"
+  },
+  {
+    "p": "cs",
+    "v": "target",
+    "c": "-0,937330819"
+  },
+  {
+    "p": "cs",
+    "v": "spywords.ru",
+    "c": "-0,9381434895"
+  },
+  {
+    "p": "cs",
+    "v": "giftonline4u.com",
+    "c": "-0,9437352662"
+  },
+  {
+    "p": "cs",
+    "v": "searchtds.ru",
+    "c": "-0,9484463054"
+  },
+  {
+    "p": "cs",
+    "v": "work.ua",
+    "c": "-0,9529647166"
+  },
+  {
+    "p": "cs",
+    "v": "mail.aet.in.ua",
+    "c": "-0,9746385572"
+  },
+  {
+    "p": "cs",
+    "v": "teletype.in",
+    "c": "-0,9796576473"
+  },
+  {
+    "p": "cs",
+    "v": "darked.biz",
+    "c": "-0,9880076457"
+  },
+  {
+    "p": "cs",
+    "v": "ecosia.org",
+    "c": "-0,9919351524"
+  },
+  {
+    "p": "cs",
+    "v": "DonanimHaber",
+    "c": "-1,004726047"
+  },
+  {
+    "p": "cs",
+    "v": "gsearch.mi7.ru",
+    "c": "-1,008317159"
+  },
+  {
+    "p": "cs",
+    "v": "englishgu.ru",
+    "c": "-1,008906046"
+  },
+  {
+    "p": "cs",
+    "v": "belaya-tserkov.hh.ua",
+    "c": "-1,010275795"
+  },
+  {
+    "p": "cs",
+    "v": "vmodenov.blogspot.com",
+    "c": "-1,01082246"
+  },
+  {
+    "p": "cs",
+    "v": "s1.sharewood.bz",
+    "c": "-1,012375307"
   },
   {
     "p": "cs",
     "v": "sharewood.biz",
-    "c": "-1,10717869"
+    "c": "-1,019941806"
+  },
+  {
+    "p": "cs",
+    "v": "prostosdelaj.ru",
+    "c": "-1,034343301"
+  },
+  {
+    "p": "cs",
+    "v": "englishdom.amocrm.ru",
+    "c": "-1,03811478"
+  },
+  {
+    "p": "cs",
+    "v": "mastercard",
+    "c": "-1,04139529"
+  },
+  {
+    "p": "cs",
+    "v": "zen",
+    "c": "-1,049894588"
+  },
+  {
+    "p": "cs",
+    "v": "megogo.cc",
+    "c": "-1,057087085"
+  },
+  {
+    "p": "cs",
+    "v": "kadam",
+    "c": "-1,057404514"
+  },
+  {
+    "p": "cs",
+    "v": "web.telegram.org",
+    "c": "-1,062817801"
+  },
+  {
+    "p": "cs",
+    "v": "lm.workplace.com",
+    "c": "-1,063675645"
+  },
+  {
+    "p": "cs",
+    "v": "blackbiz.club",
+    "c": "-1,070939397"
+  },
+  {
+    "p": "cs",
+    "v": "e.mail.ru",
+    "c": "-1,072841122"
+  },
+  {
+    "p": "cs",
+    "v": "gravitec",
+    "c": "-1,074317201"
+  },
+  {
+    "p": "cs",
+    "v": "pdf",
+    "c": "-1,081339539"
+  },
+  {
+    "p": "cs",
+    "v": "mbox2.i.ua",
+    "c": "-1,087139175"
+  },
+  {
+    "p": "cs",
+    "v": "pro_mandri",
+    "c": "-1,104171018"
+  },
+  {
+    "p": "cs",
+    "v": "expertsender",
+    "c": "-1,114592695"
+  },
+  {
+    "p": "cs",
+    "v": "wikium.ru",
+    "c": "-1,11650007"
+  },
+  {
+    "p": "cs",
+    "v": "m.babyblog.ru",
+    "c": "-1,121925949"
+  },
+  {
+    "p": "cs",
+    "v": "geekbrains.ru",
+    "c": "-1,122852989"
+  },
+  {
+    "p": "cs",
+    "v": "litres",
+    "c": "-1,134186208"
+  },
+  {
+    "p": "cs",
+    "v": "inner",
+    "c": "-1,137752019"
+  },
+  {
+    "p": "cs",
+    "v": "check_list",
+    "c": "-1,149603031"
+  },
+  {
+    "p": "cs",
+    "v": "4brain",
+    "c": "-1,150426169"
+  },
+  {
+    "p": "cs",
+    "v": "lolzteam.net",
+    "c": "-1,155339208"
+  },
+  {
+    "p": "cs",
+    "v": "MIB",
+    "c": "-1,183463561"
+  },
+  {
+    "p": "cs",
+    "v": "email",
+    "c": "-1,190236209"
+  },
+  {
+    "p": "cs",
+    "v": "webpromoexperts",
+    "c": "-1,209022019"
+  },
+  {
+    "p": "cs",
+    "v": "headhunter",
+    "c": "-1,260250285"
+  },
+  {
+    "p": "cs",
+    "v": "book24",
+    "c": "-1,263877899"
+  },
+  {
+    "p": "cs",
+    "v": "boominfo.ru",
+    "c": "-1,287918002"
+  },
+  {
+    "p": "cs",
+    "v": "facebook_event",
+    "c": "-1,288852852"
+  },
+  {
+    "p": "cs",
+    "v": "mytarget",
+    "c": "-1,294674073"
+  },
+  {
+    "p": "cs",
+    "v": "sharewood.pro",
+    "c": "-1,299915666"
+  },
+  {
+    "p": "cs",
+    "v": "201940_digest_orig_promo",
+    "c": "-1,302375055"
+  },
+  {
+    "p": "cs",
+    "v": "prostor.mts.com.ua",
+    "c": "-1,309029964"
+  },
+  {
+    "p": "cs",
+    "v": "proleed",
+    "c": "-1,358315759"
+  },
+  {
+    "p": "cs",
+    "v": "aksioma24.ru",
+    "c": "-1,361450392"
+  },
+  {
+    "p": "cs",
+    "v": "m.vk.com",
+    "c": "-1,372136465"
+  },
+  {
+    "p": "cs",
+    "v": "cityads.com",
+    "c": "-1,392451494"
+  },
+  {
+    "p": "cs",
+    "v": "pubg.best",
+    "c": "-1,396594023"
+  },
+  {
+    "p": "cs",
+    "v": "etext",
+    "c": "-1,413977541"
+  },
+  {
+    "p": "cs",
+    "v": "www-forumdaily-com.cdn.ampproject.org",
+    "c": "-1,462750148"
+  },
+  {
+    "p": "cs",
+    "v": "yandex.by",
+    "c": "-1,473313748"
+  },
+  {
+    "p": "cs",
+    "v": "201940_digest_adv_promo",
+    "c": "-1,499507409"
+  },
+  {
+    "p": "cs",
+    "v": "openssource.info",
+    "c": "-1,546826978"
+  },
+  {
+    "p": "cs",
+    "v": "telegra.ph",
+    "c": "-1,549331552"
+  },
+  {
+    "p": "cs",
+    "v": "iloveenglish",
+    "c": "-1,56004346"
+  },
+  {
+    "p": "cs",
+    "v": "yandex.fr",
+    "c": "-1,600259435"
+  },
+  {
+    "p": "cs",
+    "v": "bilingual",
+    "c": "-1,608885878"
+  },
+  {
+    "p": "cs",
+    "v": "m.habr.com",
+    "c": "-1,661618199"
+  },
+  {
+    "p": "cs",
+    "v": "m.rabota.ua",
+    "c": "-1,75924983"
+  },
+  {
+    "p": "cs",
+    "v": "preview.page.link",
+    "c": "-1,809774188"
+  },
+  {
+    "p": "cs",
+    "v": "pokupon",
+    "c": "-1,834748343"
+  },
+  {
+    "p": "cs",
+    "v": "presentation_webinar",
+    "c": "-1,926990685"
+  },
+  {
+    "p": "cs",
+    "v": "web-alisa",
+    "c": "-1,944311664"
+  },
+  {
+    "p": "cs",
+    "v": "careerist",
+    "c": "-1,957453544"
+  },
+  {
+    "p": "cs",
+    "v": "viber",
+    "c": "-1,987120187"
+  },
+  {
+    "p": "cs",
+    "v": "mel-fm.cdn.ampproject.org",
+    "c": "-2,094146956"
+  },
+  {
+    "p": "cs",
+    "v": "lifehacker",
+    "c": "-2,15770168"
+  },
+  {
+    "p": "cs",
+    "v": "l.instagram.com",
+    "c": "-2,425491561"
+  },
+  {
+    "p": "cs",
+    "v": "eSputnik-trigger",
+    "c": "-2,439361632"
+  },
+  {
+    "p": "cs",
+    "v": "forumdaily.com",
+    "c": "-2,76517051"
+  },
+  {
+    "p": "cs",
+    "v": "theoryandpractice",
+    "c": "-2,812082017"
   },
   {
     "p": "cs",
     "v": "(not_set)",
-    "c": "0,1793603836"
+    "c": "1,358791895"
   },
   {
     "p": "cs",
