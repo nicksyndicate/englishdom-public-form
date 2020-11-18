@@ -12,7 +12,11 @@ import {
 } from './utils/lead-priority';
 
 let formInstances = [];
-sbjs.init();
+
+sbjs.init({
+  lifetime: 24,
+  timezone_offset: 0,
+});
 
 const formMurkupError = (elSelector) =>
   `Element with selector ${elSelector} not found in englishdom-form murkup. Please check that you have correctly copied
@@ -355,6 +359,25 @@ class Form {
     return tags;
   }
 
+  getUtm() {
+    let ep = _get(sbjs, 'get.current_add.ep', '');
+
+    // remove window.location.origin "https://nick.eddev.cf"
+    if (ep) {
+      ep = ep.replace(window.location.origin, '');
+    }
+
+    return JSON.stringify({
+      traffic_type: _get(sbjs, 'get.current.typ', ''),
+      source: _get(sbjs, 'get.current.src', ''),
+      medium: _get(sbjs, 'get.current.mdm', ''),
+      campaign: _get(sbjs, 'get.current.cmp', ''),
+      content: _get(sbjs, 'get.current.cnt', ''),
+      term: _get(sbjs, 'get.current.trm', ''),
+      entrance_point: ep,
+    });
+  }
+
   sendApplication(data, form, token) {
     const _this = this;
 
@@ -367,6 +390,9 @@ class Form {
     } catch (e) {
       //
     }
+
+
+    data.attributes.utm = this.getUtm();
 
     api.apiSendApplication(
       data,
