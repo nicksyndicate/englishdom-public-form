@@ -363,8 +363,12 @@ class Form {
     let ep = _get(sbjs, 'get.current_add.ep', '');
 
     // remove window.location.origin "https://nick.eddev.cf"
+    // remove hash
+    // remove search params
     if (ep) {
       ep = ep.replace(window.location.origin, '');
+      ep = ep.replace(/#.*/, '');
+      ep = ep.replace(/\?.*/, '');
     }
 
     return JSON.stringify({

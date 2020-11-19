@@ -10719,9 +10719,13 @@ var Form = /*#__PURE__*/function () {
     key: "getUtm",
     value: function getUtm() {
       var ep = (0, _get2.default)(_sourcebuster.default, 'get.current_add.ep', ''); // remove window.location.origin "https://nick.eddev.cf"
+      // remove hash
+      // remove search params
 
       if (ep) {
         ep = ep.replace(window.location.origin, '');
+        ep = ep.replace(/#.*/, '');
+        ep = ep.replace(/\?.*/, '');
       }
 
       return JSON.stringify({
