@@ -32,6 +32,7 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
       contentType: 'application/vnd.api+json',
       data: JSON.stringify(sendData),
       headers: Object.assign({
+        'Accept-Language': document.body.getAttribute('data-language') || 'ru',
         'X-Client-Id': getClientId(),
       }, header),
       beforeSend() {
@@ -70,6 +71,7 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
       contentType: 'application/vnd.api+json',
       data: JSON.stringify(sendData),
       headers: Object.assign({
+        'Accept-Language': document.body.getAttribute('data-language') || 'ru',
         'X-Client-Id': getClientId(),
       }, header),
       beforeSend() {
@@ -106,6 +108,7 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
       contentType: 'application/vnd.api+json',
       data: JSON.stringify(sendData),
       headers: Object.assign({
+        'Accept-Language': document.body.getAttribute('data-language') || 'ru',
         'X-Client-Id': getClientId(),
       }, header),
       statusCode: {
@@ -150,6 +153,7 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
+      'Accept-Language': document.body.getAttribute('data-language') || 'ru',
       'X-Client-Id': getClientId(),
     }, token ? {
       Authorization1: `Bearer ${token}`,
