@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/home/nick/englishdom-public-form/";
+/******/ 	__webpack_require__.p = "/var/www/englishdom-form/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -13185,6 +13185,7 @@ function apiRegistration(data, internal, tags, loadCb, cb) {
       contentType: 'application/vnd.api+json',
       data: JSON.stringify(sendData),
       headers: (0, _extends2.default)({
+        'Accept-Language': document.body.getAttribute('data-language') || 'ru',
         'X-Client-Id': getClientId()
       }, header),
       beforeSend: function beforeSend() {
@@ -13220,6 +13221,7 @@ function apiGetToken(data, internal, tags, loadCb, cb) {
       contentType: 'application/vnd.api+json',
       data: JSON.stringify(sendData),
       headers: (0, _extends2.default)({
+        'Accept-Language': document.body.getAttribute('data-language') || 'ru',
         'X-Client-Id': getClientId()
       }, header),
       beforeSend: function beforeSend() {
@@ -13258,6 +13260,7 @@ function apiReadRegistration(data, internal, tags, loadCb, cb) {
       contentType: 'application/vnd.api+json',
       data: JSON.stringify(sendData),
       headers: (0, _extends2.default)({
+        'Accept-Language': document.body.getAttribute('data-language') || 'ru',
         'X-Client-Id': getClientId()
       }, header),
       statusCode: {
@@ -13311,6 +13314,7 @@ function apiSendApplication(data, internal, tags, token, loadCb, cb) {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Authorization1',
+      'Accept-Language': document.body.getAttribute('data-language') || 'ru',
       'X-Client-Id': getClientId()
     }, token ? {
       Authorization1: "Bearer ".concat(token)
