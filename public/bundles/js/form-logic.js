@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/var/www/englishdom-form/";
+/******/ 	__webpack_require__.p = "/home/nick/englishdom-public-form/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -10410,7 +10410,10 @@ var _leadPriority = __webpack_require__(69);
 
 var formInstances = [];
 
-_sourcebuster.default.init();
+_sourcebuster.default.init({
+  lifetime: 24,
+  timezone_offset: 0
+});
 
 var formMurkupError = function formMurkupError(elSelector) {
   return "Element with selector ".concat(elSelector, " not found in englishdom-form murkup. Please check that you have correctly copied\n  form murkup to your page.");
@@ -10713,6 +10716,29 @@ var Form = /*#__PURE__*/function () {
       return tags;
     }
   }, {
+    key: "getUtm",
+    value: function getUtm() {
+      var ep = (0, _get2.default)(_sourcebuster.default, 'get.current_add.ep', ''); // remove window.location.origin "https://nick.eddev.cf"
+      // remove hash
+      // remove search params
+
+      if (ep) {
+        ep = ep.replace(window.location.origin, '');
+        ep = ep.replace(/#.*/, '');
+        ep = ep.replace(/\?.*/, '');
+      }
+
+      return JSON.stringify({
+        traffic_type: (0, _get2.default)(_sourcebuster.default, 'get.current.typ', ''),
+        source: (0, _get2.default)(_sourcebuster.default, 'get.current.src', ''),
+        medium: (0, _get2.default)(_sourcebuster.default, 'get.current.mdm', ''),
+        campaign: (0, _get2.default)(_sourcebuster.default, 'get.current.cmp', ''),
+        content: (0, _get2.default)(_sourcebuster.default, 'get.current.cnt', ''),
+        term: (0, _get2.default)(_sourcebuster.default, 'get.current.trm', ''),
+        entrance_point: ep
+      });
+    }
+  }, {
     key: "sendApplication",
     value: function sendApplication(data, form, token) {
       var _this = this; // reset phone send to backend because front validation doesnt pass
@@ -10724,6 +10750,8 @@ var Form = /*#__PURE__*/function () {
         data.attributes.tags = this.addPriorityToTags(data.attributes.tags);
       } catch (e) {//
       }
+
+      data.attributes.utm = this.getUtm();
 
       _formApi.default.apiSendApplication(data, this.options.internal, this.options.partnerTags, token, this.options.loadCb, function (result, response) {
         if (result) {

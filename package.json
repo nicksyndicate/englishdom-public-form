@@ -1,6 +1,6 @@
 {
   "name": "englishdom-form",
-  "version": "0.4.82",
+  "version": "0.4.83",
   "description": "englishdom form api for external includes",
   "main": "index.js",
   "dependencies": {
@@ -43,7 +43,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "build-profile": "webpack --profile --json > webpack-stats.json",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "link-ed": "sudo npm link; cd /var/www/englishdom; sudo npm link englishdom-form"
   },
   "author": "englishdom",
   "license": "ISC"
