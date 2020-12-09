@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/var/www/englishdom-form/";
+/******/ 	__webpack_require__.p = "/home/nick/englishdom-public-form/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports

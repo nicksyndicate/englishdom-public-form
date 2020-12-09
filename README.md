@@ -1,6 +1,17 @@
 # Englishdom public form
 -------
 
+#### Contributing
+- форк
+- меняешь код
+- меняешь версию в пекедж жсон
+- билд npm run build - билдит исходники
+- пушиш в ориджин с исходниками
+- подаешь пул риквест в апстрим
+- npm publish
+- в основном проекте меняешь версию пакета
+
+
 #### Demo
 
 [https://englishdom.com](https://englishdom.com)
